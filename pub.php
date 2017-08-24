@@ -1,7 +1,7 @@
  <?php
  function pubMqtt($topic,$msg){
        
-      put("https://api.netpie.io/microgear/jadetest/$topic?retain",$msg);
+      put("https://api.netpie.io/microgear/numpapicklinebot/$topic?retain",$msg);
  
   }
   function getMqttfromlineMsg($lineMsg){
@@ -34,7 +34,7 @@
      
     curl_setopt($ch, CURLOPT_POSTFIELDS, $tmsg);
  
-    curl_setopt($ch, CURLOPT_USERPWD, "jJhs4OCpicDIGTT:kWNwUoBoEZenL50J2h8Th8XGT");
+    curl_setopt($ch, CURLOPT_USERPWD, "pp4gzMhCvJIqlxc66hKEvk46m");
      
     $response = curl_exec($ch);
     
