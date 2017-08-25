@@ -4,16 +4,16 @@
       put("https://api.netpie.io/microgear/numpapicklinebot/$topic?retain",$msg);
  
   }
-  function getMqttfromlineMsg($lineMsg){
+ function getMqttfromlineMsg($lineMsg,$replytoken){
  
     $pos = strpos($lineMsg, ":");
     if($pos){
       $splitMsg = explode(":", $lineMsg);
-      $topic = "NodeMCU1";
+      $topic = $splitMsg[0];
       $msg = $splitMsg[1];
       pubMqtt($topic,$msg);
     }else{
-      $topic = "NodeMCU1";
+      $topic = $replytoken;
       $msg = $lineMsg;
       pubMqtt($topic,$msg);
     }
