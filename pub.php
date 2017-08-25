@@ -4,7 +4,7 @@
       put("https://api.netpie.io/microgear/numpapicklinebot/$topic?retain",$msg);
  
   }
- function getMqttfromlineMsg($lineMsg,$replytoken){
+ function getMqttfromlineMsg($lineMsg){
  
     $pos = strpos($lineMsg, ":");
     if($pos){
