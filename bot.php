@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			if($text == "Check" || $text == "CHECK" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 				$text = "CHECK";	
 				getMqttfromlineMSG($text);  
-			}else if($text == "Acknowladge" || $text == "รับทราบ" || $text == "OK"){
+			}else if($text == "Acknowladge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
 				$text = "ACK";	
 				getMqttfromlineMSG($text);  
 			}	
