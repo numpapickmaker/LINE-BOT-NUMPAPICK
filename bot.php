@@ -23,11 +23,15 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
-			$replyToken = $event['replyToken'];
+			//$replyToken = $event['replyToken'];
 
 			// Build message to reply back
+
+			if($text = "Check" || $text = "CHECK" || $text = "เช็ค" || $text = "เช็คอุปกรณ์"){
 				getMqttfromlineMsg($text);
-			    }
+			}
+			
+		
 			
 		}
 	}
