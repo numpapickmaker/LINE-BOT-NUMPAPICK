@@ -35,7 +35,10 @@ if (!is_null($events['events'])) {
 			      
 			      getMqttfromlineMsg($msg);
 			    }else {
-				getMqttfromlineMSG($text);    
+				    
+				if($text = "Check" || $text = "CHECK" || $text = "เช็ค" || $text = "เช็คอุปกรณ์"){
+					getMqttfromlineMSG($text);  
+				}	
 			    }
 			
 			
