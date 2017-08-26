@@ -9,9 +9,13 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) {
+	if($events['ESP'] == 'CHECK'){
+	send_LINE($events['MSG']);
+	}
 	
-	send_LINE($events['ESP']);
-		
+	if($events['ESP'] == 'HELP'){
+	send_CHECK();
+	}
 	echo "OK";
 	}
 if (!is_null($events['events'])) {
