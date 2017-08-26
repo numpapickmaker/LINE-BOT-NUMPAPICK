@@ -26,14 +26,6 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-
-			 $pos = strpos($text, ":");
-			    if($pos){
-			      $splitMsg = explode(":", $text);
-			      $topic = $splitMsg[0];
-			      $msg = $splitMsg[1];
-			      getMqttfromlineMsg($topic);
-			    }else{
 				getMqttfromlineMsg($text);
 			    }
 			
