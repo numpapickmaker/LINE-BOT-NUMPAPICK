@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 			      $splitMsg = explode(":", $text);
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
-			      getMqttfromlineMsg($msg);
+			      getMqttfromlineMsg($topic);
 			    }else{
 				getMqttfromlineMsg($text);
 			    }
