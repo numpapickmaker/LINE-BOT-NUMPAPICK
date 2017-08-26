@@ -27,19 +27,13 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 
-			 $pos = strpos($text, ":");
-			    if($pos){
-			      $splitMsg = explode(":", $text);
-			      $topic = $splitMsg[0];
-			      $msg = $splitMsg[1];
-			      
-			      getMqttfromlineMsg($msg);
-			    }else {
+			
 				    
-				if($text == "Check" || $text == "CHECK" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
-					getMqttfromlineMSG($text);  
-				}	
-			    }
+			if($text == "Check" || $text == "CHECK" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
+				$text = "CHECK";	
+				getMqttfromlineMSG($text);  
+			}	
+			    
 			
 			
 		
