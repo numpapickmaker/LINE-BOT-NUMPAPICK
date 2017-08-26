@@ -34,6 +34,8 @@ if (!is_null($events['events'])) {
 			      $msg = $splitMsg[1];
 			      
 			      getMqttfromlineMsg($msg);
+			    }else {
+				getMqttfromlineMSG($text);    
 			    }
 			
 			
