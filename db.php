@@ -2,7 +2,7 @@
  require("pub.php");
    $userid = "jade";
    $esp = "NodeMCU1";
-   save_userid($userid,$esp)
+   save_userid($userid,$esp);
    function save_userid($userid,$esp){ 
    $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
    $port        = "port=5432";
