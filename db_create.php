@@ -10,10 +10,9 @@
    } else {
       echo "Opened database successfully\n";
    }
-   $sql =<<<EOF
-      select MAX(ESPNO) as LargestNO
-      from ESP;
-EOF; 
+   $sql ="select MAX(ESPNO) as LargestNO from ESP;";
+
+
  $ret = pg_query($db, $sql) ;
    if(!$ret) {
       echo pg_last_error($db) ;
