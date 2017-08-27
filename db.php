@@ -70,5 +70,7 @@
      
       pg_close($db) ;
    }
-
+ $userid ="Ue77a191627f6ac91899e75d92264310c";
+$msg ="CHECK";
+  check_userid($userid,$msg);
 ?>
