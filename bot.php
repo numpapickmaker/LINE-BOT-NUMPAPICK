@@ -28,7 +28,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			//$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$Id = $event['source']['userId'];
+			$userId = $event['source']['userId'];
 			$pos = strpos($text, ":");
 			    if($pos){
 			     send_LINE("login");
