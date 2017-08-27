@@ -37,9 +37,9 @@ function send_Check(){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> "https://cdn.pixabay.com/photo/2014/11/28/22/23/alm-549333_960_720.jpg",
-              "title"=> "Menu",
-              "text"=> "Please select",
+              "thumbnailImageUrl"=> "https://i.imgur.com/t3aVgCp.jpg",
+              "title"=> "EMERGENCY ALERT!! FALL DETECT",
+              "text"=> "Please check user",
               "actions"=> [
                   [
                     "type"=> "message",
