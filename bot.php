@@ -5,7 +5,6 @@
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
-
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) {
@@ -27,18 +26,28 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
-			$userId = $event['source']['userId'];
-
+			//$userId = $event['source']['userId'];
 			// Build message to reply back
-	    
-				if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
-					$text = "CHECK";	
-					getMqttfromlineMSG($text);  
-				}else if($text == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
-					$text = "ACK";	
-					getMqttfromlineMSG($text);  
-				}	
-			    
+			
+			$pos = strpos($text, ":");
+			    if($pos){
+			     send_LINE("login");
+			      $splitMsg = explode(":", $text);
+			      $topic = $splitMsg[0];
+			      $msg = $splitMsg[1];
+			        if($topic == "Login" || $topic == "login"){
+					send_LINE("login2");
+					save_userid($userId,$msg);
+					}
+			    }else{	    
+					if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
+						$text = "CHECK";	
+						getMqttfromlineMSG($text);  
+					}else if($text == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
+						$text = "ACK";	
+						getMqttfromlineMSG($text);  
+					}	
+			    }
 			
 			
 		
