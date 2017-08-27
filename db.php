@@ -34,7 +34,7 @@
    } else {
       echo "Records created successfully\n";
    }
-   pg_close($db) ;te
+   pg_close($db) ;
    }
    function check_userid($userid){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
