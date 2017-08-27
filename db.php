@@ -23,7 +23,7 @@
       while($row = pg_fetch_row($ret) ){
       echo "NO max = " . $row[0] . "\n";
       $row[0] = intval($row[0]+1);
-       $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",".$userid.",".$esp.");";
+       $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$esp."'');";
       }
       //echo "Records created successfully\n";
    }
@@ -67,7 +67,7 @@
      
       pg_close($db) ;
    }
- $userid = "jade";
+   $userid = "jade";
    $esp = "NodeMCU1";
    save_userid($userid,$esp);
 ?>
