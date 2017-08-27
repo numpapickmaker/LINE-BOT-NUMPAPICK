@@ -1,7 +1,10 @@
  <?php
  function pubMqtt($topic,$msg){
-       
-      put("https://api.netpie.io/microgear/numpapicklinebot/NodeMCU1?retain&auth=mJ7K4MfteC7p0dW:pp4gzMhCvJIqlxc66hKEvk46m",$msg);
+       $APPID= "numpapicklinebot"; //enter your appid
+     $KEY = "mJ7K4MfteC7p0dW"; //enter your key
+    $SECRET = "pp4gzMhCvJIqlxc66hKEvk46m"; //enter your secret
+    $Topic = "/NodeMCU2"; 
+      put("https://api.netpie.io/microgear/'+APPID+Topic+'?retain&auth=$KEY:$SECRET",$msg);
  
   }
  function getMqttfromlineMsg($lineMsg){
