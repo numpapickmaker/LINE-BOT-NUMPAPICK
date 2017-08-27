@@ -38,7 +38,8 @@ if (!is_null($events['events'])) {
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
-					save_userid($userid,$msg);
+					send_LINE($events['MSG']);
+					save_userid($userId,$msg);
 				}
 			    }else{	    
 				if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
