@@ -53,7 +53,7 @@
       } else {
          echo "Opened database successfully\n";
       }
-      $sql ="SELECT * FROM userline WHERE id=".$userid.";";
+      $sql ="SELECT * FROM userline WHERE id='".$userid."';";
 
 
     $ret = pg_query($db, $sql) ;
