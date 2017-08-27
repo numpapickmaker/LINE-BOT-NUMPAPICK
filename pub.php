@@ -1,7 +1,7 @@
  <?php
  function pubMqtt($topic,$msg){
        
-      put("https://api.netpie.io/microgear/numpapicklinebot/$topic?retain",$msg);
+      put("https://api.netpie.io/microgear/numpapicklinebot/NodeMCU1?retain",$msg);
  
   }
  function getMqttfromlineMsg($lineMsg){
