@@ -67,7 +67,5 @@
      
       pg_close($db) ;
    }
-   $userid = "jade";
-   $esp = "NodeMCU1";
-   save_userid($userid,$esp);
+   
 ?>
