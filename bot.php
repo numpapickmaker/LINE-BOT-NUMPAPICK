@@ -1,6 +1,7 @@
 <?php
  require("pub.php");
  require("line.php");
+ require("db.php");	
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -27,7 +28,7 @@ if (!is_null($events['events'])) {
 			// Get replyToken
 			//$replyToken = $event['replyToken'];
 			// Build message to reply back
-			
+			$userId = $event['source']['userId'];
 				    
 			if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 				$text = "CHECK";	
