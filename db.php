@@ -62,7 +62,7 @@
       } else {
          while($row = pg_fetch_row($ret) ){
          echo "ESP name = " . $row[3] . "\n";
-         getMqttfromlineMsg($row[3],$msg);
+         getMqttfromlineMsg($row[3],$row[3]);
                 }
          //echo "Records created successfully\n";
       }
