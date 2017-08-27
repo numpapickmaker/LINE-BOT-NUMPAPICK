@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
-					send_LINE("login2");
+					send_LINE($userId);
 					save_userid("jade","NodeMCU1");
 					}
 			    }else{	    
