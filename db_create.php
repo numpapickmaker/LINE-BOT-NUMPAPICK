@@ -23,13 +23,5 @@
       }
       //echo "Records created successfully\n";
    }  
-   $sql ="INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0]}.",'1',1);";
-
-   $ret = pg_query($db, $sql) ;
-   if(!$ret) {
-      echo pg_last_error($db) ;
-   } else {
-      echo "Records created successfully\n";
-   }
    pg_close($db) ;
 ?>
