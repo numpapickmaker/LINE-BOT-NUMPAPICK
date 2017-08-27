@@ -38,7 +38,7 @@ function send_Check(){
           "template"=> [
               "type"=> "buttons",
               "thumbnailImageUrl"=> "https://i.imgur.com/t3aVgCp.jpg",
-              "title"=> "EMERGENCY ALERT!! FALL DETECT",
+              "title"=> "EMERGENCY ALERT !!",
               "text"=> "Please check user",
               "actions"=> [
                   [
