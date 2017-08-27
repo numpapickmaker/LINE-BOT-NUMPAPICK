@@ -19,7 +19,7 @@
    } else {
       while($row = pg_fetch_row($ret) ){
       echo "NO max = " . $row[0] . "\n";
-       $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'1',1);";
+       $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0]+1.",'1',1);";
       }
       //echo "Records created successfully\n";
    }
