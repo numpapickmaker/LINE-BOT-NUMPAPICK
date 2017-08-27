@@ -26,9 +26,9 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
-			//$replyToken = $event['replyToken'];
+			$replyToken = $event['replyToken'];
 			// Build message to reply back
-			$Id = $event['source']['userId'];
+			//$Id = $event['source']['userId'];
 				    
 			if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 				$text = "CHECK";	
