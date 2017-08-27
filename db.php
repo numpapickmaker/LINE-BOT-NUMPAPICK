@@ -27,6 +27,16 @@
          }
          //echo "Records created successfully\n";
       }
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         
+        echo "Records created successfully\n";
+         //getMqttfromlineMsg("555");
+                }
+         
+      }
 
       pg_close($db) ;
    }
