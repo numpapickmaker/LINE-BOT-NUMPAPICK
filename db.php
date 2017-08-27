@@ -60,11 +60,12 @@
          while($row = pg_fetch_row($ret) ){
          echo "ESP name = " . $row[2] . "\n";
          // send_LINE('PASS');
-         if($row[2] != ""){
-            getMqttfromlineMsg($row[2],$msg);
-         }else{
-            send_LINE('Please Login');
-         }  
+            if($row[2] == ""){
+               send_LINE('Please Login');
+            }else{
+               getMqttfromlineMsg($row[2],$msg);
+            }  
+         }
          //echo "Records created successfully\n";
       }
 
