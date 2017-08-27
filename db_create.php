@@ -11,8 +11,8 @@
       echo "Opened database successfully\n";
    }
    $sql =<<<EOF
-   select MAX(ESPNO) as LargestNO
-   from ESP;
+      select MAX(ESPNO) as LargestNO
+      from ESP;
 EOF; 
  $ret = pg_query($db, $sql) ;
    if(!$ret) {
