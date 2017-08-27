@@ -30,19 +30,7 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 
 			// Build message to reply back
-
-			
-			$pos = strpos($text, ":");
-			    if($pos){
-			     send_LINE("login");
-			      $splitMsg = explode(":", $text);
-			      $topic = $splitMsg[0];
-			      $msg = $splitMsg[1];
-			        if($topic == "Login" || $topic == "login"){
-					send_LINE("login2");
-					save_userid($userId,$msg);
-				}
-			    }else{	    
+	    
 				if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 					$text = "CHECK";	
 					getMqttfromlineMSG($text);  
@@ -50,7 +38,7 @@ if (!is_null($events['events'])) {
 					$text = "ACK";	
 					getMqttfromlineMSG($text);  
 				}	
-			    }
+			    
 			
 			
 		
