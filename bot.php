@@ -31,13 +31,13 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 			$pos = strpos($text, ":");
 			    if($pos){
-			     send_LINE("login");
+			     
 			      $splitMsg = explode(":", $text);
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
-					send_LINE($userId);
-					save_userid("jade","NodeMCU1");
+					send_LINE("login");
+					save_userid($userId, $msg);
 					}
 			    }else{	    
 					if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
