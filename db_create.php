@@ -10,7 +10,7 @@
    } else {
       echo "Opened database successfully\n";
    }
-   $sql ="select MAX(ESPNO) as LargestNO from ESP;";
+   $sql ="SELECT MAX(ESPNO) as LargestNO from ESP;";
 
 
  $ret = pg_query($db, $sql) ;
@@ -23,7 +23,7 @@
       }
       //echo "Records created successfully\n";
    }  
-   $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0]}.",'1',1);";
+   $sql ="INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0]}.",'1',1);";
 
    $ret = pg_query($db, $sql) ;
    if(!$ret) {
