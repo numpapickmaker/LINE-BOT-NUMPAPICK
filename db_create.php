@@ -23,8 +23,8 @@
       }
       //echo "Records created successfully\n";
    }
-     
-   $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0]}.",'1',1);";
+
+   $sql =" INSERT INTO userline (userno,id,esp) VALUES ( 2,'1',1);";
 
    $ret = pg_query($db, $sql) ;
    if(!$ret) {
