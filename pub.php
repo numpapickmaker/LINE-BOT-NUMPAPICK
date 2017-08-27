@@ -3,7 +3,7 @@
        $APPID= "numpapicklinebot"; //enter your appid
      $KEY = "mJ7K4MfteC7p0dW"; //enter your key
     $SECRET = "pp4gzMhCvJIqlxc66hKEvk46m"; //enter your secret
-    $Topic = "/NodeMCU2"; 
+    $Topic = "/Smarthelper2"; 
       put("https://api.netpie.io/microgear/".$APPID.$Topic."?retain&auth=".$KEY.":".$SECRET,$msg);
  
   }
