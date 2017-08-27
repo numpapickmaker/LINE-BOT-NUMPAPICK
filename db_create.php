@@ -10,21 +10,30 @@
    } else {
       echo "Opened database successfully\n";
    }
-   
    $sql =<<<EOF
-      CREATE TABLE COMPANY
-      (ID INT PRIMARY KEY     NOT NULL,
-      NAME           TEXT    NOT NULL,
-      AGE            INT     NOT NULL,
-      ADDRESS        CHAR(50) ,
-      SALARY         REAL);
+   select MAX(ESPNO) as LargestNO
+   from ESP;
+EOF; 
+ $ret = pg_query($db, $sql) ;
+   if(!$ret) {
+      echo pg_last_error($db) ;
+   } else {
+      while($row = pg_fetch_row($ret) ){
+      echo "NO max = " . $row[0] . "\n";
+      
+      }
+      //echo "Records created successfully\n";
+   }  
+   $sql =<<<EOF
+      INSERT INTO userline (userno,id,esp)
+      VALUES ({$row[0]},'1') ;
 EOF;
 
    $ret = pg_query($db, $sql) ;
    if(!$ret) {
       echo pg_last_error($db) ;
    } else {
-      echo "Table created successfully\n";
+      echo "Records created successfully\n";
    }
    pg_close($db) ;
 ?>
