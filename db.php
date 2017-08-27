@@ -34,7 +34,7 @@
          
         echo "Records created successfully\n";
          //getMqttfromlineMsg("555");
-                }
+                
          
       }
 
