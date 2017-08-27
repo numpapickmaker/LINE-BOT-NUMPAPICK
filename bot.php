@@ -1,5 +1,5 @@
 <?php
- require("pub.php");
+ //require("pub.php");
  require("line.php");
 require("db.php");
 // Get POST body content
