@@ -1,8 +1,6 @@
 <?php
  require("pub.php");
-   $userid = "jade";
-   $esp = "NodeMCU1";
-   save_userid($userid,$esp);
+   
    function save_userid($userid,$esp){ 
    $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
    $port        = "port=5432";
@@ -69,4 +67,7 @@
      
       pg_close($db) ;
    }
+ $userid = "jade";
+   $esp = "NodeMCU1";
+   save_userid($userid,$esp);
 ?>
