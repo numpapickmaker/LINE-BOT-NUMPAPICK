@@ -1,4 +1,5 @@
 <?php
+ require("pub.php");
    function save_userid($userid,$esp){ 
    $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
    $port        = "port=5432";
@@ -57,18 +58,12 @@
       } else {
          while($row = pg_fetch_row($ret) ){
          echo "ESP name = " . $row[3] . "\n";
+         getMqttfromlineMsg("555");
                 }
          //echo "Records created successfully\n";
       }
 
      
-
-      $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-         echo pg_last_error($db) ;
-      } else {
-         echo "Records created successfully\n";
-      }
       pg_close($db) ;
    }
 ?>
