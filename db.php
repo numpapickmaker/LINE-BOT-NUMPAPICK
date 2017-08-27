@@ -1,5 +1,5 @@
 <?php
- require("pub.php");
+ 
    
    function save_userid($userid,$esp){ 
    $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -59,7 +59,7 @@
       } else {
          while($row = pg_fetch_row($ret) ){
          echo "ESP name = " . $row[3] . "\n";
-         getMqttfromlineMsg("555");
+         //getMqttfromlineMsg("555");
                 }
          //echo "Records created successfully\n";
       }
