@@ -27,20 +27,28 @@ if (!is_null($events['events'])) {
 			// Get text sent
 			$text = $event['message']['text'];
 			// Get replyToken
-			//$replyToken = $event['replyToken'];
+			$userId = $event['source']['userId'];
 
 			// Build message to reply back
 
 			
-				    
-			if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
-				$text = "CHECK";	
-				getMqttfromlineMSG($text);  
-			}else if($text == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
-				$text = "ACK";	
-				getMqttfromlineMSG($text);  
-			}	
-			    
+			$pos = strpos($text, ":");
+			    if($pos){
+			      $splitMsg = explode(":", $text);
+			      $topic = $splitMsg[0];
+			      $msg = $splitMsg[1];
+			        if($topic == "Login" || $topic == "login"){
+					save_userid($userid,$msg);
+				}
+			    }else{	    
+				if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
+					$text = "CHECK";	
+					getMqttfromlineMSG($text);  
+				}else if($text == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
+					$text = "ACK";	
+					getMqttfromlineMSG($text);  
+				}	
+			    }
 			
 			
 		
