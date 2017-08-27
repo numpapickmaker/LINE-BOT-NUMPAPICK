@@ -34,11 +34,12 @@ if (!is_null($events['events'])) {
 			
 			$pos = strpos($text, ":");
 			    if($pos){
+			     send_LINE("login");
 			      $splitMsg = explode(":", $text);
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
-					send_CHECK();
+					send_LINE("login2");
 					save_userid($userId,$msg);
 				}
 			    }else{	    
