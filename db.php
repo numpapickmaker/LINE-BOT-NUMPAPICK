@@ -91,10 +91,11 @@
                       send_LINE("you login already",$userid);
                            
                    }  
-                     
+                  
            if( $checking == 0){
                 save_userid($userid,$esp);
            }
+        }
    }
    function check_login($userid,$esp){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -119,7 +120,7 @@
             //check_send($row[1],$msg);
           $checking = 1 ;
           
-          // check_userlogin($userid,$row[1]);
+           check_userlogin($userid,$row[1]);
              
          }
          if($checking == 0){
