@@ -68,7 +68,7 @@
       pg_close($db) ;
    }
    function check_userlogin($userid,$esp){
-       $sql ="SELECT * FROM userline WHERE id='".$userid."';";
+      /* $sql ="SELECT * FROM userline WHERE id='".$userid."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -84,7 +84,7 @@
                   
         if( $checking == 0){
              save_userid($userid,$esp);
-        }
+        }*/
    }
    function check_login($userid,$esp){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
