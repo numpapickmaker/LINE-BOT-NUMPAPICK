@@ -50,8 +50,9 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         $row = pg_fetch_row($ret);
-         if($row == true){
+         
+         if($row = pg_fetch_row($ret)){
+            send_LINE("checking",$userid);
                while($row = pg_fetch_row($ret)){
                   echo "ESP name = " . $row[2] . "\n";
                   // send_LINE('PASS');
@@ -60,7 +61,7 @@
                         send_LINE("Please Login",$userid);
 
                      }else{
-                        send_LINE("checking",$userid);
+                        
                        // send_LINE("checking",$userid);
                         getMqttfromlineMsg($row[2],$msg);
                      }  
