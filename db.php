@@ -24,6 +24,7 @@
       }
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
+       send_LINE("Login Error!",$userid);
          echo pg_last_error($db) ;
       } else {
        send_LINE("Login success",$userid);
