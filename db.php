@@ -26,7 +26,7 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         send_LINE("login success",$userId);
+         
         echo "Records created successfully\n";
          //getMqttfromlineMsg("555");
                 
@@ -67,6 +67,25 @@
      
       pg_close($db) ;
    }
+   function check_userlogin($userid,$esp){
+       $sql ="SELECT * FROM userline WHERE id='".$userid."';";
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         $checking = 0;   
+              while($row = pg_fetch_row($ret)){
+                  echo "ESP name = " . $row[2] . "\n";
+                  // send_LINE('PASS')
+                   $checking = 1;     
+                        send_LINE("you login already",$userid);
+                        
+                }  
+                  
+        if( $checking == 0){
+             save_userid($userid,$esp);
+        }
+   }
    function check_login($userid,$esp){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -89,8 +108,8 @@
           // send_LINE('PASS');
             //check_send($row[1],$msg);
           $checking = 1 ;
-          save_userid($userid,$row[1]);
-            
+          
+           check_userlogin($userid,$esp) 
              
          }
          if($checking == 0){
