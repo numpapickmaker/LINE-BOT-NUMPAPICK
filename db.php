@@ -58,7 +58,7 @@
          echo pg_last_error($db) ;
       } else {
          $row = pg_fetch_row($ret) 
-         if(!is_null($row)){
+         
             while($row){
                echo "ESP name = " . $row[2] . "\n";
                // send_LINE('PASS');
@@ -72,9 +72,7 @@
                }  
 
             }
-         }else {
-          send_LINE("Please Login",$userid);
-         }
+      
          //echo "Records created successfully\n";
       }
 
