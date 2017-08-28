@@ -66,7 +66,7 @@
 
                }
          }else{
-          send_LINE($row,$userid);
+          send_LINE("Please Login",$userid);
          }
          //echo "Records created successfully\n";
       }
