@@ -96,7 +96,7 @@
          while($row = pg_fetch_row($ret) ){
          echo "userid = " . $row[1] . "\n";
          // send_LINE('PASS');
-            send_LINE($msg,$row[1]);
+            send_LINE($msg,'Ue77a191627f6ac91899e75d92264310c');
             if($row[1] == ""){
                //send_LINE('Please Login',$userid);
              
