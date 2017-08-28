@@ -64,7 +64,9 @@
             }  
            
          }
+         if(is_null($row)){
           send_LINE("Please Login",$userid);
+         }
          //echo "Records created successfully\n";
       }
      
