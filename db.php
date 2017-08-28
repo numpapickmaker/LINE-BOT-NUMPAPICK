@@ -56,7 +56,7 @@
                   echo "ESP name = " . $row[2] . "\n";
                   // send_LINE('PASS')
                    $checking = 1;     
-                        send_LINE($row[2],$userid);
+                        send_LINE("Wait a Second",$userid);
                         getMqttfromlineMsg($row[2],$msg);
                 }  
                   
