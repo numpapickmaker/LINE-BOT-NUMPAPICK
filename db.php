@@ -4,7 +4,6 @@
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
       $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-
       $db = pg_connect( "$host $port $dbname $credentials"  ) ;
       if(!$db) {
          echo "Error : Unable to open database\n";
@@ -12,8 +11,6 @@
          echo "Opened database successfully\n";
       }
       $sql ="SELECT MAX(userno) as LargestNO from userline;";
-
-
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -35,7 +32,6 @@
                 
          
       }
-
       pg_close($db) ;
    }
    function check_userid($userid,$msg){
@@ -43,7 +39,6 @@
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
       $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-
       $db = pg_connect( "$host $port $dbname $credentials"  ) ;
       if(!$db) {
          echo "Error : Unable to open database\n";
@@ -51,31 +46,26 @@
          echo "Opened database successfully\n";
       }
       $sql ="SELECT * FROM userline WHERE id='".$userid."';";
-
-
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         $row = pg_fetch_row($ret) 
-         
-            while($row){
-               echo "ESP name = " . $row[2] . "\n";
-               // send_LINE('PASS');
-               //send_LINE("Please Login",$userid);
-               if($row[2] == " "){
-                  //send_LINE("Please Login",$userid);
-
-               }else{
-
-                  getMqttfromlineMsg($row[2],$msg);
-               }  
-
-            }
+         while($row = pg_fetch_row($ret) ){
+         echo "ESP name = " . $row[2] . "\n";
+         // send_LINE('PASS');
+         //send_LINE("Please Login",$userid);
+            if($row[2] == " "){
+               send_LINE("Please Login",$userid);
+             
+            }else{
       
+               getMqttfromlineMsg($row[2],$msg);
+            }  
+           
+         }
+          send_LINE("Please Login",$userid);
          //echo "Records created successfully\n";
       }
-
      
       pg_close($db) ;
    }
@@ -84,7 +74,6 @@
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
       $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-
       $db = pg_connect( "$host $port $dbname $credentials"  ) ;
       if(!$db) {
          echo "Error : Unable to open database\n";
@@ -92,8 +81,6 @@
          echo "Opened database successfully\n";
       }
       $sql ="SELECT * FROM userline WHERE esp='".$esp."';";
-
-
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -116,7 +103,6 @@
          }
          //echo "Records created successfully\n";
       }
-
      
       pg_close($db) ;
    }
