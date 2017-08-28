@@ -119,7 +119,7 @@
             //check_send($row[1],$msg);
           $checking = 1 ;
           
-           check_userlogin($userid,$row[1]);
+          // check_userlogin($userid,$row[1]);
              
          }
          if($checking == 0){
