@@ -59,7 +59,7 @@
                send_LINE("Please Login",$userid);
              
             }else{
-               send_LINE("checking",$userid);
+              // send_LINE("checking",$userid);
                getMqttfromlineMsg($row[2],$msg);
             }  
            
