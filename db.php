@@ -172,6 +172,6 @@ function save_esp($esp){
       pg_close($db) ;
    }
     
-   //$esp = "NodeMCU1";
-   //check_esp($esp;  
+   $esp = "NodeMCU1";
+   check_esp($esp);  
 ?>
