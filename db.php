@@ -26,7 +26,7 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         
+         send_LINE("login success",$userId);
         echo "Records created successfully\n";
          //getMqttfromlineMsg("555");
                 
