@@ -101,8 +101,11 @@
                //send_LINE('Please Login',$userid);
              
             }else{
-               send_LINE($msg,$row[1]);
-               //getMqttfromlineMsg($row[2],$msg);
+               if($msg == "CHECK"){
+                  send_LINE($msg,$row[1]);
+               }else{ 
+                  send_CHECK($row[1]);
+               }
             }  
          }
          //echo "Records created successfully\n";
