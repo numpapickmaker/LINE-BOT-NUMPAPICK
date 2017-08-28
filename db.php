@@ -50,16 +50,17 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-               while($row = pg_fetch_row($ret)){
+         $checking = 0;   
+              while($row = pg_fetch_row($ret)){
                   echo "ESP name = " . $row[2] . "\n";
                   // send_LINE('PASS')
-                        
+                   $checking = 1;     
                         send_LINE("checking",$userid);
                         getMqttfromlineMsg($row[2],$msg);
-                     }  
+                }  
 
                   
-        if(($row = pg_fetch_row($ret)) == false){
+        if( $checking == 0){
              send_LINE("Please login",$userid);
         }
          //echo "Records created successfully\n";
