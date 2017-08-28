@@ -9,12 +9,13 @@ $events = json_decode($content, true);
 // Validate parsed JSON data
 if (!is_null($events['ESP'])) {
 	if($events['ESP'] == 'CHECK'){
-	check_send($events['NAME'],$events['MSG']);	
-	//send_LINE($events['MSG'],'Ue77a191627f6ac91899e75d92264310c');
+		check_send($events['NAME'],$events['MSG']);	
+		//send_LINE($events['MSG'],'Ue77a191627f6ac91899e75d92264310c');
 	}
 	
 	if($events['ESP'] == 'HELP'){
-	send_CHECK();
+		check_send($events['NAME'],$events['MSG']);	
+	
 	}
 	echo "OK";
 	}
