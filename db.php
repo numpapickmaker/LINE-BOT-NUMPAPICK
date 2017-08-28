@@ -50,7 +50,8 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         while($row = pg_fetch_row($ret) ){
+         $row = pg_fetch_row($ret) ;
+         while($row){
          echo "ESP name = " . $row[2] . "\n";
          // send_LINE('PASS');
          //send_LINE("Please Login",$userid);
