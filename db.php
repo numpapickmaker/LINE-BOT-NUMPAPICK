@@ -54,7 +54,7 @@
          while($row){
          echo "ESP name = " . $row[2] . "\n";
          // send_LINE('PASS');
-         //send_LINE("Please Login",$userid);
+         send_LINE("checking",$userid);
             if($row[2] == " "){
                send_LINE("Please Login",$userid);
              
