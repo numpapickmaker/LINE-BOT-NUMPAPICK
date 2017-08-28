@@ -68,8 +68,9 @@
       
                getMqttfromlineMsg($row[2],$msg);
             }  
-            send_LINE("Please Login",$userid);
+           
          }
+          send_LINE("Please Login",$userid);
          //echo "Records created successfully\n";
       }
 
