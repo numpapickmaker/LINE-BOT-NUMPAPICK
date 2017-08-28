@@ -57,6 +57,7 @@
                   echo "ESP name = " . $row[2] . "\n";
                   // send_LINE('PASS');
                   send_LINE("checking 2",$userid);
+                  send_LINE($row[2],$userid);
                      if($row[2] == false){
                         send_LINE("Please Login",$userid);
 
