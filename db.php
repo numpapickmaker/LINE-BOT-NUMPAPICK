@@ -50,23 +50,24 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         
-         while($row = pg_fetch_row($ret)){
-         echo "ESP name = " . $row[2] . "\n";
-         // send_LINE('PASS');
-         send_LINE("checking",$userid);
-            if($row[2] == " "){
-               send_LINE("Please Login",$userid);
-             
-            }else{
-              // send_LINE("checking",$userid);
-               getMqttfromlineMsg($row[2],$msg);
-            }  
-           
-         }
-        $row = pg_fetch_row($ret);
+         if($row = pg_fetch_row($ret)){
+               while($row = pg_fetch_row($ret)){
+                  echo "ESP name = " . $row[2] . "\n";
+                  // send_LINE('PASS');
+
+                     if($row[2] == " "){
+                        send_LINE("Please Login",$userid);
+
+                     }else{
+                        send_LINE("checking",$userid);
+                       // send_LINE("checking",$userid);
+                        getMqttfromlineMsg($row[2],$msg);
+                     }  
+
+               }
+         }else{
           send_LINE($row,$userid);
-         
+         }
          //echo "Records created successfully\n";
       }
      
