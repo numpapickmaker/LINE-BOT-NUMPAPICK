@@ -35,7 +35,7 @@
       }
       pg_close($db) ;
    }
-   function check_userid($userid,$esp){
+   function check_userid($userid,$msg){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
