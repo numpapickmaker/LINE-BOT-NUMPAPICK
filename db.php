@@ -50,8 +50,8 @@
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         $row = pg_fetch_row($ret) ;
-         while($row){
+         
+         while($row = pg_fetch_row($ret)){
          echo "ESP name = " . $row[2] . "\n";
          // send_LINE('PASS');
          send_LINE("checking",$userid);
@@ -64,9 +64,9 @@
             }  
            
          }
-         if(is_null($row)){
-          send_LINE("Please Login",$userid);
-         }
+        
+          send_LINE($row,$userid);
+         
          //echo "Records created successfully\n";
       }
      
