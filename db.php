@@ -58,7 +58,7 @@
                         getMqttfromlineMsg($row[2],$msg);
                      }  
 
-               }   
+                  
         if(($row = pg_fetch_row($ret)) == false){
              send_LINE("Please login",$userid);
         }
