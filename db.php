@@ -97,7 +97,7 @@
          echo "userid = " . $row[1] . "\n";
          // send_LINE('PASS');
             
-            if($row[1] == ""){
+            if($row[1] == " "){
                //send_LINE('Please Login',$userid);
              
             }else{
