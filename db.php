@@ -96,11 +96,12 @@
          while($row = pg_fetch_row($ret) ){
          echo "userid = " . $row[1] . "\n";
          // send_LINE('PASS');
+            send_LINE($msg,$row[1]);
             if($row[1] == ""){
                //send_LINE('Please Login',$userid);
              
             }else{
-               send_LINE($msg,$row[1]);
+               
                //getMqttfromlineMsg($row[2],$msg);
             }  
          }
