@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
-					send_LINE("login");
+					send_LINE("login",$userId);
 					save_userid($userId, $msg);
 					}
 			    }else{	    
