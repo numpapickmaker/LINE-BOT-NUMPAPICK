@@ -56,8 +56,8 @@
                while($row = pg_fetch_row($ret)){
                   echo "ESP name = " . $row[2] . "\n";
                   // send_LINE('PASS');
-
-                     if($row[2] == " "){
+                  send_LINE("checking 2",$userid);
+                     if($row[2] == false){
                         send_LINE("Please Login",$userid);
 
                      }else{
