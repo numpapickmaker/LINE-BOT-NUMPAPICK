@@ -51,7 +51,7 @@
          echo pg_last_error($db) ;
       } else {
          $row = pg_fetch_row($ret);
-         if($row){
+         if($row == true){
                while($row = pg_fetch_row($ret)){
                   echo "ESP name = " . $row[2] . "\n";
                   // send_LINE('PASS');
