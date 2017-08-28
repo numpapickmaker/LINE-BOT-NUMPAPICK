@@ -111,7 +111,5 @@
      
       pg_close($db) ;
    }
-   $esp = "NodeMCU1";
-   $msg = "test";
-   check_send($esp,$msg)
+  
 ?>
