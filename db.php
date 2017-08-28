@@ -139,7 +139,7 @@ function save_esp($esp){
       }
       pg_close($db) ;
    }
-   function check_esp($esp){
+   function check_esp($esp,$msg){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -158,7 +158,8 @@ function save_esp($esp){
          $checking = 0;
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
-         // send_LINE('PASS');
+          // send_LINE('PASS');
+            check_send($row[1],$msg);
             $checking = 1 ;
             
              
