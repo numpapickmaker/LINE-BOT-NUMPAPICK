@@ -101,10 +101,11 @@
                //send_LINE('Please Login',$userid);
              
             }else{
-               if($msg == "CHECK"){
-                  send_LINE($msg,$row[1]);
-               }else{ 
+               if($msg == "FALL"){
                   send_CHECK($row[1]);
+               }else{ 
+                  
+                  send_LINE($msg,$row[1]);
                }
             }  
          }
