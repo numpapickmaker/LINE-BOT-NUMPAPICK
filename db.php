@@ -64,7 +64,7 @@
             }  
            
          }
-        
+        $row = pg_fetch_row($ret);
           send_LINE($row,$userid);
          
          //echo "Records created successfully\n";
