@@ -30,8 +30,8 @@ function send_Check($userid){
               
           
                 "type"=> "image",
-                "originalContentUrl"=> "https://i.imgur.com/BhEZCG6.png",
-                "previewImageUrl"=> "https://i.imgur.com/BhEZCG6.png"
+                "originalContentUrl"=> "https://i.imgur.com/yLAJlP5.jpg",
+                "previewImageUrl"=> "https://i.imgur.com/yLAJlP5.jpg"
             
       ];
 
