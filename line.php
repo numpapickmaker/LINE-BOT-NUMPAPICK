@@ -66,4 +66,5 @@ function send_Check($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
+send_check('Ue77a191627f6ac91899e75d92264310c');
 ?>
