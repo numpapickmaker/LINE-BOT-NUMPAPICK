@@ -37,7 +37,7 @@ function send_Check($userid,$img){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> $img,
+              "thumbnailImageUrl"=>"http://i.imgur.com/yLAJlP5.jpg",
               "title"=> "EMERGENCY ALERT !!",
               "text"=> "Please check user",
               "actions"=> [
