@@ -63,6 +63,5 @@ if (!is_null($events['events'])) {
 		}
 	}
 }
-send_CHECK("Ue77a191627f6ac91899e75d92264310c");
 echo "OK";
 ?>
