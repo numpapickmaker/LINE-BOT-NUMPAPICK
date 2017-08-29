@@ -29,7 +29,7 @@ function send_LINE($msg,$userid){
       echo $result . "\r\n"; 
 }
 
-function send_Check($userid){
+function send_Check($userid,$img){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
 
   $messages = [
@@ -37,7 +37,7 @@ function send_Check($userid){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> "https://i.imgur.com/t3aVgCp.jpg",
+              "thumbnailImageUrl"=> $img,
               "title"=> "EMERGENCY ALERT !!",
               "text"=> "Please check user",
               "actions"=> [
