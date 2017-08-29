@@ -163,8 +163,9 @@
                  send_LOWBAT($row[1]); 
                }else if($msg == "PRESS"){
                  send_PRESS($row[1]); 
+               }else{
+                  send_LINE($msg,$row[1]);
                }
-              // send_LINE($msg,$row[1]);
             }  
          }
          //echo "Records created successfully\n";
