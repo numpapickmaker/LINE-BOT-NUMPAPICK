@@ -54,7 +54,7 @@ if (!is_null($events['events'])) {
 						check_userid($userId,$text);
 						//getMqttfromlineMSG($text);  
 					}else{
-						send_LINE('Incorrect command: Command "Check" for check status device		Command "login:<device name>" for login',$userId);
+						send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login',$userId);
 					}
 			    }
 			    
