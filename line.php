@@ -28,11 +28,11 @@ function send_Check($userid){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
               
-             [
+          
                 "type"=> "image",
                 "originalContentUrl"=> "https://i.imgur.com/BhEZCG6.png",
                 "previewImageUrl"=> "https://i.imgur.com/BhEZCG6.png"
-            ]
+            
       ];
 
       // Make a POST Request to Messaging API to reply to sender
