@@ -155,13 +155,13 @@
              
             }else{
                if($msg == "LOW"){
-                  send_CHECK($row[1],"http://i.imgur.com/yLAJlP5.jpg");
+                  send_CHECK($row[1]);
                }else if($msg == "PRESS"){
-                 send_CHECK($row[1],"http://i.imgur.com/QBHEdRu.jpg");
+                 send_CHECK($row[1]);
                }else if($msg == "FALL"){
-                   send_CHECK($row[1],"http://i.imgur.com/c65ILrh.jpg");
+                   send_CHECK($row[1]);
                }else if($msg == "STATUS"){
-                  send_CHECK($row[1],"http://i.imgur.com/BhEZCG6.png");
+                  send_CHECK($row[1]);
                }else{   
                  send_LINE($msg,$row[1]);
                }
