@@ -159,7 +159,7 @@
                }else if($msg == "PRESS"){
                  send_CHECK($row[1]);
                }else if($msg == "FALL"){
-                   send_CHECK($row[1]);
+                   send_CHECK($row[1],"http://i.imgur.com/yLAJlP5.jpg");
                }else if($msg == "STATUS"){
                   send_CHECK($row[1]);
                }else{   
