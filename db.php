@@ -154,17 +154,10 @@
                //send_LINE('Please Login',$userid);
              
             }else{
-               if($msg == "LOW"){
-                  send_CHECK($row[1]);
-               }
-               if($msg == "PRESS"){
-                 send_CHECK($row[1]);
-               }
+     
                if($msg == "FALL"){
-                   send_CHECK($row[1],'http://i.imgur.com/yLAJlP5.jpg');
-               }
-               if($msg == "STATUS"){
-                  send_CHECK($row[1]);
+                   send_CHECK($row[1]);
+               }else{
                  
                  send_LINE($msg,$row[1]);
                }
