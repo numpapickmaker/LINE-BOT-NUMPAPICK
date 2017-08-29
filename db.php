@@ -156,13 +156,16 @@
             }else{
                if($msg == "LOW"){
                   send_CHECK($row[1]);
-               }else if($msg == "PRESS"){
+               }
+               if($msg == "PRESS"){
                  send_CHECK($row[1]);
-               }else if($msg == "FALL"){
+               }
+               if($msg == "FALL"){
                    send_CHECK($row[1],"http://i.imgur.com/yLAJlP5.jpg");
-               }else if($msg == "STATUS"){
+               }
+               if($msg == "STATUS"){
                   send_CHECK($row[1]);
-               }else{   
+                 
                  send_LINE($msg,$row[1]);
                }
             }  
