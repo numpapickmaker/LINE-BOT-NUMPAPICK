@@ -43,11 +43,11 @@ if (!is_null($events['events'])) {
 			        if($topic == "Login" || $topic == "login"){
 					
 						check_login($userId, $msg);
-				}
-				if($topic == "Logout" || $topic == "logout"){
+					}
+					if($topic == "Logout" || $topic == "logout"){
 					
 						check_userlogout($userId, $msg);
-				}
+					)
 			    }else{	    
 					if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 						$text = "CHECK";
@@ -58,7 +58,7 @@ if (!is_null($events['events'])) {
 						check_userid($userId,$text);
 						//getMqttfromlineMSG($text);  
 					}else{
-						send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login',$userId);
+						send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login , "logout:<device name>" for logout',$userId);
 					}
 			    }
 			    
