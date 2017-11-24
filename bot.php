@@ -47,7 +47,7 @@ if (!is_null($events['events'])) {
 					if($topic == "Logout" || $topic == "logout"){
 					
 						check_userlogout($userId, $msg);
-					)
+					}
 			    }else{	    
 					if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 						$text = "CHECK";
