@@ -42,8 +42,12 @@ if (!is_null($events['events'])) {
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
 					
-					check_login($userId, $msg);
+						check_login($userId, $msg);
 					}
+					if($topic == "Logout" || $topic == "logout"){
+					
+						check_userlogout($userId, $msg);
+					)
 			    }else{	    
 					if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
 						$text = "CHECK";
