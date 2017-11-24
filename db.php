@@ -116,13 +116,14 @@
          } else {
             $checking = 0;   
                  while($row = pg_fetch_row($ret)){
-                     echo "ESP name = " . $row[2] . "\n";
+                     //echo "ESP name = " . $row[2] . "\n";
                      // send_LINE('PASS')
                       $checking = 1;     
                    //   send_LINE("you login already",$userid); 
                       $sql ="DELETE FROM userline WHERE id='".$userid."' AND esp='".$esp."';";
                       $ret = pg_query($db, $sql) ;
                       if(!$ret) {
+                        send_LINE("Logout Error!",$userid);
                          echo pg_last_error($db) ;
                       } else {
                             
@@ -130,12 +131,13 @@
                                                  
                                 }     
                   }  
-                  
+                    
           if( $checking == 0){
                 //save_userid($userid,$esp);
               send_LINE("you not login",$userid);
           }
         }
+        pg_close($db) ;
    }
    function check_login($userid,$esp){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
