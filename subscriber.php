@@ -22,3 +22,4 @@ if ($mqtt->connect(true, NULL, $url['user'], $url['pass'])) {
 } else {
   exit(1);
 }
+?>
