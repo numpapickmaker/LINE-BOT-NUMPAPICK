@@ -1,18 +1,4 @@
 
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
-<body>
-<form action="information.php?username=<?php echo $_GET["username"];?>" name="frmEdit" method="post">
  <?php
   $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
@@ -56,6 +42,20 @@
       pg_close($db) ;   
       
 ?>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
+</head>
+<body>
+
 <table width="600" border="1">
   <tr>
     <th width="30"> <div align="center">No </div></th>
@@ -85,6 +85,6 @@
     <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
   </tr>
 </table>
- </form>
+
 </body>
 </html>
