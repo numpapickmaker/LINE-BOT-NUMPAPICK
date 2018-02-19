@@ -41,7 +41,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          echo pg_last_error($db) ;
       } else {
          $checking = 0;
-        echo $ret['espname'] ;
+       
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
