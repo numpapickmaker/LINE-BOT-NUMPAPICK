@@ -22,7 +22,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     } else{
         $password = trim($_POST['password']);
     }
-    check_loginpage($username,$password);
+     if(empty($username_err) && empty($password_err)){
+            check_loginpage($username,$password);
+        }
     /*// Validate credentials
     if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
@@ -81,7 +83,7 @@ function check_loginpage($username,$password){
       if(!$db) {
          echo "Error : Unable to open database\n";
       } else {
-         echo "Opened database successfully\n";
+         //echo "Opened database successfully\n";
       }
       $sql ="SELECT * FROM device WHERE espname='".$username."';";
     $ret = pg_query($db, $sql) ;
