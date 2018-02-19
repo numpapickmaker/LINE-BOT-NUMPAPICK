@@ -24,6 +24,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
      if(empty($username_err) && empty($password_err)){
             check_loginpage($username,$password);
+       $password_err = 'Please enter your password.';
+    
         }
     /*// Validate credentials
     if(empty($username_err) && empty($password_err)){
