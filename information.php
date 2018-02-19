@@ -82,7 +82,7 @@
     <td align="right"><?php echo $disease;?></td>
     <td align="right"><?php echo $address;?></td>
     <td align="right"><?php echo $phone;?></td>
-    <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $Test;?>">Edit</a></td>
+    <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
   </tr>
 </table>
 </body>
