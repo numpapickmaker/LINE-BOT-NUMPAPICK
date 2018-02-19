@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
      if(empty($username_err) && empty($password_err)){
             check_loginpage($username,$password);
-       $password_err = 'Please enter your password.';
+      
     
         }
     /*// Validate credentials
@@ -75,8 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Close connection
     mysqli_close($link);*/
-}
-function check_loginpage($username,$password){
+
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -102,10 +101,10 @@ function check_loginpage($username,$password){
          }
          if($checking == 0){
            $username_err = 'No account found with that username.';
-          echo "No account found with that username.";
+         // echo "No account found with that username.";
          }
-          $password_err = 'No account found with that password.';
-          echo "No account found with that username.";
+          //$password_err = 'No account found with that password.';
+          //echo "No account found with that username.";
          //echo "Records created successfully\n";
       }
      
