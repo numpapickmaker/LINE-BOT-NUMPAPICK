@@ -14,7 +14,7 @@
 <body>
 <form action="information.php?username=<?php echo $_GET["username"];?>" name="frmEdit" method="post">
  <?php
- 
+  $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -82,7 +82,7 @@
     <td align="right"><?php echo $disease;?></td>
     <td align="right"><?php echo $address;?></td>
     <td align="right"><?php echo $phone;?></td>
-    <td align="center"><a href="">Edit</a></td>
+    <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $Test;?>">Edit</a></td>
   </tr>
 </table>
 </body>
