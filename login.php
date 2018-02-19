@@ -41,11 +41,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          echo pg_last_error($db) ;
       } else {
          $checking = 0;
-       
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
-          //  header("location: bot.php");
+            header("location: information.php?username=<?php echo $username;?");
             
              
          }
