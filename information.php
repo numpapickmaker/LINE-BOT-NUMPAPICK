@@ -56,12 +56,16 @@
 <body>
 <table width="600" border="1">
   <tr>
-    <th width="91"> <div align="center">CustomerID </div></th>
-    <th width="98"> <div align="center">Name </div></th>
-    <th width="198"> <div align="center">Email </div></th>
-    <th width="97"> <div align="center">CountryCode </div></th>
-    <th width="59"> <div align="center">Budget </div></th>
-    <th width="71"> <div align="center">Used </div></th>
+    <th width="30"> <div align="center">No </div></th>
+    <th width="30"> <div align="center">Device id </div></th>
+    <th width="198"> <div align="center">Name </div></th>
+    <th width="30"> <div align="center">Age </div></th>
+    <th width="30"> <div align="center">Sex </div></th>
+    <th width="30"> <div align="center">Heigth </div></th>
+    <th width="30"> <div align="center">Weigth </div></th>
+    <th width="180"> <div align="center">Disease </div></th>
+    <th width="180"> <div align="center">Address </div></th>
+    <th width="50"> <div align="center">Phone </div></th>
     <th width="30"> <div align="center">Edit </div></th>
   </tr>
 
@@ -72,6 +76,10 @@
     <td><div align="center"><?php echo $Age;?></div></td>
     <td align="right"><?php echo $Sex;?></td>
     <td align="right"><?php echo $Heigth;?></td>
+    <td align="right"><?php echo $Weigth;?></td>
+    <td align="right"><?php echo $Disease;?></td>
+    <td align="right"><?php echo $Address;?></td>
+    <td align="right"><?php echo $Phone;?></td>
     <td align="center"><a href="">Edit</a></td>
   </tr>
 </table>
