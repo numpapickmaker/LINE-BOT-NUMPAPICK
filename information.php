@@ -77,9 +77,9 @@
     <td align="right"><?php echo $Sex;?></td>
     <td align="right"><?php echo $Heigth;?></td>
     <td align="right"><?php echo $Weigth;?></td>
-    <td align="right"><?php echo $Disease;?></td>
-    <td align="right"><?php echo $Address;?></td>
-    <td align="right"><?php echo $Phone;?></td>
+    <td align="right"><?php echo $disease;?></td>
+    <td align="right"><?php echo $address;?></td>
+    <td align="right"><?php echo $phone;?></td>
     <td align="center"><a href="">Edit</a></td>
   </tr>
 </table>
