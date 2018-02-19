@@ -1,8 +1,3 @@
-<html>
-<head>
-<title>Device information</title>
-</head>
-<body>
 <?php
   $username = 1;
   $No ,$Device_id ,$Name ,$Age,$Sex ,$Heigth ,$Weigth ,$disease ,$address , $phone = "";
@@ -46,6 +41,19 @@
       pg_close($db) ;   
       
 ?>
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
+</head>
+<body>
 <table width="600" border="1">
   <tr>
     <th width="91"> <div align="center">CustomerID </div></th>
@@ -64,7 +72,7 @@
     <td><div align="center"><?php echo $Age;?></div></td>
     <td align="right"><?php echo $Sex;?></td>
     <td align="right"><?php echo $Heigth;?></td>
-    <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $objResult["CustomerID"];?>">Edit</a></td>
+    <td align="center"><a href="">Edit</a></td>
   </tr>
 </table>
 </body>
