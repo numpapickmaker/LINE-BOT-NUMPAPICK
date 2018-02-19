@@ -1,5 +1,5 @@
 <?php
-  $username = "1";
+ 
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -11,7 +11,7 @@
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="SELECT * FROM Device_information WHERE Device_id='".$username."';";
+     $sql ="SELECT * FROM Device_information WHERE Device_id='".$_GET["username"]."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -54,6 +54,7 @@
     </style>
 </head>
 <body>
+<form action="information.php?username=<?php echo $_GET["username"];?>" name="frmEdit" method="post">
 <table width="600" border="1">
   <tr>
     <th width="30"> <div align="center">No </div></th>
