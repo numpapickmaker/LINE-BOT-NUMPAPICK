@@ -3,7 +3,7 @@
 
  
 // Define variables and initialize with empty values
-$username = $password = "";
+$username = $password ="";
 $username_err = $password_err = "";
  
 // Processing form data when form is submitted
@@ -44,7 +44,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
-            header("location: information.php?username=".$username."");
+            
+            header("location: information.php?username=".$row[0]."");
             
              
          }
