@@ -44,7 +44,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
-            header("location: information.php?username=<?php echo $username;?>");
+            header("location: phpMySQLEditRecordForm.php?CusID=<?php echo $username;?>");
             
              
          }
