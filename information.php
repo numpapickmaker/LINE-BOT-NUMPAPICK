@@ -85,5 +85,6 @@
     <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
   </tr>
 </table>
+ </form>
 </body>
 </html>
