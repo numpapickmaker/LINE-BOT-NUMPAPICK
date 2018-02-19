@@ -95,7 +95,7 @@ function check_loginpage($username,$password){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
             header("location: bot.php");
-            
+             $checking = 1;
              
          }
          if($checking == 0){
