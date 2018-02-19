@@ -1,6 +1,6 @@
 <?php
-  $username = 1;
-  $No ,$Device_id ,$Name ,$Age,$Sex ,$Heigth ,$Weigth ,$disease ,$address , $phone = "";
+  $username = "1";
+  $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
