@@ -100,6 +100,7 @@ function check_loginpage($username,$password){
          }
          if($checking == 0){
              $username_err = 'No account found with that username.';
+          echo "No account found with that username.";
          }
          //echo "Records created successfully\n";
       }
