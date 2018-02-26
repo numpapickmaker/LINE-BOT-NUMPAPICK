@@ -179,7 +179,7 @@ function send_Menu($userid){
                 "defaultAction"=> [
                     "type"=> "uri",
                     "label"=> "View detail",
-                    "uri"=> "https://numpapick.herokuapp.com/manage.php"
+                    "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid."
                 ],
               "actions"=> [
                   [
