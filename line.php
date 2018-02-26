@@ -176,7 +176,7 @@ function send_Menu($userid){
               "thumbnailImageUrl"=> "https://i.imgur.com/QBHEdRu.jpg",
               "title"=> "Menu",
               "text"=> "Please select",
-                "defaultAction": [
+                "defaultAction"=> [
                     "type"=> "uri",
                     "label"=> "View detail",
                     "uri"=> "https://numpapick.herokuapp.com/manage.php"
