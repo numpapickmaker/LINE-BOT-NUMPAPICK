@@ -28,7 +28,7 @@
   </tr>
 
 <?php
-echo $_GET["username"];
+echo $_GET["action"];
   $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -41,7 +41,7 @@ echo $_GET["username"];
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="SELECT * FROM userline WHERE id='Ue77a191627f6ac91899e75d92264310c';";
+     $sql ="SELECT * FROM userline WHERE id='".$_GET["action"]."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
