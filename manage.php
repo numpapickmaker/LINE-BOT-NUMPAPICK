@@ -1,3 +1,32 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <style type="text/css">
+        body{ font: 14px sans-serif; }
+        .wrapper{ width: 350px; padding: 20px; }
+    </style>
+</head>
+<body>
+
+<table width="600" border="1">
+  <tr>
+    <th width="30"> <div align="center">No </div></th>
+    <th width="30"> <div align="center">Device id </div></th>
+    <th width="198"> <div align="center">Name </div></th>
+    <th width="30"> <div align="center">Age </div></th>
+    <th width="30"> <div align="center">Sex </div></th>
+    <th width="30"> <div align="center">Heigth </div></th>
+    <th width="30"> <div align="center">Weigth </div></th>
+    <th width="180"> <div align="center">Disease </div></th>
+    <th width="180"> <div align="center">Address </div></th>
+    <th width="50"> <div align="center">Phone </div></th>
+    <th width="30"> <div align="center">Edit </div></th>
+  </tr>
+
 <?php
 echo $_GET["username"];
   $test = "Hello";
@@ -32,46 +61,8 @@ echo $_GET["username"];
            $disease = $row[7];
            $address  = $row[8];
            $phone = $row[9]; 
-         }
-         if($checking == 0){
-            // $username_err = 'No account found with that username.';
-         }
-         //echo "Records created successfully\n";
-      }
-     
-      pg_close($db) ;   
-      
-?>
- 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
-    </style>
-</head>
-<body>
-
-<table width="600" border="1">
-  <tr>
-    <th width="30"> <div align="center">No </div></th>
-    <th width="30"> <div align="center">Device id </div></th>
-    <th width="198"> <div align="center">Name </div></th>
-    <th width="30"> <div align="center">Age </div></th>
-    <th width="30"> <div align="center">Sex </div></th>
-    <th width="30"> <div align="center">Heigth </div></th>
-    <th width="30"> <div align="center">Weigth </div></th>
-    <th width="180"> <div align="center">Disease </div></th>
-    <th width="180"> <div align="center">Address </div></th>
-    <th width="50"> <div align="center">Phone </div></th>
-    <th width="30"> <div align="center">Edit </div></th>
-  </tr>
-
-  <tr>
+           ?>
+           <tr>
     <td><div align="center"><?php echo $No;?></div></td>
     <td><?php echo $Device_id;?></td>
     <td><?php echo $Name;?></td>
@@ -84,6 +75,19 @@ echo $_GET["username"];
     <td align="right"><?php echo $phone;?></td>
     <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
   </tr>
+  <?php
+         }
+         if($checking == 0){
+            // $username_err = 'No account found with that username.';
+         }
+         //echo "Records created successfully\n";
+      }
+     
+      pg_close($db) ;   
+      
+?>
+
+  
 </table>
 
 </body>
