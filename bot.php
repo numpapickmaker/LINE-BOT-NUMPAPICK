@@ -32,7 +32,12 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'follow') {
 			$userId = $event['source']['userId'];
-			send_LINE('welcome to smarthelper ',$userId);
+			send_Menu('welcome to smarthelper ',$userId);
+		}
+		else if ($event['type'] == 'postback') {
+			$userId = $event['source']['userId'];
+			$data = $event['postback']['data'];
+			send_LINE($data,$userId);
 		}
 		else if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			// Get text sent
