@@ -179,7 +179,7 @@ function send_Menu($userid){
                 "defaultAction"=> [
                     "type"=> "uri",
                     "label"=> "View detail",
-                    "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid."
+                    "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid.""
                 ],
               "actions"=> [
                   [
@@ -188,7 +188,7 @@ function send_Menu($userid){
                     "text"=> "check"
                   ],
                   [
-                    "type"=> "postback",
+                    "type"=> "uri",
                     "label"=> "device",
                     "data"=> "action=device"
                   ]
