@@ -1,7 +1,7 @@
 
  <?php
-if( $_GET["name"] || $_GET["age"] || $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
-  echo  "name " . $_GET["name"] ."\n";
+if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
+  echo  $_GET["name"];
 }
 echo $_GET["view"];
   $test = "Hello";
@@ -52,6 +52,7 @@ echo $_GET["view"];
     <meta charset="UTF-8">
     <script>
     function Save() {
+      var view = <?php echo $php_var; ?>;
      var a = document.getElementById("namefld").innerHTML;
           var b = document.getElementById("agefld").innerHTML;
             var c = document.getElementById("sexfld").innerHTML;
@@ -71,7 +72,7 @@ echo $_GET["view"];
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
 
-            window.location.href = "https://numpapick.herokuapp.com/information.php?name=" + a + "&age=" + b +"&sex=" + c+"$heigth=" +d+"$weigth="+e+"&disease="+f+"$address="+g+"$phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"name=" + a + "&age=" + b +"&sex=" + c+"$heigth=" +d+"$weigth="+e+"&disease="+f+"$address="+g+"$phone="+h;
     }
 function Edit() {
     
