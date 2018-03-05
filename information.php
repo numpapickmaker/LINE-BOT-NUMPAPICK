@@ -12,7 +12,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="update Device_information set name='".$_GET["name"]."',age='".$_GET["age"]."',sex='".$_GET["age"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"].",phone='".$_GET["Phone"]."' 'where device_id='".$_GET["deviceid"]."';
+     $sql ="update Device_information set name='".$_GET["name"]."',age='".$_GET["age"]."',sex='".$_GET["age"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"].",phone='".$_GET["Phone"]."' 'where device_id='1'";
     
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
@@ -94,7 +94,7 @@ echo $_GET["view"];
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
 
-            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&deviceid="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&device_id="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
     
