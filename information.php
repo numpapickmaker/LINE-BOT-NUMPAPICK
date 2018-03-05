@@ -1,12 +1,7 @@
 
  <?php
-if( $_GET["view"])
-{
-echo "Welcome: ". $_GET['view']. "<br />";
 
-}
-
-echo $_GET["username"];
+echo $_GET["view"];
   $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -19,7 +14,7 @@ echo $_GET["username"];
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="SELECT * FROM Device_information WHERE Device_id='".$_GET["username"]."';";
+     $sql ="SELECT * FROM Device_information WHERE Device_id='".$_GET["view"]."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
