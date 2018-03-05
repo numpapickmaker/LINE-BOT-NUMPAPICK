@@ -1,6 +1,8 @@
 
  <?php
-
+if( $_GET["name"]){
+  echo  $_GET["name"];
+}
 echo $_GET["view"];
   $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
