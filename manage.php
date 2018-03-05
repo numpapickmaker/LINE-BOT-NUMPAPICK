@@ -84,7 +84,7 @@ echo $_GET["action"];
           // send_LINE('PASS');
           //  header("location: bot.php");
            $No = $row[0];
-           $Device_id = $row[1];
+           $Device_id = $row[2];
           
            ?>
            <tr>
