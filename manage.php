@@ -2,29 +2,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
+        #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 75%;
+        
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+    .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 8px;}
+.button2 {border-radius: 8px; background-color: #f44336;}
+.button3 { position: relative;
+  
+  left: 90%;border-radius: 8px; background-color: #008CBA;}
+
     </style>
 </head>
 <body>
-
-<table width="600" border="1">
+<button align="center" class="button button3">+</button>
+<table  id="customers" align="center">
   <tr>
-    <th width="30"> <div align="center">No </div></th>
-    <th width="30"> <div align="center">Device id </div></th>
-    <th width="198"> <div align="center">Name </div></th>
-    <th width="30"> <div align="center">Age </div></th>
-    <th width="30"> <div align="center">Sex </div></th>
-    <th width="30"> <div align="center">Heigth </div></th>
-    <th width="30"> <div align="center">Weigth </div></th>
-    <th width="180"> <div align="center">Disease </div></th>
-    <th width="180"> <div align="center">Address </div></th>
-    <th width="50"> <div align="center">Phone </div></th>
-    <th width="30"> <div align="center">Edit </div></th>
+    <th > <div align="center">No </div></th>
+    <th > <div align="center">Device id </div></th>
+    <th > <div align="center">Menu</div></th>
   </tr>
 
 <?php
@@ -53,27 +85,15 @@ echo $_GET["action"];
           //  header("location: bot.php");
            $No = $row[0];
            $Device_id = $row[1];
-           $Name = $row[2];
-           $Age = $row[3];
-           $Sex = $row[4];
-           $Heigth = $row[5];
-           $Weigth = $row[6];
-           $disease = $row[7];
-           $address  = $row[8];
-           $phone = $row[9]; 
+          
            ?>
            <tr>
     <td><div align="center"><?php echo $No;?></div></td>
     <td><?php echo $Device_id;?></td>
-    <td><?php echo $Name;?></td>
-    <td><div align="center"><?php echo $Age;?></div></td>
-    <td align="right"><?php echo $Sex;?></td>
-    <td align="right"><?php echo $Heigth;?></td>
-    <td align="right"><?php echo $Weigth;?></td>
-    <td align="right"><?php echo $disease;?></td>
-    <td align="right"><?php echo $address;?></td>
-    <td align="right"><?php echo $phone;?></td>
-    <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
+    
+    <td align="center"><button class="button button1" value="1" name="view">View</button>
+<button class="button button2">Delete</button>
+<a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
   </tr>
   <?php
          }
