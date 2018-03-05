@@ -72,7 +72,7 @@ echo $_GET["view"];
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
 
-            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"name=" + a + "&age=" + b +"&sex=" + c+"$heigth=" +d+"$weigth="+e+"&disease="+f+"$address="+g+"$phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"$disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
     
