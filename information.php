@@ -4,7 +4,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
   echo  $_GET["name"];
 }
 echo $_GET["view"];
-  $test = "Hello";
+  $Test = 1;
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -52,7 +52,7 @@ echo $_GET["view"];
     <meta charset="UTF-8">
     <script>
     function Save() {
-      var view = <?php echo $php_var; ?>;
+      var view = document.getElementById("storage").getAttribute("data-variable-one");
      var a = document.getElementById("namefld").innerHTML;
           var b = document.getElementById("agefld").innerHTML;
             var c = document.getElementById("sexfld").innerHTML;
@@ -148,7 +148,7 @@ function Edit() {
 <body>
 
 <p id="demo"></p>
-
+<span id="storage" data-variable-one="<?php echo $Test; ?>"</span>
 
  <h1  > Information </h1>
 <button class="button button3" id="edit_btn" onclick="Edit()">Edit</button>
