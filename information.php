@@ -2,26 +2,7 @@
  <?php
 if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
   
-  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
-      $port        = "port=5432";
-      $dbname      = "dbname=ddagopqfb1uood";
-      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
-      if(!$db) {
-         echo "Error : Unable to open database\n";
-      } else {
-         //echo "Opened database successfully\n";
-      }
-     $sql ="UPDATE Device_information set name='"._$GET["name"]."' , age='"._$GET["age"]."' ,sex='"._$GET["sex"]."', heigth='"._$GET["heigth"]."',weigth='"._$GET["weigth"]."', disease='"._$GET["disease"]."' ,address='"._$GET["address"]."',phone='"._$GET["phone"]."' WHERE Device_id='".$_GET["device_id"]."';";
-    $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-         echo pg_last_error($db) ;
-      } else {
-         
-         echo "Records created successfully\n";
-      }
-     
-      pg_close($db) ;   
+
 }
 echo $_GET["view"];
   $Test = $_GET["view"];
