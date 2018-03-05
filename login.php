@@ -3,7 +3,7 @@
 
  
 // Define variables and initialize with empty values
-$username = $password ="";
+$username = $password = "";
 $username_err = $password_err = "";
  
 // Processing form data when form is submitted
@@ -45,13 +45,36 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
             
-            header("location: information.php?username=".$row[0]."");
             
              
          }
          if($checking == 0){
              $username_err = 'No account found with that username.';
-         }
+         }else{
+              $sql ="SELECT MAX(userno) as LargestNO from userline;";
+              $ret = pg_query($db, $sql) ;
+              if(!$ret) {
+                echo pg_last_error($db) ;
+              } else {
+                  while($row = pg_fetch_row($ret) ){
+                      echo "NO max = " . $row[0] . "\n";
+                      $row[0] = intval($row[0]+1);
+                      $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$esp."');";
+                  }
+           //echo "Records created successfully\n";
+              }
+                  $ret = pg_query($db, $sql) ;
+                  if(!$ret) {
+                      //  send_LINE("Login Error!",$userid);
+                        echo pg_last_error($db) ;
+                  } else {
+                    //send_LINE("Login success",$userid);
+                    echo "Records created successfully\n";
+                    //getMqttfromlineMsg("555");
+                      header("location: information.php?action=<?php echo $_GET["add"];?");
+           
+                  }
+           }
          //echo "Records created successfully\n";
       }
      
@@ -89,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
-           
+            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
         </form>
     </div>    
 </body>
