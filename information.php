@@ -12,7 +12,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="UPDATE Device_information name='"._$GET["name"]."' , age='"._$GET["age"]."' ,sex='"._$GET["sex"]."', heigth='"._$GET["heigth"]."',weigth='"._$GET["weigth"]."', disease='"._$GET["disease"]."' ,address='"._$GET["address"]."',phone='"._$GET["phone"]."' WHERE Device_id='".$_GET["view"]."';";
+     $sql ="UPDATE Device_information set name='"._$GET["name"]."' , age='"._$GET["age"]."' ,sex='"._$GET["sex"]."', heigth='"._$GET["heigth"]."',weigth='"._$GET["weigth"]."', disease='"._$GET["disease"]."' ,address='"._$GET["address"]."',phone='"._$GET["phone"]."' WHERE Device_id='".$_GET["device_id"]."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -91,6 +91,7 @@ echo $_GET["view"];
     <script>
     function Save() {
       var view = document.getElementById("storage").getAttribute("data-variable-one");
+     var device_id = document.getElementById("name").innerHTML;
      var a = document.getElementById("namefld").value;
           var b = document.getElementById("agefld").value;
             var c = document.getElementById("sexfld").value;
@@ -110,7 +111,7 @@ echo $_GET["view"];
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
 
-            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&device_id="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
     
@@ -193,7 +194,7 @@ function Edit() {
 <table  id="customers" align="center">
    <tr>
           <td  ><div align="center">Device id </div></td>
-          <td ><?php echo $Device_id;?></td>
+          <td id="Device_id" ><?php echo $Device_id;?></td>
               
           </tr>
           <tr>
