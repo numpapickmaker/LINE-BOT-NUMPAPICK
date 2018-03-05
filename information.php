@@ -1,7 +1,7 @@
 
  <?php
 if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
-  
+  echo 
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -74,7 +74,7 @@ echo $_GET["view"];
     <script>
     function Save() {
       var view = document.getElementById("storage").getAttribute("data-variable-one");
-     var device_id = document.getElementById("name").innerHTML;
+     var device_id = document.getElementById("Device_id").innerHTML;
      var a = document.getElementById("namefld").value;
           var b = document.getElementById("agefld").value;
             var c = document.getElementById("sexfld").value;
