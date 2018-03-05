@@ -44,7 +44,6 @@ echo $_GET["view"];
       pg_close($db) ;   
       
 ?>
- 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,40 +51,90 @@ echo $_GET["view"];
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
-        body{ font: 14px sans-serif; }
-        .wrapper{ width: 350px; padding: 20px; }
+        #customers {
+        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 75%;
+    }
+
+    #customers td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+    #customers tr:hover {background-color: #ddd;}
+
+    #customers th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #4CAF50;
+        color: white;
+    }
+       .button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button1 {border-radius: 2px;} 
+.button3 { position: relative;
+  
+  left: 90%;border-radius: 8px; background-color: #008CBA;}
+
     </style>
 </head>
 <body>
-
-<table width="600" border="1">
-  <tr>
-    <th width="30"> <div align="center">No </div></th>
-    <th width="30"> <div align="center">Device id </div></th>
-    <th width="198"> <div align="center">Name </div></th>
-    <th width="30"> <div align="center">Age </div></th>
-    <th width="30"> <div align="center">Sex </div></th>
-    <th width="30"> <div align="center">Heigth </div></th>
-    <th width="30"> <div align="center">Weigth </div></th>
-    <th width="180"> <div align="center">Disease </div></th>
-    <th width="180"> <div align="center">Address </div></th>
-    <th width="50"> <div align="center">Phone </div></th>
-    <th width="30"> <div align="center">Edit </div></th>
-  </tr>
-
-  <tr>
-    <td><div align="center"><?php echo $No;?></div></td>
-    <td><?php echo $Device_id;?></td>
-    <td><?php echo $Name;?></td>
-    <td><div align="center"><?php echo $Age;?></div></td>
-    <td align="right"><?php echo $Sex;?></td>
-    <td align="right"><?php echo $Heigth;?></td>
-    <td align="right"><?php echo $Weigth;?></td>
-    <td align="right"><?php echo $disease;?></td>
-    <td align="right"><?php echo $address;?></td>
-    <td align="right"><?php echo $phone;?></td>
-    <td align="center"><a href="phpMySQLEditRecordForm.php?CusID=<?php echo $test;?>">Edit</a></td>
-  </tr>
+ <h1  > Information </h1>
+<button align="center" class="button button3">Edit</button>
+<table  id="customers" align="center">
+   <tr>
+          <td><div align="center">Device id </div></td>
+          <td><?php echo $Device_id;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Name </div></td>
+          <td><?php echo $Name;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Age </div></td>
+          <td><div align="center"><?php echo $Age;?></div></td>
+          </tr>
+          <tr>
+          <td><div align="center">Sex </div></td>
+          <td align="right"><?php echo $Sex;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Heigth </div></td>
+          <td align="right"><?php echo $Heigth;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Weigth </div></td>
+          <td align="right"><?php echo $Weigth;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Disease </div></td>
+          <td align="right"><?php echo $disease;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Address </div></td>
+          <td align="right"><?php echo $address;?></td>
+          </tr>
+          <tr>
+          <td><div align="center">Phone </div></td>
+          <td align="right"><?php echo $phone;?></td>
+          </tr>
+          <tr>
+  
 </table>
 
 </body>
