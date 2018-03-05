@@ -53,14 +53,14 @@ echo $_GET["view"];
     <script>
     function Save() {
       var view = document.getElementById("storage").getAttribute("data-variable-one");
-     var a = document.getElementById("namefld").innerHTML;
-          var b = document.getElementById("agefld").innerHTML;
-            var c = document.getElementById("sexfld").innerHTML;
-            var d = document.getElementById("heigthfld").innerHTML;
-            var e = document.getElementById("weigthfld").innerHTML;
-            var f = document.getElementById("diseasefld").innerHTML;
-            var g = document.getElementById("addressfld").innerHTML;
-            var h = document.getElementById("phonefld").innerHTML;
+     var a = document.getElementById("namefld").value;
+          var b = document.getElementById("agefld").value;
+            var c = document.getElementById("sexfld").value;
+            var d = document.getElementById("heigthfld").value;
+            var e = document.getElementById("weigthfld").value;
+            var f = document.getElementById("diseasefld").value;
+            var g = document.getElementById("addressfld").value;
+            var h = document.getElementById("phonefld").value;
             document.getElementById("name").innerHTML=a;
             document.getElementById("age").innerHTML=b;
             document.getElementById("sex").innerHTML=c;
@@ -72,7 +72,7 @@ echo $_GET["view"];
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
 
-            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"$disease="+f+"&address="+g+"&phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
     
