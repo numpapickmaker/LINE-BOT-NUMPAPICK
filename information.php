@@ -12,7 +12,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="UPDATE Device_information name='"._$GET["name"]."' , age="._$GET["age"]." ,sex='"._$GET["sex"]."', heigth='"._$GET["heigth"]."' WHERE Device_id='".$_GET["view"]."';";
+     $sql ="UPDATE Device_information name='"._$GET["name"]."' , age='"._$GET["age"]."' ,sex='"._$GET["sex"]."', heigth='"._$GET["heigth"]."',weigth='"._$GET["weigth"]."', disease='"._$GET["disease"]."' ,address='"._$GET["address"]."',phone='"._$GET["phone"]."' WHERE Device_id='".$_GET["view"]."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
