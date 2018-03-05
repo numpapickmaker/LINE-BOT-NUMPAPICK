@@ -1,7 +1,45 @@
 
  <?php
 if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
-  echo  $_GET["name"];
+  
+  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     $sql ="UPDATE Device_information name='"._$GET["name"]."' , age="._$GET["age"]." ,sex='"._$GET["sex"]."', heigth='"._$GET["heigth"]."' WHERE Device_id='".$_GET["view"]."';";
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         $checking = 0;
+         while($row = pg_fetch_row($ret) ){
+          echo "have espname = " . $row[1] . "\n";
+          // send_LINE('PASS');
+          //  header("location: bot.php");
+           $No = $row[0];
+           $Device_id = $row[1];
+           $Name = $row[2];
+           $Age = $row[3];
+           $Sex = $row[4];
+           $Heigth = $row[5];
+           $Weigth = $row[6];
+           $disease = $row[7];
+           $address  = $row[8];
+           $phone = $row[9]; 
+         }
+         if($checking == 0){
+            // $username_err = 'No account found with that username.';
+         }
+         //echo "Records created successfully\n";
+      }
+     
+      pg_close($db) ;   
 }
 echo $_GET["view"];
   $Test = $_GET["view"];
