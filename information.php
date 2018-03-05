@@ -17,26 +17,8 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         $checking = 0;
-         while($row = pg_fetch_row($ret) ){
-          echo "have espname = " . $row[1] . "\n";
-          // send_LINE('PASS');
-          //  header("location: bot.php");
-           $No = $row[0];
-           $Device_id = $row[1];
-           $Name = $row[2];
-           $Age = $row[3];
-           $Sex = $row[4];
-           $Heigth = $row[5];
-           $Weigth = $row[6];
-           $disease = $row[7];
-           $address  = $row[8];
-           $phone = $row[9]; 
-         }
-         if($checking == 0){
-            // $username_err = 'No account found with that username.';
-         }
-         //echo "Records created successfully\n";
+         
+         echo "Records created successfully\n";
       }
      
       pg_close($db) ;   
