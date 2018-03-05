@@ -1,6 +1,6 @@
 
  <?php
-if( $_GET["name"] || $_GET["age"]){
+if( $_GET["name"] || $_GET["age"] || $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
   echo  "name " . $_GET["name"] ."\n";
 }
 echo $_GET["view"];
