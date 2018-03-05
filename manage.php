@@ -51,7 +51,10 @@
     </style>
 </head>
 <body>
-<button align="center" class="button button3">+</button>
+<form action="https://numpapick.herokuapp.com/login.php" method="get">
+    <button class="button button3" value="<?php echo $Device_id;?>" name="add">+</button>
+</form>
+
 <table  id="customers" align="center">
   <tr>
     <th > <div align="center">No </div></th>
