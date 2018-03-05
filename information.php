@@ -1,6 +1,8 @@
 
  <?php
-
+if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["Phone"]){
+  echo  $_GET["name"]
+}
 echo $_GET["view"];
   $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
@@ -51,7 +53,7 @@ echo $_GET["view"];
     <script>
     function Save() {
      var a = document.getElementById("namefld").innerHTML;
-	        var b = document.getElementById("agefld").innerHTML;
+          var b = document.getElementById("agefld").innerHTML;
             var c = document.getElementById("sexfld").innerHTML;
             var d = document.getElementById("heigthfld").innerHTML;
             var e = document.getElementById("weigthfld").innerHTML;
@@ -68,11 +70,13 @@ echo $_GET["view"];
             document.getElementById("phone").innerHTML=h;
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
+
+            window.location.href = "https://numpapick.herokuapp.com/information.php?name=" + a + "&age=" + b +"&sex=" + c+"$heigth=" +d+"$weigth="+e+"&disease="+f+"$address="+g+"$phone="+h;
     }
 function Edit() {
     
             var a = document.getElementById("name").innerHTML;
-	        var b = document.getElementById("age").innerHTML;
+          var b = document.getElementById("age").innerHTML;
             var c = document.getElementById("sex").innerHTML;
             var d = document.getElementById("heigth").innerHTML;
             var e = document.getElementById("weigth").innerHTML;
