@@ -93,7 +93,7 @@ echo $_GET["action"];
     
     <td align="center">
     <form action="https://numpapick.herokuapp.com/information.php" method="get">
-    <button class="button button1" value="1" name="view">View</button>
+    <button class="button button1" value="<?php echo $Device_id;?>" name="view">View</button>
     </form>
 <button class="button button2">Delete</button>
 </td>
