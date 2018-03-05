@@ -12,7 +12,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="update Device_information set name='"._$GET["name"]."'  where device_id='1'";
+     $sql ="update Device_information set name='chatsada' where device_id='1'";
     
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
