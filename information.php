@@ -1,7 +1,7 @@
 
  <?php
-if( $_GET["name"]){
-  echo  $_GET["name"];
+if( $_GET["name"] || $_GET["age"]){
+  echo  "name " . $_GET["name"] ."\n";
 }
 echo $_GET["view"];
   $test = "Hello";
