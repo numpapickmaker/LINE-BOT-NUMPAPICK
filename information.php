@@ -1,5 +1,11 @@
 
  <?php
+if( $_GET["view"])
+{
+echo "Welcome: ". $_GET['view']. "<br />";
+
+}
+
 echo $_GET["username"];
   $test = "Hello";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
