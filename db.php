@@ -3,6 +3,7 @@
       $userid = $_GET["userid"];
       $esp = $_GET["esp"];
       check_userlogout($userid,$esp);
+      header("location: manage.php?action=$userid");
     }
    function save_userid($userid,$esp){ 
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
