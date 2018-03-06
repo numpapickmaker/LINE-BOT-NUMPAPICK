@@ -3,7 +3,7 @@
       $userid = $_GET["userid"];
       $esp = $_GET["esp"];
       check_userlogout($userid,$esp);
-      header("location: manage.php?action=$userid");
+
     }
    function save_userid($userid,$esp){ 
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -129,11 +129,11 @@
                       $sql ="DELETE FROM userline WHERE id='".$userid."' AND esp='".$esp."';";
                       $ret = pg_query($db, $sql) ;
                       if(!$ret) {
-                        send_LINE("Logout Error!",$userid);
+                        //send_LINE("Logout Error!",$userid);
                          echo pg_last_error($db) ;
                       } else {
-                            
-                          send_LINE("logout success",$userid);
+                          header("location: manage.php?action=$userid");  
+                          //send_LINE("logout success",$userid);
                                                  
                                 }     
                   }  
