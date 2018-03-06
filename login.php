@@ -5,7 +5,7 @@
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
- 
+$userid = $_GET["add"];
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
@@ -59,7 +59,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   while($row = pg_fetch_row($ret) ){
                       echo "NO max = " . $row[0] . "\n";
                       $row[0] = intval($row[0]+1);
-                      $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$esp."');";
+                      $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$username."');";
                   }
            //echo "Records created successfully\n";
               }
