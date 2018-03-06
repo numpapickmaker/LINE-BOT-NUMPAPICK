@@ -76,7 +76,7 @@ function del_device(a, b) {
   </tr>
 
 <?php
-echo $_GET["action"];
+//echo $_GET["action"];
   $userid = $_GET["action"];
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
