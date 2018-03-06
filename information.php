@@ -1,7 +1,7 @@
 
  <?php
 if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["phone"]){
-  echo 
+   
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -16,15 +16,15 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
     
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
-         echo pg_last_error($db) ;
+        // echo pg_last_error($db) ;
       } else {
          
-         echo "Records created successfully\n";
+        // echo "Records created successfully\n";
       }
      
       pg_close($db) ;   
 }
-echo $_GET["view"];
+//echo $_GET["view"];
   $Test = $_GET["view"];
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -44,7 +44,7 @@ echo $_GET["view"];
       } else {
          $checking = 0;
          while($row = pg_fetch_row($ret) ){
-          echo "have espname = " . $row[1] . "\n";
+        //  echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
           //  header("location: bot.php");
            $No = $row[0];
