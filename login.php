@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $userid = $_POST["userid"];
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
-        $username_err = $_POST["userid"];
+        $username_err = 'Please enter username.';
     } else{
         $username = trim($_POST["username"]);
     }
@@ -105,7 +105,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
-                <input type="hidden" name="userid"class="form-control" value="<?php echo $userid; ?>"></input>
+                <input type="hidden" name="userid" class="form-control" value="<?php echo $userid; ?>"></input>
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
