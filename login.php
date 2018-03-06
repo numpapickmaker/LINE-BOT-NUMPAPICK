@@ -63,17 +63,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   }
            //echo "Records created successfully\n";
               }
-                  $ret = pg_query($db, $sql) ;
-                  if(!$ret) {
-                      //  send_LINE("Login Error!",$userid);
-                        echo pg_last_error($db) ;
-                  } else {
-                    //send_LINE("Login success",$userid);
-                    echo "Records created successfully\n";
-                    //getMqttfromlineMsg("555");
-                      header("location: information.php?action=<?php echo $_GET["add"];?");
-           
-                  }
+                 
            }
          //echo "Records created successfully\n";
       }
