@@ -60,7 +60,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
               } else {
                   $checking = 0;   
                    while($row = pg_fetch_row($ret)){
-                       echo "ESP name = " . $row[2] . "\n";
+                     //  echo "ESP name = " . $row[2] . "\n";
                        // send_LINE('PASS')
                         $checking = 1;     
                         //send_LINE("you login already",$userid);
@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         echo pg_last_error($db) ;
                       } else {
                           while($row = pg_fetch_row($ret) ){
-                          echo "NO max = " . $row[0] . "\n";
+                         // echo "NO max = " . $row[0] . "\n";
                           $row[0] = intval($row[0]+1);
                           $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$username."');";
                       }
