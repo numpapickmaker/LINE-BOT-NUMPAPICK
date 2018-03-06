@@ -92,7 +92,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   //echo "Records created successfully\n";
                   }
                 }else{
-                  echo "you have been login";
+                  $username_err = "you have been login";
                 }
               }
          
