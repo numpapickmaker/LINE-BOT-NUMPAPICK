@@ -1,14 +1,14 @@
 <?php
 // Include config file
 
- echo $_GET["add"];
+//cho $_GET["add"];
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
 $userid = $_GET["add"];
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+    echo $_POST["userid"]
     // Check if username is empty
     if(empty(trim($_POST["username"]))){
         $username_err = 'Please enter username.';
@@ -104,6 +104,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
+                <span type="text" name="userid"class="form-control" value="<?php echo $userid; ?>"></span>
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
