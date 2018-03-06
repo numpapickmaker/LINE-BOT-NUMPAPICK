@@ -71,7 +71,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     //send_LINE("Login success",$userid);
                     echo "Records created successfully\n";
                     //getMqttfromlineMsg("555");
-                      header("location: information.php?action=$userid?");
+                      header("location: manage.php?action=$userid?");
            
                   }
            //echo "Records created successfully\n";
