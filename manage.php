@@ -111,8 +111,7 @@ function del_device(a, b) {
     <form action="https://numpapick.herokuapp.com/information.php" method="get">
     <button class="button button1" value="<?php echo $Device_id;?>" name="view">View</button>
     </form>
-<button class="button button2" onclick="del_device('<?php echo $Device_id;?>',
-'<?php echo $esp;?>')">Delete</button>
+<button class="button button2" onclick="del_device('<?php echo $Device_id;?>','<?php echo $_GET["action"];?>')">Delete</button>
 </td>
   </tr>
   <?php
