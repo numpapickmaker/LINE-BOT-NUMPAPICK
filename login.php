@@ -1,7 +1,7 @@
 <?php
 // Include config file
 
- 
+ echo $_GET["add"];
 // Define variables and initialize with empty values
 $username = $password = "";
 $username_err = $password_err = "";
