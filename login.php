@@ -53,29 +53,49 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          if($checking == 0){
              $username_err = 'No account found with that username.';
          }else{
-              $sql ="SELECT MAX(userno) as LargestNO from userline;";
+              $sql ="SELECT * FROM userline WHERE id='".$userid."' AND esp='".$username."';";
               $ret = pg_query($db, $sql) ;
               if(!$ret) {
-                echo pg_last_error($db) ;
+                  echo pg_last_error($db) ;
               } else {
-                  while($row = pg_fetch_row($ret) ){
-                      echo "NO max = " . $row[0] . "\n";
-                      $row[0] = intval($row[0]+1);
-                      $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$username."');";
-                  }
-                  $ret = pg_query($db, $sql) ;
-                  if(!$ret) {
-                      //  send_LINE("Login Error!",$userid);
+                  $checking = 0;   
+                   while($row = pg_fetch_row($ret)){
+                       echo "ESP name = " . $row[2] . "\n";
+                       // send_LINE('PASS')
+                        $checking = 1;     
+                        //send_LINE("you login already",$userid);
+                       // echo "string";     
+                     }  
+                    
+                if( $checking == 0){
+                           $sql ="SELECT MAX(userno) as LargestNO from userline;";
+                      $ret = pg_query($db, $sql) ;
+                      if(!$ret) {
                         echo pg_last_error($db) ;
-                  } else {
+                      } else {
+                          while($row = pg_fetch_row($ret) ){
+                          echo "NO max = " . $row[0] . "\n";
+                          $row[0] = intval($row[0]+1);
+                          $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$username."');";
+                      }
+                      $ret = pg_query($db, $sql) ;
+                      if(!$ret) {
+                      //  send_LINE("Login Error!",$userid);
+                            echo pg_last_error($db) ;
+                      } else {
                     //send_LINE("Login success",$userid);
-                    echo "Records created successfully\n";
+                            echo "Records created successfully\n";
                     //getMqttfromlineMsg("555");
-                      header("location: manage.php?action=$userid");
+                          header("location: manage.php?action=$userid");
            
+                      }
+                  //echo "Records created successfully\n";
                   }
-           //echo "Records created successfully\n";
+                }else{
+                  echo "you have been login";
+                }
               }
+         
                   
            }
          //echo "Records created successfully\n";
@@ -100,7 +120,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <body>
     <div class="wrapper">
         <h2>Login</h2>
-        <p>Please fill in your credentials to login. <?php echo $userid; ?></p>
+        <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <label>Username</label>
