@@ -51,6 +51,19 @@
     </style>
 </head>
 <body>
+
+<script>
+function del_device(a, b) {
+    var txt;
+    var r = confirm("You want to delete device?"+a );
+    if (r == true) {
+    	window.location.href = "https://numpapick.herokuapp.com/db.php?userid="+a+"&esp="+b;
+    } else {
+        txt = "You pressed Cancel!";
+    }
+    
+}
+</script>
 <form action="https://numpapick.herokuapp.com/login.php" method="get">
     <button class="button button3" value="<?php echo $_GET["action"];?>" name="add">+</button>
 </form>
@@ -98,7 +111,7 @@ echo $_GET["action"];
     <form action="https://numpapick.herokuapp.com/information.php" method="get">
     <button class="button button1" value="<?php echo $Device_id;?>" name="view">View</button>
     </form>
-<button class="button button2">Delete</button>
+<button class="button button2" onclick="del_device('<?php echo $Device_id;?>',1)">Delete</button>
 </td>
   </tr>
   <?php
