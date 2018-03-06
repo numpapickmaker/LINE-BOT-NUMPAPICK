@@ -44,7 +44,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
-            
+
+            $checking = 1;
             
              
          }
@@ -61,9 +62,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                       $row[0] = intval($row[0]+1);
                       $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$username."');";
                   }
+                  $ret = pg_query($db, $sql) ;
+                  if(!$ret) {
+                      //  send_LINE("Login Error!",$userid);
+                        echo pg_last_error($db) ;
+                  } else {
+                    //send_LINE("Login success",$userid);
+                    echo "Records created successfully\n";
+                    //getMqttfromlineMsg("555");
+                      header("location: information.php?action=<?php echo $userid;?");
+           
+                  }
            //echo "Records created successfully\n";
               }
-                 
+                  
            }
          //echo "Records created successfully\n";
       }
