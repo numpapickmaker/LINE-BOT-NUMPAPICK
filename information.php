@@ -166,7 +166,7 @@ function Edit() {
 .button2 { position: relative; 
  left: 3%;border-radius: 8px; background-color: #f44336;}   
 .button4 { position: relative; 
- left: 50%;border-radius: 8px; background-color: #f44336;} 
+ left: 40%;border-radius: 8px; background-color: #f44336;} 
     </style>
 </head>
 <body>
