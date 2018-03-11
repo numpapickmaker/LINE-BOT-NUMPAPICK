@@ -320,7 +320,7 @@ function save_esp($esp,$id){
       } else {
          echo "Opened database successfully\n";
       }
-      $sql ="SELECT * FROM device WHERE espname='".$esp."';";
+      $sql ="SELECT * FROM device WHERE deviceid='".$esp."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
