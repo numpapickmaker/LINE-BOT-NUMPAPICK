@@ -167,7 +167,7 @@ function Edit() {
 
  <h1  > Information </h1>
  <form class="button " action="https://numpapick.herokuapp.com/manage.php" method="get">
-    <button class="button button2" value="<?php echo $Test;?>" name="action">Back</button>
+    <button class="button button2" value="<?php echo $_GET["username"];?>" name="action">Back</button>
     
 </form>
 <button class="button button3" id="edit_btn" onclick="Edit()">Edit</button>
