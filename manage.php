@@ -57,7 +57,7 @@ function del_device(a, b) {
     var txt;
     var r = confirm("You want to delete device?"+b );
     if (r == true) {
-    	window.location.href = "https://numpapick.herokuapp.com/db.php?userid="+a+"&esp="+b;
+      window.location.href = "https://numpapick.herokuapp.com/db.php?userid="+a+"&esp="+b;
     } else {
         txt = "You pressed Cancel!";
     }
@@ -95,13 +95,14 @@ function del_device(a, b) {
          echo pg_last_error($db) ;
       } else {
          $checking = 0;
+         $n = 1;
          while($row = pg_fetch_row($ret) ){
          // echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
           //  header("location: bot.php");
-           $No = $row[0];
+           $No = $n;
            $Device_id = $row[2];
-          
+           $n++;
            ?>
            <tr>
     <td><div align="center"><?php echo $No;?></div></td>
