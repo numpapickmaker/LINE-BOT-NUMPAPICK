@@ -261,7 +261,7 @@ function save_esp($esp,$id){
          while($row = pg_fetch_row($ret) ){
 
          }$row[0] = intval($row[0]+1);
-          $sql =" INSERT INTO device_information (no,deviceid) VALUES ( ".$row[0].",'".$id."');";
+          $sql =" INSERT INTO device_information (no,device_id) VALUES ( ".$row[0].",'".$id."');";
       } 
       $ret = pg_query($db, $sql) ;
       if(!$ret) {
