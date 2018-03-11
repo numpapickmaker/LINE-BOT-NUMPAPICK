@@ -12,16 +12,12 @@
         width: 75%;
         
     }
-
     #customers td, #customers th {
         border: 1px solid #ddd;
         padding: 8px;
     }
-
     #customers tr:nth-child(even){background-color: #f2f2f2;}
-
     #customers tr:hover {background-color: #ddd;}
-
     #customers th {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -41,13 +37,11 @@
     margin: 4px 2px;
     cursor: pointer;
 }
-
 .button1 {border-radius: 8px;}
 .button2 {border-radius: 8px; background-color: #f44336;}
 .button3 { position: relative;
   
   left: 90%;border-radius: 8px; background-color: #008CBA;}
-
     </style>
 </head>
 <body>
@@ -110,6 +104,7 @@ function del_device(a, b) {
     
     <td align="center">
     <form action="https://numpapick.herokuapp.com/information.php" method="get">
+    <input type="hidden" name="username" value="<?php echo $_GET["action"];?>">
     <button class="button button1" value="<?php echo $Device_id;?>" name="view">View</button>
     </form>
 <button class="button button2" onclick="del_device('<?php echo $userid;?>','<?php echo $Device_id;?>')">Delete</button>
