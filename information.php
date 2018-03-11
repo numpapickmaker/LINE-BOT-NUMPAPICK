@@ -71,6 +71,11 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
 <head>
     <meta charset="UTF-8">
     <script>
+    function Cancel(){
+    var view = document.getElementById("storage1").getAttribute("data-variable-one");
+    var deviceid = document.getElementById("storage2").getAttribute("data-variable-one");
+    window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&deviceid="+deviceid;
+    }
     function Save() {
       var view = document.getElementById("storage").getAttribute("data-variable-one");
      var device_id = document.getElementById("Device_id").innerHTML;
@@ -92,6 +97,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
             document.getElementById("phone").innerHTML=h;
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
+            
             window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&deviceid="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
@@ -115,6 +121,7 @@ function Edit() {
            
             document.getElementById("edit_btn").innerHTML='Save';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Save();" );
+             document.getElementById("cancel_btn").style.display = "inline-block";
             //document.getElementById("done_btn").disabled=false;
         
 }
@@ -158,20 +165,22 @@ function Edit() {
   left: 80%;border-radius: 8px; background-color: #008CBA;}
 .button2 { position: relative; 
  left: 3%;border-radius: 8px; background-color: #f44336;}   
+.button4 { position: relative; 
+ left: 60%;border-radius: 8px; background-color: #f44336;} 
     </style>
 </head>
 <body>
 
 <p id="demo"></p>
-<span id="storage" data-variable-one="<?php echo $Test; ?>"</span>
-
+<span id="storage1" data-variable-one="<?php echo $Test; ?>"</span>
+<span id="storage2" data-variable-one="<?php echo $_GET["username"]; ?>"</span>
  <h1  > Information </h1>
  <form class="button " action="https://numpapick.herokuapp.com/manage.php" method="get">
     <button class="button button2" value="<?php echo $_GET["username"];?>" name="action">Back</button>
     
 </form>
 <button class="button button3" id="edit_btn" onclick="Edit()">Edit</button>
- 
+<button class="button button4" id="cancel_btn" style="display:none" onclick="Cancel()" >Cancel</button>
 <table  id="customers" align="center">
    <tr>
           <td  ><div align="center">Device id </div></td>
