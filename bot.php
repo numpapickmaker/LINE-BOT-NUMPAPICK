@@ -18,7 +18,7 @@ if (!is_null($events['ESP'])) {
 	
 	}
 	if($events['ESP'] == 'REGISTER'){
-		Check_ESP($events['NAME'],$events['ID']);
+		Check_ESP($events['NAME'],$events['MSG'],$events['ID']);
 	}
 	if($events['ESP'] == 'BAT'){
 		Check_ESP($events['NAME'],$events['MSG']);
