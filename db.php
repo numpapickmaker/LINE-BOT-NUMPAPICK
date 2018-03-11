@@ -288,7 +288,7 @@ function save_esp($esp,$id){
      
       pg_close($db) ;
    }
-   function check_esp($esp,$msg){
+   function check_esp($esp,$msg,$id){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -314,7 +314,7 @@ function save_esp($esp,$id){
              
          }
          if($checking == 0){
-             save_esp($esp,$msg);
+             save_esp($esp,$id);
          }
          //echo "Records created successfully\n";
       }
