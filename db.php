@@ -239,7 +239,7 @@ function save_esp($esp,$id){
          while($row = pg_fetch_row($ret) ){
          echo "NO max = " . $row[0] . "\n";
          $row[0] = intval($row[0]+1);
-          $sql =" INSERT INTO device (espno,espname,deviceid,password) VALUES ( ".$row[0].",'".$esp."','".$id."',"Smarthelper");";
+          $sql =" INSERT INTO device (espno,espname) VALUES ( ".$row[0].",'".$esp."');";
          }
          //echo "Records created successfully\n";
       }
@@ -314,7 +314,7 @@ function save_esp($esp,$id){
              
          }
          if($checking == 0){
-             save_esp($esp);
+             save_esp($esp,$msg);
          }
          //echo "Records created successfully\n";
       }
