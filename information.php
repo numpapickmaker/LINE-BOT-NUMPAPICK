@@ -1,5 +1,4 @@
-
- <?php
+<?php
 if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["phone"]){
    
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -93,7 +92,6 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
             document.getElementById("phone").innerHTML=h;
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
-
             window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&deviceid="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
@@ -120,7 +118,6 @@ function Edit() {
             //document.getElementById("done_btn").disabled=false;
         
 }
-
 </script>
     <title>information</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
@@ -130,16 +127,12 @@ function Edit() {
         border-collapse: collapse;
         width: 75%;
     }
-
     #customers td, #customers th {
         border: 1px solid #ddd;
         padding: 8px;
     }
-
     #customers tr:nth-child(even){background-color: #f2f2f2;}
-
     #customers tr:hover {background-color: #ddd;}
-
     #customers th {
         padding-top: 12px;
         padding-bottom: 12px;
@@ -148,23 +141,23 @@ function Edit() {
         color: white;
     }
        .button {
-    background-color: #4CAF50; /* Green */
+    
     border: none;
     color: white;
     padding: 10px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: inline;
     
     margin: 4px 2px;
     cursor: pointer;
 }
-
 .button1 {border-radius: 2px;} 
 .button3 { position: relative;
-  
-  left: 90%;border-radius: 8px; background-color: #008CBA;}
 
+  left: 80%;border-radius: 8px; background-color: #008CBA;}
+.button2 { position: relative; 
+ left: 3%;border-radius: 8px; background-color: #f44336;}   
     </style>
 </head>
 <body>
@@ -173,7 +166,12 @@ function Edit() {
 <span id="storage" data-variable-one="<?php echo $Test; ?>"</span>
 
  <h1  > Information </h1>
+ <form class="button " action="https://numpapick.herokuapp.com/manage.php" method="get">
+    <button class="button button2" value="<?php echo $Test;?>" name="action">Back</button>
+    
+</form>
 <button class="button button3" id="edit_btn" onclick="Edit()">Edit</button>
+ 
 <table  id="customers" align="center">
    <tr>
           <td  ><div align="center">Device id </div></td>
