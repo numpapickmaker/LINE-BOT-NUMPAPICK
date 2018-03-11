@@ -36,7 +36,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       }
-      $sql ="SELECT * FROM device WHERE espname='".$username."';";
+      $sql ="SELECT * FROM device WHERE deviceid='".$username."' AND password='".$password."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -51,7 +51,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              
          }
          if($checking == 0){
-             $username_err = 'No account found with that username.';
+             $username_err = 'username or password is wrong.';
          }else{
               $sql ="SELECT * FROM userline WHERE id='".$userid."' AND esp='".$username."';";
               $ret = pg_query($db, $sql) ;
@@ -109,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
     <style type="text/css">
