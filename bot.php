@@ -18,10 +18,13 @@ if (!is_null($events['ESP'])) {
 	
 	}
 	if($events['ESP'] == 'REGISTER'){
+		Check_ESP($events['NAME'],$events['ID']);
+	}
+	if($events['ESP'] == 'BAT'){
 		Check_ESP($events['NAME'],$events['MSG']);
 	}
-	if($events['ESP'] == 'ฺBAT'){
-		Check_ESP($events['NAME'],$events['MSG']);
+	if($events['ESP'] == 'RESET'){
+		update_ESP($events['NAME'],$events['MSG']);
 	}
 	echo "OK";
 	}
