@@ -1,6 +1,5 @@
 <?php
 // Include config file
-
 //cho $_GET["add"];
 // Define variables and initialize with empty values
 $username = $password = "";
@@ -45,7 +44,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
-
             $checking = 1;
             
              
@@ -123,7 +121,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label>Username</label>
+                <label>Device id</label>
                 <input type="text" name="username"class="form-control" value="<?php echo $username; ?>">
                 <input type="hidden" name="userid" class="form-control" value="<?php echo $userid; ?>"></input>
                 <span class="help-block"><?php echo $username_err; ?></span>
@@ -135,9 +133,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <input type="submit" class="btn btn-primary" value="Login">
+               
+    
             </div>
-            <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>
+           
         </form>
+        <br>
+         <form action="https://numpapick.herokuapp.com/manage.php" method="get">
+    <button class="btn btn-danger" value="<?php echo $userid;?>" name="action">Back</button></form>
     </div>    
 </body>
 </html>
