@@ -253,6 +253,27 @@ function save_esp($esp,$id){
                 
          
       }
+        $sql ="SELECT MAX(no) as LargestNO from device_information;";
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         while($row = pg_fetch_row($ret) ){
+
+         }$row[0] = intval($row[0]+1);
+          $sql =" INSERT INTO device_information (no,deviceid) VALUES ( ".$row[0].",'".$id."');";
+      } 
+      $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         
+        echo "Records created successfully\n";
+         //getMqttfromlineMsg("555");
+                
+         
+      } 
+
       pg_close($db) ;
    }
     function update_esp($esp,$msg){
