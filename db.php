@@ -220,7 +220,7 @@
      
       pg_close($db) ;
    }
-function save_esp($esp){ 
+function save_esp($esp,$id){ 
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -239,7 +239,7 @@ function save_esp($esp){
          while($row = pg_fetch_row($ret) ){
          echo "NO max = " . $row[0] . "\n";
          $row[0] = intval($row[0]+1);
-          $sql =" INSERT INTO device (espno,espname) VALUES ( ".$row[0].",'".$esp."');";
+          $sql =" INSERT INTO device (espno,espname,deviceid,password) VALUES ( ".$row[0].",'".$esp."','".$id."',"Smarthelper");";
          }
          //echo "Records created successfully\n";
       }
