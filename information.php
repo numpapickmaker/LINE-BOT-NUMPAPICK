@@ -72,12 +72,12 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
     function Cancel(){
-    var username = document.getElementById("storage1").getAttribute("data-variable-one");
-    var deviceid = document.getElementById("storage2").getAttribute("data-variable-one");
-    window.location.href = "https://numpapick.herokuapp.com/information.php?username="+uaername+"&username="+deviceid;
+    var username = document.getElementById("storage2").getAttribute("data-variable-one");
+    var device_id = document.getElementById("storage1").getAttribute("data-variable-one");
+    window.location.href = "https://numpapick.herokuapp.com/information.php?username="+username+"&view="+device_id;
     }
     function Save() {
-      var username = document.getElementById("storage1").getAttribute("data-variable-one");
+      var username = document.getElementById("storage2").getAttribute("data-variable-one");
      var device_id = document.getElementById("Device_id").innerHTML;
      var a = document.getElementById("namefld").value;
           var b = document.getElementById("agefld").value;
