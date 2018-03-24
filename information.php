@@ -72,12 +72,12 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
     function Cancel(){
-    var view = document.getElementById("storage1").getAttribute("data-variable-one");
+    var username = document.getElementById("storage1").getAttribute("data-variable-one");
     var deviceid = document.getElementById("storage2").getAttribute("data-variable-one");
-    window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&username="+deviceid;
+    window.location.href = "https://numpapick.herokuapp.com/information.php?username="+uaername+"&username="+deviceid;
     }
     function Save() {
-      var view = document.getElementById("storage1").getAttribute("data-variable-one");
+      var username = document.getElementById("storage1").getAttribute("data-variable-one");
      var device_id = document.getElementById("Device_id").innerHTML;
      var a = document.getElementById("namefld").value;
           var b = document.getElementById("agefld").value;
@@ -98,7 +98,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
             
-            window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&deviceid="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?username="+username+"&deviceid="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
     
