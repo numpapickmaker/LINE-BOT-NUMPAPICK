@@ -77,7 +77,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
     window.location.href = "https://numpapick.herokuapp.com/information.php?view="+view+"&username="+deviceid;
     }
     function Save() {
-      var view = document.getElementById("storage").getAttribute("data-variable-one");
+      var view = document.getElementById("storage1").getAttribute("data-variable-one");
      var device_id = document.getElementById("Device_id").innerHTML;
      var a = document.getElementById("namefld").value;
           var b = document.getElementById("agefld").value;
