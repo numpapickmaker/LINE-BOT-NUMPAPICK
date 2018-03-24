@@ -192,7 +192,7 @@ function send_Menu($userid){
                             ]
                         ], [
                         "type"=> "message",
-                        "label"=>"https://i.imgur.com/QBHEdRu.jpg",
+                        
                         "text"=> "Hello",
                         "area"=> [
                             "x"=> 520,
