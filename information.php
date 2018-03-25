@@ -12,7 +12,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
          //echo "Opened database successfully\n";
       }
      $sql ="update Device_information set name='".$_GET["name"]."',sex='".$_GET["sex"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"]."',phone='".$_GET["phone"]."',birthday='".$_GET["birthday"]."' where device_id='".$_GET["deviceid"]."';";
-    
+    echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
         // echo pg_last_error($db) ;
@@ -246,10 +246,7 @@ function Edit() {
           <td><div align="center">Name </div></td>
           <td id="name"><?php echo $Name;?></td>
           </tr>
-          <tr>
-          <td><div align="center">Birthday </div></td>
-          <td id="birthday" ><?php echo $Birthday;?></div></td>
-          </tr>
+       
           <tr>
           <td><div align="center">Sex </div></td>
           <td id="sex" ><?php echo $Sex;?></td>
@@ -275,6 +272,10 @@ function Edit() {
           <td id="phone" ><?php echo $phone;?></td>
           </tr>
           <tr>
+          <tr>
+          <td><div align="center">Birthday </div></td>
+          <td id="birthday" ><?php echo $Birthday;?></div></td>
+          </tr>
   
 </table>
 </div>
