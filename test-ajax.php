@@ -31,7 +31,7 @@
 			 return false;
 		  }
 	
-		  var url = 'AjaxPHPLoginForm2.php';
+		  var url = 'test-ajax2.php';
 		  var pmeters = "tUsername=" + encodeURI( document.getElementById("txtUsername").value) +
 						"&tPassword=" + encodeURI( document.getElementById("txtPassword").value );
 
