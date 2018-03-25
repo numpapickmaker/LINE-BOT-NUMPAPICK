@@ -113,16 +113,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
 <style>
-
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
 }
-
 p {
     font-family: verdana;
     font-size: 20px;
@@ -136,8 +133,6 @@ input[type=text],input[type=password], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
-
 .kanit {
 	font-family: 'Kanit', sans-serif;
 }.Taviraj {
@@ -145,7 +140,6 @@ input[type=text],input[type=password], select {
     font-size: 20px;
     margin: 24px 2px;
 }
-
 .footer {
    position: fixed;
    left: 0;
@@ -173,7 +167,7 @@ input[type=text],input[type=password], select {
     
 }
 .button1 {
-    background-color: white; 
+    
     color: white; 
     border: 2px solid white;
     border-radius: 8px;
@@ -183,8 +177,8 @@ input[type=text],input[type=password], select {
     
 }
 .button2 {
-    background-color: white; 
-    color: #072140; 
+     
+    color: white; 
     border: 2px solid white;
     border-radius: 8px;
     background-color: #FFA611;
@@ -227,7 +221,7 @@ input[type=text],input[type=password], select {
         </form>
         <br>
          <form action="https://numpapick.herokuapp.com/manage.php" method="get">
-    <button class="button button1" value="<?php echo $userid;?>" name="action">Back</button></form>
+    <button class="button button2" value="<?php echo $userid;?>" name="action">Back</button></form>
     </div>    
 </body>
 </html>
