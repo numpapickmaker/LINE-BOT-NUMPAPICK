@@ -1,5 +1,5 @@
 <?php
-if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["phone"]){
+if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigth"]|| $_GET["disease"]|| $_GET["address"]|| $_GET["phone"]){
    
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -11,7 +11,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="update Device_information set name='".$_GET["name"]."',age='".$_GET["age"]."',sex='".$_GET["age"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"]."',phone='".$_GET["phone"]."' where device_id='".$_GET["deviceid"]."';";
+     $sql ="update Device_information set name='".$_GET["name"]."',sex='".$_GET["sex"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"]."',phone='".$_GET["phone"]."',birthday='".$_GET["birthday"]."' where device_id='".$_GET["deviceid"]."';";
     
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
@@ -25,7 +25,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
 }
 //echo $_GET["view"];
   $Test = $_GET["view"];
-  $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
+  $No =$Device_id =$Name =$Birthday =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -49,7 +49,7 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
            $No = $row[0];
            $Device_id = $row[1];
            $Name = $row[2];
-           $Age = $row[3];
+           $Birthday = $row[3];
            $Sex = $row[4];
            $Heigth = $row[5];
            $Weigth = $row[6];
@@ -106,16 +106,16 @@ input[type=text], select {
 }
 
 .kanit {
-	font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }.Taviraj {
-	font-family: 'Taviraj', serif;
+  font-family: 'Taviraj', serif;
     font-size: 20px;
     margin: 24px 20px;
 }
 .button {
     background-color: white; /* Green */
     border: none;
-	color: white; 
+  color: white; 
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
@@ -133,7 +133,7 @@ input[type=text], select {
     color: white; 
     border: 2px solid white;
     border-radius: 8px;
-  	position: relative;
+    position: relative;
     background-color: #0F4484;
    
     
@@ -145,17 +145,17 @@ input[type=text], select {
     border: 2px solid white;
     border-radius: 8px;
     background-color: #FFA611;
-	position: relative;
+  position: relative;
     
 }
 .button3 {
-	color: white; 
+  color: white; 
     background-color: #35847A; 
     
     border: 2px solid white;
     border-radius: 8px;
    
-	position: relative;
+  position: relative;
     
 }
 
@@ -172,7 +172,7 @@ input[type=text], select {
       var username = document.getElementById("storage2").getAttribute("data-variable-one");
      var device_id = document.getElementById("Device_id").innerHTML;
      var a = document.getElementById("namefld").value;
-          var b = document.getElementById("agefld").value;
+          var b = document.getElementById("birthdayfld").value;
             var c = document.getElementById("sexfld").value;
             var d = document.getElementById("heigthfld").value;
             var e = document.getElementById("weigthfld").value;
@@ -180,7 +180,7 @@ input[type=text], select {
             var g = document.getElementById("addressfld").value;
             var h = document.getElementById("phonefld").value;
             document.getElementById("name").innerHTML=a;
-            document.getElementById("age").innerHTML=b;
+            document.getElementById("birthday").innerHTML=b;
             document.getElementById("sex").innerHTML=c;
             document.getElementById("heigth").innerHTML=d;
             document.getElementById("weigth").innerHTML=e;
@@ -190,12 +190,12 @@ input[type=text], select {
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
             
-            window.location.href = "https://numpapick.herokuapp.com/information.php?username="+username+"&view="+device_id+"&name=" + a + "&age=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
+            window.location.href = "https://numpapick.herokuapp.com/information.php?username="+username+"&view="+device_id+"&name=" + a + "&birthday=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
 function Edit() {
     
             var a = document.getElementById("name").innerHTML;
-          var b = document.getElementById("age").innerHTML;
+          var b = document.getElementById("birthday").innerHTML;
             var c = document.getElementById("sex").innerHTML;
             var d = document.getElementById("heigth").innerHTML;
             var e = document.getElementById("weigth").innerHTML;
@@ -203,7 +203,7 @@ function Edit() {
             var g = document.getElementById("address").innerHTML;
             var h = document.getElementById("phone").innerHTML;
             document.getElementById("name").innerHTML='<input id="namefld" type="text" value="'+a+'"'+' />';
-            document.getElementById("age").innerHTML='<input id="agefld" type="text" value="'+b+'"'+' />';
+            document.getElementById("birthday").innerHTML='<input id="birthdayfld" type="date" value="'+b+'"'+' />';
             document.getElementById("sex").innerHTML='<input id="sexfld" type="text" value="'+c+'"'+' />';
             document.getElementById("heigth").innerHTML='<input id="heigthfld" type="text" value="'+d+'"'+' />';
             document.getElementById("weigth").innerHTML='<input id="weigthfld" type="text" value="'+e+'"'+' />';
@@ -247,8 +247,8 @@ function Edit() {
           <td id="name"><?php echo $Name;?></td>
           </tr>
           <tr>
-          <td><div align="center">Age </div></td>
-          <td id="age" ><?php echo $Age;?></div></td>
+          <td><div align="center">Birthday </div></td>
+          <td id="birthday" ><?php echo $Birthday;?></div></td>
           </tr>
           <tr>
           <td><div align="center">Sex </div></td>
