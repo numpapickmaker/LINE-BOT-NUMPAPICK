@@ -189,6 +189,7 @@ input[type=text], select {
             document.getElementById("phone").innerHTML=h;
              document.getElementById("edit_btn").innerHTML='Edit';
             document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
+             document.getElementById("cancel_btn").style.display = "none";
             
             window.location.href = "https://numpapick.herokuapp.com/information.php?username="+username+"&view="+device_id+"&name=" + a + "&birthday=" + b +"&sex=" + c+"&heigth=" +d+"&weigth="+e+"&disease="+f+"&address="+g+"&phone="+h;
     }
@@ -198,7 +199,7 @@ function Edit() {
           var b = document.getElementById("birthday").innerHTML;
             var c = document.getElementById("sex").innerHTML;
             var male,female;
-            if(c==male){
+            if(c=='male'){
             	male='checked';
             }else{
             	female='checked';
