@@ -17,7 +17,7 @@ function getData(){
  
 // ทดสอบการใช้ POST
 function postData(){
-	$.post("test-ajax2.php", { data: $("#data2").val()}, 
+	$.post("https://numpapick.herokuapp.com/test-ajax2.php", { data: $("#data2").val()}, 
 		function(data){
 			$("#divPostData").html(data);
 		}
