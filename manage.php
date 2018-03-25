@@ -55,6 +55,7 @@ input[type=text], select {
     font-size: 24px;
     margin: 0px 0px;
     cursor: pointer;
+   
     
 }
 .button1 {
@@ -98,10 +99,11 @@ function del_device(a, b) {
  <br>
 <ul class="w3-ul">
     <li> </li>
+    <br>    
 <form action="https://numpapick.herokuapp.com/login.php" method="get">
-    <button class="button button1" value="<?php echo $_GET["action"];?>" name="add">Add Device</button>
+    <button class="button button1"  value="<?php echo $_GET["action"];?>" name="add">Add Device</button>
 </form>
-
+<br>
 <table class="w3-table w3-striped" id="customers" align="center">
   <tr>
     <th > <div align="center">No </div></th>
