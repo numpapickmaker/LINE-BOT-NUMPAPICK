@@ -68,6 +68,98 @@ if( $_GET["name"]|| $_GET["age"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["weigt
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+<style>
+
+body {
+    background-color: white;
+}
+
+h1 {
+    color: #072140;
+    text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 28px;
+    margin: 8px 2px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.kanit {
+	font-family: 'Kanit', sans-serif;
+}.Taviraj {
+	font-family: 'Taviraj', serif;
+    font-size: 20px;
+    margin: 24px 20px;
+}
+.button {
+    background-color: white; /* Green */
+    border: none;
+	color: white; 
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 0px 0px;
+    cursor: pointer;
+    width:100%;
+   
+    
+}
+.button1 {
+   
+    color: white; 
+    border: 2px solid white;
+    border-radius: 8px;
+  	position: relative;
+    background-color: #0F4484;
+   
+    
+}
+.button2 {
+    
+     color: white;
+      
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #FFA611;
+	position: relative;
+    
+}
+.button3 {
+	color: white; 
+    background-color: #35847A; 
+    
+    border: 2px solid white;
+    border-radius: 8px;
+   
+	position: relative;
+    
+}
+
+    </style>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script>
@@ -126,62 +218,25 @@ function Edit() {
         
 }
 </script>
-    <title>information</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        #customers {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 75%;
-    }
-    #customers td, #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-    #customers tr:nth-child(even){background-color: #f2f2f2;}
-    #customers tr:hover {background-color: #ddd;}
-    #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #4CAF50;
-        color: white;
-    }
-       .button {
     
-    border: none;
-    color: white;
-    padding: 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline;
-    
-    margin: 4px 2px;
-    cursor: pointer;
-}
-.button1 {border-radius: 2px;} 
-.button3 { position: relative;
-
-  left: 60%;border-radius: 8px; background-color: #008CBA;}
-.button2 { position: relative; 
- left: 3%;border-radius: 8px; background-color: #f44336;}   
-.button4 { position: relative; 
- left: 60%;border-radius: 8px; background-color: #f44336;} 
-    </style>
 </head>
 <body>
-
+<div class="w3-container" >
 <p id="demo"></p>
 <span id="storage1" data-variable-one="<?php echo $Test; ?>"</span>
 <span id="storage2" data-variable-one="<?php echo $_GET["username"]; ?>"</span>
- <h1  > Information </h1>
- <form class="button " action="https://numpapick.herokuapp.com/manage.php" method="get">
+ <h1 class="kanit" > Information </h1>
+ <ul class="w3-ul">
+    <li> </li>
+    <br>    
+ <form  action="https://numpapick.herokuapp.com/manage.php" method="get">
     <button class="button button2" value="<?php echo $_GET["username"];?>" name="action">Back</button>
     
 </form>
-<button class="button button3" id="edit_btn" onclick="Edit()">Edit</button>
-<button class="button button4" id="cancel_btn" style="display:none" onclick="Cancel()" >Cancel</button>
-<table  id="customers" align="center">
+<button class="button button1" id="edit_btn" onclick="Edit()">Edit</button>
+<button class="button button3" id="cancel_btn" style="display:none" onclick="Cancel()" >Cancel</button>
+<br>
+<table class="w3-table w3-striped" id="customers" align="center">
    <tr>
           <td  ><div align="center">Device id </div></td>
           <td id="Device_id" ><?php echo $Device_id;?></td>
@@ -222,6 +277,6 @@ function Edit() {
           <tr>
   
 </table>
-
+</div>
 </body>
 </html>
