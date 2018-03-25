@@ -60,7 +60,7 @@ input[type=text], select {
     
 }
 .button1 {
-    background-color: white; 
+   
     color: white; 
     border: 2px solid white;
     border-radius: 8px;
@@ -70,8 +70,8 @@ input[type=text], select {
     
 }
 .button2 {
-    background-color: white; 
-    color: #072140; 
+    
+    color: white; 
     border: 2px solid white;
     border-radius: 8px;
     background-color: #FFA611;
