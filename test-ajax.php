@@ -48,7 +48,7 @@
 
 				 if(HttPRequest.readyState == 4) // Return Request
 				  {
-				   document.getElementById("mySpan").innerHTML = HttPRequest.responseText;
+				   window.location = test-ajax2.php;
 				  }
 				
 			}
