@@ -210,7 +210,7 @@ function Edit() {
             var h = document.getElementById("phone").innerHTML;
             document.getElementById("name").innerHTML='<input id="namefld" type="text" value="'+a+'"'+' />';
             document.getElementById("birthday").innerHTML='<input id="birthdayfld" type="date" value="'+b+'"'+' />';
-            document.getElementById("sex").innerHTML='<fieldset id="sexfld"><input  type="radio" value="male" name="sexfld"'+male+' />Male <input type="radio" value="female" name="sexfld" '+female+'/> Female </fieldset>';
+            document.getElementById("sex").innerHTML='<input id="sexfld" type="radio" value="male" name="sexfld"'+male+' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '+female+'/> Female ';
             document.getElementById("heigth").innerHTML='<input id="heigthfld" type="text" value="'+d+'"'+' />';
             document.getElementById("weigth").innerHTML='<input id="weigthfld" type="text" value="'+e+'"'+' />';
             document.getElementById("disease").innerHTML='<input id="diseasefld" type="text" value="'+f+'"'+' />';
