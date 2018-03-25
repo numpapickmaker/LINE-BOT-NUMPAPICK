@@ -197,6 +197,12 @@ function Edit() {
             var a = document.getElementById("name").innerHTML;
           var b = document.getElementById("birthday").innerHTML;
             var c = document.getElementById("sex").innerHTML;
+            var male,female;
+            if(c==male){
+            	male='checked';
+            }else{
+            	female='checked';
+            }
             var d = document.getElementById("heigth").innerHTML;
             var e = document.getElementById("weigth").innerHTML;
             var f = document.getElementById("disease").innerHTML;
@@ -204,7 +210,7 @@ function Edit() {
             var h = document.getElementById("phone").innerHTML;
             document.getElementById("name").innerHTML='<input id="namefld" type="text" value="'+a+'"'+' />';
             document.getElementById("birthday").innerHTML='<input id="birthdayfld" type="date" value="'+b+'"'+' />';
-            document.getElementById("sex").innerHTML='<input id="sexfld" type="text" value="'+c+'"'+' />';
+            document.getElementById("sex").innerHTML='<input id="sexfld" type="radio" value="male" '+male+' />Male <input type="radio" name="gender" value="female" '+female+'/> Female';
             document.getElementById("heigth").innerHTML='<input id="heigthfld" type="text" value="'+d+'"'+' />';
             document.getElementById("weigth").innerHTML='<input id="weigthfld" type="text" value="'+e+'"'+' />';
             document.getElementById("disease").innerHTML='<input id="diseasefld" type="text" value="'+f+'"'+' />';
@@ -236,6 +242,7 @@ function Edit() {
 <button class="button button1" id="edit_btn" onclick="Edit()">Edit</button>
 <button class="button button3" id="cancel_btn" style="display:none" onclick="Cancel()" >Cancel</button>
 <br>
+<br>
 <table class="w3-table w3-striped" id="customers" align="center">
    <tr>
           <td  ><div align="center">Device id </div></td>
@@ -250,6 +257,10 @@ function Edit() {
           <tr>
           <td><div align="center">Sex </div></td>
           <td id="sex" ><?php echo $Sex;?></td>
+          </tr>
+            <tr>
+          <td><div align="center">Birthday </div></td>
+          <td id="birthday" ><?php echo $Birthday;?></div></td>
           </tr>
           <tr>
           <td><div align="center">Heigth </div></td>
@@ -271,11 +282,9 @@ function Edit() {
           <td><div align="center">Phone </div></td>
           <td id="phone" ><?php echo $phone;?></td>
           </tr>
-          <tr>
-          <tr>
-          <td><div align="center">Birthday </div></td>
-          <td id="birthday" ><?php echo $Birthday;?></div></td>
-          </tr>
+   
+          
+        
   
 </table>
 </div>
