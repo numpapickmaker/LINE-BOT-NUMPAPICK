@@ -126,6 +126,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
 <style>
 
@@ -201,27 +202,27 @@ input[type=text],input[type=date], select {
 
     <label for="fname" class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
-    <input type="text" id="fname" name="firstname" placeholder="ชื่อ" class = "Taviraj">
+    <input type="text" id="fname" name="firstname" placeholder="ชื่อ" class = "Taviraj" value="<?php echo $firstname; ?>">
     <span class="help-block"><?php echo $firstname_err; ?></span>
     </div>
     <div class="form-group <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
-    <input type="text" id="fname" name="lastname" placeholder="นามสกุล" class = "Taviraj">
+    <input type="text" id="fname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="<?php echo $lastname; ?>">
     <span class="help-block"><?php echo $lastname_err; ?></span>
     </div>
     <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
-    <input type="text" id="fname" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj">
+    <input type="text" id="fname" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="<?php echo $phone; ?>">
     <span class="help-block"><?php echo $phone_err; ?></span>
     </div>
     <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-  <input type="text" id="fname" name="email" placeholder="อีเมล" class = "Taviraj">
+  <input type="text" id="fname" name="email" placeholder="อีเมล" class = "Taviraj" value="<?php echo $email; ?>">
   <span class="help-block"><?php echo $email_err; ?></span>
   </div>
   <div class="form-group <?php echo (!empty($career_err)) ? 'has-error' : ''; ?>">
-  <input type="text" id="fname" name="career" placeholder="อาชีพ" class = "Taviraj">
+  <input type="text" id="fname" name="career" placeholder="อาชีพ" class = "Taviraj" value="<?php echo $career; ?>">
   <span class="help-block"><?php echo $career_err; ?></span>
   </div>
   <div class="form-group <?php echo (!empty($birthday_err)) ? 'has-error' : ''; ?>">
-  <p class="Taviraj">วัดเกิด</p> <input type="Date" id="fname" name="birthday"  class = "Taviraj"> 
+  <p class="Taviraj">วัดเกิด</p> <input type="Date" id="fname" name="birthday"  class = "Taviraj" value="<?php echo $birthday; ?>"> 
   <span class="help-block"><?php echo $birthday_err; ?></span>
   </div>
   <input type="submit" class="button button1" value="Next"> 
