@@ -48,7 +48,7 @@
 
 				 if(HttPRequest.readyState == 4) // Return Request
 				  {
-				   window.location = test-ajax2.php;
+				   window.location = "test-ajax2.php";
 				  }
 				
 			}
