@@ -68,6 +68,7 @@ input[type=text], select {
 </style>
 <?php
   $username= $_GET["action"];
+	echo $username;
 ?>
 <div class="w3-container" id="demo">
 
