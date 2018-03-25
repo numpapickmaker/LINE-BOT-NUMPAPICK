@@ -12,16 +12,13 @@
 <body>
 
 <style>
-
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
 }
-
 p {
     font-family: verdana;
     font-size: 20px;
@@ -35,7 +32,6 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 .kanit {
 	font-family: 'Kanit', sans-serif;
 }.Taviraj {
@@ -46,7 +42,6 @@ input[type=text], select {
 .button {
     background-color: white; /* Green */
     border: none;
-
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
@@ -78,7 +73,6 @@ input[type=text], select {
 	position: relative;
     
 }
-
     </style>
 
 <body>
@@ -101,8 +95,12 @@ function del_device(a, b) {
 <ul class="w3-ul">
     <li> </li>
     <br>    
+   
 <form action="https://numpapick.herokuapp.com/login.php" method="get">
     <button class="button button1"  value="<?php echo $_GET["action"];?>" name="add">Add Device</button>
+</form>
+ <form action="https://numpapick.herokuapp.com/main.php" method="get">
+    <button class="button button2"  value="<?php echo $_GET["action"];?>" name="action">Back To Main</button>
 </form>
 <br>
 <table class="w3-table w3-striped" id="customers" align="center">
