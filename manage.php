@@ -48,13 +48,14 @@ input[type=text], select {
     border: none;
 
     padding: 10px 32px;
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: 'Kanit', sans-serif;
     font-size: 24px;
     margin: 0px 0px;
     cursor: pointer;
+    width:100%;
    
     
 }
