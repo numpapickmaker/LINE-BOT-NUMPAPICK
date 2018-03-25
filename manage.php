@@ -1,49 +1,84 @@
- 
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <style type="text/css">
-        #customers {
-        font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-        border-collapse: collapse;
-        width: 75%;
-        
-    }
-    #customers td, #customers th {
-        border: 1px solid #ddd;
-        padding: 8px;
-    }
-    #customers tr:nth-child(even){background-color: #f2f2f2;}
-    #customers tr:hover {background-color: #ddd;}
-    #customers th {
-        padding-top: 12px;
-        padding-bottom: 12px;
-        text-align: left;
-        background-color: #4CAF50;
-        color: white;
-    }
-    .button {
-    background-color: #4CAF50; /* Green */
-    border: none;
-    color: white;
-    padding: 10px;
+<html>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+
+<style>
+
+body {
+    background-color: white;
+}
+
+h1 {
+    color: #072140;
     text-align: center;
+}
+
+p {
+    font-family: verdana;
+    font-size: 20px;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 28px;
+    margin: 8px 2px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.kanit {
+	font-family: 'Kanit', sans-serif;
+}.Taviraj {
+	font-family: 'Taviraj', serif;
+    font-size: 20px;
+    margin: 24px 20px;
+}
+.button {
+    background-color: white; /* Green */
+    border: none;
+
+    padding: 10px 32px;
+    text-align: left;
     text-decoration: none;
     display: inline-block;
-    
-    margin: 4px 2px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 0px 0px;
     cursor: pointer;
+    
 }
-.button1 {border-radius: 8px;}
-.button2 {border-radius: 8px; background-color: #f44336;}
-.button3 { position: relative;
-  
-  left: 90%;border-radius: 8px; background-color: #008CBA;}
+.button1 {
+    background-color: white; 
+    color: white; 
+    border: 2px solid white;
+    border-radius: 8px;
+  	position: relative;
+    background-color: #0F4484;
+   
+    
+}
+.button2 {
+    background-color: white; 
+    color: #072140; 
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: #FFA611;
+	position: relative;
+    
+}
+
     </style>
-</head>
+
 <body>
 
 <script>
@@ -58,11 +93,16 @@ function del_device(a, b) {
     
 }
 </script>
+<div class="w3-container" id="demo">
+ <h1 class="kanit" style = "color: #072140; ">จัดการข้อมูล</h1>
+ <br>
+<ul class="w3-ul">
+    <li> </li>
 <form action="https://numpapick.herokuapp.com/login.php" method="get">
-    <button class="button button3" value="<?php echo $_GET["action"];?>" name="add">+</button>
+    <button class="button button1" value="<?php echo $_GET["action"];?>" name="add">Add Device</button>
 </form>
 
-<table  id="customers" align="center">
+<table class="w3-table w3-striped" id="customers" align="center">
   <tr>
     <th > <div align="center">No </div></th>
     <th > <div align="center">Device id </div></th>
@@ -124,6 +164,6 @@ function del_device(a, b) {
 
   
 </table>
-
+</div>
 </body>
 </html>
