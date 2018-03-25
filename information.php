@@ -11,7 +11,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="update Device_information set name='".$_GET["name"]."',sex='".$_GET["sex"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"]."',phone='".$_GET["phone"]."',birthday='".$_GET["birthday"]."' where device_id='".$_GET["deviceid"]."';";
+     $sql ="update Device_information set name='".$_GET["name"]."',sex='".$_GET["sex"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"]."',phone='".$_GET["phone"]."',birthday='".$_GET["birthday"]."' where device_id='".$_GET["view"]."';";
     echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
@@ -49,13 +49,13 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
            $No = $row[0];
            $Device_id = $row[1];
            $Name = $row[2];
-           $Birthday = $row[3];
-           $Sex = $row[4];
-           $Heigth = $row[5];
-           $Weigth = $row[6];
-           $disease = $row[7];
-           $address  = $row[8];
-           $phone = $row[9]; 
+           $Sex = $row[3];
+           $Heigth = $row[4];
+           $Weigth = $row[5];
+           $disease = $row[6];
+           $address  = $row[7];
+           $phone = $row[8]; 
+           $Birthday = $row[9];
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
