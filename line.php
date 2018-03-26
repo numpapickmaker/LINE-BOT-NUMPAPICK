@@ -111,9 +111,9 @@ function send_PRESS($userid){
                     "text"=> "Acknowledge"
                   ],
                   [
-                    "type"=> "message",
+                    "type"=> "uri",
                     "label"=> "call",
-                    "text"=> "0846823134"
+                    "text"=> "tel:0846823134"
                   ]
               ]
           ]
