@@ -90,6 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       pg_close($db) ;
     }
    }
+ }
 ?>
 <!DOCTYPE html>
 <html>
