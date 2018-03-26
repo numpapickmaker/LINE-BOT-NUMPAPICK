@@ -102,9 +102,11 @@ input[type=text], select {
 
     <ul class="w3-ul">
     <li> </li>
-    <li> <button class="button button1" style = "color: #505050;">
+    <form action="https://numpapick.herokuapp.com/user_information.php" method="get">
+    <li> <button class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="action">
     <i class="fas fa-user" style="color: #0F4484;">
     </i>&emsp;ข้อมูลส่วนตัว <i class="fas fa-chevron-right" style="float:right; color: #505050; "></i></button></li>
+    </form>
     <li></li>
     
   </ul>
@@ -119,7 +121,7 @@ input[type=text], select {
     <li> <button  class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="action">
     <i class="fas fa-tasks" style="color: #0F4484;">
     </i>&emsp;จัดการอุปกรณ์ <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
-    
+    </form>
     <li> <button class="button button1 " style = "color: #505050;">
     <i class="fas fa-chart-line" style="color: #0F4484; ">
     </i>&emsp;ประวัติการใช้งาน 
