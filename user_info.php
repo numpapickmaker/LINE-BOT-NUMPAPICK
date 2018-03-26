@@ -4,7 +4,8 @@
 // Define variables and initialize with empty values
 $firstname = $lastname = $phone=$email = $career= $birthday ="";
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
-$userid = $_GET["add"];
+$userid = $_GET["action"];
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo $_POST["firstname"];
@@ -44,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
      if(empty($firstname_erris) && empty($lastname_err)){
             
-      /*
+      
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -55,23 +56,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       }
-      $sql ="SELECT * FROM device WHERE deviceid='".$username."' AND password='".$password."';";
+      $sql ="SELECT MAX(userno) as LargestNO from user_info;";
+     
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-         $checking = 0;
+       
          while($row = pg_fetch_row($ret) ){
-          echo "have espname = " . $row[1] . "\n";
-          // send_LINE('PASS');
-            $checking = 1;
+
+            $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
             
              
          }
-         if($checking == 0){
-             $username_err = 'username or password is wrong.';
-         }else{
-              $sql ="SELECT * FROM userline WHERE id='".$userid."' AND esp='".$username."';";
+        
+              
               $ret = pg_query($db, $sql) ;
               if(!$ret) {
                   echo pg_last_error($db) ;
@@ -84,42 +83,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                         //send_LINE("you login already",$userid);
                        // echo "string";     
                      }  
-                    
-                if( $checking == 0){
-                           $sql ="SELECT MAX(userno) as LargestNO from userline;";
-                      $ret = pg_query($db, $sql) ;
-                      if(!$ret) {
-                        echo pg_last_error($db) ;
-                      } else {
-                          while($row = pg_fetch_row($ret) ){
-                         // echo "NO max = " . $row[0] . "\n";
-                          $row[0] = intval($row[0]+1);
-                          $sql =" INSERT INTO userline (userno,id,esp) VALUES ( ".$row[0].",'".$userid."','".$username."');";
-                      }
-                      $ret = pg_query($db, $sql) ;
-                      if(!$ret) {
-                      //  send_LINE("Login Error!",$userid);
-                            echo pg_last_error($db) ;
-                      } else {
-                    //send_LINE("Login success",$userid);
-                            echo "Records created successfully\n";
-                    //getMqttfromlineMsg("555");
-                          header("location: manage.php?action=$userid");
-           
-                      }
-                  //echo "Records created successfully\n";
-                  }
-                }else{
-                  $username_err = "you have been login";
+                     header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
+               
                 }
-              }
-         
-                  
-           }
-         //echo "Records created successfully\n";
-      }
      
-      pg_close($db) ;*/
+      pg_close($db) ;
     }
    }
 ?>
