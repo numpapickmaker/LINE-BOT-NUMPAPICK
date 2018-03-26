@@ -113,7 +113,7 @@ function send_PRESS($userid){
                    [
                     "type"=> "uri",
                     "label"=> "View detail",
-                    "uri"=> "tel:0846823134"
+                    "uri"=> "tel:1669"
                   ]
               ]
           ]
