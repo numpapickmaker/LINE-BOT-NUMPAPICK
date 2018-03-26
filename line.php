@@ -34,7 +34,6 @@ function send_Check($userid){
                 "previewImageUrl"=> "https://imgur.com/a0vMdA5.jpg"
             
       ];
-
       // Make a POST Request to Messaging API to reply to sender
       $url = 'https://api.line.me/v2/bot/message/push';
       $data = [
@@ -77,7 +76,6 @@ function send_FALL($userid){
               ]
           ]
       ];
-
       // Make a POST Request to Messaging API to reply to sender
       $url = 'https://api.line.me/v2/bot/message/push';
       $data = [
@@ -114,13 +112,12 @@ function send_PRESS($userid){
                   ],
                   [
                     "type"=> "uri",
-                    "label"=> "View detail",
-                    "uri"=> "http://app.midatdb.com/PFrCbTJd2J"
+                    "label"=> "call",
+                    "uri"=> "0846823134"
                   ]
               ]
           ]
       ];
-
       // Make a POST Request to Messaging API to reply to sender
       $url = 'https://api.line.me/v2/bot/message/push';
       $data = [
@@ -147,7 +144,6 @@ function send_LOWBAT($userid){
                 "originalContentUrl"=> "https://i.imgur.com/c65ILrh.jpg",
                 "previewImageUrl"=> "https://i.imgur.com/c65ILrh.jpg"
       ];
-
       // Make a POST Request to Messaging API to reply to sender
       $url = 'https://api.line.me/v2/bot/message/push';
       $data = [
@@ -206,7 +202,6 @@ function send_Menu($userid){
               
           ]
       ];
-
       // Make a POST Request to Messaging API to reply to sender
       $url = 'https://api.line.me/v2/bot/message/push';
       $data = [
