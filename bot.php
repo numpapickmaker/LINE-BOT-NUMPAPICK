@@ -36,6 +36,7 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'follow') {
 			$userId = $event['source']['userId'];
 			send_Menu($userId);
+			send_PRESS($userid);
 		}
 		else if ($event['type'] == 'postback') {
 			$userId = $event['source']['userId'];
