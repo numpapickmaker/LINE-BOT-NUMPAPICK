@@ -113,7 +113,7 @@ function send_PRESS($userid){
                   [
                     "type"=> "uri",
                     "label"=> "call",
-                    "text"=> "tel:0846823134"
+                    "text"=> "http://app.midatdb.com/PFrCbTJd2J"
                   ]
               ]
           ]
