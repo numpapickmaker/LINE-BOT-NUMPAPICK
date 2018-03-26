@@ -110,10 +110,10 @@ function send_PRESS($userid){
                     "label"=> "Acknowledge",
                     "text"=> "Acknowledge"
                   ],
-                  [
+                   [
                     "type"=> "uri",
-                    "label"=> "call",
-                    "text"=> "http://app.midatdb.com/PFrCbTJd2J"
+                    "label"=> "View detail",
+                    "uri"=> "http://app.midatdb.com/PFrCbTJd2J"
                   ]
               ]
           ]
