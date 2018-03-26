@@ -10,16 +10,13 @@
 <body>
 
 <style>
-
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
 }
-
 p {
     font-family: verdana;
     font-size: 20px;
@@ -33,11 +30,10 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 .kanit {
-	font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }.Taviraj {
-	font-family: 'Taviraj', serif;
+  font-family: 'Taviraj', serif;
     font-size: 20px;
     margin: 24px 20px;
 }
@@ -63,18 +59,44 @@ input[type=text], select {
     width: 100%;
     
 }
-
-
 </style>
 <?php
   $username= $_GET["action"];
-	echo $username;
+  echo $username;
+  //echo $_GET["action"];
+  
+ $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     $sql ="SELECT * FROM user_info WHERE id='".$_GET["action"]."';";
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         $checking = 0;
+         $n = 1;
+         while($row = pg_fetch_row($ret) ){
+          header("Location: https://numpapick.herokuapp.com/user_info.php?action="+$username);
+          die();
+         }
+         
+         //echo "Records created successfully\n";
+      }
+     
+      pg_close($db) ;   
 ?>
 <div class="w3-container" id="demo">
 
   <h1 class="kanit" style = "color: #072140; ">จัดการข้อมูล</h1>
   <br>
-	<label for="fname" class = "Taviraj" style = "color: #808080; ">แก้ไขประวัติผู้ดูแล</label>
+  <label for="fname" class = "Taviraj" style = "color: #808080; ">แก้ไขประวัติผู้ดูแล</label>
 
     <ul class="w3-ul">
     <li> </li>
@@ -119,4 +141,4 @@ input[type=text], select {
 </div>
 
 </body>
-</html> 
+</html>
