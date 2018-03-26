@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       }
-       $sql ="SELECT * FROM user_info WHERE id='".$_GET["action"]."';";
+       $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
         $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
