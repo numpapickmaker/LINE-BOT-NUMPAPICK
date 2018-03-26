@@ -87,7 +87,7 @@ input[type=text], select {
           $checking = 1;
          }
          if($checking != 0 ){
-         header("Location: https://numpapick.herokuapp.com/user_info.php?action="+$username);
+          header("Location: https://numpapick.herokuapp.com/user_info.php");
          //echo "Records created successfully\n";
        }
       }
