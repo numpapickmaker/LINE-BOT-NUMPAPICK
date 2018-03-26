@@ -61,12 +61,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-          $check_id =0;
+          $check_id = 0;
          while($row = pg_fetch_row($ret) ){
             $check_id=1;
-             
+             echo "check_id ==1";
          }
          if($check_id == 0){
+          echo "check_id ==0";
                 $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
                 $ret = pg_query($db, $sql) ;
                 if(!$ret) {
