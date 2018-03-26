@@ -9,7 +9,7 @@ echo $userid;
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo $_POST["firstname"];
-    echo $userid;
+    echo $userid = $_POST["action"];
     // Check if username is empty
     if(empty(trim($_POST["firstname"]))){
         $firstname_err = 'Please enter firstname.';
@@ -113,16 +113,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
 <style>
-
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
 }
-
 p {
     font-family: verdana;
     font-size: 20px;
@@ -136,7 +133,6 @@ input[type=text],input[type=date], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 .kanit {
   font-family: 'Kanit', sans-serif;
 }.Taviraj {
