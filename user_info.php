@@ -9,7 +9,7 @@ $userid = $_GET["action"];
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo $_POST["firstname"];
-    $userid = $_POST["userid"];
+    echo $userid;
     // Check if username is empty
     if(empty(trim($_POST["firstname"]))){
         $firstname_err = 'Please enter firstname.';
