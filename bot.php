@@ -58,12 +58,12 @@ if (!is_null($events['events'])) {
 			      $topic = $splitMsg[0];
 			      $msg = $splitMsg[1];
 			        if($topic == "Login" || $topic == "login"){
-					
-						check_login($userId, $msg);
+						send_FALL($userid);
+						//check_login($userId, $msg);
 					}
 					if($topic == "Logout" || $topic == "logout"){
-					
-						check_userlogout($userId, $msg);
+						send_PRESS($userid);
+						//check_userlogout($userId, $msg);
 					}
 			    }else{	    
 					if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
