@@ -12,7 +12,7 @@ if( $_GET["Firstname"]|| $_GET["Lastname"]|| $_GET["Phone"]|| $_GET["Email"]|| $
          //echo "Opened database successfully\n";
       }
      $sql ="update user_info set firstname='".$_GET["Firstname"]."',lastname='".$_GET["Lastname"]."',phone='".$_GET["Phone"]."',email='".$_GET["Email"]."',career='".$_GET["Career"]."' ,birthday='".$_GET["Birthday"]."' where id='".$_GET["action"]."';";
-    echo $sql;
+   
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
         // echo pg_last_error($db) ;
@@ -220,7 +220,7 @@ function Edit() {
  <ul class="w3-ul">
     <li> </li>
     <br>    
- <form  action="https://numpapick.herokuapp.com/manage.php" method="get">
+ <form  action="https://numpapick.herokuapp.com/main.php" method="get">
     <button class="button button2" value="<?php echo $_GET["action"];?>" name="action">Back</button>
     
 </form>
