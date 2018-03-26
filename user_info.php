@@ -5,7 +5,7 @@
 $firstname = $lastname = $phone=$email = $career= $birthday ="";
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
 $userid = $_GET["action"];
-
+echo $userid;
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     echo $_POST["firstname"];
@@ -56,40 +56,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       }
-      $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
-     
-    $ret = pg_query($db, $sql) ;
+       $sql ="SELECT * FROM user_info WHERE id='".$_GET["action"]."';";
+        $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
-       
+          $check_id =0;
          while($row = pg_fetch_row($ret) ){
-
-            $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
-            
+            $check_id=1;
              
          }
-        
-              
-              $ret = pg_query($db, $sql) ;
-              if(!$ret) {
-                  echo pg_last_error($db) ;
-              } else {
-                  $checking = 0;   
-                   while($row = pg_fetch_row($ret)){
-                     //  echo "ESP name = " . $row[2] . "\n";
-                       // send_LINE('PASS')
-                        $checking = 1;     
-                        //send_LINE("you login already",$userid);
-                       // echo "string";     
-                     }  
-                     header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
+         if($check_id == 0){
+
+
+                $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
                
-                }
-     
-      pg_close($db) ;
-    }
-   }
+              $ret = pg_query($db, $sql) ;
+                if(!$ret) {
+                   echo pg_last_error($db) ;
+                } else {
+                 
+                   while($row = pg_fetch_row($ret) ){
+                      $row[0] = intval($row[0]+1);
+                      $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
+                      
+                       
+                   }
+                  
+                        
+                        $ret = pg_query($db, $sql) ;
+                        if(!$ret) {
+                            echo pg_last_error($db) ;
+                        } else {
+                            $checking = 0;   
+                             while($row = pg_fetch_row($ret)){
+                               //  echo "ESP name = " . $row[2] . "\n";
+                                 // send_LINE('PASS')
+                                  $checking = 1;     
+                                  //send_LINE("you login already",$userid);
+                                 // echo "string";     
+                               }  
+                               header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
+                         
+                          }
+               
+                pg_close($db) ;
+              }
+             }
+          }
  }
 ?>
 <!DOCTYPE html>
@@ -196,6 +210,7 @@ input[type=text],input[type=date], select {
   <p class="Taviraj">วัดเกิด</p> <input type="Date" id="fname" name="birthday"  class = "Taviraj" value="<?php echo $birthday; ?>"> 
   <span class="help-block"><?php echo $birthday_err; ?></span>
   </div>
+   <input type="hidden" name="action" value="<?php echo $userid; ?>">
   <input type="submit" class="button button1" value="Next"> 
   </form>
 
