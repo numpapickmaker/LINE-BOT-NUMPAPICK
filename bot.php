@@ -35,7 +35,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'follow') {
 			$userId = $event['source']['userId'];
-			send_PRESS($userid);
+			send_FALL($userid);
 			send_Menu($userId);
 			
 		}
