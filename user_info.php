@@ -56,7 +56,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       }
-      $sql ="SELECT MAX(userno) as LargestNO from user_info;";
+      $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
      
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
