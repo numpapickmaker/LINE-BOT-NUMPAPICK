@@ -83,11 +83,13 @@ input[type=text], select {
          $checking = 0;
          $n = 1;
          while($row = pg_fetch_row($ret) ){
-          header("Location: https://numpapick.herokuapp.com/user_info.php?action="+$username);
-          die();
+          
+          $checking = 1;
          }
-         
+         if($checking != 0 ){
+         header("Location: https://numpapick.herokuapp.com/user_info.php?action="+$username);
          //echo "Records created successfully\n";
+       }
       }
      
       pg_close($db) ;   
