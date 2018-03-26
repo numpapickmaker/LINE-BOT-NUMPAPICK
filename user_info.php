@@ -67,11 +67,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
              
          }
          if($check_id == 0){
-
-
                 $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
-               
-              $ret = pg_query($db, $sql) ;
+                $ret = pg_query($db, $sql) ;
                 if(!$ret) {
                    echo pg_last_error($db) ;
                 } else {
@@ -100,10 +97,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                          
                           }
                
-                pg_close($db) ;
+               
               }
-             }
-          }
+         }
+       }
+        pg_close($db) ;
+      }    
  }
 ?>
 <!DOCTYPE html>
