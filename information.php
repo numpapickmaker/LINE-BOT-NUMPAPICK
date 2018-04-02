@@ -60,26 +60,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
          if($checking == 0){
             // $username_err = 'No account found with that username.';
          }
-         //echo "Records created successfully\n";
-          $sql ="SELECT * FROM device WHERE Deviceid='".$_GET["view"]."';";
-		    $ret = pg_query($db, $sql) ;
-		      if(!$ret) {
-		         echo pg_last_error($db) ;
-		      } else {
-		         $checking = 0;
-		         while($row = pg_fetch_row($ret) ){
-		        //  echo "have espname = " . $row[1] . "\n";
-		          // send_LINE('PASS');
-		          //  header("location: bot.php");
-		          
-		           $Password = $row[3];
-		          
-		         }
-		         if($checking == 0){
-		            // $username_err = 'No account found with that username.';
-		         }
-		      }
-     
+         
       pg_close($db) ;   
       
 ?>
@@ -222,7 +203,7 @@ function Edit() {
             var g = document.getElementById("address").innerHTML;
             var h = document.getElementById("phone").innerHTML;
              var pw = document.getElementById("Password").innerHTML;
-           
+            document.getElementById("Password").innerHTML=''+pw+'<form action="https://numpapick.herokuapp.com/password.php" method="get">  <input type="hidden" name="username" class = "Taviraj" value="<?php echo $_GET["view"];?>" > <button  value="<?php echo $_GET["username"];?>"name="action">change password</button></form> ';
             document.getElementById("name").innerHTML='<input id="namefld" type="text" value="'+a+'"'+' />';
             document.getElementById("birthday").innerHTML='<input id="birthdayfld" type="date" value="'+b+'"'+' />';
             document.getElementById("sex").innerHTML='<input id="sexfld" type="radio" value="male" name="sexfld"'+male+' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '+female+'/> Female ';
