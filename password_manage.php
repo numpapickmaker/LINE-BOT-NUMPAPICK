@@ -9,6 +9,7 @@ $userid = $_GET["view"];
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //echo $_POST["userid"];
      $userid = $_POST["userid"];
+  
     // Check if username is empty
     if(empty(trim($_POST["newpassword"]))){
         $new_password_err = 'Please enter new password.';
@@ -18,12 +19,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     // Check if password is empty
     if(empty(trim($_POST['confpassword']))){
-        $password_err = 'Please confirm your password.';
+        $conf_password_err = 'Please confirm your password.';
     } else{
         $conf_password = trim($_POST['confpassword']);
     }
     if($new_password != $conf_password){
-        $password_err = 'Password not math.';
+        $conf_password_err = 'Password not math.';
     }
      if(empty($new_password_err) && empty($conf_password)){
             
@@ -166,7 +167,7 @@ input[type=text],input[type=password], select {
                 <input type="password" name="confpassword" class = "Taviraj" placeholder="password" >
                 <span class="help-block"><?php echo $conf_password_err; ?></span>
             </div>
-              <input type="hidden" name="userid" class = "Taviraj" value="<?php echo $userid; ?>">         
+              <input type="text" name="userid" class = "Taviraj" value="<?php echo $userid; ?>" hidden>         
              <ul class="w3-ul">
     <li> </li>
     <br>
