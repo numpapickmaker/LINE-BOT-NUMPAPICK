@@ -25,7 +25,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
 }
 //echo $_GET["view"];
   $Test = $_GET["view"];
-  $No =$Device_id =$Name =$Birthday =$Sex =$Heigth =$Weigth =$disease =$address = $phone =   $Password = "";
+  $No =$Device_id =$Name =$Birthday =$Sex =$Heigth =$Weigth =$disease =$address = $phone = $Password = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -61,24 +61,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
             // $username_err = 'No account found with that username.';
          }
          //echo "Records created successfully\n";
-          $sql ="SELECT * FROM device WHERE Deviceid='".$_GET["view"]."';";
-    $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-         echo pg_last_error($db) ;
-      } else {
-         $checking = 0;
-         while($row = pg_fetch_row($ret) ){
-        //  echo "have espname = " . $row[1] . "\n";
-          // send_LINE('PASS');
-          //  header("location: bot.php");
-          
-           $Password = $row[3];
-          
-         }
-         if($checking == 0){
-            // $username_err = 'No account found with that username.';
-         }
-      }
+         
      
       pg_close($db) ;   
       
