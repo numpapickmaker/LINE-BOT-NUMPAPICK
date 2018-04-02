@@ -222,7 +222,7 @@ function Edit() {
             var g = document.getElementById("address").innerHTML;
             var h = document.getElementById("phone").innerHTML;
              var pw = document.getElementById("Password").innerHTML;
-            document.getElementById("Password").innerHTML=''+pw+'<form action="https://numpapick.herokuapp.com/password.php" method="get">  <input type="hidden" name="username" class = "Taviraj" value="<?php echo $_GET["view"];?>" > <button  value="<?php echo $_GET["username"];?>"name="action">change password</button></form> ';
+           
             document.getElementById("name").innerHTML='<input id="namefld" type="text" value="'+a+'"'+' />';
             document.getElementById("birthday").innerHTML='<input id="birthdayfld" type="date" value="'+b+'"'+' />';
             document.getElementById("sex").innerHTML='<input id="sexfld" type="radio" value="male" name="sexfld"'+male+' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '+female+'/> Female ';
