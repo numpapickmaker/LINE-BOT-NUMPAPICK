@@ -64,62 +64,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
       }
      
       pg_close($db) ;   
-$new_password = $conf_password = "";
-$new_password_err = $conf_password_err = "";
-//$userid = $_GET["add"];
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    //echo $_POST["userid"];
-     $userid = $_POST["userid"];
-    // Check if username is empty
-    if(empty(trim($_POST["newpassword"]))){
-        $new_password_err = 'Please enter new password.';
-    } else{
-        $new_password = trim($_POST["newpassword"]);
-    }
-    
-    // Check if password is empty
-    if(empty(trim($_POST['confpassword']))){
-        $password_err = 'Please confirm your password.';
-    } else{
-        $conf_password = trim($_POST['confpassword']);
-    }
-    if($new_password != $conf_password){
-        $password_err = 'Password not math.';
-    }
-     if(empty($new_password_err) && empty($conf_password)){
-            
-   
-      $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
-      $port        = "port=5432";
-      $dbname      = "dbname=ddagopqfb1uood";
-      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
-      if(!$db) {
-         echo "Error : Unable to open database\n";
-      } else {
-         //echo "Opened database successfully\n";
-      } 
-      $sql ="UPDATE device VALUES SET password='".$new_password."' WHERE Deviceid='".$userid."';";
-    $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-         echo pg_last_error($db) ;
-      } else {
-         $checking = 0;
-         while($row = pg_fetch_row($ret) ){
-          echo "have espname = " . $row[0] . "\n";
-          // send_LINE('PASS');
-            $checking = 1;
-            
-             
-         }
-         
-         //echo "Records created successfully\n";
-      }
-     
-      pg_close($db) ;
-    }
-   } 
+      
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -209,46 +154,6 @@ input[type=text], select {
   position: relative;
     
 }
-
-
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content */
-.modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaaaaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
     </style>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -290,9 +195,9 @@ function Edit() {
             var c = document.getElementById("sex").innerHTML;
             var male,female;
             if(c=='male'){
-              male='checked';
+            	male='checked';
             }else{
-              female='checked';
+            	female='checked';
             }
             var d = document.getElementById("heigth").innerHTML;
             var e = document.getElementById("weigth").innerHTML;
@@ -330,67 +235,6 @@ function Edit() {
     <button class="button button2" value="<?php echo $_GET["username"];?>" name="action">Back</button>
     
 </form>
-<!-- Trigger/Open The Modal -->
-<button class="button button2" id="myBtn">Change password</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content">
-    <span class="close">&times;</span>
-     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <label for="fname" class = "Taviraj" >New password</label><br>
-                <input type="password" name="newpassword" class = "Taviraj" placeholder="password" >
-                <input type="hidden" name="userid" class = "Taviraj" value="<?php echo $userid; ?>"></input>
-                <span class="help-block"><?php echo $new_password_err; ?></span>
-            </div>    
-            <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <label for="fname" class = "Taviraj" >Confirm password</label><br>
-                <input type="password" name="confpassword" class = "Taviraj" placeholder="password" >
-                <span class="help-block"><?php echo $conf_password_err; ?></span>
-            </div>
-                       
-             <ul class="w3-ul">
-    <li> </li>
-    <br>
-                <input type="submit" class="button button1" value="save">
-               
-    
-
-        </form>
-  </div>
-
-</div>
-
-<script>
-// Get the modal
-var modal = document.getElementById('myModal');
-
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the modal 
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
 <button class="button button1" id="edit_btn" onclick="Edit()">Edit</button>
 <button class="button button3" id="cancel_btn" style="display:none" onclick="Cancel()" >Cancel</button>
 <br>
