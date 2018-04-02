@@ -12,7 +12,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      $userid = $_POST["userid"];
   	 $Deviceid = $_POST["Deviceid"];
   	 echo $Deviceid;
-  	
+
     // Check if username is empty
     if(empty(trim($_POST["newpassword"]))){
         $new_password_err = 'Please enter new password.';
@@ -42,7 +42,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       } 
+
       $sql ="UPDATE device VALUES SET password='".$new_password."' WHERE Deviceid='".$Deviceid."';";
+      echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
