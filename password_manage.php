@@ -29,7 +29,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if($new_password != $conf_password){
         $conf_password_err = 'Password not math.';
     }
-     if(empty($new_password_err) && empty($conf_password)){
+     if(empty($new_password_err) && empty($conf_password_err)){
             
    
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
