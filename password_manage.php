@@ -4,13 +4,13 @@
 // Define variables and initialize with empty values
 $new_password = $conf_password = "";
 $new_password_err = $conf_password_err = "";
-$userid = $_GET["action"];
+$userid = $_GET["username"];
 $Deviceid = $_GET["view"];
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //echo $_POST["userid"];
      $userid = $_POST["userid"];
-  
+  	 $Deviceid = $_POST["Deviceid"];
     // Check if username is empty
     if(empty(trim($_POST["newpassword"]))){
         $new_password_err = 'Please enter new password.';
@@ -147,11 +147,11 @@ input[type=text],input[type=password], select {
 </head>
 <body>
     <div class="w3-container" >
-        <h1 class="kanit">Login</h1>
+        <h1 class="kanit">Change password</h1>
         <ul class="w3-ul">
     <li> </li>
     <br>    
-        <h3 class="kanit">Please fill in your credentials to login.</h3>
+        <h3 class="kanit">Please fill your new password.</h3>
 
 
     
@@ -168,7 +168,8 @@ input[type=text],input[type=password], select {
                 <input type="password" name="confpassword" class = "Taviraj" placeholder="password" >
                 <span class="help-block"><?php echo $conf_password_err; ?></span>
             </div>
-              <input type="hidden" name="userid" class = "Taviraj" value="<?php echo $Deviceid; ?>" >         
+              <input type="hidden" name="Deviceid" class = "Taviraj" value="<?php echo $Deviceid; ?>" >    
+              <input type="hidden" name="username" class = "Taviraj" value="<?php echo $userid; ?>" >      
              <ul class="w3-ul">
     <li> </li>
     <br>
@@ -179,8 +180,8 @@ input[type=text],input[type=password], select {
         </form>
         <br>
          <form action="https://numpapick.herokuapp.com/information.php" method="get">
-         <input type="hidden" name="action" class = "Taviraj" value="<?php echo $userid; ?>" >    
-    <button class="button button2" value="<?php echo $userid;?>" name="view">Back</button></form>
+         <input type="hidden" name="username" class = "Taviraj" value="<?php echo $userid; ?>" >    
+    <button class="button button2" value="<?php echo $Deviceid;?>" name="view">Back</button></form>
     </div>    
 </body>
 </html>
