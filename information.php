@@ -60,7 +60,10 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
          if($checking == 0){
             // $username_err = 'No account found with that username.';
          }
-         
+         //echo "Records created successfully\n";
+    
+		      }
+     
       pg_close($db) ;   
       
 ?>
