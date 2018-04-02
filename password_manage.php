@@ -4,7 +4,8 @@
 // Define variables and initialize with empty values
 $new_password = $conf_password = "";
 $new_password_err = $conf_password_err = "";
-$userid = $_GET["view"];
+$userid = $_GET["action"];
+$Deviceid = $_GET["view"];
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     //echo $_POST["userid"];
@@ -39,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } else {
          //echo "Opened database successfully\n";
       } 
-      $sql ="UPDATE device VALUES SET password='".$new_password."' WHERE Deviceid='".$userid."';";
+      $sql ="UPDATE device VALUES SET password='".$new_password."' WHERE Deviceid='".$Deviceid."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -167,7 +168,7 @@ input[type=text],input[type=password], select {
                 <input type="password" name="confpassword" class = "Taviraj" placeholder="password" >
                 <span class="help-block"><?php echo $conf_password_err; ?></span>
             </div>
-              <input type="text" name="userid" class = "Taviraj" value="<?php echo $userid; ?>" hidden>         
+              <input type="hidden" name="userid" class = "Taviraj" value="<?php echo $Deviceid; ?>" >         
              <ul class="w3-ul">
     <li> </li>
     <br>
@@ -177,8 +178,9 @@ input[type=text],input[type=password], select {
 
         </form>
         <br>
-         <form action="https://numpapick.herokuapp.com/manage.php" method="get">
-    <button class="button button2" value="<?php echo $userid;?>" name="action">Back</button></form>
+         <form action="https://numpapick.herokuapp.com/information.php" method="get">
+         <input type="hidden" name="action" class = "Taviraj" value="<?php echo $userid; ?>" >    
+    <button class="button button2" value="<?php echo $userid;?>" name="view">Back</button></form>
     </div>    
 </body>
 </html>
