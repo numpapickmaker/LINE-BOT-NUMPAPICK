@@ -11,8 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //echo $_POST["userid"];
      $userid = $_POST["userid"];
   	 $Deviceid = $_POST["Deviceid"];
-  	 echo $Deviceid;
-
+  	 
     // Check if username is empty
     if(empty(trim($_POST["newpassword"]))){
         $new_password_err = 'Please enter new password.';
@@ -44,7 +43,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       } 
 
       $sql ="UPDATE device VALUES SET password='".$new_password."' WHERE Deviceid='".$Deviceid."';";
-      echo $sql;
+      
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -62,6 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
      
       pg_close($db) ;
+      header( 'Location: https://numpapick.herokuapp.com/information.php?username=$userid&view=$Deviceid' );
     }
    } 
 ?>
