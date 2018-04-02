@@ -61,7 +61,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       }
      
       pg_close($db) ;
-      header( 'Location: https://numpapick.herokuapp.com/information.php?username='"$userid"'&view='"$Deviceid");
+
+      header( "Location: information.php?username=$userid&view=$Deviceid");
     }
    } 
 ?>
