@@ -218,11 +218,11 @@ span.psw {
   </table>
    
 </div>
-	<input type="hidden" id="userid" value="<?php echo $userid; ?>">
+	
     <p><button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
     <p><button class="prevbutton" >ย้อนกลับ</button></p>
 	<p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
-	
+	<input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
  
  <!--<div class="Row">
  <div style="text-align:center;margin-top:40px;">
@@ -296,15 +296,16 @@ window.onclick = function(event) {
     }
 }
 function edit(){
-	var userid = document.getElementById('userid');
-    var deviceid = document.getElementById('deviceid');
+	var userid = document.getElementById('userid').value;
+    var deviceid = document.getElementById('deviceid').value.value;
 }
 function submit(){
-	var userid = document.getElementById('userid');
+	var userid = document.getElementById('userid').value;
 }
 
 function create_table(){
-	var userid = document.getElementById('userid');
+	var userid = document.getElementById('userid').value;
+   
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
