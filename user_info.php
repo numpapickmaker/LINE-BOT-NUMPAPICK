@@ -26,9 +26,9 @@ p {
 }
 /* Full-width input fields */
 .kanit {
-	font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }.Taviraj {
-	font-family: 'Taviraj', serif;
+  font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -49,7 +49,7 @@ p {
     border: 2px solid #072140;
 }
 .nextbutton{
-	 background-color: #072140; 
+   background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -65,7 +65,7 @@ p {
     border: 2px solid #072140;
 }
 .addbutton{
-	 background-color: white; 
+   background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -188,66 +188,61 @@ span.psw {
     <p id="career_error"></p>
     <p id="test" class="Taviraj">วัดเกิด</p> 
     <input type="Date" id="birthday" name="birthday"  class = "Taviraj" > 
-	<p id="birthday_error"></p>
- 	<div style="text-align: center;">
-   	<input type="hidden" name="userid" id="userid" value="<?php echo $userid;>">
+  <p id="birthday_error"></p>
+  <div style="text-align: center;">
+    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
     
-  	   <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
-	</div>
- 	
-
-
+       <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
+  </div>
+  
 <div class="footer">
   <p>   </p>
 </div>
 <script>
-
 function user(){
-	 
+   
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
-
     var phone = document.getElementById("phone").value;
-	var email = document.getElementById("email").value;
+  var email = document.getElementById("email").value;
     var career = document.getElementById("career").value;
     var birthday = document.getElementById("birthday").value;
     var userid = document.getElementById("userid").value;
-
-	if(fname.length == 0){
-    	   document.getElementById("fname_error").innerHTML = "กรุณาใส่ชื่อ";
+  if(fname.length == 0){
+         document.getElementById("fname_error").innerHTML = "กรุณาใส่ชื่อ";
             return;
     }else{
-    	 document.getElementById("fname_error").innerHTML = "";
+       document.getElementById("fname_error").innerHTML = "";
     }
     if(lname.length == 0){
-    	 document.getElementById("lname_error").innerHTML = "กรุณาใส่นามสกุล";
+       document.getElementById("lname_error").innerHTML = "กรุณาใส่นามสกุล";
             return;
     }else{
-    	document.getElementById("lname_error").innerHTML = "";
+      document.getElementById("lname_error").innerHTML = "";
     }
     if(phone.length == 0){
-    	 document.getElementById("phone_error").innerHTML = "กรุณาใส่เบอร์โทรศัพท์";
+       document.getElementById("phone_error").innerHTML = "กรุณาใส่เบอร์โทรศัพท์";
             return;
     }else{
-    	document.getElementById("phone_error").innerHTML = "";
+      document.getElementById("phone_error").innerHTML = "";
     }
     if(email.length == 0){
-    	 document.getElementById("email_error").innerHTML = "กรุณาใส่อีเมล";
+       document.getElementById("email_error").innerHTML = "กรุณาใส่อีเมล";
             return;
     }else{
-    	document.getElementById("email_error").innerHTML = "";
+      document.getElementById("email_error").innerHTML = "";
     }
     if(career.length == 0){
-    	 document.getElementById("career_error").innerHTML = "กรุณาใส่อาชีพ";
+       document.getElementById("career_error").innerHTML = "กรุณาใส่อาชีพ";
             return;
     }else{
-    	document.getElementById("career_error").innerHTML = "";
+      document.getElementById("career_error").innerHTML = "";
     }
     if(birthday.length == 0){
-    	 document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
+       document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
             return;
     }else{
-    	document.getElementById("birthday_error").innerHTML = "";
+      document.getElementById("birthday_error").innerHTML = "";
     }
     
         var xmlhttp = new XMLHttpRequest();
