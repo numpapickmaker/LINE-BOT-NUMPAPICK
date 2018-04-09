@@ -227,24 +227,26 @@ span.psw {
     </div>
 
     <div class="container Taviraj" >
-      <p>
+ <p>
+ 		
       <label for="uname"><b>อุปกรณ์</b></label>
-      <input type="text" placeholder="เลขอุปกรณ์" name="uname" required>
-	  <p>
+      <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
+	  <p id="uname_error"></p>
       <label for="psw"><b>รหัสผ่าน</b></label>
-      <input type="password" placeholder="รหัสผ่านเดิม" name="psw" required>
-      <input type="password" placeholder="รหัสผ่านใหม่" name="psw2" required>
-      <input  type="password" placeholder="ยืนยันรหัสผ่านใหม่" name="psw3" required>
+      <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" required>
+  
+      <p id="psw_error"></p>
       <p>
-      <label for="psw"><b>ข้อมูลผู้สูงอายุ</b></label>
-      <input  type="password" placeholder="ชื่อ" name="psw4" required>
-      <input  type="password" placeholder="นามสกุล" name="psw5" required>
-      <input  type="password" placeholder="........" name="psw6" required>
+     
       <p><p><p><p>
-      <button class="prevbutton" style = "font-size: 18px; width:40%"> ย้อนกลับ</button>
-     <button class="nextbutton" style = "font-size: 18px; width:40%"> ถัดไป</button>
-    
-    </div>
+     <input type="hidden" id="userid" name="userid" value="<?php echo $userid;" >
+     <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
+   
+   
+
+
+   
+  </div>
 
    
   </form>
