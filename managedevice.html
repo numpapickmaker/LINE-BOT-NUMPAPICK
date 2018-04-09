@@ -1,6 +1,5 @@
 <?php 
 $userid = $_GET["userid"];
-echo $userid;
 ?>
 <!DOCTYPE html>
 <html>
@@ -219,7 +218,7 @@ span.psw {
   </table>
    
 </div>
-	<input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
+	<input  name="userid" id="userid" value="<?php echo $userid;?>">
     <p><button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
     <p><button class="prevbutton" >ย้อนกลับ</button></p>
 	<p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
