@@ -27,7 +27,7 @@ $result = "";
       } else {
          $checking = 0;
          while($row = pg_fetch_row($ret) ){
-          echo "have espname = " . $row[1] . "\n";
+          //echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
             $checking = 1;
             
