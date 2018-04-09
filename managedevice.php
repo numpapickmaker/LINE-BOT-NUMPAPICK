@@ -227,9 +227,7 @@ span.psw {
     </div>
 
     <div class="container Taviraj" >
- <p>
- 		
-      <label for="uname"><b>อุปกรณ์</b></label>
+        <label for="uname"><b>อุปกรณ์</b></label>
       <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
 	  <p id="uname_error"></p>
       <label for="psw"><b>รหัสผ่าน</b></label>
@@ -239,15 +237,10 @@ span.psw {
       <p>
      
       <p><p><p><p>
-     <input type="hidden" id="userid" name="userid" value="<?php echo $userid;" >
-     <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
-   
-   
+     
+     <button class="nextbutton"   style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
 
-
-   
   </div>
-
    
   </form>
 </div>
