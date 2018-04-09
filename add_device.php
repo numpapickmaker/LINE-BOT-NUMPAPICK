@@ -193,11 +193,11 @@ if(!empty($create_table)){
           
           // send_LINE('PASS');
           //  header("location: bot.php");
-
-            $result =+ "<tr>";
-            $result =+ "<td>".$row[0]."</td>";
-            $result =+ "<td>".$row[1]."</td>";
-            $result =+ '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
+            
+            echo "<tr>";
+            echo "<td>".$row[0]."</td>";
+           echo "<td>".$row[1]."</td>";
+            echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
 
          }
          if($checking == 0){
@@ -206,7 +206,7 @@ if(!empty($create_table)){
          }
          //echo "Records created successfully\n";
       }
-     echo $result;
+     //echo $result;
       pg_close($db) ;   
       
 
