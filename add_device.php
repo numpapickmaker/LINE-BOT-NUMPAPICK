@@ -182,16 +182,17 @@ if(!empty($create_table)){
          //echo "Opened database successfully\n";
       }
      $sql ="SELECT device_information.device_id , device_information.name from device_information inner join userline on device_information.device_id =userline.esp where userline.id='".$userid."';";
-      echo $sql;
+     
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
          $checking = 0;
          $n = 1;
          while($row = pg_fetch_row($ret) ){
-         // echo "have espname = " . $row[1] . "\n";
+           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
           //  header("location: bot.php");
+
             echo "<tr>";
             echo "<td>".$row[0]."</td>";
             echo "<td>".$row[1]."</td>";
