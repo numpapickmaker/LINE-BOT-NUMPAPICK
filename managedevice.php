@@ -4,31 +4,45 @@ $userid = $_GET["userid"];
 <!DOCTYPE html>
 <html>
 <head>
-<link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+  
 <style>
+	
 body {
     background-color: white;
 }
+
 h1 {
     color: #072140;
     text-align: center;
+}
+.table {
+    border-radius: 5px;
+    width: 100%;
+    margin: 0px auto;
+    float: none;
+}
+.table td {
+   text-align: center;   
 }
 p {
     font-family: verdana;
     font-size: 20px;
 }
 /* Full-width input fields */
+
 .kanit {
-  font-family: 'Kanit', sans-serif;
+	font-family: 'Kanit', sans-serif;
 }.Taviraj {
-  font-family: 'Taviraj', serif;
+	font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -49,7 +63,7 @@ p {
     border: 2px solid #072140;
 }
 .nextbutton{
-   background-color: #072140; 
+	 background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -65,7 +79,7 @@ p {
     border: 2px solid #072140;
 }
 .addbutton{
-   background-color: white; 
+	 background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -104,23 +118,28 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
-input[type=text], select {
+
+input[type=text], input[type=password] {
     width: 100%;
-    padding: 12px 28px;
-    margin: 8px 2px;
+    padding: 12px 20px;
+    margin: 8px 0;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
     box-sizing: border-box;
 }
+
 /* Set a style for all buttons */
+
+
 .container {
     padding: 16px;
 }
+
 span.psw {
     float: right;
     padding-top: 16px;
 }
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -135,6 +154,7 @@ span.psw {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -142,6 +162,7 @@ span.psw {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
+
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -151,113 +172,116 @@ span.psw {
     font-size: 35px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
+
 </style>
 </head>
 <body>
-<h1 class="kanit">กรอกข้อมูลเพื่อยืนยันตัวตน</h1>
 
 <p>
-    <div style="text-align: center;">
-    <span class="step" style="background-color: #000000;"></span>
+<h1 class="kanit">จัดการข้อมูลผู้ใช้งาน</h1>
+<p>   
+  
+<div style="text-align: center; ">
+  <span class="step"></span>
     <span class="step" ></span>
+    <span class="step" style="background-color: #000000;"></span>
+    
+    <div class="container" >
+    
+      <div id="listdevice">
+     </div>
+   
+</div>
+    <button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
+    <p><button class="prevbutton" >ย้อนกลับ</button></p>
+	<p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
+
+ <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">	
+ 
+ <!--<div class="Row">
+ <div style="text-align:center;margin-top:40px;">
+    <span class="step" style="background-color: #000000;"></span>
     <span class="step"></span>
-    <p>
+    <span class="step"></span>
+    <span class="step"></span>
+  </div>
+</div> -->
+
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
+    <div class="imgcontainer">
+      <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
-    <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
-    
-    <input type="text"  name="fname" id="fname" placeholder="ชื่อ" class = "Taviraj"  >
-    <p id="fname_error"></p>
-    <input type="text" id="lname" name="lastname" placeholder="นามสกุล" class = "Taviraj"  required>
-    <p id="lname_error"></p>
-    <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" >
-    <p id="phone_error"></p>
-    <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" >
-    <p id="email_error"></p>
-    <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" >
-    <p id="career_error"></p>
-    <p id="test" class="Taviraj">วัดเกิด</p> 
-    <input type="Date" id="birthday" name="birthday"  class = "Taviraj" > 
-  <p id="birthday_error"></p>
-  <div style="text-align: center;">
-    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
-    
-       <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
-  </div>
+    <div class="container Taviraj" >
+     <p>
+      <label for="uname"><b>อุปกรณ์</b></label>
+      <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
+    <p id="uname_error"></p>
+      <label for="psw"><b>รหัสผ่าน</b></label>
+      <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" required>
   
-<div class="footer">
-  <p>   </p>
-</div>
-<script>
-function user(){
+      <p id="psw_error"></p>
+      <p>
+     
+      <p><p><p><p>
+     <input type="hidden" id="userid" name="userid" value="<?php echo $userid;" >
+     <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
+    
+    </div>
+
    
-    var fname = document.getElementById("fname").value;
-    var lname = document.getElementById("lname").value;
-    var phone = document.getElementById("phone").value;
-  var email = document.getElementById("email").value;
-    var career = document.getElementById("career").value;
-    var birthday = document.getElementById("birthday").value;
-    var userid = document.getElementById("userid").value;
-  if(fname.length == 0){
-         document.getElementById("fname_error").innerHTML = "กรุณาใส่ชื่อ";
-            return;
-    }else{
-       document.getElementById("fname_error").innerHTML = "";
-    }
-    if(lname.length == 0){
-       document.getElementById("lname_error").innerHTML = "กรุณาใส่นามสกุล";
-            return;
-    }else{
-      document.getElementById("lname_error").innerHTML = "";
-    }
-    if(phone.length == 0){
-       document.getElementById("phone_error").innerHTML = "กรุณาใส่เบอร์โทรศัพท์";
-            return;
-    }else{
-      document.getElementById("phone_error").innerHTML = "";
-    }
-    if(email.length == 0){
-       document.getElementById("email_error").innerHTML = "กรุณาใส่อีเมล";
-            return;
-    }else{
-      document.getElementById("email_error").innerHTML = "";
-    }
-    if(career.length == 0){
-       document.getElementById("career_error").innerHTML = "กรุณาใส่อาชีพ";
-            return;
-    }else{
-      document.getElementById("career_error").innerHTML = "";
-    }
-    if(birthday.length == 0){
-       document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
-            return;
-    }else{
-      document.getElementById("birthday_error").innerHTML = "";
-    }
+  </form>
+</div>
+
+
+
+<div id="id02" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php">
     
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("birthday_error").innerHTML = this.responseText;
-                if(this.responseText == "success"){
-                	window.location.replace("https://numpapick.herokuapp.com/add_device1.html?userid="+userid);
-                }
-            }
-        };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
-        xmlhttp.send();
-    
+
+    <div class="container Taviraj" >
+      <p>
+      
+     <h1 class= "kanit">เริ่มต้นใช้งานสำเสร็จ</h1>
+     <p>
+     <i class="fas fa-check" style ="width: 100px; height: 100px; color: 	#32CD32;"></i>
+     <p>
+     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color: 	#32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
+     </div>
+   </form>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
+var modal = document.getElementById('id03');
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
+
+
+
+
 </script>
 </body>
 </html>
+
