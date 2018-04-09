@@ -199,24 +199,9 @@ span.psw {
     <span class="step" style="background-color: #000000;"></span>
     
     <div class="container" >
-                 
-  <table width="100%" class="table table-striped  Taviraj">
-    <thead>
-      <tr>
-        <th>หมายเลข</th>
-        <th>ผู้ใช้งาน</th>
-        <th>แก้ไข</th>
-      </tr>
-    </thead>
-    <tbody>
-    
-    <div id="listdevice">
-    
-     </div>
-       </tbody>
-       
-  </table>
-   
+    	<div id="listdevice">             
+  
+   		</div>
 </div>
 	
     <p><button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
