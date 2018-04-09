@@ -305,7 +305,7 @@ function submit(){
 
 function create_table(){
 	var userid = document.getElementById('userid').value;
-   
+     document.getElementById("listdevice").innerHTML = userid;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
