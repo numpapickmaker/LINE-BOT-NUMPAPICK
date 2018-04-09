@@ -209,9 +209,12 @@ span.psw {
       </tr>
     </thead>
     <tbody>
+    
     <div id="listdevice">
+    
      </div>
        </tbody>
+       
   </table>
    
 </div>
@@ -301,7 +304,7 @@ function submit(){
 }
 
 function create_table(){
-
+	var userid = document.getElementById('userid');
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
