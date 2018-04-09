@@ -310,7 +310,7 @@ function add() {
                 
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
+        xmlhttp.open("GET", 'https://numpapick.herokuapp.com/add_device.php?uname=' + uname + "&psw="+psw+"&userid="+userid, true);
         xmlhttp.send();
     }
 }
