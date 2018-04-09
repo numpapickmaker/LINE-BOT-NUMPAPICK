@@ -278,12 +278,13 @@ window.onclick = function(event) {
     }
 }
 function add() {
-  var modal = document.getElementById('id01');
+  
 
     var uname = document.getElementById("uname").value;
     var psw = document.getElementById("psw").value;
   var userid =  document.getElementById("userid").value;
    // var userid = url.searchParams.get("userid");  
+  
     if (uname.length == 0) { 
         document.getElementById("uname_error").innerHTML = "กรุณาใส่เลขอุปกรณ์";
         return;
@@ -309,6 +310,7 @@ function add() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
                   if(this.responseText == "success"){
+                  var modal = document.getElementById('id01');
                     modal.style.display = "none";
                     create_table();
                 }
