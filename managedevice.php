@@ -269,11 +269,70 @@ span.psw {
 var modal = document.getElementById('id01');
 var modal = document.getElementById('id02');
 var modal = document.getElementById('id03');
+create_table();
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
+}
+function add() {
+    var uname = document.getElementById("uname").value;
+    var psw = document.getElementById("psw").value;
+  var userid =  document.getElementById("userid").value;
+   // var userid = url.searchParams.get("userid");  
+    if (uname.length == 0) { 
+        document.getElementById("uname_error").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+        return;
+    }else{
+       document.getElementById("uname_error").innerHTML = "";
+    }
+    if(psw.length == 0){
+      document.getElementById("psw_error").innerHTML = "กรุณาใส่รหัสผ่าน";
+        return;
+    }else{
+      document.getElementById("psw_error").innerHTML = "";
+    }
+    if(userid.length == 0){
+      document.getElementById("psw_error").innerHTML = "กรุณาออกจากระบบและเข้าใหม่";
+        return;
+    }else{
+      document.getElementById("psw_error").innerHTML = "";
+    }
+    
+    if(uname.length != 0 && psw.length != 0){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("uname_error").innerHTML = this.responseText;
+                
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
+        xmlhttp.send();
+    }
+}
+function edit(){
+  var userid = document.getElementById('userid').value;
+    var deviceid = document.getElementById('deviceid').value.value;
+}
+function submit(){
+  var userid = document.getElementById('userid').value;
+}
+
+function create_table(){
+  var userid = document.getElementById('userid').value;
+     document.getElementById("listdevice").innerHTML = userid;
+    var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("listdevice").innerHTML = this.responseText;
+                    
+                }
+            };
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1", true);
+            xmlhttp.send();
+
 }
 
 
