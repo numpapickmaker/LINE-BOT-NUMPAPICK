@@ -190,7 +190,7 @@ span.psw {
     <input type="Date" id="birthday" name="birthday"  class = "Taviraj" > 
   <p id="birthday_error"></p>
   <div style="text-align: center;">
-    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
+    <input  name="userid" id="userid" value="<?php echo $userid;?>">
     
        <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
   </div>
