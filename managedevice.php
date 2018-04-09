@@ -6,7 +6,7 @@ $userid = $_GET["userid"];
 <head>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
-  <link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -15,7 +15,7 @@ $userid = $_GET["userid"];
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   
 <style>
-  
+	
 body {
     background-color: white;
 }
@@ -40,9 +40,9 @@ p {
 /* Full-width input fields */
 
 .kanit {
-  font-family: 'Kanit', sans-serif;
+	font-family: 'Kanit', sans-serif;
 }.Taviraj {
-  font-family: 'Taviraj', serif;
+	font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -63,7 +63,7 @@ p {
     border: 2px solid #072140;
 }
 .nextbutton{
-   background-color: #072140; 
+	 background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -79,7 +79,7 @@ p {
     border: 2px solid #072140;
 }
 .addbutton{
-   background-color: white; 
+	 background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -199,15 +199,15 @@ span.psw {
     <span class="step" style="background-color: #000000;"></span>
     
     <div class="container" >
-      <div id="listdevice">             
+    	<div id="listdevice">             
   
-      </div>
+   		</div>
 </div>
-  
-    <p><button class="addbutton"   onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
+	
+    <p><button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
     <p><button class="prevbutton" >ย้อนกลับ</button></p>
-  <p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
-  
+	<p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
+	
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
  <!--<div class="Row">
  <div style="text-align:center;margin-top:40px;">
@@ -229,7 +229,7 @@ span.psw {
       <p>
       <label for="uname"><b>อุปกรณ์</b></label>
       <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
-    <p id="uname_error"></p>
+	  <p id="uname_error"></p>
       <label for="psw"><b>รหัสผ่าน</b></label>
       <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" required>
   
@@ -258,30 +258,26 @@ span.psw {
       
      <h1 class= "kanit">เริ่มต้นใช้งานสำเสร็จ</h1>
      <p>
-     <i class="fas fa-check" style ="width: 100px; height: 100px; color:  #32CD32;"></i>
+     <i class="fas fa-check" style ="width: 100px; height: 100px; color: 	#32CD32;"></i>
      <p>
-     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
+     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color: 	#32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
      </div>
    </form>
 </div>
 
 <script>
 // Get the modal
-
-
+var modal = document.getElementById('id01');
+var modal = document.getElementById('id02');
+var modal = document.getElementById('id03');
 create_table();
 // When the user clicks anywhere outside of the modal, close it
-var modal1= document.getElementById('id01');
-var modal2 = document.getElementById('id02');
-var modal3 = document.getElementById('id03');
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal1) {
-        modal1.style.display = "none";
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
 }
 function add() {
-
     var uname = document.getElementById("uname").value;
     var psw = document.getElementById("psw").value;
   var userid =  document.getElementById("userid").value;
@@ -310,9 +306,7 @@ function add() {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
-               if(this.responseText == "success"){
-                  modal1.style.display = "none";
-              }
+                
             }
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
@@ -320,15 +314,15 @@ function add() {
     }
 }
 function edit(){
-  var userid = document.getElementById('userid').value;
+	var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value.value;
 }
 function submit(){
-  var userid = document.getElementById('userid').value;
+	var userid = document.getElementById('userid').value;
 }
 
 function create_table(){
-  var userid = document.getElementById('userid').value;
+	var userid = document.getElementById('userid').value;
      document.getElementById("listdevice").innerHTML = userid;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
