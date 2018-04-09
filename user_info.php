@@ -190,7 +190,7 @@ span.psw {
     <input type="Date" id="birthday" name="birthday"  class = "Taviraj" > 
   <p id="birthday_error"></p>
   <div style="text-align: center;">
-    <input  name="userid" id="userid" value="<?php echo $userid;?>">
+    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
     
        <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
   </div>
@@ -242,7 +242,7 @@ function user(){
        document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
             return;
     }else{
-      document.getElementById("birthday_error").innerHTML = "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid"+userid;
+      document.getElementById("birthday_error").innerHTML = "";
     }
     
         var xmlhttp = new XMLHttpRequest();
@@ -252,7 +252,7 @@ function user(){
                  
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid"+userid, true);
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
         xmlhttp.send();
     
 }
