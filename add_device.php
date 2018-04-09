@@ -100,7 +100,7 @@ $birthday =$_REQUEST["birthday"];
 
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
 $userid = $_REQUEST["userid"];
-echo $userid;
+
 // Processing form data when form is submitted
 if(!empty($firstname)){
    
@@ -135,7 +135,7 @@ if(!empty($firstname)){
                    while($row = pg_fetch_row($ret) ){
                       $row[0] = intval($row[0]+1);
                       $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
-                      
+                      $result = $sql;
                        
                    }
                   
