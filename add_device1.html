@@ -240,7 +240,7 @@ window.onclick = function(event) {
 function add() {
     var uname = document.getElementById("uname").value;
     var psw = document.getElementById("psw").value;
-      
+    var userid = url.searchParams.get("userid");  
     if (uname.length == 0) { 
         document.getElementById("uname_error").innerHTML = "กรุณาใส่เลขอุปกรณ์";
         return;
@@ -260,7 +260,7 @@ function add() {
                 document.getElementById("uname_error").innerHTML = this.responseText;
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw, true);
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
         xmlhttp.send();
     }
 }
