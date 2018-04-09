@@ -307,8 +307,11 @@ function add() {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
-                if(this.responseText == "success"){
-                	modal1.style.display = "none";
+                var str = this.responseText;
+                if( str == "success"){
+                	create_table();
+                    modal1.style.display = "none";
+                    
                 }
             }
         };
