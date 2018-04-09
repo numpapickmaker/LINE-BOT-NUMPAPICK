@@ -307,7 +307,7 @@ function add() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
                   if(this.responseText == "success"){
-                   // modal.style.display = "none";
+                    modal.style.display = "none";
                 }
             }
         };
