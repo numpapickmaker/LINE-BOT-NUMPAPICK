@@ -237,7 +237,7 @@ span.psw {
       <p>
      
       <p><p><p><p>
-     
+     <input type="hidden" id="userid" name="userid" value="<?php echo $userid;" >
      <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
     
     </div>
@@ -267,24 +267,25 @@ span.psw {
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
-var modal = document.getElementById('id02');
-var modal = document.getElementById('id03');
+
+
 create_table();
 // When the user clicks anywhere outside of the modal, close it
+var modal1= document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var modal3 = document.getElementById('id03');
+// When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modal1) {
+        modal1.style.display = "none";
     }
 }
 function add() {
-  
 
     var uname = document.getElementById("uname").value;
     var psw = document.getElementById("psw").value;
   var userid =  document.getElementById("userid").value;
    // var userid = url.searchParams.get("userid");  
-  
     if (uname.length == 0) { 
         document.getElementById("uname_error").innerHTML = "กรุณาใส่เลขอุปกรณ์";
         return;
@@ -308,13 +309,10 @@ function add() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                
-                  if(this.responseText == "success"){
-                   document.getElementById("uname_error").innerHTML = this.responseText;
-                  	var modal = document.getElementById('id01');
-                    modal.style.display = "none";
-                    create_table();
-                }
+                document.getElementById("uname_error").innerHTML = this.responseText;
+               if(this.responseText == "success"){
+                  modal1.style.display = "none";
+              }
             }
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
