@@ -99,7 +99,7 @@ $career= $_REQUEST["career"];
 $birthday =$_REQUEST["birthday"];
 
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
-$userid = $_REQUEST["userid"];
+
 
 // Processing form data when form is submitted
 if(!empty($firstname)){
@@ -165,6 +165,47 @@ if(!empty($firstname)){
       
   }    
  
+$create_table = $_REQUEST["create"]; 
+if(!empty($create_table)){
 
+//echo $_GET["action"];
+  
+  $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
+ $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     $sql ="SELECT device_information.device_id , device_information.name from device_information inner join userline on device_information.device_id =userline.esp where userline.id='".$userid."';";
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         $checking = 0;
+         $n = 1;
+         while($row = pg_fetch_row($ret) ){
+         // echo "have espname = " . $row[1] . "\n";
+          // send_LINE('PASS');
+          //  header("location: bot.php");
+            echo "<tr>";
+            echo "<td>".$row[0]."</td>";
+            echo "<td>".$row[1]."</td>";
+            echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>'
+
+         }
+         if($checking == 0){
+            // $username_err = 'No account found with that username.';
+         }
+         //echo "Records created successfully\n";
+      }
+     
+      pg_close($db) ;   
+      
+?>
+}
 ?>
  
