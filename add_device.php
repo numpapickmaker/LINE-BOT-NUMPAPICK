@@ -169,7 +169,7 @@ $create_table = $_REQUEST["create"];
 if(!empty($create_table)){
 
 //echo $_GET["action"];
-  echo "create";
+  
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -182,6 +182,7 @@ if(!empty($create_table)){
          //echo "Opened database successfully\n";
       }
      $sql ="SELECT device_information.device_id , device_information.name from device_information inner join userline on device_information.device_id =userline.esp where userline.id='".$userid."';";
+      echo $sql;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
