@@ -220,7 +220,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <div class="modal-content animate" >
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -228,25 +228,22 @@ span.psw {
     <div class="container Taviraj" >
       <p>
       <label for="uname"><b>อุปกรณ์</b></label>
-      <input type="text" placeholder="เลขอุปกรณ์" name="uname" required>
-	  <p>
+      <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
+	  <p id="uname_error"></p>
       <label for="psw"><b>รหัสผ่าน</b></label>
-      <input type="password" placeholder="รหัสผ่านเดิม" name="psw" required>
-      <input type="password" placeholder="รหัสผ่านใหม่" name="psw2" required>
-      <input  type="password" placeholder="ยืนยันรหัสผ่านใหม่" name="psw3" required>
+      <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" required>
+  
+      <p id="psw_error"></p>
       <p>
-      <label for="psw"><b>ข้อมูลผู้สูงอายุ</b></label>
-      <input  type="password" placeholder="ชื่อ" name="psw4" required>
-      <input  type="password" placeholder="นามสกุล" name="psw5" required>
-      <input  type="password" placeholder="........" name="psw6" required>
+     
       <p><p><p><p>
-      <button class="prevbutton" style = "font-size: 18px; width:40%"> ย้อนกลับ</button>
-     <button class="nextbutton" style = "font-size: 18px; width:40%"> ถัดไป</button>
+     <input type="hidden" id="userid" name="userid" value="<?php echo $userid;" >
+     <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
     
     </div>
 
    
-  </form>
+  </div>
 </div>
 
 
@@ -278,6 +275,44 @@ create_table();
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+}
+function add() {
+    var uname = document.getElementById("uname").value;
+    var psw = document.getElementById("psw").value;
+  var userid =  document.getElementById("userid").value;
+   // var userid = url.searchParams.get("userid");  
+    if (uname.length == 0) { 
+        document.getElementById("uname_error").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+        return;
+    }else{
+       document.getElementById("uname_error").innerHTML = "";
+    }
+    if(psw.length == 0){
+      document.getElementById("psw_error").innerHTML = "กรุณาใส่รหัสผ่าน";
+        return;
+    }else{
+      document.getElementById("psw_error").innerHTML = "";
+    }
+    if(userid.length == 0){
+      document.getElementById("psw_error").innerHTML = "กรุณาออกจากระบบและเข้าใหม่";
+        return;
+    }else{
+      document.getElementById("psw_error").innerHTML = "";
+    }
+    
+    if(uname.length != 0 && psw.length != 0){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("uname_error").innerHTML = this.responseText;
+                	if(this.responseText == "success"){
+                		modal.style.display = "none";
+            		}
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
+        xmlhttp.send();
     }
 }
 function edit(){
