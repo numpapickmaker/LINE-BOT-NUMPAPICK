@@ -172,7 +172,7 @@ span.psw {
     </div>
 
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
-    <form name="myform" onsubmit="user()" >
+    
     <input type="text" id="fname" name="firstname" placeholder="ชื่อ" class = "Taviraj" value="<?php echo $firstname; ?>" required>
     <input type="text" id="lastname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="<?php echo $lastname; ?>" required>
     <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="<?php echo $phone; ?>" required>
@@ -184,10 +184,9 @@ span.psw {
  	<div style="text-align: center;">
    	<input type="hidden" name="action" value="<?php echo $userid; ?>">
     
-  	<button onclick="test()" class="nextbutton" >ถัดไป</button>
-    
+  	   <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
 	</div>
- 	</form>
+ 	
 
 
 <div class="footer">
@@ -195,16 +194,32 @@ span.psw {
 </div>
 <script>
 
-function user() {
-	
+function user(){
+	 
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
+    
     var phone = document.getElementById("phone").value;
 	var email = document.getElementById("email").valuea
     var career = document.getElementById("career").value;
     var birthday = document.getElementById("birthday").value;
     var userid = url.searchParams.get("userid");  
-    if(fname.length != 0 && lname.length != 0){
+	if(fname.length == 0){
+    	   document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+            return;
+    }else if(lname.length == 0){
+    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+            return;
+    }else if(phone.length == 0){
+    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+            return;
+    }else if(email.length == 0){
+    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+            return;
+    }else if(birthday.length == 0){
+    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+            return;
+    }else{
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
