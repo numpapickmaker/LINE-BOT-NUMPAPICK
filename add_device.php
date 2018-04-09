@@ -188,22 +188,34 @@ if(!empty($create_table)){
       } else {
          $checking = 0;
          $n = 1;
-         
+          echo '<table width="100%" class="table table-striped  Taviraj">';
+          echo '<thead>';
+          echo '<tr>';
+          echo '<th>หมายเลข</th>';
+          echo '<th>ผู้ใช้งาน</th>';
+          echo '<th>แก้ไข</th>';
+          echo '</tr>';
+          echo '</thead>';
+          echo '<tbody>';
+    
+    
+    
+     
+  
          while($row = pg_fetch_row($ret) ){
           
           // send_LINE('PASS');
           //  header("location: bot.php");
-            
-            echo "<tr>";
-            echo "<td>".$row[0]."</td>";
-           echo "<td>".$row[1]."</td>";
+
+            echo '<tr>';
+            echo '<td>'.$row[0].'</td>';
+           echo '<td>'.$row[1].'</td>';
             echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
 
          }
-         if($checking == 0){
-            // $username_err = 'No account found with that username.';
-
-         }
+      
+            echo '</tbody>';
+            echo '</table>';
          //echo "Records created successfully\n";
       }
      //echo $result;
