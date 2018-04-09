@@ -254,15 +254,16 @@ span.psw {
     
 
     <div class="container Taviraj" >
-      <p>
-      
-     <h1 class= "kanit">เริ่มต้นใช้งานสำเสร็จ</h1>
-     <p>
-     <i class="fas fa-check" style ="width: 100px; height: 100px; color: 	#32CD32;"></i>
-     <p>
-     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color: 	#32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
+	      <p>
+
+	     <h1 class= "kanit">เริ่มต้นใช้งานสำเสร็จ</h1>
+	     <p>
+	     <i class="fas fa-check" style='width: 100px; height: 100px; color:#32CD32;'></i>
+	     <p>
+	     <button class="nextbutton container Taviraj"  style = 'font-size: 24px; width:50% ; background-color:#32CD32; border: 2px solid white;'>  เสร็จสิ้น </button>
      </div>
    </form>
+		     
 </div>
 
 <script>
