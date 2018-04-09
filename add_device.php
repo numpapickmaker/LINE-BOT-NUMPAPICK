@@ -188,23 +188,25 @@ if(!empty($create_table)){
       } else {
          $checking = 0;
          $n = 1;
+         $result =+ "check";
          while($row = pg_fetch_row($ret) ){
            echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
           //  header("location: bot.php");
 
-            echo "<tr>";
-            echo "<td>".$row[0]."</td>";
-            echo "<td>".$row[1]."</td>";
-            echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
+            $result =+ "<tr>";
+            $result =+ "<td>".$row[0]."</td>";
+            $result =+ "<td>".$row[1]."</td>";
+            $result =+ '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
 
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
+          
          }
          //echo "Records created successfully\n";
       }
-     
+     echo $result;
       pg_close($db) ;   
       
 
