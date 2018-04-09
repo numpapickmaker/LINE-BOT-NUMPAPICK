@@ -1,3 +1,6 @@
+<?php 
+$userid = $_GET["userid"];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -173,16 +176,21 @@ span.psw {
 
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     
-    <input type="text" id="fname" name="firstname" placeholder="ชื่อ" class = "Taviraj" value="<?php echo $firstname; ?>" required>
-    <input type="text" id="lastname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="<?php echo $lastname; ?>" required>
-    <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="<?php echo $phone; ?>" required>
-    <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" value="<?php echo $email; ?>" required>
-    <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" value="<?php echo $career; ?>" required>
+    <input type="text"  name="fname" id="fname" placeholder="ชื่อ" class = "Taviraj"  >
+    <p id="fname_error"></p>
+    <input type="text" id="lname" name="lastname" placeholder="นามสกุล" class = "Taviraj"  required>
+    <p id="lname_error"></p>
+    <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" >
+    <p id="phone_error"></p>
+    <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" >
+    <p id="email_error"></p>
+    <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" >
+    <p id="career_error"></p>
     <p id="test" class="Taviraj">วัดเกิด</p> 
-    <input type="Date" id="birthday" name="birthday"  class = "Taviraj" value="<?php echo $birthday; ?>" required> 
-
+    <input type="Date" id="birthday" name="birthday"  class = "Taviraj" > 
+	<p id="birthday_error"></p>
  	<div style="text-align: center;">
-   	<input type="hidden" name="action" value="<?php echo $userid; ?>">
+   	<input type="hidden" name="userid" id="userid" value="<?php echo $userid;>">
     
   	   <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
 	</div>
@@ -198,38 +206,60 @@ function user(){
 	 
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
-    
+
     var phone = document.getElementById("phone").value;
-	var email = document.getElementById("email").valuea
+	var email = document.getElementById("email").value;
     var career = document.getElementById("career").value;
     var birthday = document.getElementById("birthday").value;
-    var userid = url.searchParams.get("userid");  
+    var userid = document.getElementById("userid").value;
+
 	if(fname.length == 0){
-    	   document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
-            return;
-    }else if(lname.length == 0){
-    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
-            return;
-    }else if(phone.length == 0){
-    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
-            return;
-    }else if(email.length == 0){
-    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
-            return;
-    }else if(birthday.length == 0){
-    	 document.getElementById("test").innerHTML = "กรุณาใส่เลขอุปกรณ์";
+    	   document.getElementById("fname_error").innerHTML = "กรุณาใส่ชื่อ";
             return;
     }else{
+    	 document.getElementById("fname_error").innerHTML = "";
+    }
+    if(lname.length == 0){
+    	 document.getElementById("lname_error").innerHTML = "กรุณาใส่นามสกุล";
+            return;
+    }else{
+    	document.getElementById("lname_error").innerHTML = "";
+    }
+    if(phone.length == 0){
+    	 document.getElementById("phone_error").innerHTML = "กรุณาใส่เบอร์โทรศัพท์";
+            return;
+    }else{
+    	document.getElementById("phone_error").innerHTML = "";
+    }
+    if(email.length == 0){
+    	 document.getElementById("email_error").innerHTML = "กรุณาใส่อีเมล";
+            return;
+    }else{
+    	document.getElementById("email_error").innerHTML = "";
+    }
+    if(career.length == 0){
+    	 document.getElementById("career_error").innerHTML = "กรุณาใส่อาชีพ";
+            return;
+    }else{
+    	document.getElementById("career_error").innerHTML = "";
+    }
+    if(birthday.length == 0){
+    	 document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
+            return;
+    }else{
+    	document.getElementById("birthday_error").innerHTML = "";
+    }
+    
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
-                 document.myform.action ="insert.html";
+                 
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid"+useid, true);
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid"+userid, true);
         xmlhttp.send();
-    }
+    
 }
 </script>
 </body>
