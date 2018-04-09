@@ -190,7 +190,7 @@ if(!empty($create_table)){
          $n = 1;
          
          while($row = pg_fetch_row($ret) ){
-           echo "have espname = " . $row[1] . "\n";
+          
           // send_LINE('PASS');
           //  header("location: bot.php");
 
