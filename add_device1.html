@@ -1,3 +1,6 @@
+<?php 
+$userid = $_GET["userid"];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -216,7 +219,7 @@ span.psw {
       <p>
      
       <p><p><p><p>
-     
+     <input type="hidden" id="userid" name="userid" value="<?php echo $userid;" >
      <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
    
     </div>
@@ -240,7 +243,8 @@ window.onclick = function(event) {
 function add() {
     var uname = document.getElementById("uname").value;
     var psw = document.getElementById("psw").value;
-    var userid = url.searchParams.get("userid");  
+ 	var userid =  document.getElementById("userid").value;
+   // var userid = url.searchParams.get("userid");  
     if (uname.length == 0) { 
         document.getElementById("uname_error").innerHTML = "กรุณาใส่เลขอุปกรณ์";
         return;
@@ -253,6 +257,13 @@ function add() {
     }else{
     	document.getElementById("psw_error").innerHTML = "";
     }
+    if(userid.length == 0){
+    	document.getElementById("psw_error").innerHTML = "กรุณาออกจากระบบและเข้าใหม่";
+        return;
+    }else{
+    	document.getElementById("psw_error").innerHTML = "";
+    }
+    
     if(uname.length != 0 && psw.length != 0){
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
