@@ -218,12 +218,12 @@ span.psw {
   </table>
    
 </div>
-	<input  name="userid" id="userid" value="<?php echo $userid;?>">
+	
     <p><button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
     <p><button class="prevbutton" >ย้อนกลับ</button></p>
 	<p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
 	
- 
+ <input  name="userid" id="userid" value="<?php echo $userid;?>">
  <!--<div class="Row">
  <div style="text-align:center;margin-top:40px;">
     <span class="step" style="background-color: #000000;"></span>
