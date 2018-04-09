@@ -242,7 +242,7 @@ function user(){
        document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
             return;
     }else{
-      document.getElementById("birthday_error").innerHTML = "";
+      document.getElementById("birthday_error").innerHTML = "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid"+userid;
     }
     
         var xmlhttp = new XMLHttpRequest();
