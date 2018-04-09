@@ -169,7 +169,7 @@ $create_table = $_REQUEST["create"];
 if(!empty($create_table)){
 
 //echo $_GET["action"];
-  
+  echo "create";
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
