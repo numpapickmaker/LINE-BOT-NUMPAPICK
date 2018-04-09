@@ -210,11 +210,6 @@ span.psw {
     </thead>
     <tbody>
     <div id="listdevice">
-      <tr>
-        <td>1001231</td>
-        <td>นายตรง</td>
-        <td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td>
-      </tr>
      </div>
        </tbody>
   </table>
@@ -304,12 +299,14 @@ function edit(){
 function submit(){
 	var userid = document.getElementById('userid');
 }
+
 function create_table(){
+
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("listtable").innerHTML = this.responseText;
-                        
+                    document.getElementById("listdevice").innerHTML = this.responseText;
+                    
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1", true);
