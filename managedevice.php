@@ -308,9 +308,10 @@ function add() {
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("uname_error").innerHTML = this.responseText;
+                
                   if(this.responseText == "success"){
-                  var modal = document.getElementById('id01');
+                   document.getElementById("uname_error").innerHTML = this.responseText;
+                  	var modal = document.getElementById('id01');
                     modal.style.display = "none";
                     create_table();
                 }
