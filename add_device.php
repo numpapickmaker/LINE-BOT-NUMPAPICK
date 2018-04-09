@@ -205,7 +205,7 @@ if(!empty($create_table)){
      
       pg_close($db) ;   
       
-?>
+
 }
 ?>
  
