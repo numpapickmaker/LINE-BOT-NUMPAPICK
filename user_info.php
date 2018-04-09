@@ -249,7 +249,9 @@ function user(){
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("birthday_error").innerHTML = this.responseText;
-                 
+                if(this.responseText == "success"){
+                	window.location.replace("https://numpapick.herokuapp.com/add_device1.html?userid="+userid);
+                }
             }
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
