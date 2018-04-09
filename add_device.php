@@ -182,13 +182,13 @@ if(!empty($create_table)){
          //echo "Opened database successfully\n";
       }
      $sql ="SELECT device_information.device_id , device_information.name from device_information inner join userline on device_information.device_id =userline.esp where userline.id='".$userid."';";
-     
+     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
          $checking = 0;
          $n = 1;
-         $result =+ "check";
+         
          while($row = pg_fetch_row($ret) ){
            echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
@@ -202,7 +202,7 @@ if(!empty($create_table)){
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
-          
+
          }
          //echo "Records created successfully\n";
       }
