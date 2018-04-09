@@ -238,7 +238,7 @@ span.psw {
      
       <p><p><p><p>
      
-     <button class="nextbutton"   style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
+     <button onclick="add()" class="nextbutton"   style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
 
   </div>
    
