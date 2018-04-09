@@ -194,7 +194,7 @@ if(!empty($create_table)){
             echo "<tr>";
             echo "<td>".$row[0]."</td>";
             echo "<td>".$row[1]."</td>";
-            echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>'
+            echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
 
          }
          if($checking == 0){
