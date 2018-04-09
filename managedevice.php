@@ -266,14 +266,16 @@ span.psw {
 
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
-var modal = document.getElementById('id02');
-var modal = document.getElementById('id03');
+var modal1 = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var modal3 = document.getElementById('id03');
 create_table();
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+        modal2.style.display = "none";
+        modal3.style.display = "none";
     }
 }
 function add() {
@@ -305,7 +307,9 @@ function add() {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
-                
+                if(this.responseText == "success"){
+                	modal1.style.display = "none";
+                }
             }
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?uname=" + uname + "&psw="+psw+"&userid="+userid, true);
