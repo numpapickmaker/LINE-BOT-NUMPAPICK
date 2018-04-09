@@ -1,111 +1,3 @@
-<?php
-// Include config file
-//cho $_GET["add"];
-// Define variables and initialize with empty values
-$firstname = $lastname = $phone=$email = $career= $birthday ="";
-$firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
-$userid = $_GET["action"];
-echo $userid;
-// Processing form data when form is submitted
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    echo $_POST["firstname"];
-    echo $userid = $_POST["action"];
-    // Check if username is empty
-    if(empty(trim($_POST["firstname"]))){
-        $firstname_err = 'Please enter firstname.';
-    } else{
-        $firstname = trim($_POST["firstname"]);
-    }
-    
-    // Check if password is empty
-    if(empty(trim($_POST['lastname']))){
-        $lastname_err = 'Please enter your lastname.';
-    } else{
-        $lastname = trim($_POST['lastname']);
-    }
-      if(empty(trim($_POST['phone']))){
-        $phone_err = 'Please enter your phone number.';
-    } else{
-        $phone = trim($_POST['phone']);
-    }
-      if(empty(trim($_POST['email']))){
-        $email_err = 'Please enter your email.';
-    } else{
-        $email = trim($_POST['email']);
-    }
-      if(empty(trim($_POST['career']))){
-        $career_err = 'Please enter your career.';
-    } else{
-        $career = trim($_POST['career']);
-    }
-      if(empty(trim($_POST['birthday']))){
-        $birthday_err = 'Please enter your birthday.';
-    } else{
-        $birthday = trim($_POST['birthday']);
-    }
-     if(empty($firstname_erris) && empty($lastname_err)){
-            
-      
-      $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
-      $port        = "port=5432";
-      $dbname      = "dbname=ddagopqfb1uood";
-      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
-      if(!$db) {
-         echo "Error : Unable to open database\n";
-      } else {
-         //echo "Opened database successfully\n";
-      }
-       $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
-        $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-         echo pg_last_error($db) ;
-      } else {
-          $check_id = 0;
-         while($row = pg_fetch_row($ret) ){
-            $check_id=1;
-             echo "check_id ==1";
-         }
-         if($check_id == 0){
-          echo "check_id ==0";
-                $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
-                $ret = pg_query($db, $sql) ;
-                if(!$ret) {
-                   echo pg_last_error($db) ;
-                } else {
-                 
-                   while($row = pg_fetch_row($ret) ){
-                      $row[0] = intval($row[0]+1);
-                      $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
-                      
-                       
-                   }
-                  
-                        
-                        $ret = pg_query($db, $sql) ;
-                        if(!$ret) {
-                            echo pg_last_error($db) ;
-                        } else {
-                            $checking = 0;   
-                             while($row = pg_fetch_row($ret)){
-                               //  echo "ESP name = " . $row[2] . "\n";
-                                 // send_LINE('PASS')
-                                  $checking = 1;     
-                                  //send_LINE("you login already",$userid);
-                                 // echo "string";     
-                               }  
-                               header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
-                         
-                          }
-               
-               
-              }
-         }
-       }
-        pg_close($db) ;
-      }    
- }
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -121,18 +13,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
 }
-
 p {
     font-family: verdana;
     font-size: 20px;
 }
 /* Full-width input fields */
-
 .kanit {
 	font-family: 'Kanit', sans-serif;
 }.Taviraj {
@@ -212,7 +101,6 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
-
 input[type=text], select {
     width: 100%;
     padding: 12px 28px;
@@ -222,19 +110,14 @@ input[type=text], select {
     border-radius: 4px;
     box-sizing: border-box;
 }
-
 /* Set a style for all buttons */
-
-
 .container {
     padding: 16px;
 }
-
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -249,7 +132,6 @@ span.psw {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
-
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -257,7 +139,6 @@ span.psw {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -267,19 +148,16 @@ span.psw {
     font-size: 35px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
-
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-
 </style>
 </head>
 <body>
@@ -292,42 +170,52 @@ span.psw {
     <span class="step"></span>
     <p>
     </div>
-<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
 
-    <label for="fname" class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
-    <div class="form-group <?php echo (!empty($firstname_err)) ? 'has-error' : ''; ?>">
-    <input type="text" id="fname" name="firstname" placeholder="ชื่อ" class = "Taviraj" value="<?php echo $firstname; ?>">
-    <span class="help-block"><?php echo $firstname_err; ?></span>
-    </div>
-    <div class="form-group <?php echo (!empty($lastname_err)) ? 'has-error' : ''; ?>">
-    <input type="text" id="fname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="<?php echo $lastname; ?>">
-    <span class="help-block"><?php echo $lastname_err; ?></span>
-    </div>
-    <div class="form-group <?php echo (!empty($phone_err)) ? 'has-error' : ''; ?>">
-    <input type="text" id="fname" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="<?php echo $phone; ?>">
-    <span class="help-block"><?php echo $phone_err; ?></span>
-    </div>
-    <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
-  <input type="text" id="fname" name="email" placeholder="อีเมล" class = "Taviraj" value="<?php echo $email; ?>">
-  <span class="help-block"><?php echo $email_err; ?></span>
-  </div>
-  <div class="form-group <?php echo (!empty($career_err)) ? 'has-error' : ''; ?>">
-  <input type="text" id="fname" name="career" placeholder="อาชีพ" class = "Taviraj" value="<?php echo $career; ?>">
-  <span class="help-block"><?php echo $career_err; ?></span>
-  </div>
-  <div class="form-group <?php echo (!empty($birthday_err)) ? 'has-error' : ''; ?>">
-  <p class="Taviraj">วัดเกิด</p> <input type="Date" id="fname" name="birthday"  class = "Taviraj" value="<?php echo $birthday; ?>"> 
-  <span class="help-block"><?php echo $birthday_err; ?></span>
-  </div>
-  <div style="text-align: center;">
-   <input type="hidden" name="action" value="<?php echo $userid; ?>">
-  <input type="submit" class="nextbutton" value="Next"> 
-  </div>
-  </form>
+    <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
+    <form name="myform" onsubmit="user()" >
+    <input type="text" id="fname" name="firstname" placeholder="ชื่อ" class = "Taviraj" value="<?php echo $firstname; ?>" required>
+    <input type="text" id="lastname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="<?php echo $lastname; ?>" required>
+    <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="<?php echo $phone; ?>" required>
+    <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" value="<?php echo $email; ?>" required>
+    <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" value="<?php echo $career; ?>" required>
+    <p id="test" class="Taviraj">วัดเกิด</p> 
+    <input type="Date" id="birthday" name="birthday"  class = "Taviraj" value="<?php echo $birthday; ?>" required> 
+
+ 	<div style="text-align: center;">
+   	<input type="hidden" name="action" value="<?php echo $userid; ?>">
+    
+  	<button onclick="test()" class="nextbutton" >ถัดไป</button>
+    
+	</div>
+ 	</form>
 
 
 <div class="footer">
   <p>   </p>
 </div>
+<script>
+
+function user() {
+	
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var phone = document.getElementById("phone").value;
+	var email = document.getElementById("email").value;
+    var career = document.getElementById("career").value;
+    var birthday = document.getElementById("birthday").value;
+    var userid = url.searchParams.get("userid");  
+    if(fname.length != 0 && lname.length != 0){
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("uname_error").innerHTML = this.responseText;
+                 document.myform.action ="insert.html";
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid"+useid, true);
+        xmlhttp.send();
+    }
+}
+</script>
 </body>
 </html>
