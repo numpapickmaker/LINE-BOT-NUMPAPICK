@@ -200,7 +200,7 @@ function user() {
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
     var phone = document.getElementById("phone").value;
-	var email = document.getElementById("email").value;
+	var email = document.getElementById("email").valuea
     var career = document.getElementById("career").value;
     var birthday = document.getElementById("birthday").value;
     var userid = url.searchParams.get("userid");  
