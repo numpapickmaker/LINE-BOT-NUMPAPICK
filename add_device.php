@@ -225,7 +225,7 @@ if(!empty($elderinfo)){
 //echo $_GET["action"];
 
  if($elderinfo == "2"){
-    echo $elderinfo;
+   // echo $elderinfo;
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -237,7 +237,7 @@ if(!empty($elderinfo)){
          //echo "Opened database successfully\n";
       }
      $sql ="update Device_information set name='".$_REQUEST["name"]."',sex='".$_REQUEST["sex"]."',heigth='".$_REQUEST["heigth"]."',weigth='".$_REQUEST["weigth"]."',disease='".$_REQUEST["disease"]."' ,address='".$_REQUEST["address"]."',phone='".$_REQUEST["phone"]."',birthday='".$_REQUEST["birthday"]."' where device_id='".$deviceid."';";
-    echo $sql;
+    //echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
         // echo pg_last_error($db) ;
