@@ -312,7 +312,7 @@ function save(){
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("elderinfo").innerHTML = this.responseText;
+                  //  document.getElementById("elderinfo").innerHTML = this.responseText;
                     //window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
                 }
             };
