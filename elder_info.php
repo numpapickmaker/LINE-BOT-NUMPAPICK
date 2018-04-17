@@ -308,7 +308,7 @@ function save(){
     var disease = document.getElementById("diseasefld").value;
     var address = document.getElementById("addressfld").value;
     var phone = document.getElementById("phonefld").value;
-     document.getElementById("elderinfo").innerHTML ="userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday;
+    // document.getElementById("elderinfo").innerHTML ="userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -316,14 +316,14 @@ function save(){
                     //window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
                 }
             };
-            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday , true);
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=2"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday , true);
             xmlhttp.send();
 }
 create_listinfo();
 function create_listinfo(){
   var userid = document.getElementById('userid').value;
   var deviceid = document.getElementById('deviceid').value;
-     document.getElementById("elderinfo").innerHTML = userid;
+    // document.getElementById("elderinfo").innerHTML = userid;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
