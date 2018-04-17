@@ -308,7 +308,7 @@ function save(){
     var disease = document.getElementById("diseasefld").value;
     var address = document.getElementById("addressfld").value;
     var phone = document.getElementById("phonefld").value;
-     document.getElementById("elderinfo").innerHTML = name+" "+birthday+" "+sex+" "+heigth+" "+weigth+" "+disease+" "+address+" "+phone;
+     document.getElementById("elderinfo").innerHTML =" https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ brithda;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
