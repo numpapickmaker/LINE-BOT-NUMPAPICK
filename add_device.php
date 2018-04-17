@@ -223,7 +223,9 @@ if(!empty($create_table)){
 $elderinfo = $_REQUEST["elderinfo"]; 
 if(!empty($elderinfo)){
 //echo $_GET["action"];
+
   if($elderinfo == "0"){
+    echo $elderinfo;
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
