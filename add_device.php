@@ -224,7 +224,7 @@ $elderinfo = $_REQUEST["elderinfo"];
 if(!empty($elderinfo)){
 //echo $_GET["action"];
 
-  if($elderinfo == "0"){
+ if($elderinfo == "2"){
     echo $elderinfo;
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
