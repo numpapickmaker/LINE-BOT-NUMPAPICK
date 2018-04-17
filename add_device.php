@@ -285,7 +285,7 @@ if(!empty($elderinfo)){
            }else{
               $female ='checked';
            }
-          echo '<input id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female ';
+          echo '<form id ="sexfld"> <input id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female </form>' ;
            $Heigth = $row[4];
            echo'<input id="heigthfld" type="text" value="'.$Heigth.'" >';
            $Weigth = $row[5];
