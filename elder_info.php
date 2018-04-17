@@ -312,8 +312,8 @@ function save(){
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
-                    //document.getElementById("elderinfo").innerHTML = this.responseText;
-                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
+                    document.getElementById("elderinfo").innerHTML = this.responseText;
+                    //window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday , true);
