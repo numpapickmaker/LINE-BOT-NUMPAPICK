@@ -272,7 +272,7 @@ if(!empty($elderinfo)){
            $No = $row[0];
                       $Device_id = $row[1];
            $Name = $row[2];
-           echo '<input type="text" id="fname" name="firstname" value="'.$Name.'">';
+           echo '<input type="text" id="namefld" name="namefld" value="'.$Name.'">';
            $Sex = $row[3];
            if($Sex == 'male'){
               $male = 'checked';
