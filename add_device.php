@@ -205,9 +205,9 @@ if(!empty($create_table)){
             echo '<tr>';
             echo '<td>'.$row[0].'</td>';
             echo '<td>'.$row[1].'</td>';
-            echo '<td> <form action="https://numpapick.herokuapp.com/information.php" method="get">';
-            echo '<input type="hidden" name="username" value="'.$userid.'">';
-            echo '<button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;" value="'.$row[0].'" name="view">แก้ไข</button></td> </tr>';
+            echo '<td> <form action="https://numpapick.herokuapp.com/elder_info.php" method="get">';
+            echo '<input type="hidden" name="userid" value="'.$userid.'">';
+            echo '<button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;" value="'.$row[0].'" name="deviceid">แก้ไข</button></td> </tr>';
             echo '</form>';
            // echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
          }
