@@ -218,11 +218,9 @@ span.psw {
 
     
     <div class = "Taviraj" style="text-align: left;">
-    <label for="fname" >ผู้สูงอายุ</label>
+    <label >ผู้สูงอายุ</label>
     <div id="elderinfo"></div>
-    <input type="text" id="fname" name="firstname" placeholder="นายตรง">
-    <input type="text" id="lname" name="firstname" placeholder="ศิวัฒน์กิตติสุข">
-	<input type="text" id="fname" name="firstname" placeholder="........"><p>
+    
     </div>
     
  	<br>
@@ -242,7 +240,7 @@ span.psw {
 
 <div id="id01" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <div class="modal-content animate" >
     <div class="imgcontainer">
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
@@ -254,14 +252,13 @@ span.psw {
      <p>
      <i class="fas fa-check" style ="width: 100px; height: 100px; color: 	#32CD32;"></i>
      <p>
-     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color: 	#32CD32; border: 2px solid white;">  ตกลง </button>
+     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color: 	#32CD32; border: 2px solid white;" onclick="save()">  ตกลง </button>
      </div>
      
     
     </div>
 
-   
-  </form>
+
 </div>
 
 <div id="id02" class="modal">
@@ -287,14 +284,40 @@ span.psw {
  <input type="hidden" name="userid" id="deviceid" value="<?php echo $deviceid;?>">
 <script>
 // Get the modal
-var modal = document.getElementById('id01');
-var modal = document.getElementById('id02');
-var modal = document.getElementById('id03');
+var modal1 = document.getElementById('id01');
+var modal2 = document.getElementById('id02');
+var modal3 = document.getElementById('id03');
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == modal1) {
+        modal1.style.display = "none";
+    }else if(event.target == modal2){
+    	modal2.style.display = "none";
+    }else if(event.target == modal3){
+        modal3.style.display = "none";    
     }
+}
+function save(){
+	var userid = document.getElementById('userid').value;
+  	var deviceid = document.getElementById('deviceid').value;
+   	var name = document.getElementById("namefld").value;
+    var birthday = document.getElementById("birthdayfld").value;
+    var sex = document.getElementById("sexfld").value;
+    var heigth = document.getElementById("heigthfld").value;
+    var weigth = document.getElementById("weigthfld").value;
+    var disease = document.getElementById("diseasefld").value;
+    var address = document.getElementById("addressfld").value;
+    var phone = document.getElementById("phonefld").value;
+     document.getElementById("elderinfo").innerHTML = "test";
+    var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //document.getElementById("elderinfo").innerHTML = this.responseText;
+                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
+                }
+            };
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ brithday , true);
+            xmlhttp.send();
 }
 create_listinfo();
 function create_listinfo(){
