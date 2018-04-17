@@ -259,7 +259,7 @@ if(!empty($elderinfo)){
          //echo "Opened database successfully\n";
       }
      $sql ="SELECT * FROM Device_information WHERE Device_id='".$deviceid."';";
-     echo $sql;
+    // echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -271,7 +271,7 @@ if(!empty($elderinfo)){
           //  header("location: bot.php");
            $No = $row[0];
            $Device_id = $row[1];
-           echo '<label >'.$Device_id.'</label>';
+           echo '<label > Device id  '.$Device_id.'</label>';
            $Name = $row[2];
            echo '<input type="text" id="namefld" name="namefld" value="'.$Name.'">';
            $Sex = $row[3];
