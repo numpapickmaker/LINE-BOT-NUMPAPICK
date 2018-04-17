@@ -87,7 +87,6 @@ if( !empty($username) && !empty($password)){
       echo $result ;
       pg_close($db) ;
 }   
-
 // Include config file
 //cho $_GET["add"];
 // Define variables and initialize with empty values
@@ -97,10 +96,7 @@ $phone=$_REQUEST["phone"];
 $email = $_REQUEST["email"];
 $career= $_REQUEST["career"];
 $birthday =$_REQUEST["birthday"];
-
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
-
-
 // Processing form data when form is submitted
 if(!empty($firstname)){
    
@@ -167,7 +163,6 @@ if(!empty($firstname)){
  
 $create_table = $_REQUEST["create"]; 
 if(!empty($create_table)){
-
 //echo $_GET["action"];
   
   $No =$Device_id =$Name =$Age =$Sex =$Heigth =$Weigth =$disease =$address = $phone = "";
@@ -206,12 +201,14 @@ if(!empty($create_table)){
           
           // send_LINE('PASS');
           //  header("location: bot.php");
-
             echo '<tr>';
             echo '<td>'.$row[0].'</td>';
-           echo '<td>'.$row[1].'</td>';
-            echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
-
+            echo '<td>'.$row[1].'</td>';
+            echo '<td> <form action="https://numpapick.herokuapp.com/information.php" method="get">';
+            echo '<input type="hidden" name="username" value="'.$userid.'">';
+            echo '<button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;" value="'.$row[0].'" name="view">แก้ไข</button></td> </tr>';
+            echo '</form>';
+           // echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
          }
       
             echo '</tbody>';
@@ -221,7 +218,5 @@ if(!empty($create_table)){
      //echo $result;
       pg_close($db) ;   
       
-
 }
 ?>
- 
