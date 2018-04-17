@@ -270,7 +270,8 @@ if(!empty($elderinfo)){
           // send_LINE('PASS');
           //  header("location: bot.php");
            $No = $row[0];
-                      $Device_id = $row[1];
+           $Device_id = $row[1];
+           echo '<label >'.$Device_id.'</label>';
            $Name = $row[2];
            echo '<input type="text" id="namefld" name="namefld" value="'.$Name.'">';
            $Sex = $row[3];
