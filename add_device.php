@@ -258,7 +258,8 @@ if(!empty($elderinfo)){
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="SELECT * FROM Device_information WHERE Device_id='".$_GET["view"]."';";
+     $sql ="SELECT * FROM Device_information WHERE Device_id='".$deviceid."';";
+     echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
