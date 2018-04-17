@@ -20,7 +20,6 @@ $deviceid = $_GET["deviceid"];
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
@@ -39,7 +38,6 @@ p {
     font-size: 20px;
 }
 /* Full-width input fields */
-
 .kanit {
   font-family: 'Kanit', sans-serif;
 }.Taviraj {
@@ -135,7 +133,6 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
-
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -144,19 +141,14 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
 /* Set a style for all buttons */
-
-
 .container {
     padding: 16px;
 }
-
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -171,7 +163,6 @@ span.psw {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
-
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -179,7 +170,6 @@ span.psw {
     border: 1px solid #888;
     width: 50%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -189,19 +179,16 @@ span.psw {
     font-size: 35px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
-
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-
 </style>
 </head>
 <body>
@@ -302,7 +289,8 @@ function save(){
     var deviceid = document.getElementById('deviceid').value;
     var name = document.getElementById("namefld").value;
     var birthday = document.getElementById("birthdayfld").value;
-    var sex = document.getElementById("sexfld").value;
+    var sexform = document.getElementById("sexfld");
+    var sex =  sexform.elements["sexfld"].value;
     var heigth = document.getElementById("heigthfld").value;
     var weigth = document.getElementById("weigthfld").value;
     var disease = document.getElementById("diseasefld").value;
@@ -333,13 +321,8 @@ function create_listinfo(){
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=1"+ "&deviceid=" +deviceid , true);
             xmlhttp.send();
-
 }
-
-
-
 </script>
 </body>
 
 </html>
-
