@@ -223,7 +223,8 @@ if(!empty($create_table)){
 $elderinfo = $_REQUEST["elderinfo"]; 
 if(!empty($elderinfo)){
 //echo $_GET["action"];
-/*   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+  if($elderinfo == "0"){
+  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
       $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
@@ -233,7 +234,7 @@ if(!empty($elderinfo)){
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="update Device_information set name='".$_GET["name"]."',sex='".$_GET["sex"]."',heigth='".$_GET["heigth"]."',weigth='".$_GET["weigth"]."',disease='".$_GET["disease"]."' ,address='".$_GET["address"]."',phone='".$_GET["phone"]."',birthday='".$_GET["birthday"]."' where device_id='".$_GET["view"]."';";
+     $sql ="update Device_information set name='".$_REQUEST["name"]."',sex='".$_REQUEST["sex"]."',heigth='".$_REQUEST["heigth"]."',weigth='".$_REQUEST["weigth"]."',disease='".$_REQUEST["disease"]."' ,address='".$_REQUEST["address"]."',phone='".$_REQUEST["phone"]."',birthday='".$_REQUEST["birthday"]."' where device_id='".$deviceid."';";
     echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
@@ -244,9 +245,11 @@ if(!empty($elderinfo)){
       }
      
       pg_close($db) ;   
-}*/
+}
 //echo $_GET["view"];
+  if($elderinfo == "1"){
    $male =  $female = "";
+  
   $No =$Device_id =$Name =$Birthday =$Sex =$Heigth =$Weigth =$disease =$address = $phone = $Password = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -319,6 +322,6 @@ if(!empty($elderinfo)){
           }
      }
       pg_close($db) ;   
-      
+     } 
 }
 ?>
