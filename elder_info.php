@@ -206,14 +206,14 @@ span.psw {
     
     <div class = "Taviraj" style="text-align: left;">
     <label >ผู้สูงอายุ</label>
-    <form  onSubmit="return save()">
+    <form id="elder_form" onSubmit="return confirm_save()">
     <div id="elderinfo"></div>
     </form>
     </div>
     
   <br>
     <p><button class="prevbutton" >ย้อนกลับ</button></p>
-  <p><button class="nextbutton" onclick="document.getElementById('id01').style.display='block'">ยืนยัน</button></p>
+  <p><button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
     <button class="delbutton" onclick="document.getElementById('id02').style.display='block'"> ลบ</button>
   
  
@@ -285,7 +285,13 @@ window.onclick = function(event) {
         modal3.style.display = "none";    
     }
 }
+function confirm_save(){
+	document.getElementById('id01').style.display='block' ;
+    return false;
+}
+
 function save(){
+	
   var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
     var name = document.getElementById("namefld").value;
