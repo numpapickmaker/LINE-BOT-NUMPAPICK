@@ -260,7 +260,7 @@ span.psw {
      <h1 class= "kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
      <h2 class= "Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
      <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:48% ; ">  ยกเลิก </button>
-     <button class="delbutton " onclick="delete()" style = "font-size: 20px; width:48% ; ">  ลบ </button>
+     <button class="delbutton " onclick="delete_device()" style = "font-size: 20px; width:48% ; ">  ลบ </button>
      </div>
 
    
@@ -322,7 +322,7 @@ function create_listinfo(){
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=1"+ "&deviceid=" +deviceid , true);
             xmlhttp.send();
 }
-function delete(){
+function delete_device(){
 	var userid = document.getElementById('userid').value;
   	var deviceid = document.getElementById('deviceid').value;
     // ลบการเชื่อมต่อระหว่าง อุปกรณ์และผู้ใช้งาน
