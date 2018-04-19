@@ -223,8 +223,30 @@ if(!empty($create_table)){
 $elderinfo = $_REQUEST["elderinfo"]; 
 if(!empty($elderinfo)){
 //echo $_GET["action"];
-
- if($elderinfo == "2"){
+ if($elderinfo == "3"){ // ลบข้อมูลอุปกรณ์ ที่เชื่อมต่อ ออกจาก ผู้ดูแล
+    $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     $sql ="update Device_information set name='".$_REQUEST["name"]."',sex='".$_REQUEST["sex"]."',heigth='".$_REQUEST["heigth"]."',weigth='".$_REQUEST["weigth"]."',disease='".$_REQUEST["disease"]."' ,address='".$_REQUEST["address"]."',phone='".$_REQUEST["phone"]."',birthday='".$_REQUEST["birthday"]."' where device_id='".$deviceid."';";
+    //echo $sql;
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+        // echo pg_last_error($db) ;
+      } else {
+         
+        // echo "Records created successfully\n";
+      }
+     
+      pg_close($db) ;   
+ }   
+ if($elderinfo == "2"){ // บันทึกข้อมูล ผู้สูงอายุ
    // echo $elderinfo;
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -249,8 +271,14 @@ if(!empty($elderinfo)){
       pg_close($db) ;   
 }
 //echo $_GET["view"];
-  if($elderinfo == "1"){
-   $male =  $female = "";
+
+
+  if($elderinfo == "1"){ // หาข้อมูลผู้สูงอายุ เพื่อทำตาราง แสดง
+    create_table_elderlist();
+     } 
+}
+function create_table_elderlist(){
+    $male =  $female = "";
   
   $No =$Device_id =$Name =$Birthday =$Sex =$Heigth =$Weigth =$disease =$address = $phone = $Password = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -298,7 +326,6 @@ if(!empty($elderinfo)){
           echo'<input id="phonefld" type="text" value="'.$phone.'">';
            $Birthday = $row[9];
            echo '<input id="birthdayfld" type="date" value="'.$Birthday.'">';
-
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
@@ -324,6 +351,46 @@ if(!empty($elderinfo)){
           }
      }
       pg_close($db) ;   
-     } 
 }
+function check_userlogout($userid,$esp){
+       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         echo "Opened database successfully\n";
+      }
+       $sql ="SELECT * FROM userline WHERE id='".$userid."' AND esp='".$esp."';";
+       $ret = pg_query($db, $sql) ;
+         if(!$ret) {
+            echo pg_last_error($db) ;
+         } else {
+            $checking = 0;   
+                 while($row = pg_fetch_row($ret)){
+                     //echo "ESP name = " . $row[2] . "\n";
+                     // send_LINE('PASS')
+                      $checking = 1;     
+                   //   send_LINE("you login already",$userid); 
+                      $sql ="DELETE FROM userline WHERE id='".$userid."' AND esp='".$esp."';";
+                      $ret = pg_query($db, $sql) ;
+                      if(!$ret) {
+                        //send_LINE("Logout Error!",$userid);
+                         echo pg_last_error($db) ;
+                      } else {
+                          header("location: manage.php?action=$userid");  
+                          //send_LINE("logout success",$userid);
+                                                 
+                                }     
+                  }  
+                    
+          if( $checking == 0){
+                //save_userid($userid,$esp);
+              send_LINE("you not login",$userid);
+          }
+        }
+        pg_close($db) ;
+   }
 ?>
