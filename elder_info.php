@@ -250,7 +250,7 @@ span.psw {
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <div class="modal-content animate" >
     <div class="imgcontainer">
   
     </div>
@@ -259,12 +259,12 @@ span.psw {
       
      <h1 class= "kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
      <h2 class= "Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
-     <button class="nextbutton "  style = "font-size: 20px; width:48% ; ">  ยกเลิก </button>
-     <button class="delbutton "  style = "font-size: 20px; width:48% ; ">  ลบ </button>
+     <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:48% ; ">  ยกเลิก </button>
+     <button class="delbutton " onclick="delete()" style = "font-size: 20px; width:48% ; ">  ลบ </button>
      </div>
 
    
-  </form>
+  </div>
 
 </div>
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
@@ -309,8 +309,8 @@ function save(){
 }
 create_listinfo();
 function create_listinfo(){
-  var userid = document.getElementById('userid').value;
-  var deviceid = document.getElementById('deviceid').value;
+  	var userid = document.getElementById('userid').value;
+  	var deviceid = document.getElementById('deviceid').value;
     // document.getElementById("elderinfo").innerHTML = userid;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -321,6 +321,14 @@ function create_listinfo(){
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=1"+ "&deviceid=" +deviceid , true);
             xmlhttp.send();
+}
+function delete(){
+	var userid = document.getElementById('userid').value;
+  	var deviceid = document.getElementById('deviceid').value;
+    // ลบการเชื่อมต่อระหว่าง อุปกรณ์และผู้ใช้งาน
+   window.location.href = "https://numpapick.herokuapp.com/db.php?userid="+userid+"&esp="+deviceid;
+   
+
 }
 </script>
 </body>
