@@ -227,13 +227,13 @@ if(!empty($elderinfo)){
         check_userlogout($userid,$deviceid);     
     }   
     if($elderinfo == "2"){ // บันทึกข้อมูล ผู้สูงอายุ
-        save_elder_info();
+        save_elder_info($deviceid);
     }
     if($elderinfo == "1"){ // หาข้อมูลผู้สูงอายุ เพื่อทำตาราง แสดง
-        create_table_elderlist();
+        create_table_elderlist($deviceid);
     } 
 }
-function save_elder_info(){
+function save_elder_info($deviceid){
     // echo $elderinfo;
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -257,7 +257,7 @@ function save_elder_info(){
      
       pg_close($db) ;   
 }
-function create_table_elderlist(){
+function create_table_elderlist($deviceid){
     $male =  $female = "";
   
   $No =$Device_id =$Name =$Birthday =$Sex =$Heigth =$Weigth =$disease =$address = $phone = $Password = "";
