@@ -222,7 +222,6 @@ if(!empty($create_table)){
 }
 $elderinfo = $_REQUEST["elderinfo"]; 
 if(!empty($elderinfo)){
-
     if($elderinfo == "3"){ // ลบข้อมูลอุปกรณ์ ที่เชื่อมต่อ ออกจาก ผู้ดูแล
         check_userlogout($userid,$deviceid);     
     }   
@@ -235,7 +234,6 @@ if(!empty($elderinfo)){
 }
 function save_elder_info($deviceid){
     // echo $elderinfo;
-
   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -362,8 +360,9 @@ function check_userlogout($userid,$esp){
                          echo pg_last_error($db) ;
                       } else {
                          // header("location: manage.php?action=$userid");  
+                            echo "logout";   
                           send_LINE("Device has been remove",$userid);
-                          echo "logout";                       
+                             echo "sendline";                    
                       }     
                   }  
                     
