@@ -2,6 +2,7 @@
  require("pub.php");
  require("line.php");
 require("db.php");
+ require("add_device.php");
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
