@@ -1,4 +1,6 @@
 <?php
+
+require("line.php");
 // Include config file
 //cho $_GET["add"];
 // Define variables and initialize with empty values
@@ -340,7 +342,7 @@ function check_userlogout($userid,$esp){
       if(!$db) {
          echo "Error : Unable to open database\n";
       } else {
-         echo "Opened database successfully\n";
+         //echo "Opened database successfully\n";
       }
        $sql ="SELECT * FROM userline WHERE id='".$userid."' AND esp='".$esp."';";
        $ret = pg_query($db, $sql) ;
