@@ -326,7 +326,15 @@ function delete_device(){
 	var userid = document.getElementById('userid').value;
   	var deviceid = document.getElementById('deviceid').value;
     // ลบการเชื่อมต่อระหว่าง อุปกรณ์และผู้ใช้งาน
-   window.location.href = "https://numpapick.herokuapp.com/db.php?userid="+userid+"&esp="+deviceid;
+    var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("elderinfo").innerHTML = this.responseText;
+                    
+                }
+            };
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=3"+ "&deviceid=" +deviceid , true);
+            xmlhttp.send();
    
 
 }
