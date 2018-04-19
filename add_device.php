@@ -246,7 +246,7 @@ function save_elder_info($deviceid){
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="update Device_information set name='".$_REQUEST["name"]."',sex='".$_REQUEST["sex"]."',heigth=".$_REQUEST["heigth"].",weigth=".$_REQUEST["weigth"].",disease='".$_REQUEST["disease"]."' ,address='".$_REQUEST["address"]."',phone='".$_REQUEST["phone"]."',birthday='".$_REQUEST["birthday"]."' where device_id='".$deviceid."';";
+     $sql ="update Device_information set name='".$_REQUEST["name"]."',sex='".$_REQUEST["sex"]."',heigth='".$_REQUEST["heigth"]."',weigth='".$_REQUEST["weigth"]."',disease='".$_REQUEST["disease"]."' ,address='".$_REQUEST["address"]."',phone='".$_REQUEST["phone"]."',birthday='".$_REQUEST["birthday"]."' where device_id='".$deviceid."';";
     echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
@@ -287,7 +287,7 @@ function create_table_elderlist($deviceid){
            $Device_id = $row[1];
            echo '<label > Device id  '.$Device_id.'</label>';
            $Name = $row[2];
-           echo '<input type="text" id="namefld" name="namefld" value="'.$Name.'">';
+           echo '<input type="text" id="namefld" name="namefld" value="'.$Name.'" placeholder="ชื่อ - นามสกุล" required>';
            $Sex = $row[3];
            if($Sex == 'male'){
               $male = 'checked';
@@ -296,17 +296,17 @@ function create_table_elderlist($deviceid){
            }
           echo '<form id ="sexfld"> <input id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female </form>' ;
            $Heigth = $row[4];
-           echo'<input id="heigthfld" type="text" value="'.$Heigth.'" >';
+           echo'<input id="heigthfld" type="text" value="'.$Heigth.'" placeholder="ความสูง" required>';
            $Weigth = $row[5];
-           echo'<input id="weigthfld" type="text" value="'.$Weigth.'">';
+           echo'<input id="weigthfld" type="text" value="'.$Weigth.'" placeholder="น้ำหนัก" required>';
            $disease = $row[6];
-           echo'<input id="diseasefld" type="text" value="'.$disease.'">';
+           echo'<input id="diseasefld" type="text" value="'.$disease.'" placeholder="โรคประจำตัว" required>';
            $address  = $row[7];
-           echo'<input id="addressfld" type="text" value="'.$address.'">';
+           echo'<input id="addressfld" type="text" value="'.$address.'" placeholder="ที่อยู่" required>';
            $phone = $row[8]; 
-          echo'<input id="phonefld" type="text" value="'.$phone.'">';
+          echo'<input id="phonefld" type="text" value="'.$phone.'" placeholder="เบอร์โทรศัพท์" required>';
            $Birthday = $row[9];
-           echo '<input id="birthdayfld" type="date" value="'.$Birthday.'">';
+           echo '<input id="birthdayfld" type="date" value="'.$Birthday.'" placeholder="วันเกิด" required>';
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
