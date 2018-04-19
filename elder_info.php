@@ -206,7 +206,7 @@ span.psw {
     
     <div class = "Taviraj" style="text-align: left;">
     <label >ผู้สูงอายุ</label>
-    <form id="elder_form" onSubmit="return confirm_save()">
+    <form name="elder_form" id="elder_form" onSubmit="return confirm_save()">
     <div id="elderinfo"></div>
     </form>
     </div>
@@ -286,18 +286,26 @@ window.onclick = function(event) {
     }
 }
 function confirm_save(){
-	document.getElementById('id01').style.display='block' ;
+  document.getElementById('id01').style.display='block' ;
     return false;
 }
-
+function getRadioButtonValue(rbutton)
+      {
+        for (var i = 0; i < rbutton.length; ++i)
+        { 
+          if (rbutton[i].checked)
+            return rbutton[i].value;
+        }
+        return null;
+      }
 function save(){
-	
+  
   var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
     var name = document.getElementById("namefld").value;
     var birthday = document.getElementById("birthdayfld").value;
-    var sexform = document.getElementById("sexfld");
-    var sex =  sexform.elements["sexfld"].value;
+    
+    var sex =  getRadioButtonValue(document.elder_form.sexfld);
     var heigth = document.getElementById("heigthfld").value;
     var weigth = document.getElementById("weigthfld").value;
     var disease = document.getElementById("diseasefld").value;
@@ -316,8 +324,8 @@ function save(){
 }
 create_listinfo();
 function create_listinfo(){
-  	var userid = document.getElementById('userid').value;
-  	var deviceid = document.getElementById('deviceid').value;
+    var userid = document.getElementById('userid').value;
+    var deviceid = document.getElementById('deviceid').value;
     // document.getElementById("elderinfo").innerHTML = userid;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
@@ -330,8 +338,8 @@ function create_listinfo(){
             xmlhttp.send();
 }
 function delete_device(){
-	var userid = document.getElementById('userid').value;
-  	var deviceid = document.getElementById('deviceid').value;
+  var userid = document.getElementById('userid').value;
+    var deviceid = document.getElementById('deviceid').value;
     // ลบการเชื่อมต่อระหว่าง อุปกรณ์และผู้ใช้งาน
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
