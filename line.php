@@ -141,7 +141,7 @@ function send_LOWBAT($userid){
     $messages = [
       
     "type"=> "text",
-    "text"=> "เหลือ"
+    "text"=> "เหลือพลังงานต่ำกว่า 20%"
 
       ];
   //     $messages = [
