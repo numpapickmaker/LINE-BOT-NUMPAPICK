@@ -9,10 +9,9 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if(!is_null($events['check'])){
- echo $events['check']['name'];
- echo $events['check'][1];
-
-  Check_send($events['check']['status'],$events['check']['name']);
+  echo $events['status'];
+  echo $events['name'];
+  Check_send($events['status'],$events['name']);
 }
 if (!is_null($events['ESP'])) {
   if($events['ESP'] == 'CHECK'){
@@ -42,10 +41,9 @@ if (!is_null($events['events'])) {
     // Reply only when message sent is in 'text' format
     if ($event['type'] == 'follow') {
       $userId = $event['source']['userId'];
-      
+      //send_PRESS($userId);
       send_Menu($userId);
-      send_PRESS($userId);
-      send_FALL($userid)
+      
       //send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
     }
     else if ($event['type'] == 'postback') {
