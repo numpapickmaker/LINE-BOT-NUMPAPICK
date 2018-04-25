@@ -103,7 +103,7 @@ $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday
 // Processing form data when form is submitted
 $info =$_REQUEST["info"];
 if($info == 1){
-   
+   		echo "info = 1";
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
