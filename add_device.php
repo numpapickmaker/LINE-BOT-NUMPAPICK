@@ -137,7 +137,7 @@ if($info == "1"){
                    while($row = pg_fetch_row($ret) ){
                       $row[0] = intval($row[0]+1);
                       $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
-                      $result = $sql;
+                     // $result = $sql;
                       // echo $result;
                    }
                   
