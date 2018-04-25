@@ -141,7 +141,7 @@ function send_LOWBAT($userid){
     $messages = [
       
     "type"=> "text",
-    "text"=> "Hello, world"
+    "text"=> "เหลือ"
 
       ];
   //     $messages = [
