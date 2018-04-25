@@ -169,8 +169,8 @@ function send_Menu($userid){
           "baseUrl"=> "https://i.imgur.com/nkI631e.jpg/460",
           "altText"=> "this is a buttons template",
           "baseSize"=> [
-              "height"=>700,
-              "width"=> 700
+              "height"=>240,
+              "width"=> 240
           ],
          
                    // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
@@ -179,13 +179,13 @@ function send_Menu($userid){
                       [
                             "type"=> "uri",
                      
-                            "thumbnailImageUrl"=> "https://i.imgur.com/nkI631e.jpg",
+                            "thumbnailImageUrl"=> "https://i.imgur.com/nkI631e.jpg/460",
                             "linkUri"=> "https://numpapick.herokuapp.com/main.php?action=".$userid,
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
-                                "width"=> 700,
-                                "height"=> 700
+                                "width"=> 240,
+                                "height"=> 240
                             ]
                         ]
                 
