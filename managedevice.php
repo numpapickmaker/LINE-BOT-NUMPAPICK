@@ -236,7 +236,7 @@ span.psw {
 
 <div id="id02" class="modal">
   
-  <form class="modal-content animate" action="/action_page.php">
+  <div class="modal-content animate" >
     
 
     <div class="container Taviraj" >
@@ -246,9 +246,9 @@ span.psw {
      <p>
      <i class="fas fa-check" style ="width: 100px; height: 100px; color:  #32CD32;"></i>
      <p>
-     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
+     <button class="nextbutton container Taviraj"  onclick="next()" style = "font-size: 24px; width:50% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
      </div>
-   </form>
+   </div>
 </div>
 
 <script>
@@ -264,6 +264,11 @@ window.onclick = function(event) {
         modal2.style.display = "none";
         modal3.style.display = "none";
     }
+}
+
+function next(){
+   var userid = document.getElementById('userid').value;
+     window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid);
 }
 function back(){
    var userid = document.getElementById('userid').value;
