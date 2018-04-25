@@ -135,7 +135,7 @@ if(!empty($firstname)){
                       $row[0] = intval($row[0]+1);
                       $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
                       $result = $sql;
-                       
+                       echo $result;
                    }
                   
                         
