@@ -102,9 +102,9 @@ $birthday =$_REQUEST["birthday"];
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
 // Processing form data when form is submitted
 $info =$_REQUEST["info"];
-echo $info;
+
 if($info == "1"){
-   		echo "info = 1";
+   	
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -116,6 +116,7 @@ if($info == "1"){
          //echo "Opened database successfully\n";
       }
        $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
+       echo $sql ;
         $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -137,7 +138,7 @@ if($info == "1"){
                       $row[0] = intval($row[0]+1);
                       $sql ="insert into user_info values (".$row[0].",'".$userid."','".$firstname."','".$lastname."','".$phone."','".$email."','".$career."','".$birthday."');";
                       $result = $sql;
-                       echo $result;
+                      // echo $result;
                    }
                   
                         
