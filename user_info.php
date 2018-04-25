@@ -210,47 +210,11 @@ function user(){
     var career = document.getElementById("career").value;
     var birthday = document.getElementById("birthday").value;
     var userid = document.getElementById("userid").value;
-  if(fname.length == 0){
-         document.getElementById("fname_error").innerHTML = "กรุณาใส่ชื่อ";
-            return;
-    }else{
-       document.getElementById("fname_error").innerHTML = "";
-    }
-    if(lname.length == 0){
-       document.getElementById("lname_error").innerHTML = "กรุณาใส่นามสกุล";
-            return;
-    }else{
-      document.getElementById("lname_error").innerHTML = "";
-    }
-    if(phone.length == 0){
-       document.getElementById("phone_error").innerHTML = "กรุณาใส่เบอร์โทรศัพท์";
-            return;
-    }else{
-      document.getElementById("phone_error").innerHTML = "";
-    }
-    if(email.length == 0){
-       document.getElementById("email_error").innerHTML = "กรุณาใส่อีเมล";
-            return;
-    }else{
-      document.getElementById("email_error").innerHTML = "";
-    }
-    if(career.length == 0){
-       document.getElementById("career_error").innerHTML = "กรุณาใส่อาชีพ";
-            return;
-    }else{
-      document.getElementById("career_error").innerHTML = "";
-    }
-    if(birthday.length == 0){
-       document.getElementById("birthday_error").innerHTML = "กรุณาใส่วันเกิด";
-            return;
-    }else{
-      document.getElementById("birthday_error").innerHTML = "";
-    }
-    
+     document.getElementById("birthday_error").innerHTML = "test";
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("birthday_error").innerHTML = this.responseText;
+             
                 if(this.responseText == "success"){
                   window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
                 }
