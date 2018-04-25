@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
       //send_PRESS($userId);
       send_Menu($userId);
       
-      
+      send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
     }
     else if ($event['type'] == 'postback') {
       $userId = $event['source']['userId'];
