@@ -192,7 +192,7 @@ span.psw {
    
 </div>
     <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
-    <p><button class="prevbutton" >ย้อนกลับ</button></p>
+    <p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>
   <p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
 
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
@@ -265,10 +265,9 @@ window.onclick = function(event) {
         modal3.style.display = "none";
     }
 }
-
 function next(){
    var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid);
+     window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
 }
 function back(){
    var userid = document.getElementById('userid').value;
