@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
       $userId = $event['source']['userId'];
       send_PRESS($userId);
       send_Menu($userId);
-      send_LOWBAT($userid)
+      send_LOWBAT($userid);
        
       //send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
     }
