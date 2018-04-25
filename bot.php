@@ -9,7 +9,8 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if(!is_null($events['check'])){
- echo $events['check'];
+ echo $events['check']['name'];
+ echo $events['check'][1];
 
   Check_send($events['check']['status'],$events['check']['name']);
 }
