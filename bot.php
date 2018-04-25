@@ -9,7 +9,7 @@ $content = file_get_contents('php://input');
 $events = json_decode($content, true);
 // Validate parsed JSON data
 if(!is_null($events['check'])){
-  send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
+  Check_send($events['check']['status'],$events['check']['name']);
 }
 if (!is_null($events['ESP'])) {
   if($events['ESP'] == 'CHECK'){
@@ -42,7 +42,7 @@ if (!is_null($events['events'])) {
       //send_PRESS($userId);
       send_Menu($userId);
       
-      send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
+      //send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
     }
     else if ($event['type'] == 'postback') {
       $userId = $event['source']['userId'];
