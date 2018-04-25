@@ -173,28 +173,30 @@ span.psw {
     <span class="step"></span>
     <p>
     </div>
-
+<form name="elder_form" id="elder_form" onSubmit="return user()">
+    
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     
-    <input type="text"  name="fname" id="fname" placeholder="ชื่อ" class = "Taviraj"  >
+    <input type="text"  name="fname" id="fname" placeholder="ชื่อ" class = "Taviraj"  required >
     <p id="fname_error"></p>
     <input type="text" id="lname" name="lastname" placeholder="นามสกุล" class = "Taviraj"  required>
     <p id="lname_error"></p>
-    <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" >
+    <input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" required >
     <p id="phone_error"></p>
-    <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" >
+    <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" required>
     <p id="email_error"></p>
-    <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" >
+    <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" required >
     <p id="career_error"></p>
     <p id="test" class="Taviraj">วัดเกิด</p> 
-    <input type="Date" id="birthday" name="birthday"  class = "Taviraj" > 
+    <input type="Date" id="birthday" name="birthday"  class = "Taviraj" required> 
   <p id="birthday_error"></p>
   <div style="text-align: center;">
-    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
+    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
     
-       <button class="nextbutton"  onclick="user()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
+    <button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
+     
   </div>
-  
+   </form>
 <div class="footer">
   <p>   </p>
 </div>
@@ -250,7 +252,7 @@ function user(){
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("birthday_error").innerHTML = this.responseText;
                 if(this.responseText == "success"){
-                	window.location.replace("https://numpapick.herokuapp.com/add_device1.html?userid="+userid);
+                  window.location.replace("https://numpapick.herokuapp.com/add_device1.html?userid="+userid);
                 }
             }
         };
