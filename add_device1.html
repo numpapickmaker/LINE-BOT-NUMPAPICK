@@ -56,7 +56,8 @@ $userid = $_GET["userid"];
       <p>
      
       <p><p><p><p>
-     <input type="hidden" id="userid" name="userid" value="<?php echo $userid; ?>">
+     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
+     
      <button class="nextbutton"  onclick="add()" style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
    
     </div>
@@ -78,6 +79,7 @@ window.onclick = function(event) {
 }
 
 function add() {
+     var userid = document.getElementById('userid').value;
     var uname = document.getElementById("uname").value;
     var psw = document.getElementById("psw").value;
   var userid =  document.getElementById("userid").value;
@@ -102,7 +104,7 @@ function add() {
     }
     
     if(uname.length != 0 && psw.length != 0){
-      var userid = document.getElementById('userid').value;
+     
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
