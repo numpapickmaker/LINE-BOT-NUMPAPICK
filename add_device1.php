@@ -24,7 +24,7 @@ $userid = $_GET["userid"];
     <p>
     <p><button class="addbutton"  onclick="document.getElementById('id01').style.display='block'" >เพิ่ม</button></p>
     
-    <p><button class="prevbutton" >ย้อนกลับ</button></p>
+    <p><button class="prevbutton" onclick="back()">ย้อนกลับ</button></p>
   
   
  
@@ -70,14 +70,16 @@ $userid = $_GET["userid"];
 <script>
 // Get the modal
 var modal = document.getElementById('id01');
-
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
-
+function back(){
+   var userid = document.getElementById('userid').value;
+     window.location.replace("https://numpapick.herokuapp.com/user_info.php?userid="+userid);
+}
 function add() {
      var userid = document.getElementById('userid').value;
     var uname = document.getElementById("uname").value;
