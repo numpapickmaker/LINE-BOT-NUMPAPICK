@@ -8,6 +8,9 @@ $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
+if(!is_null($events['check'])){
+  send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
+}
 if (!is_null($events['ESP'])) {
   if($events['ESP'] == 'CHECK'){
     check_send($events['NAME'],$events['MSG']); 
@@ -38,7 +41,7 @@ if (!is_null($events['events'])) {
       $userId = $event['source']['userId'];
       //send_PRESS($userId);
       send_Menu($userId);
-      send_LINE('test  follow',$userId);
+      
       
     }
     else if ($event['type'] == 'postback') {
