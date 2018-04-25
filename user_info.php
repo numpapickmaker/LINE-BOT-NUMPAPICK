@@ -210,15 +210,16 @@ function user(){
     var career = document.getElementById("career").value;
     var birthday = document.getElementById("birthday").value;
     var userid = document.getElementById("userid").value;
-     document.getElementById("birthday_error").innerHTML = "test";
+    
         var xmlhttp = new XMLHttpRequest();
 
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-               document.getElementById("birthday_error").innerHTML = this.responseText;
+              // document.getElementById("birthday_error").innerHTML = this.responseText;
                 if(this.responseText == "success"){
-                  window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
+                  window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
                 }
+
             }
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
