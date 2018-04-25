@@ -212,9 +212,10 @@ function user(){
     var userid = document.getElementById("userid").value;
      document.getElementById("birthday_error").innerHTML = "test";
         var xmlhttp = new XMLHttpRequest();
+
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-             
+               document.getElementById("birthday_error").innerHTML = this.responseText;
                 if(this.responseText == "success"){
                   window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
                 }
@@ -222,6 +223,7 @@ function user(){
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
         xmlhttp.send();
+        return false;
     
 }
 </script>
