@@ -169,8 +169,8 @@ function send_Menu($userid){
           "baseUrl"=> "https://i.imgur.com/nkI631e.jpg/460",
           "altText"=> "this is a buttons template",
           "baseSize"=> [
-              "height"=>240,
-              "width"=> 240
+              "height"=>460,
+              "width"=> 460
           ],
          
                    // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
@@ -184,8 +184,8 @@ function send_Menu($userid){
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
-                                "width"=> 240,
-                                "height"=> 240
+                                "width"=> 460,
+                                "height"=> 460
                             ]
                         ]
                 
