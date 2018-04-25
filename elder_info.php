@@ -212,7 +212,7 @@ span.psw {
     </div>
     
   <br>
-    <p><button class="prevbutton"  onclick="window.location.href='https://numpapick.herokuapp.com/managedevice.php?userid='+<?php $userid ?>">ย้อนกลับ</button></p>
+    <p><button class="prevbutton"  onclick="back()">ย้อนกลับ</button></p>
   <p><button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
     <button class="delbutton" onclick="document.getElementById('id02').style.display='block'"> ลบ</button>
   
@@ -284,6 +284,10 @@ window.onclick = function(event) {
     }else if(event.target == modal3){
         modal3.style.display = "none";    
     }
+}
+function back(){
+    var userid = document.getElementById('userid').value;
+     window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
 }
 function confirm_save(){
   document.getElementById('id01').style.display='block' ;
