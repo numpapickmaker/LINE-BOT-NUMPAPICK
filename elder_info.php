@@ -212,7 +212,7 @@ span.psw {
     </div>
     
   <br>
-    <p><button class="prevbutton" >ย้อนกลับ</button></p>
+    <p><button class="prevbutton"  onclick="window.location.href='https://numpapick.herokuapp.com/managedevice.php?userid='+<?php $userid ?>">ย้อนกลับ</button></p>
   <p><button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
     <button class="delbutton" onclick="document.getElementById('id02').style.display='block'"> ลบ</button>
   
@@ -316,7 +316,7 @@ function save(){
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("elderinfo").innerHTML = this.responseText;
-             		window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
+                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=2"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday , true);
@@ -338,7 +338,7 @@ function create_listinfo(){
             xmlhttp.send();
 }
 function delete_device(){
-	                
+                    
   var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
     // ลบการเชื่อมต่อระหว่าง อุปกรณ์และผู้ใช้งาน
