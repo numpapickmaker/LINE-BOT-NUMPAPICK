@@ -166,11 +166,11 @@ function send_Menu($userid){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
           "type"=> "imagemap",
-          "baseUrl"=> "https://i.imgur.com/nkI631e.jpg/460",
+          "baseUrl"=> "https://i.imgur.com/GEltoRG.jpg",
           "altText"=> "this is a buttons template",
           "baseSize"=> [
-              "height"=>460,
-              "width"=> 460
+              "height"=>240,
+              "width"=> 240
           ],
          
                    // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
@@ -179,13 +179,13 @@ function send_Menu($userid){
                       [
                             "type"=> "uri",
                      
-                            "thumbnailImageUrl"=> "https://i.imgur.com/nkI631e.jpg/460",
+                            "thumbnailImageUrl"=> "https://i.imgur.com/GEltoRG.jpg",
                             "linkUri"=> "https://numpapick.herokuapp.com/main.php?action=".$userid,
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
-                                "width"=> 460,
-                                "height"=> 460
+                                "width"=> 240,
+                                "height"=> 240
                             ]
                         ]
                 
