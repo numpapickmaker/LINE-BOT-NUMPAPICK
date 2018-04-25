@@ -211,7 +211,10 @@
                  send_LOWBAT($row[1]); 
                }else if($msg == "PRESS"){
                  send_PRESS($row[1]); 
-               }else{
+               }else if($msg == "online" || $msg == "offline"){
+                    send_LINE($esp." ".$msg,$row[1]);
+               }
+                else{
                   send_LINE($msg,$row[1]);
                }
             }  
