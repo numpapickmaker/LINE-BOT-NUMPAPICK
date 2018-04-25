@@ -184,8 +184,8 @@ function send_Menu($userid){
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
-                                "width"=> 700,
-                                "height"=> 700
+                                "width"=> 1040,
+                                "height"=> 1040
                             ]
                         ]
                 
