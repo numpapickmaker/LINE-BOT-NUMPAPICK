@@ -38,6 +38,7 @@ if (!is_null($events['events'])) {
 			$userId = $event['source']['userId'];
 			send_PRESS($userId);
 			send_Menu($userId);
+			send_LINE('test  follow',$userId);
 			
 		}
 		else if ($event['type'] == 'postback') {
