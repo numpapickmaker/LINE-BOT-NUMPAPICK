@@ -179,7 +179,7 @@ function send_Menu($userid){
                       [
                             "type"=> "uri",
                      
-                            "thumbnailImageUrl"=> "https://i.imgur.com/QBHEdRu.jpg",
+                            "thumbnailImageUrl"=> "https://i.imgur.com/mdGga9m.jpg",
                             "linkUri"=> "https://numpapick.herokuapp.com/main.php?action=".$userid,
                             "area"=> [
                                 "x"=> 0,
