@@ -101,6 +101,7 @@ $career= $_REQUEST["career"];
 $birthday =$_REQUEST["birthday"];
 $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday_err= "";
 // Processing form data when form is submitted
+echo "info";
 if(!empty($firstname)){
    
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
