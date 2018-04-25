@@ -6,7 +6,7 @@ $userid = $_GET["userid"];
 <head>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
     <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -15,11 +15,10 @@ $userid = $_GET["userid"];
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   
 <style>
-	
+  
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
@@ -38,11 +37,10 @@ p {
     font-size: 20px;
 }
 /* Full-width input fields */
-
 .kanit {
-	font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }.Taviraj {
-	font-family: 'Taviraj', serif;
+  font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -63,7 +61,7 @@ p {
     border: 2px solid #072140;
 }
 .nextbutton{
-	 background-color: #072140; 
+   background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -79,7 +77,7 @@ p {
     border: 2px solid #072140;
 }
 .addbutton{
-	 background-color: white; 
+   background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -118,7 +116,6 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
-
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -127,19 +124,14 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
 /* Set a style for all buttons */
-
-
 .container {
     padding: 16px;
 }
-
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -154,7 +146,6 @@ span.psw {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
-
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -162,7 +153,6 @@ span.psw {
     border: 1px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -172,19 +162,16 @@ span.psw {
     font-size: 35px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
-
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-
 </style>
 </head>
 <body>
@@ -204,11 +191,11 @@ span.psw {
      </div>
    
 </div>
-    <button class="addbutton" 	 onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
+    <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
     <p><button class="prevbutton" >ย้อนกลับ</button></p>
-	<p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
+  <p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
 
- <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">	
+ <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
  
  <!--<div class="Row">
  <div style="text-align:center;margin-top:40px;">
@@ -229,7 +216,7 @@ span.psw {
     <div class="container Taviraj" >
         <label for="uname"><b>อุปกรณ์</b></label>
       <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
-	  <p id="uname_error"></p>
+    <p id="uname_error"></p>
       <label for="psw"><b>รหัสผ่าน</b></label>
       <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" required>
   
@@ -257,9 +244,9 @@ span.psw {
       
      <h1 class= "kanit">เริ่มต้นใช้งานสำเสร็จ</h1>
      <p>
-     <i class="fas fa-check" style ="width: 100px; height: 100px; color: 	#32CD32;"></i>
+     <i class="fas fa-check" style ="width: 100px; height: 100px; color:  #32CD32;"></i>
      <p>
-     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color: 	#32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
+     <button class="nextbutton container Taviraj"  style = "font-size: 24px; width:50% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
      </div>
    </form>
 </div>
@@ -277,6 +264,10 @@ window.onclick = function(event) {
         modal2.style.display = "none";
         modal3.style.display = "none";
     }
+}
+function back(){
+   var userid = document.getElementById('userid').value;
+     window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
 }
 function add() {
     var uname = document.getElementById("uname").value;
@@ -309,7 +300,7 @@ function add() {
                 document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
                 if( str == "success"){
-                	create_table();
+                  create_table();
                     modal1.style.display = "none";
                     
                 }
@@ -326,7 +317,6 @@ function edit(){
 function submit(){
   var userid = document.getElementById('userid').value;
 }
-
 function create_table(){
   var userid = document.getElementById('userid').value;
      document.getElementById("listdevice").innerHTML = userid;
@@ -339,13 +329,7 @@ function create_table(){
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1", true);
             xmlhttp.send();
-
 }
-
-
-
-
 </script>
 </body>
 </html>
-
