@@ -85,7 +85,16 @@ if (!is_null($events['events'])) {
             check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
-            send_LINE("สวัสดี",$userId);
+            send_LINE("เริ่มต้นใช้งาน",$userId);
+            //getMqttfromlineMSG($text);  
+          }else if($text == "แก้ไขข้อมูล"){
+            send_LINE("แก้ไขข้อมูล",$userId);
+            //getMqttfromlineMSG($text);  
+          }else if($text == "ข้อเสนอแนะ"){
+            send_LINE("ข้อเสนอแนะ",$userId);
+            //getMqttfromlineMSG($text);  
+          }else if($text == "ขอความช่วยเหลือ"){
+            send_LINE("ขอความช่วยเหลือ",$userId);
             //getMqttfromlineMSG($text);  
           }
            else{
