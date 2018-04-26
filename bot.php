@@ -74,7 +74,8 @@ if (!is_null($events['events'])) {
             send_PRESS($userid);
             //check_userlogout($userId, $msg);
           }
-          }else{      
+          }else{    
+           
           if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
             $text = "CHECK";
             check_userid($userId,$text);
@@ -83,7 +84,11 @@ if (!is_null($events['events'])) {
             $text = "ACK";
             check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
-          }else{
+          }else if($text == "เริ่มต้นใช้งาน"){
+            send_PRESS($userid);
+            //getMqttfromlineMSG($text);  
+          }
+           else{
             send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login , "logout:<device name>" for logout',$userId);
           }
           }
