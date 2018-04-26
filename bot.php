@@ -85,7 +85,7 @@ if (!is_null($events['events'])) {
             check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
-            send_PRESS($userid);
+            send_LINE("สวัสดี",$userId);
             //getMqttfromlineMSG($text);  
           }
            else{
