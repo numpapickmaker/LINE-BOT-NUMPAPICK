@@ -102,14 +102,13 @@ function send_PRESS($userid){
           "template"=> [
               "type"=> "buttons",
               "thumbnailImageUrl"=> "https://i.imgur.com/DPhSPYg.jpg",
-            
               "title"=> "Menu",
               "text"=> "Please select",
-//               "defaultAction"=> [
-//               "type"=> "uri",
-//               "label"=> "View detail",
-//               "uri"=> "http://google.com"
-//               ],
+              "defaultAction"=> [
+              "type"=> "uri",
+              "label"=> "View detail",
+              "uri"=> "http://google.com"
+              ],
               "actions"=> [
                   [
                     "type"=> "message",
