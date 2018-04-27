@@ -41,10 +41,8 @@ if (!is_null($events['events'])) {
     // Reply only when message sent is in 'text' format
     if ($event['type'] == 'follow') {
       $userId = $event['source']['userId'];
-      send_PRESS($userId);
       send_Menu($userId);
-      //send_LOWBAT($userid);
-      //send_FALL($userid);
+      
        
       //send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
     }
@@ -85,6 +83,10 @@ if (!is_null($events['events'])) {
             check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
+            //test Action
+            send_PRESS($userId);
+            send_LOWBAT($userid);
+            send_FALL($userid);
             send_LINE("เริ่มต้นใช้งาน",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "แก้ไขข้อมูล"){
