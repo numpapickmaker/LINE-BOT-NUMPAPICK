@@ -85,14 +85,14 @@ if (!is_null($events['events'])) {
           }else if($text == "เริ่มต้นใช้งาน"){
             //test Action
             send_PRESS($userId);
-            send_LOWBAT($userid);
-            send_FALL($userid);
             send_LINE("เริ่มต้นใช้งาน",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "แก้ไขข้อมูล"){
+            send_LOWBAT($userid);
             send_LINE("แก้ไขข้อมูล",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ข้อเสนอแนะ"){
+            send_FALL($userid);
             send_LINE("ข้อเสนอแนะ",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ขอความช่วยเหลือ"){
