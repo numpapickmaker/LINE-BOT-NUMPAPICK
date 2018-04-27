@@ -43,8 +43,8 @@ if (!is_null($events['events'])) {
       $userId = $event['source']['userId'];
       send_FALL($userid);
       send_Menu($userId);
-      
-       
+      send_LOWBAT($userid);
+      send_PRESS($userId);
       //send_LINE('json','Ue77a191627f6ac91899e75d92264310c');
     }
     else if ($event['type'] == 'postback') {
@@ -85,11 +85,9 @@ if (!is_null($events['events'])) {
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
             //test Action
-            //send_PRESS($userId);
             send_LINE("เริ่มต้นใช้งาน",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "แก้ไขข้อมูล"){
-            send_LOWBAT($userid);
             send_LINE("แก้ไขข้อมูล",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ข้อเสนอแนะ"){
