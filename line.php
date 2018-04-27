@@ -105,11 +105,11 @@ function send_PRESS($userid){
             
               "title"=> "Menu",
               "text"=> "Please select",
-              "defaultAction"=> [
-              "type"=> "uri",
-              "label"=> "View detail",
-              "uri"=> "http://google.com"
-              ],
+//               "defaultAction"=> [
+//               "type"=> "uri",
+//               "label"=> "View detail",
+//               "uri"=> "http://google.com"
+//               ],
               "actions"=> [
                   [
                     "type"=> "message",
