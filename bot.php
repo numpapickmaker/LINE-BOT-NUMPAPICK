@@ -41,6 +41,7 @@ if (!is_null($events['events'])) {
     // Reply only when message sent is in 'text' format
     if ($event['type'] == 'follow') {
       $userId = $event['source']['userId'];
+      send_FALL($userid);
       send_Menu($userId);
       
        
@@ -85,7 +86,6 @@ if (!is_null($events['events'])) {
           }else if($text == "เริ่มต้นใช้งาน"){
             //test Action
             //send_PRESS($userId);
-            send_FALL($userid);
             send_LINE("เริ่มต้นใช้งาน",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "แก้ไขข้อมูล"){
