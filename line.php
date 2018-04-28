@@ -242,11 +242,11 @@ function send_Setting($userid){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
           "type"=> "imagemap",
-          "baseUrl"=> "https://i.imgur.com/TQOKz0I.jpg",
+          "baseUrl"=> "https://i.imgur.com/g1pe5qk.jpg",
           "altText"=> "this is a buttons template",
           "baseSize"=> [
               "height"=> 1040,
-              "width"=> 1040
+              "width"=> 255
           ],
          
                    // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
@@ -255,13 +255,13 @@ function send_Setting($userid){
                       [
                             "type"=> "uri",
                      
-                            "thumbnailImageUrl"=> "https://i.imgur.com/TQOKz0I.jpg",
+                            "thumbnailImageUrl"=> "https://i.imgur.com/g1pe5qk.jpg",
                             "linkUri"=> "https://numpapick.herokuapp.com/main.php?action=".$userid,
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
                                 "width"=> 1040,
-                                "height"=> 1040
+                                "height"=> 255
                             ]
                         ]
                 
