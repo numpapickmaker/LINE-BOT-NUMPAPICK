@@ -89,7 +89,7 @@ if (!is_null($events['events'])) {
             //getMqttfromlineMSG($text);  
           }else if($text == "แก้ไขข้อมูล"){
             send_LINE("แก้ไขข้อมูล",$userId);
-            send_Setting($userId)
+            send_Setting($userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ข้อเสนอแนะ"){
             send_LINE("ข้อเสนอแนะ",$userId);
