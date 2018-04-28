@@ -298,10 +298,20 @@ function send_CALL($userid){
              
               "actions"=> [
                   [
-                    "type"=> "uri",
-                    "label"=> "โทร",
-                    "uri"=> "tel:1669"
-                  ],  
+            "type"=> "message",
+            "label"=> "Yes",
+            "text"=> "yes"
+          ],
+          [
+            "type"=> "message",
+            "label"=> "No",
+            "text"=> "no"
+          ]
+//                   [
+//                     "type"=> "uri",
+//                     "label"=> "โทร",
+//                     "uri"=> "tel:1669"
+//                   ],  
               ]
           ]
       ];
