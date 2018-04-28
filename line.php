@@ -60,7 +60,7 @@ function send_FALL($userid){
           "template"=> [
               "type"=> "buttons",
               "thumbnailImageUrl"=> "https://i.imgur.com/al9Fmdg.jpg",
-              "imageAspectRatio"=> "square",
+              "imageAspectRatio"=> "rectangle",
               "imageSize"=> "cover",
               "title"=> "Menu",
               "text"=> "Please select",
