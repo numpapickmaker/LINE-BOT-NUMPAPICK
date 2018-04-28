@@ -245,7 +245,7 @@ function send_Setting($userid){
           "baseUrl"=> "https://i.imgur.com/g1pe5qk.jpg",
           "altText"=> "this is a buttons template",
           "baseSize"=> [
-              "height"=> 700,
+              "height"=> 300,
               "width"=> 1040
           ],
          
