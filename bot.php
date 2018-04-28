@@ -95,7 +95,7 @@ if (!is_null($events['events'])) {
             send_LINE("ข้อเสนอแนะ",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ขอความช่วยเหลือ"){
-            send_CALL($userId)
+            send_CALL($userId);
             send_LINE("ขอความช่วยเหลือ",$userId);
             //getMqttfromlineMSG($text);  
           }
