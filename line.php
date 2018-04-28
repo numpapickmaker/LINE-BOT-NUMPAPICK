@@ -59,10 +59,10 @@ function send_FALL($userid){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> "https://i.imgur.com/1GloWr9.jpg",
+              "thumbnailImageUrl"=> "https://i.imgur.com/q8PeCKp.jpg",
            //   https://i.imgur.com/al9Fmdg.jpg
               "imageAspectRatio"=> "square",
-              "imageSize"=> "contain",
+              "imageSize"=> "rectangle",
               "title"=> "Menu",
               "text"=> "Please select",
               "actions"=> [
@@ -104,7 +104,7 @@ function send_PRESS($userid){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> "https://i.imgur.com/1GloWr9.jpg",
+              "thumbnailImageUrl"=> "https://i.imgur.com/q8PeCKp.jpg",
               "title"=> "Menu",
               "text"=> "Please select",
               "defaultAction"=> [
