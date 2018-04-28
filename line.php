@@ -246,7 +246,7 @@ function send_Setting($userid){
           "altText"=> "this is a buttons template",
           "baseSize"=> [
               "height"=> 1040,
-              "width"=> 1040
+              "width"=> 256
           ],
          
                    // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
@@ -261,7 +261,7 @@ function send_Setting($userid){
                                 "x"=> 0,
                                 "y"=> 0,
                                 "width"=> 1040,
-                                "height"=> 255
+                                "height"=> 256
                             ]
                         ]
                 
