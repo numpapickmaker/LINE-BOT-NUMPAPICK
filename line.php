@@ -245,8 +245,8 @@ function send_Setting($userid){
           "baseUrl"=> "https://i.imgur.com/g1pe5qk.jpg",
           "altText"=> "this is a buttons template",
           "baseSize"=> [
-              "height"=> 300,
-              "width"=> 1040
+              "width"=> 1040,
+              "height"=> 400
           ],
          
                    // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
