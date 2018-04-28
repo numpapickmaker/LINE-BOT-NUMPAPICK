@@ -104,7 +104,7 @@ function send_PRESS($userid){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> "https://i.imgur.com/5FtmNRb.jpg",
+              "thumbnailImageUrl"=> "https://i.imgur.com/1GloWr9.jpg",
               "title"=> "Menu",
               "text"=> "Please select",
               "defaultAction"=> [
