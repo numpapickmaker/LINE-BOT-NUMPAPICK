@@ -59,7 +59,7 @@ function send_FALL($userid){
           "altText"=> "this is a buttons template",
           "template"=> [
               "type"=> "buttons",
-              "thumbnailImageUrl"=> "https://i.imgur.com/q8PeCKp.jpg",
+              "thumbnailImageUrl"=> "https://i.imgur.com/oWiGMzD.jpg",
            //   https://i.imgur.com/al9Fmdg.jpg
               "imageAspectRatio"=> "square",
               "imageSize"=> "rectangle",
