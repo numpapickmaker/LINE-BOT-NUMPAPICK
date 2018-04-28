@@ -62,7 +62,7 @@ function send_FALL($userid){
               "thumbnailImageUrl"=> "https://i.imgur.com/nkI631e.jpg",
            //   https://i.imgur.com/al9Fmdg.jpg
               "imageAspectRatio"=> "rectangle",
-              "imageSize"=> "contain",
+              "imageSize"=> "cover",
               "title"=> "Menu",
               "text"=> "Please select",
               "actions"=> [
