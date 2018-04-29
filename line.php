@@ -297,15 +297,15 @@ function send_CALL($userid){
               "text"=> "โทรหา 1669 ?",
              
               "actions"=> [
-                  [
-            "type"=> "message",
-            "label"=> "Yes",
-            "text"=> "yes"
-          ],
+           [
+              "type"=> "uri",
+              "label"=> "โทร",
+              "uri"=> "tel:1669"
+            ], 
           [
             "type"=> "message",
-            "label"=> "No",
-            "text"=> "no"
+            "label"=> "ยกเลิก",
+            "text"=> "ยกเลิก"
           ]
 //                   [
 //                     "type"=> "uri",
