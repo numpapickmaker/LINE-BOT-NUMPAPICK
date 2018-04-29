@@ -309,7 +309,7 @@ function create_table_elderlist($deviceid){
            $phone = $row[8]; 
           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="phonefld" type="text" value="'.$phone.'" placeholder="เบอร์โทรศัพท์" required><p></p>';
            $Birthday = $row[9];
-           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="birthdayfld" type="date" value="'.$Birthday.'" placeholder="วันเกิด" required><p></p>';
+           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="birthdayfld" type="text" value="'.$Birthday.'" placeholder="อายุ" required><p></p>';
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
