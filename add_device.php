@@ -297,19 +297,19 @@ function create_table_elderlist($deviceid){
            }else{
               $female ='checked';
            }
-          echo '<form id ="sexfld"> <input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female </form>' ;
+          echo '<form id ="sexfld"> <input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female </form><p></p>' ;
            $Heigth = $row[4];
-           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="heigthfld" type="text" value="'.$Heigth.'" placeholder="ความสูง" required>';
+           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="heigthfld" type="text" value="'.$Heigth.'" placeholder="ความสูง" required><p></p>';
            $Weigth = $row[5];
-           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="weigthfld" type="text" value="'.$Weigth.'" placeholder="น้ำหนัก" required>';
+           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="weigthfld" type="text" value="'.$Weigth.'" placeholder="น้ำหนัก" required><p></p>';
            $disease = $row[6];
-           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="diseasefld" type="text" value="'.$disease.'" placeholder="โรคประจำตัว" required>';
+           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="diseasefld" type="text" value="'.$disease.'" placeholder="โรคประจำตัว" required><p></p>';
            $address  = $row[7];
-           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="addressfld" type="text" value="'.$address.'" placeholder="ที่อยู่" required>';
+           echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="addressfld" type="text" value="'.$address.'" placeholder="ที่อยู่" required><p></p>';
            $phone = $row[8]; 
-          echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="phonefld" type="text" value="'.$phone.'" placeholder="เบอร์โทรศัพท์" required>';
+          echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="phonefld" type="text" value="'.$phone.'" placeholder="เบอร์โทรศัพท์" required><p></p>';
            $Birthday = $row[9];
-           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="birthdayfld" type="date" value="'.$Birthday.'" placeholder="วันเกิด" required>';
+           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="birthdayfld" type="date" value="'.$Birthday.'" placeholder="วันเกิด" required><p></p>';
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
