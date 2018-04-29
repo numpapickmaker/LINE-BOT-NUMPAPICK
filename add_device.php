@@ -297,7 +297,7 @@ function create_table_elderlist($deviceid){
            }else{
               $female ='checked';
            }
-          echo '<form id ="sexfld"> <input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female </form><p></p>' ;
+          echo '<form id ="sexfld"> <input  id="sexfld" type="radio" value="male" name="sexfld"'.$male.' />Male <input id="sexfld" type="radio" value="female" name="sexfld" '.$female.'/> Female </form><p></p>' ;
            $Heigth = $row[4];
            echo'<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="heigthfld" type="text" value="'.$Heigth.'" placeholder="ความสูง" required><p></p>';
            $Weigth = $row[5];
