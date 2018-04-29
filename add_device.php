@@ -290,7 +290,7 @@ function create_table_elderlist($deviceid){
            $Device_id = $row[1];
            echo '<label > Device id  '.$Device_id.'</label>';
            $Name = $row[2];
-           echo '<input type="text" id="namefld" name="namefld" value="'.$Name.'" placeholder="ชื่อ - นามสกุล" required>';
+           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" type="text" id="namefld" name="namefld" value="'.$Name.'" placeholder="ชื่อ - นามสกุล" required>';
            $Sex = $row[3];
            if($Sex == 'male'){
               $male = 'checked';
