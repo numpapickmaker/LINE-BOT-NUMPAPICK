@@ -110,7 +110,7 @@ input[type=text], select {
     margin: 0px 2px;
     display: inline-block;
     border: 1px solid #ccc;
-    border-radius: 4px;
+    border-radius: 5px;
     box-sizing: border-box;
     
 }
@@ -216,7 +216,7 @@ span.psw {
     <p id="email_error"></p>
     <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" required >
     <p id="career_error"></p>
-    <input type="text" id="birthday" name="birthday" placeholder="อายุ" class = "Taviraj" required> 
+    <input type="date" id="birthday" name="birthday" placeholder="อายุ" class = "Taviraj" required> 
   <p id="birthday_error"></p>
   <div style="text-align: center;">
     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
