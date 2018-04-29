@@ -15,10 +15,10 @@ $userid = $_GET["userid"];
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   
 <style>
-  
 body {
     background-color: white;
 }
+
 h1 {
     color: #072140;
     text-align: center;
@@ -37,10 +37,11 @@ p {
     font-size: 20px;
 }
 /* Full-width input fields */
+
 .kanit {
-  font-family: 'Kanit', sans-serif;
+	font-family: 'Kanit', sans-serif;
 }.Taviraj {
-  font-family: 'Taviraj', serif;
+	font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -56,12 +57,12 @@ p {
     font-size: 24px;
     margin: 2px 2px;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     border-radius: 8px;
     border: 2px solid #072140;
 }
 .nextbutton{
-   background-color: #072140; 
+	 background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -72,12 +73,12 @@ p {
     font-size: 24px;
     margin: 2px 2px;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     border-radius: 8px;
     border: 2px solid #072140;
 }
 .addbutton{
-   background-color: white; 
+	 background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -88,9 +89,25 @@ p {
     font-size: 24px;
     margin: 2px 2px;
     cursor: pointer;
-    width: 50%;
+    width: 100%;
     border-radius: 8px;
     border: 2px solid #FFA400;
+}
+.delbutton{
+	 background-color: white; 
+    border: none;
+    color: #FF0000;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #FF0000;
 }
 .Row {
             
@@ -116,22 +133,28 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
+
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 0px 0;
     display: inline-block;
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
+
 /* Set a style for all buttons */
+
+
 .container {
     padding: 16px;
 }
+
 span.psw {
     float: right;
     padding-top: 16px;
 }
+
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -146,13 +169,15 @@ span.psw {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
+
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    width: 90%; /* Could be more or less, depending on screen size */
 }
+
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -162,15 +187,43 @@ span.psw {
     font-size: 35px;
     font-weight: bold;
 }
+
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
+
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
+}
+
+#outer
+{
+    width:100%;
+    text-align: center;
+}
+.inner
+{
+    display: inline-block;
+}
+
+.numberCircle {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  /* remove if you don't care about IE8 */
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background: #fff;
+  display: inline-block;
+  border: 3px solid #bbbbbb;
+  color: #bbbbbb;
+  text-align: center;
+  font: 23px kanit, sans-serif;
+  font-weight : bold
 }
 </style>
 </head>
@@ -181,9 +234,9 @@ span.psw {
 <p>   
   
 <div style="text-align: center; ">
-  <span class="step"></span>
-    <span class="step" ></span>
-    <span class="step" style="background-color: #000000;"></span>
+ <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">1</div>
+    <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">2</div>
+    <div class="numberCircle" >3</div>
     
     <div class="container" >
     
@@ -191,8 +244,9 @@ span.psw {
      </div>
    
 </div>
+	<div class="container" >
     <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
-    <p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>
+     <!--<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>-->
   <p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
 
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
@@ -213,22 +267,22 @@ span.psw {
       <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
     </div>
 
-    <div class="container Taviraj" >
-        <label for="uname"><b>อุปกรณ์</b></label>
-      <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" required>
-    <p id="uname_error"></p>
-      <label for="psw"><b>รหัสผ่าน</b></label>
-      <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" required>
+    <div class="container" >
+ <p><label class = "Taviraj"  for="uname">เพิ่มอุปกรณ์</label>
+      <input type="text"  placeholder="เลขอุปกรณ์" name="uname" id="uname" class = "Taviraj" required>
+      <p id="uname_error"></p>
+      <input type="password" placeholder="รหัสผ่าน" name="psw" id="psw" class = "Taviraj" required>
   
       <p id="psw_error"></p>
       <p>
      
       <p><p><p><p>
+     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
      
-     <button onclick="add()" class="nextbutton"   style = "font-size: 18px; width:40%" value="ยืนยัน">ยืนยัน</button>
-
-  </div>
+     <button class="nextbutton"  onclick="add()" style = "font-size: 20px; width:100%" value="ยืนยัน">ยืนยัน</button>
    
+    </div>
+   </div>
   </div>
 </div>
 
@@ -239,14 +293,14 @@ span.psw {
   <div class="modal-content animate" >
     
 
-    <div class="container Taviraj" >
+    <div class="container" >
       <p>
       
-     <h1 class= "kanit">เริ่มต้นใช้งานสำเสร็จ</h1>
+     <h1 class= "kanit" style = "font-size: 36px" >เริ่มต้นใช้งานสำเสร็จ</h1>
      <p>
-     <i class="fas fa-check" style ="width: 100px; height: 100px; color:  #32CD32;"></i>
+     <i class="fas fa-check" style ="width: 80px; height: 60px; color:  #32CD32;"></i>
      <p>
-     <button class="nextbutton container Taviraj"  onclick="next()" style = "font-size: 24px; width:50% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
+     <button class="nextbutton container Taviraj"  onclick="next()" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
      </div>
    </div>
 </div>
