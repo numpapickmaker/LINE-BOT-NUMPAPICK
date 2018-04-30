@@ -261,7 +261,7 @@ function send_Setting($userid){
                                 "x"=> 0,
                                 "y"=> 0,
                                 "width"=> 1040,
-                                "height"=> 350
+                                "height"=> 550
                             ]
                         ]
                 
