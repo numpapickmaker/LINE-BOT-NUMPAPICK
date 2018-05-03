@@ -228,7 +228,39 @@ if(!empty($register)){
   send_LINE("สมัครใช้งานสำเร็จ",$userid);
   echo "success";
 }
+$Unsubscribe = $_REQUEST["Unsubscribe"];
+if(!empty($Unsubscribe)){
+   $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     $sql ="delete from userline where id='".$userid."';";
+    //echo $sql;
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+          $sql ="delete from user_info where id='".$userid."';";
+          $ret = pg_query($db, $sql) ;
+          if(!$ret) {
+             echo pg_last_error($db) ;
+          } else {
+              
+             echo "success";
+             send_LINE("ยกเลิกบริการสำเร็จ",$userid);
+            // echo "Records created successfully\n";
+          }
+        // echo "Records created successfully\n";
+      }
 
+      pg_close($db) ; 
+}
 $elderinfo = $_REQUEST["elderinfo"]; 
 if(!empty($elderinfo)){
     if($elderinfo == "3"){ // ลบข้อมูลอุปกรณ์ ที่เชื่อมต่อ ออกจาก ผู้ดูแล
