@@ -256,7 +256,7 @@ function send_Setting($userid){
                             "type"=> "uri",
                      
                             "thumbnailImageUrl"=> "https://i.imgur.com/ZdUE0ih.jpg",
-                            "linkUri"=> "https://numpapick.herokuapp.com/main.php?action=".$userid,
+                            "linkUri"=> "https://numpapick.herokuapp.com/main.php?userid=".$userid,
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
