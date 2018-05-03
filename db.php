@@ -188,6 +188,16 @@
       } else {
          echo "Opened database successfully\n";
       }
+      $sql = "SELECT *FROM device_information WHERE device_id='10674402';";
+       $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+        while($row = pg_fetch_row($ret) ){
+          
+          $elder_name = $row[2];
+        }
+      }
       $sql ="SELECT * FROM userline WHERE esp='".$esp."';";
         echo $sql;
     $ret = pg_query($db, $sql) ;
@@ -204,15 +214,15 @@
             }else{
      
                if($msg == "FALL"){
-                   send_FALL($row[1]);
+                   send_FALL($row[1],$esp,$elder_name);
                }else if($msg == "CHECK"){
                  send_CHECK($row[1]); 
                }else if($msg == "LOW"){
-                 send_LOWBAT($row[1]); 
+                 send_LOWBAT($row[1],$esp,$elder_name); 
                }else if($msg == "PRESS"){
-                 send_PRESS($row[1]); 
+                 send_PRESS($row[1],$esp,$elder_name); 
                }else if($msg == "online" || $msg == "offline"){
-                    send_LINE($esp." ".$msg,$row[1]);
+                    send_LINE($esp.":"."$elder_name".$msg,$row[1]);
                }
                 else{
                   send_LINE($msg,$row[1]);
