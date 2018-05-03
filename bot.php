@@ -83,11 +83,11 @@ if (!is_null($events['events'])) {
            
           if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
             $text = "CHECK";
-            check_userid($userId,$text);
+            //check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
           }else if($text == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
             $text = "ACK";
-            check_userid($userId,$text);
+            check_userid($userId,$text,$ack_id);
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
             //test Action
