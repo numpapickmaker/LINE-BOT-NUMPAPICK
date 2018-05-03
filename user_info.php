@@ -213,14 +213,8 @@ span.psw {
     <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" required >
     
     <p id="career_error"></p>
-    <label  class = "Taviraj" >วัน / เดือน / ปี</label>
-     <select class = "Taviraj" style = "width: 100%;
-    padding: 12px 28px;
-    margin: 0px 2px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;"  required>
+    
+     <select class = "Taviraj" id="dd" name="dd" style="width: 25%" required>
      <option value="00">วัน</option>
       <option value="01">01</option>
       <option value="02">02</option>
@@ -256,14 +250,7 @@ span.psw {
       <option value="31">31</option>
       
 	</select>
-    <p></p>
-    <select class = "Taviraj" style = "width: 100%;
-    padding: 12px 28px;
-    margin: 0px 2px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;" id="mm" name="mm" required>
+    <select class = "Taviraj" id="mm" name="mm" style="width: 25%" required>
       <option value="00">เดือน</option>
       <option value="01">01</option>
       <option value="02">02</option>
@@ -278,14 +265,7 @@ span.psw {
       <option value="11">11</option>
       <option value="12">12</option>
 	</select>
-    <p></p>
-    <select class = "Taviraj" style = "width: 100%;
-    padding: 12px 28px;
-    margin: 0px 2px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;"  required>
+    <select class = "Taviraj" id="yy" name="yy" style="width: 45%" required>
       <option value="00">ปี</option>
       <option value="2018">2018</option>
       <option value="2017">2017</option>
@@ -386,7 +366,7 @@ span.psw {
       <option value="1930">1930</option>
       
 	</select>
-    <p></p>
+    
   
   <div style="text-align: center;">
     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
