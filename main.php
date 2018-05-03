@@ -137,7 +137,7 @@ input[type=text], select {
     <li> </li>
     <li> <button onclick="unsubscribe()" class="button button1" style = "color: #505050;">
     <i class="far fa-trash-alt"></i><i class="fas fa-trash-alt" style="color: #0F4484;">
-    </i>&emsp;ยกเลิกบริการ <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
+    </i><a href="JavaScript:window.close()" style = "color: #505050; text-decoration: none !important;">&emsp;ยกเลิกบริการ </a> <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
     <li></li>
     
   </ul>
