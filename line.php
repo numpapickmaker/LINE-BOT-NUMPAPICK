@@ -77,7 +77,7 @@ function send_FALL($userid,$esp,$elder_name){
                   [
                     "type"=> "message",
                     "label"=> "Acknowledge",
-                    "text"=> "Acknowledge"
+                    "text"=> "Acknowledge:".$esp
                   ],
                   [
                     "type"=> "uri",
@@ -129,7 +129,7 @@ function send_PRESS($userid,$esp,$elder_name){
                   [
                     "type"=> "message",
                     "label"=> "Acknowledge",
-                    "text"=> "Acknowledge"
+                    "text"=> "Acknowledge:".$esp
                   ],
                    [
                     "type"=> "uri",
@@ -163,7 +163,6 @@ function send_LOWBAT($userid,$esp,$elder_name){
       
     "type"=> "text",
     "text"=>  "หมายเลขอุปกรณ์ : ".$esp." คุณ ".$elder_name." เหลือพลังงานต่ำกว่า 20%"
-
       ];
   //     $messages = [
          
@@ -237,7 +236,6 @@ function send_Menu($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-
 function send_Setting($userid){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
@@ -286,7 +284,6 @@ function send_Setting($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-
 function send_CALL($userid){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
@@ -333,5 +330,4 @@ function send_CALL($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-
 ?>
