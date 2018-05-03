@@ -61,8 +61,8 @@ input[type=text], select {
 }
 </style>
 <?php
-  $username= $_GET["action"];
-  echo $username;
+  $username= $_GET["userid"];
+  //echo $username;
   //echo $_GET["action"];
   
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -75,7 +75,7 @@ input[type=text], select {
       } else {
          //echo "Opened database successfully\n";
       }
-     $sql ="SELECT * FROM user_info WHERE id='".$_GET["action"]."';";
+     $sql ="SELECT * FROM user_info WHERE id='".$username."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -143,6 +143,33 @@ input[type=text], select {
   </ul>
  
 </div>
+<script>
+// Get the modal
 
+function next(){
+   var userid = document.getElementById('userid').value;
+   var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("uname_error").innerHTML = this.responseText;
+                var str = this.responseText.trim();
+                console.log(str);
+                
+                 // window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+                    
+                
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?Unsubscribe=success&userid="+userid, true);
+        xmlhttp.send();
+     
+}
+function back(){
+   var userid = document.getElementById('userid').value;
+     window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
+}
+
+
+</script>
 </body>
-</html>username
+</html>
