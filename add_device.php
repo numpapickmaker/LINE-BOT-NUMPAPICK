@@ -241,12 +241,13 @@ if(!empty($Unsubscribe)){
          //echo "Opened database successfully\n";
       }
      $sql ="delete from userline where id='".$userid."';";
-    //echo $sql;
+    echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
           $sql ="delete from user_info where id='".$userid."';";
+          echo $sql;
           $ret = pg_query($db, $sql) ;
           if(!$ret) {
              echo pg_last_error($db) ;
