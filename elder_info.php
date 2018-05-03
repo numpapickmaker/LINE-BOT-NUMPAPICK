@@ -252,7 +252,8 @@ span.psw {
     
   <br>
     <p><button class="prevbutton"  onclick="back()">ย้อนกลับ</button></p>
-  <p><button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
+	    <p><button class="nextbutton" onclick="save()">ยืนยัน</button></p>
+  <!--<p><button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>-->
     <button class="delbutton" onclick="document.getElementById('id02').style.display='block'"> ลบ</button>
   
  </div>
