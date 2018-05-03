@@ -306,7 +306,7 @@ window.onclick = function(event) {
 }
 function next(){
    var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/finish.php?action="+userid); 
+     window.location.replace("https://numpapick.herokuapp.com/finish.php?userid="+userid); 
 }
 function back(){
    var userid = document.getElementById('userid').value;
