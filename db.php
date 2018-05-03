@@ -236,7 +236,7 @@
                }else if($msg == "PRESS"){
                  send_PRESS($row[1],$esp,$elder_name); 
                }else if($msg == "online" || $msg == "offline"){
-                    send_LINE($esp.":"."$elder_name ".$msg,$row[1]);
+                    send_LINE($esp." : "."$elder_name ".$msg,$row[1]);
                }
                 else{
                   send_LINE($msg,$row[1]);
