@@ -151,7 +151,7 @@ function unsubscribe(){
    var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("uname_error").innerHTML = this.responseText;
+               // document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
                 console.log(str);
                 
