@@ -66,7 +66,7 @@ if (!is_null($events['events'])) {
             $topic = $splitMsg[0];
             $msg = $splitMsg[1];
             
-             send_LINE($topic,$userId);
+            
            if($topic == "Acknowledge" ){
             $text = "ACK";
             check_userid($userId,$text,$msg);
