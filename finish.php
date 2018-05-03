@@ -241,7 +241,7 @@ span.psw {
     
 	<div class="container" >
     
-   <a href="JavaScript:window.close()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</a>
+   <a href="next()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</a>
 	</div>
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
  
@@ -315,7 +315,21 @@ window.onclick = function(event) {
 }
 function next(){
    var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+	  var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("uname_error").innerHTML = this.responseText;
+                var str = this.responseText.trim();
+                if( str == "success"){
+                  	window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+                    
+                }
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?register=success&userid="+userid, true);
+        xmlhttp.send();
+    }
+     
 }
 function back(){
    var userid = document.getElementById('userid').value;
