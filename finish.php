@@ -291,6 +291,7 @@ function next(){
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
+                console.log(str);
                 if( str == "success"){
                   window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
                     
