@@ -3,7 +3,6 @@
       $userid = $_GET["userid"];
       $esp = $_GET["esp"];
       check_userlogout($userid,$esp);
-
     }
    function save_userid($userid,$esp){ 
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -41,7 +40,7 @@
       }
       pg_close($db) ;
    }
-   function check_userid($userid,$msg){
+   function check_userid($userid,$msg,$ack_id){
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -52,24 +51,39 @@
       } else {
          echo "Opened database successfully\n";
       }
-      $sql ="SELECT * FROM userline WHERE id='".$userid."';";
+
+      send_LINE("Wait a Second",$userid);
+      //////////// send ack to device////////////////
+      getMqttfromlineMsg($ack_id,$msg);
+       $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+          while($row = pg_fetch_row($ret)){
+              $user_name =  $row[2]." ".$row[3]; 
+          }
+      }
+      $sql ="SELECT * FROM userline WHERE esp='".$ack_id."';";
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
          $checking = 0;   
               while($row = pg_fetch_row($ret)){
-                  echo "ESP name = " . $row[2] . "\n";
+                  echo "ESP name = " . $row[1] . "\n";
                   // send_LINE('PASS')
                    $checking = 1;     
-                        send_LINE("Wait a Second",$userid);
-                        getMqttfromlineMsg($row[2],$msg);
+                   send_LINE("มีการกดรับทราบโดย ".$user_name,$row[1]);     
+                        
                 }  
                   
         if( $checking == 0){
              send_LINE("Please login",$userid);
-        }
+        }else{
+
          //echo "Records created successfully\n";
+        }
       }
      
       pg_close($db) ;
@@ -287,7 +301,6 @@ function save_esp($esp,$id){
         }   
       }
       
-
       pg_close($db) ;
    }
     function update_esp($esp,$msg){
