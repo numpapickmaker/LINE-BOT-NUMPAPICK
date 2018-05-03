@@ -65,6 +65,8 @@ if (!is_null($events['events'])) {
             $splitMsg = explode(":", $text);
             $topic = $splitMsg[0];
             $msg = $splitMsg[1];
+            $ack_id = $splitMsg[2];
+            send_LINE($ack_id,$userId);
               if($topic == "Login" || $topic == "login"){
             send_FALL($userid);
             //check_login($userId, $msg);
