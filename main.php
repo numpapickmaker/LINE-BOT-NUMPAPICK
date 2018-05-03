@@ -154,7 +154,7 @@ function unsubscribe(){
                // document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
                 console.log(str);
-                myWindow.close(); 
+                window.close(); 
                  // window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
                     
                 
