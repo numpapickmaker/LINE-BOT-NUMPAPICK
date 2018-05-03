@@ -380,7 +380,7 @@ span.psw {
 </div>
 <script>
 function user(){
-   
+   //
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
     var phone = document.getElementById("phone").value;
