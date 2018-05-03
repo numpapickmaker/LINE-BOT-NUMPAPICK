@@ -104,7 +104,7 @@ $firstname_err = $lastname_err =  $phone_err=$email_err = $career_err= $birthday
 $info =$_REQUEST["info"];
 
 if($info == "1"){
-   	
+    
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
       $dbname      = "dbname=ddagopqfb1uood";
@@ -224,6 +224,11 @@ if(!empty($create_table)){
      //echo $result;
       pg_close($db) ;   
       
+}
+$register = $_REQUEST["register"];
+if($register == "success"){
+  send_LINE("สมัครใช้งานสำเร็จ",$userid);
+  echo "success";
 }
 $elderinfo = $_REQUEST["elderinfo"]; 
 if(!empty($elderinfo)){
