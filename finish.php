@@ -18,7 +18,6 @@ $userid = $_GET["userid"];
 body {
     background-color: white;
 }
-
 h1 {
     color: #072140;
     text-align: center;
@@ -37,7 +36,6 @@ p {
     font-size: 20px;
 }
 /* Full-width input fields */
-
 .kanit {
   font-family: 'Kanit', sans-serif;
 }.Taviraj {
@@ -133,7 +131,6 @@ p {
   display: inline-block;
   opacity: 0.5;
 }
-
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -142,19 +139,14 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
 }
-
 /* Set a style for all buttons */
-
-
 .container {
     padding: 16px;
 }
-
 span.psw {
     float: right;
     padding-top: 16px;
 }
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -169,7 +161,6 @@ span.psw {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
 }
-
 /* Modal Content/Box */
 .modal-content {
     background-color: #fefefe;
@@ -177,7 +168,6 @@ span.psw {
     border: 1px solid #888;
     width: 90%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button (x) */
 .close {
     position: absolute;
@@ -187,19 +177,16 @@ span.psw {
     font-size: 35px;
     font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
     color: red;
     cursor: pointer;
 }
-
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-
 #outer
 {
     width:100%;
@@ -209,7 +196,6 @@ span.psw {
 {
     display: inline-block;
 }
-
 .numberCircle {
   border-radius: 50%;
   behavior: url(PIE.htc);
@@ -230,7 +216,7 @@ span.psw {
 <body>
 
 <p>
-<h1 class="kanit">เริ่มต้นใช้งานสำเร็จ</h1>
+<h1 class="kanit">เริ่มต้นการใช้งานสำเร็จ</h1>
 <p>   
   
 <div style="text-align: center; ">
@@ -238,11 +224,12 @@ span.psw {
     <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">2</div>
     <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">3</div>
     
-    
   <div class="container" >
-      <button class="nextbutton" onclick="back()">aaa</button>
-   <button onclick="next()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</button>
-  </div>
+    <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
+     <!--<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>-->
+  <p><button class="nextbutton" onclick="next()">ถัดไป</button></p>
+  <button onclick="next()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</button>
+
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
  
  <!--<div class="Row">
@@ -282,55 +269,24 @@ span.psw {
 
 
 
-<div id="id02" class="modal">
-  
-  <div class="modal-content animate" >
-    
 
-    <div class="container" >
-      <p>
-      
-     <h1 class= "kanit" style = "font-size: 36px" >เริ่มต้นใช้งานสำเสร็จ</h1>
-     <p>
-     <i class="fas fa-check" style ="width: 80px; height: 60px; color:  #32CD32;"></i>
-     <p>
-     <button class="nextbutton container Taviraj"  onclick="next()" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
-     </div>
-   </div>
-</div>
 
 <script>
 // Get the modal
 var modal1 = document.getElementById('id01');
-var modal2 = document.getElementById('id02');
 var modal3 = document.getElementById('id03');
 create_table();
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal1) {
         modal1.style.display = "none";
-        modal2.style.display = "none";
+       
         modal3.style.display = "none";
     }
 }
 function next(){
    var userid = document.getElementById('userid').value;
-    var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("uname_error").innerHTML = this.responseText;
-                var str = this.responseText.trim();
-                console.log(str);
-                if( str == "success"){
-                    window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
-                    
-                }
-            }
-        };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?register=success&userid="+userid, true);
-        xmlhttp.send();
-    }
-     
+     window.location.replace("https://numpapick.herokuapp.com/finish.php?action="+userid); 
 }
 function back(){
    var userid = document.getElementById('userid').value;
