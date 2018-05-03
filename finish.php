@@ -292,10 +292,10 @@ function next(){
                 document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
                 console.log(str);
-                if( str == "success"){
+                
                   window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
                     
-                }
+                
             }
         };
         xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?register=success&userid="+userid, true);
