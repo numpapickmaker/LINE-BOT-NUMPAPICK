@@ -240,7 +240,7 @@ span.psw {
     
     
   <div class="container" >
-      <button class="nextbutton" onclick="next()">aaa</button>
+      <button class="nextbutton" onclick="back()">aaa</button>
    <button onclick="next()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</button>
   </div>
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
