@@ -162,7 +162,7 @@ function send_LOWBAT($userid,$esp,$elder_name){
     $messages = [
       
     "type"=> "text",
-    "text"=>  "หมายเลขอุปกรณ์ : ".$esp." คุณ ".$elder_name."เหลือพลังงานต่ำกว่า 20%"
+    "text"=>  "หมายเลขอุปกรณ์ : ".$esp." คุณ ".$elder_name." เหลือพลังงานต่ำกว่า 20%"
 
       ];
   //     $messages = [
