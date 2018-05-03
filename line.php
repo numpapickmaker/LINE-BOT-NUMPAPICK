@@ -200,7 +200,7 @@ function send_Menu($userid){
               "width"=> 1040
           ],
          
-                   // "uri"=> "https://numpapick.herokuapp.com/manage.php?action=".$userid
+                   // "uri"=> "https://numpapick.herokuapp.com/manage.php?userid=".$userid
                
               "actions"=> [
                       [
