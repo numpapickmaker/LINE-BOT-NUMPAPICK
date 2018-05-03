@@ -52,7 +52,7 @@ function send_Check($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-function send_FALL($userid){
+function send_FALL($userid,$esp,$elder_name){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
           "type"=> "template",
@@ -63,8 +63,8 @@ function send_FALL($userid){
            //   https://i.imgur.com/al9Fmdg.jpg
               "imageAspectRatio"=> "square",
               "imageSize"=> "cover",
-              "title"=> "Menu",
-              "text"=> "Please select",
+              "title"=> "หมายเลขอุปกรณ์ : ".$esp."",
+              "text"=> "คุณ ".$elder_name,
               "defaultAction"=> [
                      "type"=> "message",
                      "label"=> "Acknowledge",
@@ -105,7 +105,7 @@ function send_FALL($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-function send_PRESS($userid){
+function send_PRESS($userid,$esp,$elder_name){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
           "type"=> "template",
@@ -115,8 +115,8 @@ function send_PRESS($userid){
               "thumbnailImageUrl"=> "https://i.imgur.com/oWiGMzD.jpg",
               "imageAspectRatio"=> "square",
               "imageSize"=> "cover",
-              "title"=> "Menu",
-              "text"=> "Please select",
+              "title"=> "หมายเลขอุปกรณ์ : ".$esp."",
+              "text"=> "คุณ ".$elder_name,
               "defaultAction"=> [
                    "type"=> "message",
                    "label"=> "Acknowledge",
@@ -157,12 +157,12 @@ function send_PRESS($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-function send_LOWBAT($userid){
+function send_LOWBAT($userid,$esp,$elder_name){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
     $messages = [
       
     "type"=> "text",
-    "text"=> "เหลือพลังงานต่ำกว่า 20%"
+    "text"=>  "หมายเลขอุปกรณ์ : ".$esp." คุณ ".$elder_name."เหลือพลังงานต่ำกว่า 20%"
 
       ];
   //     $messages = [
