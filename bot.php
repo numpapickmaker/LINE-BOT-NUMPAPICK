@@ -65,29 +65,20 @@ if (!is_null($events['events'])) {
             $splitMsg = explode(":", $text);
             $topic = $splitMsg[0];
             $msg = $splitMsg[1];
-            $splitack = explode(":", $msg);
-            $msg = $splitack[0];
-            $ack_id = $splitMsg[1];
+            
              send_LINE($topic,$userId);
+           if($topic == "Acknowledge" ){
+            $text = "ACK";
+            check_userid($userId,$text,$msg);
+            //getMqttfromlineMSG($text);  
+           }
            
-           
-              if($topic == "Login" || $topic == "login"){
-            send_FALL($userid);
-            //check_login($userId, $msg);
-          }
-          if($topic == "Logout" || $topic == "logout"){
-            send_PRESS($userid);
-            //check_userlogout($userId, $msg);
-          }
+             
           }else{    
            
           if($text == "Check" || $text == "CHECK" || $text == "check" || $text == "เช็ค" || $text == "เช็คอุปกรณ์"){
             $text = "CHECK";
             //check_userid($userId,$text);
-            //getMqttfromlineMSG($text);  
-          }else if($msg == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
-            $text = "ACK";
-            check_userid($userId,$text,$ack_id);
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
             //test Action
