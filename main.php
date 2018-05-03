@@ -105,61 +105,46 @@ input[type=text], select {
     <form action="https://numpapick.herokuapp.com/user_information.php" method="get">
     <li> <button class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="action">
     <i class="fas fa-user" style="color: #0F4484;">
-    </i>&emsp;ข้อมูลส่วนตัว 
-    <!--<i class="fas fa-chevron-right" style="float:right; color: #505050; "></i>-->
-  </button>
-</li>
-    <a>    
+    </i>&emsp;ข้อมูลส่วนตัว <i class="fas fa-chevron-right" style="float:right; color: #505050; "></i></button></li>
     </form>
+    <li></li>
     
   </ul>
   <br>
-  
+  <br>
   <br>
 <label for="fname" class = "Taviraj" style = "color: #808080;">อุปกรณ์</label>
-
-  <ul class="w3-ul">
+<ul class="w3-ul">
     <li> </li>
   
     <form action="https://numpapick.herokuapp.com/manage.php" method="get">
     <li> <button  class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="action">
     <i class="fas fa-tasks" style="color: #0F4484;">
-    </i>&emsp;จัดการอุปกรณ์ 
-    <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
-  </button>
-</li>
-
+    </i>&emsp;จัดการอุปกรณ์ <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
+    </form>
     <li> <button class="button button1 " style = "color: #505050;">
     <i class="fas fa-chart-line" style="color: #0F4484; ">
     </i>&emsp;ประวัติการใช้งาน 
-    <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
-  </button>
-</li>
-    
+    <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
     <li></li>
     
   </ul>
-  </form>
-
+  
   <br>
- 
+  <br>
   <br>
 <ul class="w3-ul">
-  <li> </li>
-  <li> </li>
-    <li><button class="button button1" style = "color: #505050;">
-    <i class="far fa-trash-alt"></i>
-    <i class="fas fa-trash-alt" style="color: #0F4484;"></i>
-    <a href="JavaScript:window.close()" style = "color: #505050; text-decoration: none !important;">&emsp;ยกเลิกบริการ </a>
-    <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
-    </button></li>
-  <a>
-</ul>
+    <li> </li>
+    <li> <button onclick="unsubscribe()" class="button button1" style = "color: #505050;">
+    <i class="far fa-trash-alt"></i><i class="fas fa-trash-alt" style="color: #0F4484;">
+    </i>&emsp;ยกเลิกบริการ <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
+    <li></li>
+    
+  </ul>
  <input type="hidden" name="userid" id="userid" value="<?php echo $username;?>">  
 </div>
 <script>
 // Get the modal
-
 function unsubscribe(){
    var userid = document.getElementById('userid').value;
    var xmlhttp = new XMLHttpRequest();
@@ -182,8 +167,6 @@ function back(){
    var userid = document.getElementById('userid').value;
      window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
 }
-
-
 </script>
 </body>
 </html>
