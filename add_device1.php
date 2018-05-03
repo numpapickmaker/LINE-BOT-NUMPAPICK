@@ -237,7 +237,7 @@ span.psw {
     <p>
     <p><button class="addbutton"  onclick="document.getElementById('id01').style.display='block'" >เพิ่ม</button></p>
     
-    <p><button class="prevbutton" onclick="back()">ย้อนกลับ</button></p>
+    <!--<p><button class="prevbutton" onclick="back()">ย้อนกลับ</button></p>-->
   
   
  
