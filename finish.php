@@ -293,7 +293,7 @@ function next(){
                 var str = this.responseText.trim();
                 console.log(str);
                 
-                  window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+                  window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid); 
                     
                 
             }
