@@ -226,7 +226,7 @@ if(!empty($create_table)){
       
 }
 $register = $_REQUEST["register"];
-if($register == "success"){
+if(!empty($register)){
   send_LINE("สมัครใช้งานสำเร็จ",$userid);
   echo "success";
 }
