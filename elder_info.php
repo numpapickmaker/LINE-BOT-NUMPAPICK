@@ -275,7 +275,7 @@ span.psw {
      <div class="container Taviraj" >
       <p>
       
-     <h1 class= "kanit">แก้ไขข้อมูลสำเร็จ</h1>
+     <h1 class= "kanit">แก้ไขสำเร็จ</h1>
      <p>
      <i class="fas fa-check" style ="width: 100px; height: 100px; color:  #32CD32;"></i>
      <p>
