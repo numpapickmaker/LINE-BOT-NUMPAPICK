@@ -139,7 +139,7 @@ input[type=text], select {
     <i class="far fa-trash-alt"></i><i class="fas fa-trash-alt" style="color: #0F4484;">
     </i>&emsp;ยกเลิกบริการ <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
     <li></li>
-    
+    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
   </ul>
  
 </div>
