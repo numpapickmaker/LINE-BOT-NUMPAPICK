@@ -207,7 +207,7 @@ function send_Menu($userid){
                             "type"=> "uri",
                      
                             "thumbnailImageUrl"=> "https://i.imgur.com/nkI631e.jpg",
-                            "linkUri"=> "https://numpapick.herokuapp.com/main.php?action=".$userid,
+                            "linkUri"=> "https://numpapick.herokuapp.com/main.php?userid=".$userid,
                             "area"=> [
                                 "x"=> 0,
                                 "y"=> 0,
