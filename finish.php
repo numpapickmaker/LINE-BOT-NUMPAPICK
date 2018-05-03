@@ -225,9 +225,9 @@ span.psw {
     <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">3</div>
     
   <div class="container" >
-    <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
+    <!--<button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p> -->
      <!--<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>-->
-  <p><button class="nextbutton" onclick="next()">ถัดไป</button></p>
+  <!--<p><button class="nextbutton" onclick="next()">ถัดไป</button></p>-->
   <button onclick="next()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</button>
 
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
@@ -286,7 +286,20 @@ window.onclick = function(event) {
 }
 function next(){
    var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/finish.php?action="+userid); 
+   var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("uname_error").innerHTML = this.responseText;
+                var str = this.responseText.trim();
+                if( str == "success"){
+                  window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+                    
+                }
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?register=success&userid="+userid, true);
+        xmlhttp.send();
+     
 }
 function back(){
    var userid = document.getElementById('userid').value;
