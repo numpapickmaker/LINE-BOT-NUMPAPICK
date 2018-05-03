@@ -39,9 +39,9 @@ p {
 /* Full-width input fields */
 
 .kanit {
-	font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }.Taviraj {
-	font-family: 'Taviraj', serif;
+  font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -62,7 +62,7 @@ p {
     border: 2px solid #072140;
 }
 .nextbutton{
-	 background-color: #072140; 
+   background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -78,7 +78,7 @@ p {
     border: 2px solid #072140;
 }
 .addbutton{
-	 background-color: white; 
+   background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -94,7 +94,7 @@ p {
     border: 2px solid #FFA400;
 }
 .delbutton{
-	 background-color: white; 
+   background-color: white; 
     border: none;
     color: #FF0000;
     padding: 10px 32px;
@@ -244,10 +244,10 @@ span.psw {
      </div>
    
 </div>
-	<div class="container" >
+  <div class="container" >
     <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
      <!--<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>-->
-  <p><button class="nextbutton" onclick="document.getElementById('id02').style.display='block'">ถัดไป</button></p>
+  <p><button class="nextbutton" onclick="next()">ถัดไป</button></p>
 
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
  
@@ -288,40 +288,25 @@ span.psw {
 
 
 
-<div id="id02" class="modal">
-  
-  <div class="modal-content animate" >
-    
 
-    <div class="container" >
-      <p>
-      
-     <h1 class= "kanit" style = "font-size: 36px" >เริ่มต้นใช้งานสำเสร็จ</h1>
-     <p>
-     <i class="fas fa-check" style ="width: 80px; height: 60px; color:  #32CD32;"></i>
-     <p>
-     <button class="nextbutton container Taviraj"  onclick="next()" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">  เสร็จสิ้น </button>
-     </div>
-   </div>
-</div>
 
 <script>
 // Get the modal
 var modal1 = document.getElementById('id01');
-var modal2 = document.getElementById('id02');
+
 var modal3 = document.getElementById('id03');
 create_table();
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
     if (event.target == modal1) {
         modal1.style.display = "none";
-        modal2.style.display = "none";
+       
         modal3.style.display = "none";
     }
 }
 function next(){
    var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+     window.location.replace("https://numpapick.herokuapp.com/finish.php?action="+userid); 
 }
 function back(){
    var userid = document.getElementById('userid').value;
