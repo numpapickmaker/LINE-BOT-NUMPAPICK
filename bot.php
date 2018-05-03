@@ -68,7 +68,7 @@ if (!is_null($events['events'])) {
             $splitack = explode(":", $msg);
             $msg = $splitack[0];
             $ack_id = $splitMsg[1];
-            
+            send_LINE($topic,$userid);
            
            
               if($topic == "Login" || $topic == "login"){
