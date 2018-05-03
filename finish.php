@@ -39,9 +39,9 @@ p {
 /* Full-width input fields */
 
 .kanit {
-	font-family: 'Kanit', sans-serif;
+  font-family: 'Kanit', sans-serif;
 }.Taviraj {
-	font-family: 'Taviraj', serif;
+  font-family: 'Taviraj', serif;
     font-size: 18px;
     margin: 24px 2px;
 }
@@ -62,7 +62,7 @@ p {
     border: 2px solid #072140;
 }
 .nextbutton{
-	 background-color: #072140; 
+   background-color: #072140; 
     border: none;
     color: white;
     padding: 10px 32px;
@@ -78,7 +78,7 @@ p {
     border: 2px solid #072140;
 }
 .addbutton{
-	 background-color: white; 
+   background-color: white; 
     border: none;
     color: #FFA400;
     padding: 10px 32px;
@@ -94,7 +94,7 @@ p {
     border: 2px solid #FFA400;
 }
 .delbutton{
-	 background-color: white; 
+   background-color: white; 
     border: none;
     color: #FF0000;
     padding: 10px 32px;
@@ -239,10 +239,10 @@ span.psw {
     <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">3</div>
     
     
-	<div class="container" >
+  <div class="container" >
     
    <button onclick="next()" class="nextbutton container Taviraj" style = "font-size: 24px; width:80% ; background-color:  #32CD32; border: 2px solid white;">เสร็จสิ้น</button>
-	</div>
+  </div>
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
  
  <!--<div class="Row">
@@ -315,13 +315,14 @@ window.onclick = function(event) {
 }
 function next(){
    var userid = document.getElementById('userid').value;
-	  var xmlhttp = new XMLHttpRequest();
+    var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
+                console.log(str);
                 if( str == "success"){
-                  	window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+                    window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
                     
                 }
             }
