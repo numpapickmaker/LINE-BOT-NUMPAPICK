@@ -135,7 +135,7 @@ input[type=text], select {
   <br>
 <ul class="w3-ul">
     <li> </li>
-    <li> <button class="button button1" style = "color: #505050;">
+    <li> <button onclick="unsubscribe()" class="button button1" style = "color: #505050;">
     <i class="far fa-trash-alt"></i><i class="fas fa-trash-alt" style="color: #0F4484;">
     </i>&emsp;ยกเลิกบริการ <i class="fas fa-chevron-right" style="float:right; color: #505050;"></i></button></li>
     <li></li>
@@ -146,7 +146,7 @@ input[type=text], select {
 <script>
 // Get the modal
 
-function next(){
+function unsubscribe(){
    var userid = document.getElementById('userid').value;
    var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
