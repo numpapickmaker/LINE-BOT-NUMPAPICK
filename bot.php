@@ -70,7 +70,7 @@ if (!is_null($events['events'])) {
             $ack_id = $splitMsg[1];
             
            
-            send_LINE($ack_id,$userId);
+           
               if($topic == "Login" || $topic == "login"){
             send_FALL($userid);
             //check_login($userId, $msg);
@@ -85,7 +85,7 @@ if (!is_null($events['events'])) {
             $text = "CHECK";
             //check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
-          }else if($text == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
+          }else if($msg == "Acknowledge" || $text == "รับทราบ" || $text == "OK" || $text == "ACK" || $text == "ack"){
             $text = "ACK";
             check_userid($userId,$text,$ack_id);
             //getMqttfromlineMSG($text);  
