@@ -370,7 +370,7 @@ function create_table(){
                     
                 }
             };
-            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1", true);
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1&path=managedevice", true);
             xmlhttp.send();
 }
 </script>
