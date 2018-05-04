@@ -395,7 +395,7 @@ function delete_device(){
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     //document.getElementById("elderinfo").innerHTML = this.responseText;
-                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid+"&path"+path);
+                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid+"&path="+path);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=3"+ "&deviceid=" +deviceid , true);
