@@ -223,7 +223,7 @@ span.psw {
     <li> </li>
   
     <form action="https://numpapick.herokuapp.com/manage.php" method="get">
-    <li> <button  class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="action">
+    <li> <button  class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="userid">
     <i class="fas fa-tasks" style="color: #0F4484;">
     </i>&emsp;จัดการอุปกรณ์ 
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
