@@ -11,7 +11,15 @@ $userid = $_GET["userid"];
  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!--  jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
+  <!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+  <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+  <!-- Bootstrap Date-Picker Plugin -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 <style>
 body {
     background-color: white;
@@ -211,9 +219,10 @@ span.psw {
     <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" required>
     <p id="email_error"></p>
     <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" required >
-    <input id="input-date" type="date"  class = "Taviraj" style="width: 100% padding: 12px 28px; margin: 0px 2px;" value="2014-10-31">
+    
     <p id="career_error"></p>
       <label  class = "Taviraj" >วัน / เดือน / ปี</label>
+      <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
      <select class = "Taviraj" id="dd" name="dd" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
      <option value="00">วัน</option>
       <option value="01">01</option>
@@ -249,7 +258,7 @@ span.psw {
       <option value="30">30</option>
       <option value="31">31</option>
       
-	</select>
+  </select>
   <p></p>
     <select class = "Taviraj" id="mm" name="mm" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
       <option value="00">เดือน</option>
@@ -265,7 +274,7 @@ span.psw {
       <option value="10">10</option>
       <option value="11">11</option>
       <option value="12">12</option>
-	</select>
+  </select>
   <p></p>
     <select class = "Taviraj" id="yy" name="yy" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
       <option value="00">ปี</option>
@@ -288,7 +297,7 @@ span.psw {
       <option value="2003">2003</option>
       <option value="2002">2002</option>
       <option value="2001">2001</option>
-	  <option value="2000">2000</option>
+    <option value="2000">2000</option>
       
       <option value="1999">1999</option>
       <option value="1998">1998</option>
@@ -367,7 +376,7 @@ span.psw {
       <option value="1931">1931</option>
       <option value="1930">1930</option>
       
-	</select>
+  </select>
   <p></p>  
   
   <div style="text-align: center;">
@@ -381,12 +390,25 @@ span.psw {
   <p>   </p>
 </div>
 <script>
+
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+
 function user(){
    //
     var fname = document.getElementById("fname").value;
     var lname = document.getElementById("lname").value;
     var phone = document.getElementById("phone").value;
-  	var email = document.getElementById("email").value;
+    var email = document.getElementById("email").value;
     var career = document.getElementById("career").value;
     //var birthday = document.getElementById("birthday").value;
     var dd = document.getElementById("dd").value;
