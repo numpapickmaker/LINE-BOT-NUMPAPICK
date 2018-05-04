@@ -11,7 +11,7 @@ $username = $_REQUEST["uname"];
 $password = $_REQUEST["psw"];
 $userid = $_REQUEST["userid"];
 $deviceid = $_REQUEST["deviceid"];
-$path = $_REQUEST["path"];
+
 $result = "";            
 if( !empty($username) && !empty($password)){   
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -167,6 +167,8 @@ if($info == "1"){
   }    
  
 $create_table = $_REQUEST["create"]; 
+$path = $_REQUEST["path"];
+echo $path;
 if(!empty($create_table)){
 //echo $_GET["action"];
   
