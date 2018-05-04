@@ -58,6 +58,19 @@ input[type=text], select {
     border-radius: 8px;
     width: 100%;
 }
+.delbutton{
+   background-color: white; 
+    border: none;
+    color: #FF0000;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #FF0000;
+}
 /* Set a style for all buttons */
 
 .container {
