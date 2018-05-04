@@ -410,7 +410,7 @@ function check_userlogout($userid,$esp){
                       } else {
                          // header("location: manage.php?action=$userid");  
                             echo "logout";   
-                          send_LINE("Device has been remove",$userid);
+                          send_LINE("ลบหมายเลขอุปกรณ์ : ".$esp."คุณ ".$elder_name,$userid);
                              echo "sendline";                    
                       }     
                   }  
