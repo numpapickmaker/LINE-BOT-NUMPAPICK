@@ -364,7 +364,7 @@ var path = document.getElementById('path').value;
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("elderinfo").innerHTML = this.responseText;
-                    window.location.replace("https://numpapick.herokuapp.com/"+path+".php?userid="+userid);
+                    window.location.replace("https://numpapick.herokuapp.com/mangedevice.php?userid="+userid+"&path="+path);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=2"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday , true);
