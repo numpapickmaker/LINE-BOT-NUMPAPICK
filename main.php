@@ -59,70 +59,7 @@ input[type=text], select {
     width: 100%;
 }
 /* Set a style for all buttons */
-.prevbutton {
-    background-color: white; 
-    border: none;
-    color: #072140;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #072140;
-}
-.nextbutton{
-   background-color: #072140; 
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #072140;
-}
-.addbutton{
-   background-color: white; 
-    border: none;
-    color: #FFA400;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #FFA400;
-}
-.delbutton{
-   background-color: white; 
-    border: none;
-    color: #FF0000;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #FF0000;
-}
+
 .container {
     padding: 16px;
 }
@@ -297,8 +234,8 @@ span.psw {
 
        <h1 class= "kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
        <h2 class= "Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
-       <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:45% ; ">ยกเลิก</button>
-       <button class="delbutton " onclick="unsubscribe()" style = "font-size: 20px; width:45% ; ">ลบ</button>
+       <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:48% ;">  ยกเลิก</button>
+       <button class="delbutton " onclick="unsubscribe()" style = "font-size: 20px; width:48% ; ">ลบ</button>
        </div>
 
 
