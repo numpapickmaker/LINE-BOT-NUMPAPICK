@@ -237,7 +237,7 @@ function user(){
                 }
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=2&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
         xmlhttp.send();
         return false;
     
