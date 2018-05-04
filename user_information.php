@@ -254,7 +254,7 @@ function create_listinfo(){
                     
                 }
             };
-            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&creat_userinfo=1" , true);
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1" , true);
             xmlhttp.send();
 }
 </script>
