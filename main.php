@@ -57,6 +57,111 @@ input[type=text], select {
     border: 2px solid white;
     border-radius: 8px;
     width: 100%;
+    
+}
+/* Full-width input fields */
+.kanit {
+  font-family: 'Kanit', sans-serif;
+}.Taviraj {
+  font-family: 'Taviraj', serif;
+    font-size: 18px;
+    margin: 24px 2px;
+}
+.prevbutton {
+    background-color: white; 
+    border: none;
+    color: #072140;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #072140;
+}
+.nextbutton{
+   background-color: #072140; 
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #072140;
+}
+.addbutton{
+   background-color: white; 
+    border: none;
+    color: #FFA400;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #FFA400;
+}
+.delbutton{
+   background-color: white; 
+    border: none;
+    color: #FF0000;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #FF0000;
+}
+.Row {
+            
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: white;
+   color: black;
+   text-align: center;
+   font-size: 20px;
+    margin: 24px 2px;
+        }
+.Row.Expand {
+             height: auto;
+        }
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 0px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
 }
 /* Set a style for all buttons */
 .container {
