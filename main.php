@@ -145,7 +145,8 @@ input[type=text], select {
   <br>
 <ul class="w3-ul">
     <li> </li>
-    <li> <button onclick="unsubscribe();window.close();" class="button button1" style = "color: #505050;">
+    <!--<li> <button onclick="unsubscribe();window.close();" class="button button1" style = "color: #505050;">-->
+    <li> <button onclick="unsubscribe()" class="button button1" style = "color: #505050;">
     <i class="far fa-trash-alt"></i><i class="fas fa-trash-alt" style="color: #0F4484;">
     </i><a style = "color: #505050; text-decoration: none !important;">&emsp;ยกเลิกบริการ </a> 
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
@@ -165,8 +166,8 @@ function unsubscribe(){
                // document.getElementById("uname_error").innerHTML = this.responseText;
                 var str = this.responseText.trim();
                 console.log(str);
-                window.close(); 
-                 // window.location.replace("https://numpapick.herokuapp.com/main.php?action="+userid); 
+                //window.close(); 
+                window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid); 
                     
                 
             }
