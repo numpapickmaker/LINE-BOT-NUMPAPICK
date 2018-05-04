@@ -373,6 +373,7 @@ function submit(){
 function create_table(){
   var userid = document.getElementById('userid').value;
      document.getElementById("listdevice").innerHTML = userid;
+     var path = document.getElementById('path').value;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
@@ -380,7 +381,7 @@ function create_table(){
                     
                 }
             };
-            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1&path=managedevice", true);
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create=1&path="+path, true);
             xmlhttp.send();
 }
 </script>
