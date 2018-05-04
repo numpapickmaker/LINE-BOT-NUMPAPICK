@@ -222,7 +222,7 @@ function user(){
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var career = document.getElementById("career").value;
-    var birthday = document.getElementById("birthday").value;
+    var birthday = document.getElementById("birthdayfld").value;
     /*var dd = document.getElementById("dd").value;
     var mm = document.getElementById("mm").value;
     var yy = document.getElementById("yy").value;*/
