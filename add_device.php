@@ -11,7 +11,6 @@ $username = $_REQUEST["uname"];
 $password = $_REQUEST["psw"];
 $userid = $_REQUEST["userid"];
 $deviceid = $_REQUEST["deviceid"];
-
 $result = "";            
 if( !empty($username) && !empty($password)){   
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -164,11 +163,70 @@ if($info == "1"){
     echo $result;
     pg_close($db) ;
       
-  }    
- 
+  }  
+ $create_userinfo = $_REQUEST['create_info']; 
+ if(){
+  create_userinfo()
+ }   
+ function create_userinfo(){
+  $No =$Firstname =$Lastname =$Phone =$Email =$Career =$Birthday = "";
+ $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
+    $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+         $checking = 0;
+         while($row = pg_fetch_row($ret) ){
+        //  echo "have espname = " . $row[1] . "\n";
+          // send_LINE('PASS');
+          //  header("location: bot.php");
+           /*
+           $No = $row[0];
+           $Firstname = $row[2];
+           $Lastname = $row[3];
+           $Phone = $row[4];
+           $Email = $row[5];
+           $Career = $row[6];
+           $Birthday = $row[7];
+           */
+          echo '<input  type="text"  name="fname" id="fname" placeholder="ชื่อ" class = "Taviraj" value="'.$row[2].'"  required >';
+          echo '<p id="fname_error"></p>';
+          echo '<input type="text" id="lname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="'.$row[3].'" required>';
+          echo '<p id="lname_error"></p>';
+          echo '<input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="'.$row[4].'" required >';
+          echo '<p id="phone_error"></p>';
+          echo '<input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" value="'.$row[5].'" required>';
+          echo '<p id="email_error"></p>';
+          echo '<input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" value="'.$row[6].'" required >';
+          echo '<p id="career_error"></p>';
+          $Birthday = $row[7];
+           $Birthday = explode('-', $Birthday);
+           $year  = $Birthday[0];   
+           $month = $Birthday[1];
+           $day   = $Birthday[2];
+         
+           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="birthdayfld" type="text" value="'.$year.'-'.$month.'-'.$day.'" placeholder="อายุ" required><p></p>';
+         }
+         if($checking == 0){
+            // $username_err = 'No account found with that username.';
+         }
+         //echo "Records created successfully\n";
+      }
+     
+      pg_close($db) ;   
+}
 $create_table = $_REQUEST["create"]; 
 $path = $_REQUEST["path"];
-
 if(!empty($create_table)){
 //echo $_GET["action"];
   
@@ -263,7 +321,6 @@ if(!empty($Unsubscribe)){
           }
         // echo "Records created successfully\n";
       }
-
       pg_close($db) ; 
 }
 $elderinfo = $_REQUEST["elderinfo"]; 
@@ -384,6 +441,7 @@ function create_table_elderlist($deviceid){
      }
       pg_close($db) ;   
 }
+
 function check_userlogout($userid,$esp){
        $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
