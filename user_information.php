@@ -1,82 +1,16 @@
-<?php
-if( $_GET["Firstname"]|| $_GET["Lastname"]|| $_GET["Phone"]|| $_GET["Email"]|| $_GET["Career"]|| $_GET["Birthday"]){
-   
-  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
-      $port        = "port=5432";
-      $dbname      = "dbname=ddagopqfb1uood";
-      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
-      if(!$db) {
-         echo "Error : Unable to open database\n";
-      } else {
-         //echo "Opened database successfully\n";
-      }
-     $sql ="update user_info set firstname='".$_GET["Firstname"]."',lastname='".$_GET["Lastname"]."',phone='".$_GET["Phone"]."',email='".$_GET["Email"]."',career='".$_GET["Career"]."' ,birthday='".$_GET["Birthday"]."' where id='".$_GET["action"]."';";
-   
-    $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-        // echo pg_last_error($db) ;
-      } else {
-         
-        // echo "Records created successfully\n";
-      }
-     
-      pg_close($db) ;   
-}
-//echo $_GET["view"];
-  //$Test = $_GET["view"];
-  $No =$Firstname =$Lastname =$Phone =$Email =$Career =$Birthday = "";
- $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
-      $port        = "port=5432";
-      $dbname      = "dbname=ddagopqfb1uood";
-      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
-      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
-      if(!$db) {
-         echo "Error : Unable to open database\n";
-      } else {
-         //echo "Opened database successfully\n";
-      }
-     $sql ="SELECT * FROM user_info WHERE id='".$_GET["action"]."';";
-    $ret = pg_query($db, $sql) ;
-      if(!$ret) {
-         echo pg_last_error($db) ;
-      } else {
-         $checking = 0;
-         while($row = pg_fetch_row($ret) ){
-        //  echo "have espname = " . $row[1] . "\n";
-          // send_LINE('PASS');
-          //  header("location: bot.php");
-           $No = $row[0];
-           $Firstname = $row[2];
-           $Lastname = $row[3];
-           $Phone = $row[4];
-           $Email = $row[5];
-           $Career = $row[6];
-           $Birthday = $row[7];
-           
-         }
-         if($checking == 0){
-            // $username_err = 'No account found with that username.';
-         }
-         //echo "Records created successfully\n";
-      }
-     
-      pg_close($db) ;   
-      
+<?php 
+$userid = $_GET["userid"];
 ?>
 <!DOCTYPE html>
-<html lang="en">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l" crossorigin="anonymous"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<html>
+<head>
 <link href="https://fonts.googleapis.com/css?family=Kanit:200|Open+Sans|Taviraj" rel="stylesheet">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-
-<body>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 <style>
 body {
@@ -90,178 +24,239 @@ p {
     font-family: verdana;
     font-size: 20px;
 }
-input[type=text], select {
-    width: 100%;
-    padding: 12px 28px;
-    margin: 8px 2px;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
+/* Full-width input fields */
 .kanit {
   font-family: 'Kanit', sans-serif;
 }.Taviraj {
   font-family: 'Taviraj', serif;
-    font-size: 20px;
-    margin: 24px 20px;
+    font-size: 18px;
+    margin: 24px 2px;
 }
-.button {
-    background-color: white; /* Green */
+.prevbutton {
+    background-color: white; 
     border: none;
-  color: white; 
+    color: #072140;
     padding: 10px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-family: 'Kanit', sans-serif;
     font-size: 24px;
-    margin: 0px 0px;
+    margin: 2px 2px;
     cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #072140;
+}
+.nextbutton{
+   background-color: #072140; 
+    border: none;
+    color: white;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #072140;
+}
+.addbutton{
+   background-color: white; 
+    border: none;
+    color: #FFA400;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Kanit', sans-serif;
+    font-size: 24px;
+    margin: 2px 2px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid #FFA400;
+}
+.Row {
+            
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: white;
+   color: black;
+   text-align: center;
+   font-size: 20px;
+    margin: 24px 2px;
+        }
+.Row.Expand {
+             height: auto;
+        }
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;  
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 28px;
+    margin: 0px 2px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    
+}
+/* Set a style for all buttons */
+.container {
+    padding: 16px;
+}
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: red;
+    cursor: pointer;
+}
+/* Add Zoom Animation */
+.animate {
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+}
+#outer
+{
     width:100%;
-   
-    
+    text-align: center;
 }
-.button1 {
-   
-    color: white; 
-    border: 2px solid white;
-    border-radius: 8px;
-    position: relative;
-    background-color: #0F4484;
-   
-    
+.inner
+{
+    display: inline-block;
 }
-.button2 {
-    
-     color: white;
-      
-    border: 2px solid white;
-    border-radius: 8px;
-    background-color: #FFA611;
-  position: relative;
-    
+.numberCircle {
+  border-radius: 50%;
+  behavior: url(PIE.htc);
+  /* remove if you don't care about IE8 */
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  background: #fff;
+  display: inline-block;
+  border: 3px solid #bbbbbb;
+  color: #bbbbbb;
+  text-align: center;
+  font: 23px kanit, sans-serif;
+  font-weight : bold
 }
-.button3 {
-  color: white; 
-    background-color: #35847A; 
-    
-    border: 2px solid white;
-    border-radius: 8px;
-   
-  position: relative;
-    
-}
-    </style>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>
-    function Cancel(){
-    var username = document.getElementById("storage2").getAttribute("data-variable-one");
-    var device_id = document.getElementById("storage1").getAttribute("data-variable-one");
-    window.location.href = "https://numpapick.herokuapp.com/information.php?action="+username;
-    }
-    function Save() {
-      var username = document.getElementById("storage2").getAttribute("data-variable-one");
-     
-     var a = document.getElementById("Firstnamefld").value;
-          var b = document.getElementById("Lastnamefld").value;
-            var c = document.getElementById("Phonefld").value;
-            var d = document.getElementById("Emailfld").value;
-            var e = document.getElementById("Careerfld").value;
-            var f = document.getElementById("Birthdayfld").value;
-            
-            document.getElementById("Firstname").innerHTML=a;
-            document.getElementById("Lastname").innerHTML=b;
-            document.getElementById("Phone").innerHTML=c;
-            document.getElementById("Email").innerHTML=d;
-            document.getElementById("Career").innerHTML=e;
-            document.getElementById("Birthday").innerHTML=f;
-            
-             document.getElementById("edit_btn").innerHTML='Edit';
-            document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Edit();" );
-             document.getElementById("cancel_btn").style.display = "none";
-            
-            window.location.href = "https://numpapick.herokuapp.com/user_information.php?action="+username+"&Firstname=" + a + "&Lastname=" + b +"&Phone=" + c+"&Email=" +d+"&Career="+e+"&Birthday="+f;
-    }
-function Edit() {
-    
-            var a = document.getElementById("Firstname").innerHTML;
-          var b = document.getElementById("Lastname").innerHTML;
-            var c = document.getElementById("Phone").innerHTML;
-           
-            var d = document.getElementById("Email").innerHTML;
-            var e = document.getElementById("Career").innerHTML;
-            var f = document.getElementById("Birthday").innerHTML;
-           
-            document.getElementById("Firstname").innerHTML='<input id="Firstnamefld" type="text" value="'+a+'"'+' />';
-            document.getElementById("Lastname").innerHTML='<input id="Lastnamefld" type="text" value="'+b+'"'+' />';
-            document.getElementById("Phone").innerHTML='<input id="Phonefld" type="text" value="'+c+'"'+' />';
-            document.getElementById("Email").innerHTML='<input id="Emailfld" type="text" value="'+d+'"'+' />';
-            document.getElementById("Career").innerHTML='<input id="Careerfld" type="text" value="'+e+'"'+' />';
-            document.getElementById("Birthday").innerHTML='<input id="Birthdayfld" type="date" value="'+f+'"'+' />';
-           
-           
-            document.getElementById("edit_btn").innerHTML='Save';
-            document.getElementById("edit_btn").setAttribute( "onClick", "javascript: Save();" );
-             document.getElementById("cancel_btn").style.display = "inline-block";
-            //document.getElementById("done_btn").disabled=false;
-        
-}
-</script>
-    
+</style>
 </head>
 <body>
-<div class="w3-container" >
-<p id="demo"></p>
-<span id="storage1" data-variable-one="<?php echo $Test; ?>"</span>
-<span id="storage2" data-variable-one="<?php echo $_GET["action"]; ?>"</span>
- <h1 class="kanit" > Information </h1>
- <ul class="w3-ul">
-    <li> </li>
-    <br>    
- <form  action="https://numpapick.herokuapp.com/main.php" method="get">
-    <button class="button button2" value="<?php echo $_GET["action"];?>" name="action">Back</button>
-    
-</form>
-<button class="button button1" id="edit_btn" onclick="Edit()">Edit</button>
-<button class="button button3" id="cancel_btn" style="display:none" onclick="Cancel()" >Cancel</button>
-<br>
-<br>
-<table class="w3-table w3-striped Taviraj" id="customers" align="center">
-   <tr>
-          
-          <tr>
-          <td><div align="center">Firstname </div></td>
-          <td id="Firstname"><?php echo $Firstname;?></td>
-          </tr>
-       
-          <tr>
-          <td><div align="center">Lastname </div></td>
-          <td id="Lastname" ><?php echo $Lastname;?></td>
-          </tr>
-            <tr>
-          <td><div align="center">Phone </div></td>
-          <td id="Phone" ><?php echo $Phone;?></div></td>
-          </tr>
-          <tr>
-          <td><div align="center">E-mail </div></td>
-          <td id="Email" ><?php echo $Email;?></td>
-          </tr>
-          <tr>
-          <td><div align="center">Career </div></td>
-          <td id="Career" ><?php echo $Career;?></td>
-          </tr>
-          <tr>
-          <td><div align="center">Birthday </div></td>
-          <td id="Birthday" ><?php echo $Birthday;?></td>
-          </tr>
-         
-   
-          
-        
+<h1 class="kanit">กรอกข้อมูลเพื่อยืนยันตัวตน</h1>
+
+<p>
+    <div style="text-align: center;">
+    <div class="numberCircle" >1</div>
+    <div class="numberCircle" >2</div>
+    <div class="numberCircle" >3</div>
+    <p>
+    </div>
+<form name="elder_form" id="elder_form" onSubmit="return user()">
+    <div class="container" >
+    <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
+    <div id="user_info"></div>
+  <p></p>  
   
-</table>
+  <div style="text-align: center;">
+    <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
+    
+    <button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
+    
+    </div>
+   </form>
+<div class="footer">
+  <p>   </p>
 </div>
+<script>
+function user(){
+   //
+    var fname = document.getElementById("fname").value;
+    var lname = document.getElementById("lname").value;
+    var phone = document.getElementById("phone").value;
+    var email = document.getElementById("email").value;
+    var career = document.getElementById("career").value;
+    //var birthday = document.getElementById("birthday").value;
+    var dd = document.getElementById("dd").value;
+    var mm = document.getElementById("mm").value;
+    var yy = document.getElementById("yy").value;
+    var userid = document.getElementById("userid").value;
+    
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+              // document.getElementById("birthday_error").innerHTML = this.responseText;
+                if(this.responseText == "success"){
+                  window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
+                }
+            }
+        };
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+yy+"-"+mm+"-"+dd+"&userid="+userid, true);
+        xmlhttp.send();
+        return false;
+    
+}
+create_listinfo();
+function create_listinfo(){
+    var userid = document.getElementById('userid').value;
+    var deviceid = document.getElementById('deviceid').value;
+    // document.getElementById("elderinfo").innerHTML = userid;
+    var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById("user_info").innerHTML = this.responseText;
+                    
+                }
+            };
+            xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&creat_userinfo=1" , true);
+            xmlhttp.send();
+}
+</script>
 </body>
 </html>
