@@ -1,6 +1,5 @@
 <?php 
 $userid = $_GET["userid"];
-echo $userid;
 ?>
 <!DOCTYPE html>
 <html>
@@ -223,10 +222,10 @@ function user(){
     var phone = document.getElementById("phone").value;
     var email = document.getElementById("email").value;
     var career = document.getElementById("career").value;
-    //var birthday = document.getElementById("birthday").value;
-    var dd = document.getElementById("dd").value;
+    var birthday = document.getElementById("birthday").value;
+    /*var dd = document.getElementById("dd").value;
     var mm = document.getElementById("mm").value;
-    var yy = document.getElementById("yy").value;
+    var yy = document.getElementById("yy").value;*/
     var userid = document.getElementById("userid").value;
     
         var xmlhttp = new XMLHttpRequest();
@@ -238,7 +237,7 @@ function user(){
                 }
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+yy+"-"+mm+"-"+dd+"&userid="+userid, true);
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
         xmlhttp.send();
         return false;
     
@@ -246,14 +245,13 @@ function user(){
 create_listinfo();
 function create_listinfo(){
     var userid = document.getElementById('userid').value;
-    
+    var deviceid = document.getElementById('deviceid').value;
     // document.getElementById("elderinfo").innerHTML = userid;
-    console.log("https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1");
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("user_info").innerHTML = this.responseText;
-                    console.log(this.responseText);
+                    
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1" , true);
