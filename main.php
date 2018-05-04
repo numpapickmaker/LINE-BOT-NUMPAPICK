@@ -203,8 +203,9 @@ span.psw {
 
     <ul class="w3-ul">
     <li> </li>
-    <form action="https://numpapick.herokuapp.com/user_information.php" method="get">
-    <li> <button class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="action">
+    <form action="https://numpapick.herokuapp.com/managedevice.php" method="get">
+    <input type="hidden" name="path" value="main">    
+    <li> <button class="button button1" style = "color: #505050;" value="<?php echo $username;?>" name="userid">
     <i class="fas fa-user" style="color: #0F4484;">
     </i>&emsp;ข้อมูลส่วนตัว 
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050; "></i>-->
