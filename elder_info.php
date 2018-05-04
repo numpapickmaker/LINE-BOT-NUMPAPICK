@@ -300,8 +300,8 @@ span.psw {
       
      <h1 class= "kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
      <h2 class= "Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
-     <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:48% ; ">  ยกเลิก </button>
-     <button class="delbutton " onclick="delete_device()" style = "font-size: 20px; width:48% ; ">  ลบ </button>
+     <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:45% ; ">  ยกเลิก </button>
+     <button class="delbutton " onclick="delete_device()" style = "font-size: 20px; width:45% ; ">  ลบ </button>
      </div>
 
    
