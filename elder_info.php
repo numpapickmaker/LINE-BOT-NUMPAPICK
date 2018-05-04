@@ -387,14 +387,15 @@ function create_listinfo(){
 }
 function delete_device(){
                     
-  var userid = document.getElementById('userid').value;
+    var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
+    var path = document.getElementById('path').value;
     // ลบการเชื่อมต่อระหว่าง อุปกรณ์และผู้ใช้งาน
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     //document.getElementById("elderinfo").innerHTML = this.responseText;
-                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
+                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid+"&path"+path);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=3"+ "&deviceid=" +deviceid , true);
