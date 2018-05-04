@@ -9,7 +9,7 @@ require("line.php");
 // Processing form data when form is submitted
 $username = $_REQUEST["uname"];
 $password = $_REQUEST["psw"];
-$userid = $_REQUEST["userid"];
+$userid = $_REQUEST["userid"]; 
 $deviceid = $_REQUEST["deviceid"];
 $result = "";            
 if( !empty($username) && !empty($password)){   
@@ -231,10 +231,10 @@ if($info == "1"){
  }  
  $create_userinfo = $_REQUEST['create_userinfo']; 
  if(!empty($create_userinfo)){
-  create_userinfo();
-  echo  $create_userinfo;
+  create_userinfo($userid);
+  //echo  $create_userinfo;
  }   
- function create_userinfo(){
+ function create_userinfo($userid){
   $No =$Firstname =$Lastname =$Phone =$Email =$Career =$Birthday = "";
  $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
