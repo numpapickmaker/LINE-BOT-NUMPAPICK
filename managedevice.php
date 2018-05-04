@@ -1,5 +1,6 @@
 <?php 
 $userid = $_GET["userid"];
+$path = $_GET["path"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -246,8 +247,15 @@ span.psw {
 </div>
   <div class="container" >
     <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
+    <?php 
+        if($path == "main"){
+           echo <p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p> ;
+        }else{
+          echo  <p><button class="nextbutton" onclick="next()">ถัดไป</button></p> ;
+        }
+    ?>
      <!--<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>-->
-  <p><button class="nextbutton" onclick="next()">ถัดไป</button></p>
+  
 
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">  
  
@@ -278,7 +286,7 @@ span.psw {
      
       <p><p><p><p>
      <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
-     
+     <input type="hidden" name="path" id="path" value="<?php echo $path;?>">
      <button class="nextbutton"  onclick="add()" style = "font-size: 20px; width:100%" value="ยืนยัน">ยืนยัน</button>
    
     </div>
@@ -310,7 +318,8 @@ function next(){
 }
 function back(){
    var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
+    var path = document.getElementById('path').value;
+     window.location.replace("https://numpapick.herokuapp.com/"+path+".php?userid="+userid);
 }
 function add() {
     var uname = document.getElementById("uname").value;
