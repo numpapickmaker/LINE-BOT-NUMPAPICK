@@ -211,7 +211,7 @@ span.psw {
     <input type="text" id="email" name="email" placeholder="อีเมล" class = "Taviraj" required>
     <p id="email_error"></p>
     <input type="text" id="career" name="career" placeholder="อาชีพ" class = "Taviraj" required >
-    
+    <input id="input-date" type="date"  class = "Taviraj" value="2014-10-31">
     <p id="career_error"></p>
       <label  class = "Taviraj" >วัน / เดือน / ปี</label>
      <select class = "Taviraj" id="dd" name="dd" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
