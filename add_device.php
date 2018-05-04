@@ -95,6 +95,7 @@ if( !empty($username) && !empty($password)){
 $firstname = $_REQUEST["fname"];
 $lastname = $_REQUEST["lname"];
 $phone=$_REQUEST["phone"];
+echo $lastname;
 $email = $_REQUEST["email"];
 $career= $_REQUEST["career"];
 $birthday =$_REQUEST["birthday"];
@@ -180,8 +181,8 @@ if($info == "1"){
       } else {
          //echo "Opened database successfully\n";
       }
-      $sql ="UPDATE user_info set firstname='".$firstname."',lastname='".$Lastname."',phone='".$phone."',email='".$email."',career='".$career."',birthday='".$birthday."' WHERE id='".$userid."' ;";
-      echo $sql;
+      $sql ="UPDATE user_info set firstname='".$firstname."',lastname='".$lastname."',phone='".$phone."',email='".$email."',career='".$career."',birthday='".$birthday."' WHERE id='".$userid."';";
+      //echo $sql;
       $ret = pg_query($db, $sql) ;
       if(!$ret) {
         echo pg_last_error($db) ;
