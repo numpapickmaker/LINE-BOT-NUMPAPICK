@@ -163,8 +163,11 @@ if($info == "1"){
     echo $result;
     pg_close($db) ;
       
-  } 
- function update_userinfo(){
+  }
+ if($info == '2'){
+  update_userinfo($userid,$firstname,$lastname,$phone,$email,$career,$birthday);
+ }  
+ function update_userinfo($userid,$firstname,$lastname,$phone,$email,$career,$birthday){
 
     
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -190,32 +193,14 @@ if($info == "1"){
          }
          if($check_id == 0){
           // echo "check_id ==0";
-                $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
-                $ret = pg_query($db, $sql) ;
-                if(!$ret) {
-                   echo pg_last_error($db) ;
-                } else {
-                 
-                   while($row = pg_fetch_row($ret) ){
-                      $row[0] = intval($row[0]+1);
-                      $sql ="UPDATE user_info set firstname='chatsada',lastname='nganiam',phone='0846823134',email='a5730069@gmail.com',career='programmer',birthday='2010-8-8' WHERE id='Ue77a191627f6ac91899e75d92264310c' ;";
-                     // $result = $sql;
-                      // echo $result;
-                   }
+                
                   
-                        
+                         $sql ="UPDATE user_info set firstname='".$firstname."',lastname='".$Lastname."',phone='".$phone."',email='".$email."',career='".$career."',birthday='"$birthday"' WHERE id='".$userid."' ;";
                         $ret = pg_query($db, $sql) ;
                         if(!$ret) {
                             echo pg_last_error($db) ;
                         } else {
-                            $checking = 0;   
-                             while($row = pg_fetch_row($ret)){
-                               //  echo "ESP name = " . $row[2] . "\n";
-                                 // send_LINE('PASS')
-                                  $checking = 1;     
-                                  //send_LINE("you login already",$userid);
-                                 // echo "string";     
-                               }  
+                           
                               // header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
                              $result = "success";
                           }
