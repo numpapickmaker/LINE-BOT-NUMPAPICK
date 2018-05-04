@@ -261,7 +261,7 @@ span.psw {
       <div class="container Taviraj" >
         <p>
 
-       <h1 class= "kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
+       <h1 class= "kanit">ต้องการยกเลิกบริการ ? </h1>
        <h2 class= "Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
        <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:48% ;">  ยกเลิก</button>
        <button class="delbutton " onclick="unsubscribe()" style = "font-size: 20px; width:48% ; ">ลบ</button>
