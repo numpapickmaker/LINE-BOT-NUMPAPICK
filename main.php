@@ -59,182 +59,6 @@ input[type=text], select {
     width: 100%;
     
 }
-/* Full-width input fields */
-.kanit {
-  font-family: 'Kanit', sans-serif;
-}.Taviraj {
-  font-family: 'Taviraj', serif;
-    font-size: 18px;
-    margin: 24px 2px;
-}
-.prevbutton {
-    background-color: white; 
-    border: none;
-    color: #072140;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #072140;
-}
-.nextbutton{
-   background-color: #072140; 
-    border: none;
-    color: white;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #072140;
-}
-.addbutton{
-   background-color: white; 
-    border: none;
-    color: #FFA400;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #FFA400;
-}
-.delbutton{
-   background-color: white; 
-    border: none;
-    color: #FF0000;
-    padding: 10px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-family: 'Kanit', sans-serif;
-    font-size: 24px;
-    margin: 2px 2px;
-    cursor: pointer;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid #FF0000;
-}
-.Row {
-            
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   background-color: white;
-   color: black;
-   text-align: center;
-   font-size: 20px;
-    margin: 24px 2px;
-        }
-.Row.Expand {
-             height: auto;
-        }
-.step {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbbbbb;
-  border: none;  
-  border-radius: 50%;
-  display: inline-block;
-  opacity: 0.5;
-}
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 0px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-/* Set a style for all buttons */
-.container {
-    padding: 16px;
-}
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-/* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    padding-top: 60px;
-}
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
-    width: 90%; /* Could be more or less, depending on screen size */
-}
-/* The Close Button (x) */
-.close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-}
-.close:hover,
-.close:focus {
-    color: red;
-    cursor: pointer;
-}
-/* Add Zoom Animation */
-.animate {
-    -webkit-animation: animatezoom 0.6s;
-    animation: animatezoom 0.6s
-}
-#outer
-{
-    width:100%;
-    text-align: center;
-}
-.inner
-{
-    display: inline-block;
-}
-.numberCircle {
-  border-radius: 50%;
-  behavior: url(PIE.htc);
-  /* remove if you don't care about IE8 */
-  width: 50px;
-  height: 50px;
-  padding: 5px;
-  background: #fff;
-  display: inline-block;
-  border: 3px solid #bbbbbb;
-  color: #bbbbbb;
-  text-align: center;
-  font: 23px kanit, sans-serif;
-  font-weight : bold
-}
 </style>
 <?php
   $username= $_GET["userid"];
@@ -321,7 +145,8 @@ span.psw {
   <br>
 <ul class="w3-ul">
     <li> </li>
-    <li> <button  onclick="document.getElementById('id02').style.display='block';" class="button button1" style = "color: #505050;">
+    <!--<li> <button onclick="unsubscribe();window.close();" class="button button1" style = "color: #505050;">-->
+    <li> <button onclick="unsubscribe()" class="button button1" style = "color: #505050;">
     <i class="far fa-trash-alt"></i><i class="fas fa-trash-alt" style="color: #0F4484;">
     </i><a style = "color: #505050; text-decoration: none !important;">&emsp;ยกเลิกบริการ </a> 
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
@@ -329,25 +154,6 @@ span.psw {
     <li></li>
     
   </ul>
-  <div id="id02" class="modal">
-  
-  <div class="modal-content animate" >
-    <div class="imgcontainer">
-  
-    </div>
-    <div class="container Taviraj" >
-      <p>
-      
-     <h1 class= "kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
-     <h2 class= "Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
-     <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style = "font-size: 20px; width:48% ; ">  ยกเลิก </button>
-     <button class="delbutton " onclick="unsubscribe()" style = "font-size: 20px; width:48% ; ">  ลบ </button>
-     </div>
-
-   
-  </div>
-</div>
-</div>
  <input type="hidden" name="userid" id="userid" value="<?php echo $username;?>">  
 </div>
 <script>
@@ -361,8 +167,7 @@ function unsubscribe(){
                 var str = this.responseText.trim();
                 console.log(str);
                 //window.close(); 
-                window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid;
-                //window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid); 
+                window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid); 
                     
                 
             }
@@ -374,14 +179,6 @@ function unsubscribe(){
 function back(){
    var userid = document.getElementById('userid').value;
      window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
-}
-
-var modal2 = document.getElementById('id02');
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal2) {
-        modal2.style.display = "none";
-    }
 }
 </script>
 </body>
