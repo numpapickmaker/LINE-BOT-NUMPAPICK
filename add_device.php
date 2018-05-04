@@ -164,7 +164,7 @@ if($info == "1"){
     pg_close($db) ;
       
   }  
- $create_userinfo = $_REQUEST['create_info']; 
+ $create_userinfo = $_REQUEST['create_userinfo']; 
  if(!empty($create_userinfo)){
   create_userinfo();
  }   
