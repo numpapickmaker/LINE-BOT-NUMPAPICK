@@ -1,5 +1,6 @@
 <?php 
 $userid = $_GET["userid"];
+echo $userid;
 ?>
 <!DOCTYPE html>
 <html>
@@ -247,11 +248,12 @@ function create_listinfo(){
     var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
     // document.getElementById("elderinfo").innerHTML = userid;
+    console.log("https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1");
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("user_info").innerHTML = this.responseText;
-                    
+                    console.log(this.responseText);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1" , true);
