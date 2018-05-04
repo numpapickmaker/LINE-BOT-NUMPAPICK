@@ -163,7 +163,72 @@ if($info == "1"){
     echo $result;
     pg_close($db) ;
       
-  }  
+  } 
+ function update_userinfo(){
+
+    
+      $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+       $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
+       //echo $sql ;
+        $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+         echo pg_last_error($db) ;
+      } else {
+          $check_id = 0;
+         while($row = pg_fetch_row($ret) ){
+            $check_id=1;
+            // echo "check_id ==1";
+         }
+         if($check_id == 0){
+          // echo "check_id ==0";
+                $sql ="SELECT MAX(user_no) as LargestNO from user_info;";
+                $ret = pg_query($db, $sql) ;
+                if(!$ret) {
+                   echo pg_last_error($db) ;
+                } else {
+                 
+                   while($row = pg_fetch_row($ret) ){
+                      $row[0] = intval($row[0]+1);
+                      $sql ="UPDATE user_info set firstname='chatsada',lastname='nganiam',phone='0846823134',email='a5730069@gmail.com',career='programmer',birthday='2010-8-8' WHERE id='Ue77a191627f6ac91899e75d92264310c' ;";
+                     // $result = $sql;
+                      // echo $result;
+                   }
+                  
+                        
+                        $ret = pg_query($db, $sql) ;
+                        if(!$ret) {
+                            echo pg_last_error($db) ;
+                        } else {
+                            $checking = 0;   
+                             while($row = pg_fetch_row($ret)){
+                               //  echo "ESP name = " . $row[2] . "\n";
+                                 // send_LINE('PASS')
+                                  $checking = 1;     
+                                  //send_LINE("you login already",$userid);
+                                 // echo "string";     
+                               }  
+                              // header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
+                             $result = "success";
+                          }
+               
+               
+              }
+         }
+      }
+    echo $result;
+    pg_close($db) ;
+      
+  
+ }  
  $create_userinfo = $_REQUEST['create_userinfo']; 
  if(!empty($create_userinfo)){
   create_userinfo();
