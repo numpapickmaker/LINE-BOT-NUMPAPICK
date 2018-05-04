@@ -11,6 +11,7 @@ $username = $_REQUEST["uname"];
 $password = $_REQUEST["psw"];
 $userid = $_REQUEST["userid"];
 $deviceid = $_REQUEST["deviceid"];
+$path = $_REQUEST["path"];
 $result = "";            
 if( !empty($username) && !empty($password)){   
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
@@ -210,6 +211,7 @@ if(!empty($create_table)){
             echo '<td>'.$row[1].'</td>';
             echo '<td> <form action="https://numpapick.herokuapp.com/elder_info.php" method="get">';
             echo '<input type="hidden" name="userid" value="'.$userid.'">';
+            echo '<input type="hidden" name="userid" value="'.$path.'">';   
             echo '<button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;" value="'.$row[0].'" name="deviceid">แก้ไข</button></td> </tr>';
             echo '</form>';
            // echo '<td><button class="prevbutton" style = "font-size: 18px; width:80% ;margin: 0px 0px;"> แก้ไข</button></td> </tr>';
