@@ -168,7 +168,7 @@ if($info == "1"){
  
 $create_table = $_REQUEST["create"]; 
 $path = $_REQUEST["path"];
-echo $path;
+
 if(!empty($create_table)){
 //echo $_GET["action"];
   
