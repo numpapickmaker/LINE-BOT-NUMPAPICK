@@ -189,25 +189,20 @@ span.psw {
 </style>
 </head>
 <body>
-<h1 class="kanit">กรอกข้อมูลเพื่อยืนยันตัวตน</h1>
+<h1 class="kanit">ข้อมูลผู้ใช้งาน</h1>
 
 <p>
-    <div style="text-align: center;">
-    <div class="numberCircle" >1</div>
-    <div class="numberCircle" >2</div>
-    <div class="numberCircle" >3</div>
-    <p>
-    </div>
+   
 <form name="elder_form" id="elder_form" onSubmit="return user()">
     <div class="container" >
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     <div id="user_info"></div>
   <p></p>  
-  
+  <p><button class="prevbutton"  onclick="back()">ย้อนกลับ</button></p>
   <div style="text-align: center;">
     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
     
-    <button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>
+    <button class="nextbutton" type="submit" form="elder_form">บันทึก</button></p>
     
     </div>
    </form>
@@ -256,6 +251,11 @@ function create_listinfo(){
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1" , true);
             xmlhttp.send();
+}
+function back(){
+    var userid = document.getElementById('userid').value;
+    
+     window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid);
 }
 </script>
 </body>
