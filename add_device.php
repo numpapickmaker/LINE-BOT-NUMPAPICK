@@ -232,7 +232,7 @@ if($info == "1"){
            */
           echo '<input  type="text"  name="fname" id="fname" placeholder="ชื่อ" class = "Taviraj" value="'.$row[2].'"  required >';
           echo '<p id="fname_error"></p>';
-          echo '<input type="text" id="lname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="'.$row[2].'" required>';
+          echo '<input type="text" id="lname" name="lastname" placeholder="นามสกุล" class = "Taviraj" value="'.$row[3].'" required>';
           echo '<p id="lname_error"></p>';
           echo '<input type="text" id="phone" name="phone" placeholder="เบอร์โทรศัพท์" class = "Taviraj" value="'.$row[4].'" required >';
           echo '<p id="phone_error"></p>';
