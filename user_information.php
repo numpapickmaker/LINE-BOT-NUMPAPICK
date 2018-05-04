@@ -246,7 +246,7 @@ function user(){
 create_listinfo();
 function create_listinfo(){
     var userid = document.getElementById('userid').value;
-    var deviceid = document.getElementById('deviceid').value;
+    
     // document.getElementById("elderinfo").innerHTML = userid;
     console.log("https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1");
     var xmlhttp = new XMLHttpRequest();
