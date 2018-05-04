@@ -95,7 +95,7 @@ if( !empty($username) && !empty($password)){
 $firstname = $_REQUEST["fname"];
 $lastname = $_REQUEST["lname"];
 $phone=$_REQUEST["phone"];
-echo $lastname;
+
 $email = $_REQUEST["email"];
 $career= $_REQUEST["career"];
 $birthday =$_REQUEST["birthday"];
