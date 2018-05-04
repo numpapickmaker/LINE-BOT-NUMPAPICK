@@ -330,7 +330,7 @@ window.onclick = function(event) {
 function back(){
     var userid = document.getElementById('userid').value;
 var path = document.getElementById('path').value;			
-     window.location.replace("https://numpapick.herokuapp.com/"+path+".php?userid="+userid);
+     window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid+"&path="+path);
 }
 function confirm_save(){
   document.getElementById('id01').style.display='block' ;
