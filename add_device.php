@@ -180,7 +180,14 @@ if($info == "1"){
       } else {
          //echo "Opened database successfully\n";
       }
-     
+      $sql ="UPDATE user_info set firstname='".$firstname."',lastname='".$Lastname."',phone='".$phone."',email='".$email."',career='".$career."',birthday='".$birthday."' WHERE id='".$userid."' ;";
+      $ret = pg_query($db, $sql) ;
+      if(!$ret) {
+        echo pg_last_error($db) ;
+      } else {                           
+      // header("location: https://numpapick.herokuapp.com/main.php?action=$userid");
+        $result = "success";
+      }
     echo $result;
     pg_close($db) ;
     
