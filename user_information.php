@@ -245,7 +245,7 @@ function user(){
 create_listinfo();
 function create_listinfo(){
     var userid = document.getElementById('userid').value;
-    var deviceid = document.getElementById('deviceid').value;
+   
     // document.getElementById("elderinfo").innerHTML = userid;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
