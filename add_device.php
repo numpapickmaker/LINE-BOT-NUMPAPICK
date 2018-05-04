@@ -165,8 +165,8 @@ if($info == "1"){
       
   }  
  $create_userinfo = $_REQUEST['create_info']; 
- if(){
-  create_userinfo()
+ if(!empty($create_userinfo)){
+  create_userinfo();
  }   
  function create_userinfo(){
   $No =$Firstname =$Lastname =$Phone =$Email =$Career =$Birthday = "";
