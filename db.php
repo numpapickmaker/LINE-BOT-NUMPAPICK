@@ -356,7 +356,7 @@ function save_esp($esp,$id){
          while($row = pg_fetch_row($ret) ){
           echo "have espname = " . $row[1] . "\n";
           // send_LINE('PASS');
-            check_send($row[1],$msg);
+           // check_send($row[1],$msg); // ส่ง message "Device online" ให้กับทุกคนที่เป็น สมาชิกของ device 
             $checking = 1 ;
             
              
