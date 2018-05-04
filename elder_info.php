@@ -1,6 +1,7 @@
 <?php 
 $userid = $_GET["userid"];
 $deviceid = $_GET["deviceid"];
+$path = $_GET["path"];
 ?>
 <!DOCTYPE html>
 <html>
@@ -310,6 +311,7 @@ span.psw {
 </div>
  <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>">
  <input type="hidden" name="userid" id="deviceid" value="<?php echo $deviceid;?>">
+<input type="hidden" name="userid" id="path" value="<?php echo $path;?>">
 <script>
 // Get the modal
 var modal1 = document.getElementById('id01');
@@ -327,7 +329,8 @@ window.onclick = function(event) {
 }
 function back(){
     var userid = document.getElementById('userid').value;
-     window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
+var path = document.getElementById('path').value;			
+     window.location.replace("https://numpapick.herokuapp.com/"+path+".php?userid="+userid);
 }
 function confirm_save(){
   document.getElementById('id01').style.display='block' ;
@@ -346,6 +349,7 @@ function save(){
   
   var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
+var path = document.getElementById('path').value;		
     var name = document.getElementById("namefld").value;
     var birthday = document.getElementById("birthdayfld").value;
     
@@ -360,7 +364,7 @@ function save(){
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("elderinfo").innerHTML = this.responseText;
-                    window.location.replace("https://numpapick.herokuapp.com/managedevice.php?userid="+userid);
+                    window.location.replace("https://numpapick.herokuapp.com/"+path+".php?userid="+userid);
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&elderinfo=2"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday , true);
