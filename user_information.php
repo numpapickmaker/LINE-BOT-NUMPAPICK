@@ -233,7 +233,7 @@ function user(){
             if (this.readyState == 4 && this.status == 200) {
               // document.getElementById("birthday_error").innerHTML = this.responseText;
                 if(this.responseText == "success"){
-                  window.location.replace("https://numpapick.herokuapp.com/add_device1.php?userid="+userid);
+                  window.location.replace("https://numpapick.herokuapp.com/main.php?userid="+userid);
                 }
             }
         };
