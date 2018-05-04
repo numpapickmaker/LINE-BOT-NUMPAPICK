@@ -181,7 +181,7 @@ if($info == "1"){
          //echo "Opened database successfully\n";
       }
       $sql ="UPDATE user_info set firstname='".$firstname."',lastname='".$Lastname."',phone='".$phone."',email='".$email."',career='".$career."',birthday='".$birthday."' WHERE id='".$userid."' ;";
-      //echo $sql;
+      echo $sql;
       $ret = pg_query($db, $sql) ;
       if(!$ret) {
         echo pg_last_error($db) ;
