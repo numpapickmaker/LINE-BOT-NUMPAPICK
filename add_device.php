@@ -164,7 +164,28 @@ if($info == "1"){
     pg_close($db) ;
       
   }
- 
+ if($info == '2'){
+  update_userinfo($userid,$firstname,$lastname,$phone,$email,$career,$birthday);
+ }  
+ function update_userinfo($userid,$firstname,$lastname,$phone,$email,$career,$birthday){
+
+    
+      $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
+      $port        = "port=5432";
+      $dbname      = "dbname=ddagopqfb1uood";
+      $credentials = "user=vsbryiqqffrttq password=7279cf8dae64f749857461db7933be4a2fb68bdc0ee6c037c158d82a755c3cf2";
+      $db = pg_connect( "$host $port $dbname $credentials"  ) ;
+      if(!$db) {
+         echo "Error : Unable to open database\n";
+      } else {
+         //echo "Opened database successfully\n";
+      }
+     
+    echo $result;
+    pg_close($db) ;
+    
+  
+ }  
  $create_userinfo = $_REQUEST['create_userinfo']; 
  if(!empty($create_userinfo)){
   create_userinfo($userid);
