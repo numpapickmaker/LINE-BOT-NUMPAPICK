@@ -232,6 +232,7 @@ if($info == "1"){
  $create_userinfo = $_REQUEST['create_userinfo']; 
  if(!empty($create_userinfo)){
   create_userinfo();
+  echo  $create_userinfo;
  }   
  function create_userinfo(){
   $No =$Firstname =$Lastname =$Phone =$Email =$Career =$Birthday = "";
@@ -246,6 +247,7 @@ if($info == "1"){
          //echo "Opened database successfully\n";
       }
      $sql ="SELECT * FROM user_info WHERE id='".$userid."';";
+     echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
