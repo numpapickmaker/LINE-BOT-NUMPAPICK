@@ -249,9 +249,9 @@ span.psw {
     <button class="addbutton"    onclick="document.getElementById('id01').style.display='block'">เพิ่ม</button></p>
     <?php 
         if($path == "main"){
-           echo <p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p> ;
+           echo "<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>" ;
         }else{
-          echo  <p><button class="nextbutton" onclick="next()">ถัดไป</button></p> ;
+          echo  "<p><button class="nextbutton" onclick="next()">ถัดไป</button></p>" ;
         }
     ?>
      <!--<p><button class="prevbutton" onclick="back()" >ย้อนกลับ</button></p>-->
