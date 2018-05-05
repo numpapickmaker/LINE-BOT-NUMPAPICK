@@ -205,6 +205,7 @@ span.psw {
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     <div id="user_info"></div>
   <p></p>  
+        <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="DD/MM/YYY" type="text" required/>
   <p><button class="prevbutton"  onclick="back()">ย้อนกลับ</button></p>
   <div style="text-align: center;">
     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
