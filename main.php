@@ -198,9 +198,9 @@
     </style>
 <?php
     $username= $_GET["userid"];
-  //echo $username;
+  echo $username;
   //echo $_GET["action"];
-  
+    
     $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
     $port        = "port=5432";
     $dbname      = "dbname=ddagopqfb1uood";
@@ -212,6 +212,7 @@
          //echo "Opened database successfully\n";
     }
     $sql ="SELECT * FROM user_info WHERE id='".$username."';";
+    echo $sql;
     $ret = pg_query($db, $sql) ;
     if(!$ret) {
         echo pg_last_error($db) ;
@@ -226,6 +227,7 @@
           header("Location: https://numpapick.herokuapp.com/user_info.php?userid=$username");
          //echo "Records created successfully\n";
         }
+        
     }
      
       pg_close($db) ;   
