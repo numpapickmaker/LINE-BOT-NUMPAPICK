@@ -391,16 +391,31 @@ span.psw {
 </div>
 <script>
 
-    $(document).ready(function(){
+      $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      $.fn.datepicker.dates['en'] = {
+    days: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    daysShort: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+    daysMin: ["อาทิตย์", "จันทร์", "อังคาร", "พุธ", "พฤหัส", "ศุกร์", "เสาร์"],
+    months: ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤษจิกายน", "ธันวาคม"],
+    monthsShort: ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."],
+    today: "Today",
+    clear: "Clear",
+    format: "dd/mm/yyyy",
+    titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
+    weekStart: 0
+};
       var options={
         format: 'mm/dd/yyyy',
         container: container,
         todayHighlight: true,
         autoclose: true,
+        
       };
+      
       date_input.datepicker(options);
+     
     })
 
 function user(){
@@ -411,6 +426,9 @@ function user(){
     var email = document.getElementById("email").value;
     var career = document.getElementById("career").value;
     //var birthday = document.getElementById("birthday").value;
+    var date = document.getElementById("date").value;
+    var birthday = fname.replace(/\//g, "-");
+       
     var dd = document.getElementById("dd").value;
     var mm = document.getElementById("mm").value;
     var yy = document.getElementById("yy").value;
@@ -425,7 +443,7 @@ function user(){
                 }
             }
         };
-        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+yy+"-"+mm+"-"+dd+"&userid="+userid, true);
+        xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid, true);
         xmlhttp.send();
         return false;
     
