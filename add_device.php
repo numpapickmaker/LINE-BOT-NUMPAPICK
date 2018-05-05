@@ -95,7 +95,6 @@ if( !empty($username) && !empty($password)){
 $firstname = $_REQUEST["fname"];
 $lastname = $_REQUEST["lname"];
 $phone=$_REQUEST["phone"];
-
 $email = $_REQUEST["email"];
 $career= $_REQUEST["career"];
 $birthday =$_REQUEST["birthday"];
@@ -169,7 +168,6 @@ if($info == "1"){
   update_userinfo($userid,$firstname,$lastname,$phone,$email,$career,$birthday);
  }  
  function update_userinfo($userid,$firstname,$lastname,$phone,$email,$career,$birthday){
-
     
       $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
@@ -336,13 +334,13 @@ if(!empty($Unsubscribe)){
          //echo "Opened database successfully\n";
       }
      $sql ="delete from userline where id='".$userid."';";
-    echo $sql;
+   // echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
       } else {
           $sql ="delete from user_info where id='".$userid."';";
-          echo $sql;
+       //   echo $sql;
           $ret = pg_query($db, $sql) ;
           if(!$ret) {
              echo pg_last_error($db) ;
@@ -381,7 +379,7 @@ function save_elder_info($deviceid){
          //echo "Opened database successfully\n";
       }
      $sql ="update Device_information set name='".$_REQUEST["name"]."',sex='".$_REQUEST["sex"]."',heigth='".$_REQUEST["heigth"]."',weigth='".$_REQUEST["weigth"]."',disease='".$_REQUEST["disease"]."' ,address='".$_REQUEST["address"]."',phone='".$_REQUEST["phone"]."',birthday='".$_REQUEST["birthday"]."' where device_id='".$deviceid."';";
-    echo $sql;
+    //echo $sql;
     $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
@@ -474,7 +472,6 @@ function create_table_elderlist($deviceid){
      }
       pg_close($db) ;   
 }
-
 function check_userlogout($userid,$esp){
        $host        = "host=ec2-54-83-48-188.compute-1.amazonaws.com";
       $port        = "port=5432";
