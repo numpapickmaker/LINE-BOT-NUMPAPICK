@@ -222,7 +222,7 @@ span.psw {
     
     <p id="career_error"></p>
       <label  class = "Taviraj" >ปี / เดือน / วัน</label>
-      <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" type="text" required/>
+      <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" onfocus="blur();" type="text" required/>
       <p>
     <!-- <select class = "Taviraj" id="dd" name="dd" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
      <option value="00">วัน</option>
