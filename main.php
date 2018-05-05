@@ -220,10 +220,14 @@
         $checking = 0;
         $n = 1;
         while($row = pg_fetch_row($ret) ){
-          
+            
             $checking = 1;
+            echo $checking;
         }
+        echo "if check=";
+        echo $checking;
         if($checking == 0 ){
+            echo "pass condition";
           header("Location: https://numpapick.herokuapp.com/user_info.php?userid=$username");
          //echo "Records created successfully\n";
         }
