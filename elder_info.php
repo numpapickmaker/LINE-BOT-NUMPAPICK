@@ -387,8 +387,9 @@ function save(){
     var deviceid = document.getElementById('deviceid').value;
 var path = document.getElementById('path').value;		
     var name = document.getElementById("namefld").value;
-    var birthday = document.getElementById("birthdayfld").value;
-    
+    //var birthday = document.getElementById("birthdayfld").value;
+    var date = document.getElementById("date").value;
+    var birthday = date.replace(/\//g, "-");
     var sex =  getRadioButtonValue(document.elder_form.sexfld);
     var heigth = document.getElementById("heigthfld").value;
     var weigth = document.getElementById("weigthfld").value;
