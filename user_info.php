@@ -222,7 +222,7 @@ span.psw {
     
     <p id="career_error"></p>
       <label  class = "Taviraj" >วัน / เดือน / ปี</label>
-      <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+      <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="DD/MM/YYY" type="text" required/>
      <select class = "Taviraj" id="dd" name="dd" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
      <option value="00">วัน</option>
       <option value="01">01</option>
@@ -407,7 +407,7 @@ span.psw {
     weekStart: 0
 };
       var options={
-        format: 'mm/dd/yyyy',
+        format: 'dd/mm/yyyy',
         container: container,
         todayHighlight: true,
         autoclose: true,
@@ -433,7 +433,7 @@ function user(){
     var mm = document.getElementById("mm").value;
     var yy = document.getElementById("yy").value;
     var userid = document.getElementById("userid").value;
-    
+    console.log("https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
