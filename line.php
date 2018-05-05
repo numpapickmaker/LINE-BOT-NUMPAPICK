@@ -81,8 +81,8 @@ function send_FALL($userid,$esp,$elder_name){
                   ],
                   [
                     "type"=> "uri",
-                    "label"=> "View detail",
-                    "uri"=> "http://app.midatdb.com/PFrCbTJd2J"
+                    "label"=> "Call",
+                    "uri"=> "tel:1669"
                   ]
               ]
           ]
@@ -133,7 +133,7 @@ function send_PRESS($userid,$esp,$elder_name){
                   ],
                    [
                     "type"=> "uri",
-                    "label"=> "View detail",
+                    "label"=> "Call",
                     "uri"=> "tel:1669"
                   ]
               ]
