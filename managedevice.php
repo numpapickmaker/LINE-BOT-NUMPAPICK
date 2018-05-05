@@ -368,17 +368,16 @@ function add() {
     }
 }
 function edit(){
-  var userid = document.getElementById('userid').value;
+    var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value.value;
 }
 function submit(){
-  var userid = document.getElementById('userid').value;
+    var userid = document.getElementById('userid').value;
 }
 function create_table(){
-  var userid = document.getElementById('userid').value;
-     document.getElementById("listdevice").innerHTML = userid;
-     var path = document.getElementById('path').value;
-    var xmlhttp = new XMLHttpRequest();
+      var userid = document.getElementById('userid').value;
+      var path = document.getElementById('path').value;
+      var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("listdevice").innerHTML = this.responseText;
