@@ -427,7 +427,7 @@ function user(){
     var career = document.getElementById("career").value;
     //var birthday = document.getElementById("birthday").value;
     var date = document.getElementById("date").value;
-    var birthday = fname.replace(/\//g, "-");
+    var birthday = date.replace(/\//g, "-");
        
     var dd = document.getElementById("dd").value;
     var mm = document.getElementById("mm").value;
