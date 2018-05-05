@@ -385,9 +385,9 @@ function getRadioButtonValue(rbutton)
       }
 function save(){
   
-  var userid = document.getElementById('userid').value;
+    var userid = document.getElementById('userid').value;
     var deviceid = document.getElementById('deviceid').value;
-var path = document.getElementById('path').value;		
+    var path = document.getElementById('path').value;		
     var name = document.getElementById("namefld").value;
     //var birthday = document.getElementById("birthdayfld").value;
     var date = document.getElementById("date").value;
@@ -398,7 +398,6 @@ var path = document.getElementById('path').value;
     var disease = document.getElementById("diseasefld").value;
     var address = document.getElementById("addressfld").value;
     var phone = document.getElementById("phonefld").value;
-     document.getElementById("elderinfo").innerHTML ="userid=" + userid + "&elderinfo=0"+ "&deviceid=" +deviceid +"&name=" + name + "&sex=" +sex + "&heigth=" +heigth+ "&weigth="+ weigth+ "&disease="+ disease+ "&address="+ address +"&phone="+ phone + "&birthday="+ birthday;
     var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
