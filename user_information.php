@@ -200,18 +200,18 @@ span.psw {
 
 <p>
    
-<form name="elder_form" id="elder_form" onSubmit="return user()">
+
     <div class="container" >
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     <div id="user_info"></div>
   <p></p>  
-        </form>
+       
       
   <p><button class="prevbutton"  onclick="back()">ย้อนกลับ</button></p>
   <div style="text-align: center;">
     <input type="hidden" name="userid" id="userid" value="<?php echo $userid;?>" >
     
-    <button class="nextbutton" type="submit" form="elder_form">บันทึก</button></p>
+    <button class="nextbutton" onclick="user()">บันทึก</button></p>
     
     </div>
    
