@@ -233,12 +233,14 @@ span.psw {
 <p>
 <h1 class="kanit">จัดการข้อมูลผู้ใช้งาน</h1>
 <p>   
-  
+   <?php 
+        if($path != "main"){
+        ?>
 <div style="text-align: center; ">
  <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">1</div>
     <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">2</div>
     <div class="numberCircle" >3</div>
-    
+    <?php }?>
     <div class="container" >
     
       <div id="listdevice">
