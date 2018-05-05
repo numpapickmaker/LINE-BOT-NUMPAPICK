@@ -82,8 +82,6 @@ if (!is_null($events['events'])) {
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
             send_tutorial($userId);
-            //test Action
-            send_LINE("เริ่มต้นใช้งาน",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "แก้ไขข้อมูล"){
             //send_LINE("แก้ไขข้อมูล",$userId);
