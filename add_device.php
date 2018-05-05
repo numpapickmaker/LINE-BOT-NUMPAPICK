@@ -246,7 +246,7 @@ if($info == "1"){
            $month = $Birthday[1];
            $day   = $Birthday[2];
          
-           echo ' <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" value="'.$year.'/'.$month.'/'.$day.'" type="text" required/><p></p>';
+           echo ' <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" value="'.$year.'/'.$month.'/'.$day.'" onfocus="blur();" type="text" required/><p></p>';
          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
@@ -445,7 +445,7 @@ function create_table_elderlist($deviceid){
            $month = $Birthday[1];
            $day   = $Birthday[2];
          
-           echo ' <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" value="'.$year.'/'.$month.'/'.$day.'" type="text" required/><p></p>';
+           echo ' <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" value="'.$year.'/'.$month.'/'.$day.'" onfocus="blur();" type="text" required/><p></p>';
           }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
