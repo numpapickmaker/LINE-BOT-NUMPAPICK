@@ -228,7 +228,7 @@
         echo $checking;
         if($checking == 0 ){
             echo "pass condition";
-          header("Location: https://numpapick.herokuapp.com/user_info.php?userid=$username");
+          header("Location: https://numpapick.herokuapp.com/user_info.php?userid=".$username);
          //echo "Records created successfully\n";
         }
         
