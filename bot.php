@@ -81,6 +81,7 @@ if (!is_null($events['events'])) {
             //check_userid($userId,$text);
             //getMqttfromlineMSG($text);  
           }else if($text == "เริ่มต้นใช้งาน"){
+            send_tutorial($userId);
             //test Action
             send_LINE("เริ่มต้นใช้งาน",$userId);
             //getMqttfromlineMSG($text);  
@@ -97,7 +98,7 @@ if (!is_null($events['events'])) {
             //getMqttfromlineMSG($text);  
           }
            else{
-            send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login , "logout:<device name>" for logout',$userId);
+            //send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login , "logout:<device name>" for logout',$userId);
           }
           }
           
