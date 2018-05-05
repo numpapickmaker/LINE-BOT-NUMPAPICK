@@ -402,12 +402,12 @@ span.psw {
     monthsShort: ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."],
     today: "Today",
     clear: "Clear",
-    format: "dd/mm/yyyy",
+    format: "yyyy/mm/dd",
     titleFormat: "MM yyyy", /* Leverages same syntax as 'format' */
     weekStart: 0
 };
       var options={
-        format: 'dd/mm/yyyy',
+        format: 'yyyy/mm/dd',
         container: container,
         todayHighlight: true,
         autoclose: true,
