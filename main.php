@@ -211,7 +211,7 @@ span.psw {
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050; "></i>-->
   </button>
 </li>
-    <a>    
+        <a></a>   
     </form>
     
   </ul>
@@ -229,11 +229,11 @@ span.psw {
     </i>&emsp;จัดการอุปกรณ์ 
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
   </button>
-        </form>
+       
 
     
     <li></li>
-    
+     </form>
   </ul>
   </a>
 
