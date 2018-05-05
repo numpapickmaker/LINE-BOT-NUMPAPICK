@@ -223,7 +223,8 @@ span.psw {
     <p id="career_error"></p>
       <label  class = "Taviraj" >วัน / เดือน / ปี</label>
       <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="DD/MM/YYY" type="text" required/>
-     <select class = "Taviraj" id="dd" name="dd" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
+      <p>
+    <!-- <select class = "Taviraj" id="dd" name="dd" style="width: 100% padding: 12px 28px; margin: 0px 2px;" required>
      <option value="00">วัน</option>
       <option value="01">01</option>
       <option value="02">02</option>
@@ -376,7 +377,7 @@ span.psw {
       <option value="1931">1931</option>
       <option value="1930">1930</option>
       
-  </select>
+  </select> -->
   <p></p>  
   
   <div style="text-align: center;">
