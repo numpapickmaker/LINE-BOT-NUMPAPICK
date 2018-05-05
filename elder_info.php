@@ -245,10 +245,12 @@ span.psw {
 <p>   
   
 <div style="text-align: center; ">
+	 <?php if($path != "main"){
+        ?>
 <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">1</div>
     <div class="numberCircle" style="border: 3px solid #33cc33; color: #33cc33;">2</div>
     <div class="numberCircle" >3</div>
-    
+    <?php } ?>
 	
     
     <div class = "Taviraj" >
