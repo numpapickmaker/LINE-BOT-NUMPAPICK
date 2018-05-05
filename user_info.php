@@ -430,9 +430,9 @@ function user(){
     var date = document.getElementById("date").value;
     var birthday = date.replace(/\//g, "-");
        
-    var dd = document.getElementById("dd").value;
+    /*var dd = document.getElementById("dd").value;
     var mm = document.getElementById("mm").value;
-    var yy = document.getElementById("yy").value;
+    var yy = document.getElementById("yy").value;*/
     var userid = document.getElementById("userid").value;
     console.log("https://numpapick.herokuapp.com/add_device.php?info=1&fname=" + fname + "&lname="+lname+"&phone="+phone+"&email="+email+"&career="+career+"&birthday="+birthday+"&userid="+userid);
         var xmlhttp = new XMLHttpRequest();
