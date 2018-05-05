@@ -447,8 +447,8 @@ function create_table_elderlist($deviceid){
            $month = $Birthday[1];
            $day   = $Birthday[2];
          
-           echo '<input style="width: 100%; padding: 12px 28px; margin: 0px 2px; display: inline-block;border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;" id="birthdayfld" type="text" value="'.$year.'-'.$month.'-'.$day.'" placeholder="อายุ" required><p></p>';
-         }
+           echo ' <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="ปี/เดือน/วัน" value="'.$year.'/'.$month.'/'.$day.'" type="text" required/><p></p>';
+          }
          if($checking == 0){
             // $username_err = 'No account found with that username.';
          }
