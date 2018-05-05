@@ -205,6 +205,7 @@ span.psw {
     <label  class = "Taviraj" >กรอกประวัติผู้ดูแล</label>
     <div id="user_info"></div>
   <p></p>  
+        </form>
         <input class="form-control" class = "Taviraj" id="date" name="date" placeholder="DD/MM/YYY" type="text" required/>
   <p><button class="prevbutton"  onclick="back()">ย้อนกลับ</button></p>
   <div style="text-align: center;">
@@ -213,11 +214,12 @@ span.psw {
     <button class="nextbutton" type="submit" form="elder_form">บันทึก</button></p>
     
     </div>
-   </form>
+   
 <div class="footer">
   <p>   </p>
 </div>
 <script>
+function date_custom(){ 
     $(document).ready(function(){
       var date_input=$('input[name="date"]'); //our date input has the name "date"
       var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
@@ -244,6 +246,7 @@ span.psw {
       date_input.datepicker(options);
      
     })
+}    
 function user(){
    //
     var fname = document.getElementById("fname").value;
@@ -282,7 +285,7 @@ function create_listinfo(){
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     document.getElementById("user_info").innerHTML = this.responseText;
-                    
+                    date_custom();
                 }
             };
             xmlhttp.open("GET", "https://numpapick.herokuapp.com/add_device.php?userid=" + userid + "&create_userinfo=1" , true);
