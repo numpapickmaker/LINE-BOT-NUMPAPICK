@@ -88,7 +88,7 @@ if (!is_null($events['events'])) {
             send_Setting($userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ข้อเสนอแนะ"){
-            send_LINE("ข้อเสนอแนะ",$userId);
+            send_LINE("https://docs.google.com/forms/d/e/1FAIpQLSdZoIqVgRgl3Ly_appIl_XBRsPe6BD_yCI4nEkHNCPG2Myfkw",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ขอความช่วยเหลือ"){
             send_CALL($userId);
