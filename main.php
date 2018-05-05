@@ -229,20 +229,14 @@ span.psw {
     </i>&emsp;จัดการอุปกรณ์ 
     <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
   </button>
-</li>
+        </form>
 
-    <li> <button class="button button1 " style = "color: #505050;">
-    <i class="fas fa-chart-line" style="color: #0F4484; ">
-    </i>&emsp;ประวัติการใช้งาน 
-    <!--<i class="fas fa-chevron-right" style="float:right; color: #505050;"></i>-->
-  </button>
-</li>
     
     <li></li>
     
   </ul>
   </a>
-</form>
+
   <br>
   <br>
   <br>
