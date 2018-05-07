@@ -68,7 +68,7 @@ function send_FALL($userid,$esp,$elder_name){
               "defaultAction"=> [
                      "type"=> "message",
                      "label"=> "Acknowledge",
-                     "text"=> "Acknowledge"
+                     "text"=> "Acknowledge:".$esp
   //               "type"=> "uri",
   //               "label"=> "View detail",
   //               "uri"=> "http://google.com"
@@ -120,7 +120,7 @@ function send_PRESS($userid,$esp,$elder_name){
               "defaultAction"=> [
                    "type"=> "message",
                    "label"=> "Acknowledge",
-                   "text"=> "Acknowledge"
+                   "text"=> "Acknowledge:".$esp
 //               "type"=> "uri",
 //               "label"=> "View detail",
 //               "uri"=> "http://google.com"
