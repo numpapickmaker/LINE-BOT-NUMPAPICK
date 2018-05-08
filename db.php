@@ -202,7 +202,7 @@
       } else {
          echo "Opened database successfully\n";
       }
-      $sql = "SELECT *FROM device_information WHERE device_id='10674402';";
+      $sql = "SELECT *FROM device_information WHERE device_id='".$esp."';";
        $ret = pg_query($db, $sql) ;
       if(!$ret) {
          echo pg_last_error($db) ;
