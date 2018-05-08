@@ -67,7 +67,7 @@ function send_FALL($userid,$esp,$elder_name,$emergency_number){
               "text"=> "คุณ ".$elder_name,
               "defaultAction"=> [
                      "type"=> "message",
-                     "label"=> "Acknowledge",
+                     "label"=> "ตอบรับ",
                      "text"=> "Acknowledge:".$esp
   //               "type"=> "uri",
   //               "label"=> "View detail",
