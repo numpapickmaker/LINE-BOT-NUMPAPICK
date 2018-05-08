@@ -128,7 +128,7 @@ function send_PRESS($userid,$esp,$elder_name,$emergency_number){
               "actions"=> [
                   [
                     "type"=> "message",
-                    "label"=> "Acknowledge",
+                    "label"=> "ตอบรับ",
                     "text"=> "Acknowledge:".$esp
                   ],
                    [
