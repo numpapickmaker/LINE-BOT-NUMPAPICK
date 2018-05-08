@@ -210,6 +210,7 @@
         while($row = pg_fetch_row($ret) ){
           
           $elder_name = $row[2];
+          $emergency_number = $row[8];
         }
       }
       $sql ="SELECT * FROM userline WHERE esp='".$esp."';";
@@ -228,13 +229,13 @@
             }else{
      
                if($msg == "FALL"){
-                   send_FALL($row[1],$esp,$elder_name);
+                   send_FALL($row[1],$esp,$elder_name,$emergency_number);
                }else if($msg == "CHECK"){
                  send_CHECK($row[1]); 
                }else if($msg == "LOW"){
                  send_LOWBAT($row[1],$esp,$elder_name); 
                }else if($msg == "PRESS"){
-                 send_PRESS($row[1],$esp,$elder_name); 
+                 send_PRESS($row[1],$esp,$elder_name,$emergency_number); 
                }else if($msg == "online" || $msg == "offline"){
                     send_LINE($esp." : "."$elder_name ".$msg,$row[1]);
                }
