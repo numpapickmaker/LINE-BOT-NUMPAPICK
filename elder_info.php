@@ -299,7 +299,7 @@ $path = $_GET["path"];
                             <button class="nextbutton" onclick="save()">ยืนยัน</button>
                         </p>
                         <!--<p><button class="nextbutton" type="submit" form="elder_form">ยืนยัน</button></p>-->
-                        <button class="delbutton" onclick="document.getElementById('id02').style.display='block'"> ลบ</button>
+                        <button class="delbutton" onclick="document.getElementById('id02').style.display='block'"> ลบการเชื่อมต่อ</button>
 
                     </div>
                         <!--<div class="Row">
@@ -344,7 +344,7 @@ $path = $_GET["path"];
                         <div class="container Taviraj">
                             <p>
 
-                                <h1 class="kanit">ต้องการลบข้อมูลอุปกรณ์ ? </h1>
+                                <h1 class="kanit">ต้องการลบการเชื่อมต่ออุปกรณ์ ? </h1>
                                 <h2 class="Taviraj" style="text-align:center">หากลบจะไม่สามารถทำการกู้คืนข้อมูลได้</h2>
                                 <button class="nextbutton " onclick="document.getElementById('id02').style.display='none'" style="font-size: 20px; width:45% ; ">
                                 ยกเลิก </button>
