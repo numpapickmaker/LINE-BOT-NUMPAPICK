@@ -52,7 +52,7 @@ function send_Check($userid){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-function send_FALL($userid,$esp,$elder_name){
+function send_FALL($userid,$esp,$elder_name,$emergency_number){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
           "type"=> "template",
@@ -82,7 +82,7 @@ function send_FALL($userid,$esp,$elder_name){
                   [
                     "type"=> "uri",
                     "label"=> "โทร",
-                    "uri"=> "tel:1669"
+                    "uri"=> "tel:".$emergency_number
                   ]
               ]
           ]
@@ -105,7 +105,7 @@ function send_FALL($userid,$esp,$elder_name){
       curl_close($ch);
       echo $result . "\r\n"; 
 }
-function send_PRESS($userid,$esp,$elder_name){
+function send_PRESS($userid,$esp,$elder_name,$emergency_number){
    $access_token = '3NZ4tPcC9W1t6cPI0r3ezvnsoK8KW04hbCSPxKSahSeGbeUU7lC8PQvx02uN5UyL7wOaVJ6EZ9oM5uQjkqLDNZtagQuRcS/NaaGmtopk7pBGOXtNk3lDc4KQIns5tV/jpm8yyr/114JL4uORE5czWwdB04t89/1O/w1cDnyilFU='; 
   $messages = [
           "type"=> "template",
@@ -134,7 +134,7 @@ function send_PRESS($userid,$esp,$elder_name){
                    [
                     "type"=> "uri",
                     "label"=> "โทร",
-                    "uri"=> "tel:1669"
+                    "uri"=> "tel:".$emergency_number
                   ]
               ]
           ]
