@@ -76,12 +76,12 @@ function send_FALL($userid,$esp,$elder_name){
               "actions"=> [
                   [
                     "type"=> "message",
-                    "label"=> "Acknowledge",
+                    "label"=> "ตอบรับ",
                     "text"=> "Acknowledge:".$esp
                   ],
                   [
                     "type"=> "uri",
-                    "label"=> "Call",
+                    "label"=> "โทร",
                     "uri"=> "tel:1669"
                   ]
               ]
@@ -119,7 +119,7 @@ function send_PRESS($userid,$esp,$elder_name){
               "text"=> "คุณ ".$elder_name,
               "defaultAction"=> [
                    "type"=> "message",
-                   "label"=> "Acknowledge",
+                   "label"=> "ตอบรับ",
                    "text"=> "Acknowledge:".$esp
 //               "type"=> "uri",
 //               "label"=> "View detail",
@@ -133,7 +133,7 @@ function send_PRESS($userid,$esp,$elder_name){
                   ],
                    [
                     "type"=> "uri",
-                    "label"=> "Call",
+                    "label"=> "โทร",
                     "uri"=> "tel:1669"
                   ]
               ]
