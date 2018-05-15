@@ -276,7 +276,7 @@ if (!empty($create_table)) {
     } else {
         $checking = 0;
         $n = 1;
-        echo '<table width="100%" class="table table-striped  Taviraj">';
+        echo '<table width="100%" class="table table-striped  Taviraj" style = "text-align: center;">';
         echo '<thead>';
         echo '<tr>';
         echo '<th>หมายเลข</th>';
