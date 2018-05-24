@@ -30,7 +30,7 @@ h1 {
 }
 .table td {
    text-align: center;   
-}
+} 
 p {
     font-family: verdana;
     font-size: 20px;
