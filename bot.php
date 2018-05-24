@@ -19,11 +19,11 @@ if (!is_null($events['ESP'])) {
     //send_LINE($events['MSG'],'Ue77a191627f6ac91899e75d92264310c');
   }
  if($events['ESP'] == 'DEVICEACK'){
-    check_send($events['NAME'],$events['ESP']); 
+    check_send($events['NAME'],$events['MSG']); 
     //send_LINE($events['MSG'],'Ue77a191627f6ac91899e75d92264310c');
   }
  if($events['ESP'] == 'HELPACK'){
-    check_send($events['NAME'],$events['ESP']); 
+    check_send($events['NAME'],$events['MSG']); 
     //send_LINE($events['MSG'],'Ue77a191627f6ac91899e75d92264310c');
   }
   
