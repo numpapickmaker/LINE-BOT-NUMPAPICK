@@ -220,6 +220,7 @@ input[type=text],input[type=password], select {
 
         </form>
         <br>
+		
          <form action="https://numpapick.herokuapp.com/manage.php" method="get">
     <button class="button button2" value="<?php echo $userid;?>" name="action">Back</button></form>
     </div>    
