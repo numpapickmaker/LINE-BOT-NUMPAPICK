@@ -34,6 +34,7 @@ if( $_GET["name"]|| $_GET["birthday"]|| $_GET["sex"]|| $_GET["heigth"]|| $_GET["
       if(!$db) {
          echo "Error : Unable to open database\n";
       } else {
+	
          //echo "Opened database successfully\n";
       }
      $sql ="SELECT * FROM Device_information WHERE Device_id='".$_GET["view"]."';";
