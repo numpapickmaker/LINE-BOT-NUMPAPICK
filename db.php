@@ -238,6 +238,10 @@
                  send_PRESS($row[1],$esp,$elder_name,$emergency_number); 
                }else if($msg == "online" || $msg == "offline"){
                     send_LINE($esp." : "."$elder_name ".$msg,$row[1]);
+               }else if($msg == "DEVICEACK"){
+                    send_LINE("การตอบรับได้ถึงอุปกรณ์ของคุณ ".$elder_name." แล้ว");
+               }else if($msg == "HELPACK"){
+                    send_LINE("มีผู้กดปุ่มกดอุปกรณ์ ของคุณ ".$elder_name." เพื่อให้ความช่วยเหลือแล้ว");
                }
                 else{
                   send_LINE($msg,$row[1]);
