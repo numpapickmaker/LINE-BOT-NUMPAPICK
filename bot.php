@@ -96,7 +96,7 @@ if (!is_null($events['events'])) {
             send_Setting($userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ข้อเสนอแนะ"){
-            send_LINE("https://drive.google.com/open?id=1zmhRSVwmmugb7chqpghOipIJk_hJnSG8Gsg8lvMwVLc",$userId);
+            send_LINE("https://docs.google.com/forms/d/e/1FAIpQLSfk6mjF57xiDHAKeCDqg6n6w9N44Vl47NeUpjTrXJddcFDXPQ/viewform?usp=sf_link",$userId);
             //getMqttfromlineMSG($text);  
           }else if($text == "ขอความช่วยเหลือ"){
             send_CALL($userId);
