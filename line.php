@@ -337,7 +337,9 @@ function send_tutorial($userid){
           
                 "type"=> "image",
                 "originalContentUrl"=> "https://i.imgur.com/GcU2NS9.jpg",
-                "previewImageUrl"=> "https://i.imgur.com/GcU2NS9.jpg"
+//                 "previewImageUrl"=> "https://i.imgur.com/GcU2NS9.jpg"
+                "previewImageUrl"=> "https://i.imgur.com/1iKzjwL.jpg"
+    
             
       ];
       // Make a POST Request to Messaging API to reply to sender
