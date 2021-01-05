@@ -338,7 +338,7 @@ function send_tutorial($userid){
                 "type"=> "image",
                 "originalContentUrl"=> "https://i.imgur.com/GcU2NS9.jpg",
 //                 "previewImageUrl"=> "https://i.imgur.com/GcU2NS9.jpg"
-                "previewImageUrl"=> "https://imgur.com/PWpbvVW"
+                "previewImageUrl"=> "https://imgur.com/PWpbvVW.jpg"
     
             
       ];
