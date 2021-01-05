@@ -335,7 +335,7 @@ function send_tutorial($userid){
   $messages = [
               
           
-                "type"=> "image",
+                "type"=> "images",
                 "originalContentUrl"=> "https://i.imgur.com/GcU2NS9.jpg",
 //                 "previewImageUrl"=> "https://i.imgur.com/GcU2NS9.jpg"
                 "previewImageUrl"=> "https://imgur.com/PWpbvVW.jpg"
