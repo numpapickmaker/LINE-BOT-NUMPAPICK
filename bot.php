@@ -102,10 +102,6 @@ if (!is_null($events['events'])) {
             send_CALL($userId);
             //send_LINE("ขอความช่วยเหลือ",$userId);
             //getMqttfromlineMSG($text);  
-          }else if($text == "call_image_test_api"){
-            send_image_test_api($userId);
-            //send_LINE("ขอความช่วยเหลือ",$userId);
-            //getMqttfromlineMSG($text);  
           }
            else{
             //send_LINE('Incorrect command: type "Check" for check status device , "login:<device name>" for login , "logout:<device name>" for logout',$userId);
